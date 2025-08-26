@@ -23,5 +23,5 @@ git commit -m "<comentário>"
 
 ### 5. Enviar branch para o repositório remoto
 ```bash
-git push -u origin <nome-branch>
+git push --set-upstream origin <nome-branch>
 ```
