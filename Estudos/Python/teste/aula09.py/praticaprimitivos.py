@@ -1,0 +1,6 @@
+n =float(input('digite um valor'))
+print(n)
+n2 =bool(input('digite um valor'))
+print(n2)
+n = input ('digite um valor')
+print (n.isnumeric)

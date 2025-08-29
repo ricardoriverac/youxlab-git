@@ -1,0 +1,12 @@
+enunciado = ('Descubra o intervalo do decrescimento da função do segundo grau a seguir: f(x) =-20x²+5x+1')
+print(enunciado)
+a = float(input('qual o coeficiente a da função: '))
+n2 = int(input('qual o coeficiente b da função: '))
+n3= str(input('qual a fórmula do ponto x do vertice?'))
+n4= 2 * a
+print (input('Qual o valor do ponto x do vértice? '))
+print ('xv = {}'.format(n4) )
+n5= int (n2/n4)
+print ('A formúla do ponto x do vértice vale {}'.format(n5))
+print (input('Conforme os cálculos e o desenho do gráfico no seu caderno, qual o intervalo do decrescimento da função quadrática? '))
+print ('A resposta final é  ]infinito {} ]'.format(n5))
