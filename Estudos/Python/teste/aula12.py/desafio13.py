@@ -1,0 +1,6 @@
+dias= int(input('Quantos dias o carro foi alugado? '))
+km= float(input('Quantos kilometrôs o carro percorreu no período de aluguel?'))
+valorFinal= float((60*dias) + 0.15*km)
+print (dias)
+print (km)
+print (str(f'O valor final após {dias} alugado com {km} percorridos, o valor final do aluguel será {valorFinal}R$'))
