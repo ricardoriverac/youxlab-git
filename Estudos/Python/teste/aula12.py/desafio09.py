@@ -1,0 +1,6 @@
+salario= float(input('Qual o Salário do profissional?'))
+print(salario)
+aumento= int (input('Qual o valor do aumento?'))
+print(aumento)
+aumento_final= salario + (salario * aumento/100)
+print(f'O profissional que ganhava {salario:2}R$ passara à ganhar {aumento_final:2}')
