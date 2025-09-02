@@ -20,7 +20,7 @@ print('o seu sucessor foi :' ,sucessor)
 numero = input('Digite um numero')
 dobro = numero * 2
 triplo = numero * 3
-raiz = numero**
+raiz = numero
 print('o dobro de {} é {}:'.format(numero)(dobro))
 print('o triplo de {} é {}:'.format(numero)(triplo))
 print ('a raiz de {} é {}:'.format(numero)(raiz))
