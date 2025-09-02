@@ -1,3 +1,4 @@
+#Calcula o dobro, triplo e raíz quadrada de um número
 numero = float (input ('Escolha um número '))
 dobroDoNumero = (numero * 2)
 triploDoNumero = (numero * 3)
