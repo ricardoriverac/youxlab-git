@@ -1,0 +1,2 @@
+nome = input("qual seu nome?")
+print (f"ola {nome} prazer em te conhecer")

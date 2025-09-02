@@ -1,0 +1,3 @@
+dia = int(input("qual dia que vc nasceu"))
+dia = int(input("qual mes que vc nasceu"))
+dia = int(input("qual ano que vc nasceu"))
