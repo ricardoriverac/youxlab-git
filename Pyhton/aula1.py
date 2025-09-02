@@ -1,2 +1,4 @@
-nome = input("Qual é o seu nome?")
-print("Olá! Seja bem vindo(a)!")
+dia = input("dia = ")
+mês = input("mês = ")
+ano = input("ano = ")
+print("Você nasceu no dia ", dia, " de ", mês, " de ", ano)
