@@ -1,3 +1,4 @@
+#Calcula a área de um triângulo
 comprimentoDaBaseDoTriangulo = float (input('Informe o comprimento da base do triângulo '))
 alturaDoTriangulo = float (input ('Informe a altura do triângulo '))
 areaDoTriangulo = float ((comprimentoDaBaseDoTriangulo * alturaDoTriangulo) / 2)
