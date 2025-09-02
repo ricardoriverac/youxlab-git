@@ -1,0 +1,5 @@
+numero = float (input ('Escolha um número '))
+dobroDoNumero = (numero * 2)
+triploDoNumero = (numero * 3)
+raizDoNumero = (numero ** (1/2))
+print ('O dobro, triplo e raíz do número {} é {}, {} e {}'.format(numero,dobroDoNumero,triploDoNumero,raizDoNumero))
