@@ -1,3 +1,4 @@
+#Pergunta sua data de nascimento
 dia = input ('Em dia você nasceu?')
 mes = input ('Qual o mês?')
 ano = input ('E o ano?')

@@ -1,3 +1,4 @@
+#Soma dois números, te dá o resultado e transforma em outra variável
 numero1 = int (input ('Insira um número inteiro '))
 numero2 = int (input ('Agora outro '))
 numero3 = int (numero1 + numero2)
