@@ -1,35 +1,13 @@
-#AULA 1/ATIVIDADE 1/
+'''ATIVIDADE : Crie um script Pyton
+que leia o nome da pessoa e mostre
+uma mensagem de boas_vindas de acordo
+com o valor digitado'''
 
-#Atividade sobre print (toda palavra tem que ter aspas quando for escrita)
-print('Olá, mundo')
+#RESPOSTAS
 
-#Caulculos de números 
-print(7+3)
+a = 'otto'
+b = 'Boas-vindas'
 
-#Mostrar números
-print('7'+'3')
+a = input('Qual o seu nome?')
 
-#Juntar números e letras utilizando  á " , " (\n pode ser utilizado como uma quebra de linha  )
-print('Quantos anos você tem?\nEu tenho' , 15 , 'anos')
-
-#Como criar variaveis 
-
-nome = 'otto'
-
-idade = 25 
-
-peso = 75.8 
-
-print(nome , idade , peso)
-
-#Como usar o "input"
-
-#O "input" serve para receber o valor do usuario vindo do terminal
-
-nome = input('Qual o seu nome?')
-
-idade = input('Qual a sua idade?')
-
-peso = input('Qual o seu peso?')
-
-print(nome , idade , peso)
+print(b,a, '!!')
