@@ -1,6 +1,6 @@
 #AULA 1/ATIVIDADE 1/
 
-#Atividade sobre print 
+#Atividade sobre print (toda palavra tem que ter aspas quando for escrita)
 print('Olá, mundo')
 
 #Caulculos de números 
@@ -19,5 +19,17 @@ nome = 'otto'
 idade = 25 
 
 peso = 75.8 
+
+print(nome , idade , peso)
+
+#Como usar o "input"
+
+#O "input" serve para receber o valor do usuario vindo do terminal
+
+nome = input('Qual o seu nome?')
+
+idade = input('Qual a sua idade?')
+
+peso = input('Qual o seu peso?')
 
 print(nome , idade , peso)

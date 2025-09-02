@@ -13,4 +13,4 @@ git commit -m "<comentário>"
 
 ### 3. Enviar branch para o repositório remoto
 ```bash
-g
+git push 
