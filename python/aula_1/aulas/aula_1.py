@@ -1,6 +1,6 @@
 #AULA 1/ATIVIDADE 1/
 
-#Atividade sobre print (toda palavra tem que ter aspas quando for escrita)
+#Atividade sobre print é input (toda palavra tem que ter aspas quando for escrita)
 print('Olá, mundo')
 
 #Caulculos de números 
@@ -33,3 +33,4 @@ idade = input('Qual a sua idade?')
 peso = input('Qual o seu peso?')
 
 print(nome , idade , peso)
+
