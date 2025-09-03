@@ -1,5 +1,6 @@
-larguraDaParede = float (input('Insira a largura da parede'))
-alturaDaParede = float (input('Insira o altura da parede'))
+#Calcula a litragem de tinta necessária para pintar uma parede
+larguraDaParede = float (input('Insira a largura da parede '))
+alturaDaParede = float (input('Insira o altura da parede '))
 areaDaParede = (larguraDaParede * alturaDaParede)
 litrosDeTinta = (areaDaParede / 2)
 print (f'Uma parede de largura {larguraDaParede}m e de altura {alturaDaParede}m possui uma área de {areaDaParede}m quadrados e são necessários {litrosDeTinta}l de tinta')

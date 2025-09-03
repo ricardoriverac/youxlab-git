@@ -1,0 +1,6 @@
+quilometrosRodados = float (input ('Insira quantos kilômetros foram rodados? '))
+diasAlugados = int (input('Insira quantidade de dias em que o carro foi alugado'))
+precoDoQuilometroRodado = (quilometrosRodados * 0.15)
+precoDoCarroPorDia = (diasAlugados * 60)
+precoFinal = (precoDoCarroPorDia + precoDoQuilometroRodado)
+print (f'Você terá que pagar {precoFinal} reais')

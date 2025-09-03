@@ -1,5 +1,5 @@
 #Exige a tabuada do número escolhido
-numero = int (input ('Escolha um número'))
+numero = int (input ('Escolha um número '))
 print (numero * 1)
 print (numero * 2)
 print (numero * 3)
