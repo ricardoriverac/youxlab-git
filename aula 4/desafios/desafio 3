@@ -1,4 +1,5 @@
 x1 = int(input("digite o valor de x1: "))
 x2 = int(input("digite o valor de x2: "))
-soma = x1+x2
+soma = x1-x2
 print("a soma e ", soma)
+
