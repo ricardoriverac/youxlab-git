@@ -1,0 +1,7 @@
+nome = str(input('Digite seu nome completo: '))
+mai = nome.upper()
+mini = nome.lower()
+total = len(nome)
+divi = nome.split()
+prim = len(divi[0])
+print(f'{nome} \n{mai} \n{mini} \n{total} \n{prim}')

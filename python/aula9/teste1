@@ -1,0 +1,4 @@
+frase = 'Lavras nao Vem'
+frase = frase.replace('Vem', 'Tem')
+div = frase.split()
+print(div[0])
