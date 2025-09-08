@@ -1,0 +1,15 @@
+print ('Olá usuário digite o seu nome para te dar boas vindas')
+nome = input ('Qual o seu nome?')
+print(f"Oi {nome} seja bem vindo(a)!")
+print('Digite os seus dados no formulário abaixo:')
+dia = input ('Que dia vc nasceu?')
+mês = input ('Que mês vc nasceu?')
+ano = input ('Que ano vc nasceu?')
+print(f"Você nasceu no dia {dia} de {mês} de {ano}. Correto?")
+
+# print('Digite um numero')
+# num1 = float(input('Digite o primeiro numero:'))
+# print('Digite o segundo número')
+# num2 = int (input('Digite o segundo numero:'))
+# print(f"A soma de {num1} e {num2} é {num1 + num2}")
+
