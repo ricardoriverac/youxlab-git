@@ -7,5 +7,5 @@ import random
 num = random.random()
 print(num)
 
-import emoji 
+import emoji
 print(emoji.emojize("Olá mundo :sunglasses: "))
