@@ -1,0 +1,5 @@
+nome = ('Pablo Araujo Rocha Dos Santos Junior')
+print(nome.upper())
+print(nome.lower())
+print(len(nome)- nome.count(' '))
+print(nome.split()[0])
