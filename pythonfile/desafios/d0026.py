@@ -1,0 +1,7 @@
+frase = str(input('Digite uma frase: '))
+num = frase.count('a')
+print(f'Sua frase tem {num} letras a')
+num2 = frase.find('a')
+print(f'A posição da primeira letra é: {num2} ')
+num3 = frase.rfind('a')
+print(f'A posição da ultima letra é: {num3}')
