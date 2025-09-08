@@ -1,6 +1,22 @@
 #Tipos primitivos 
 
-#Para comverter um tipo para outro e necessario passar os dados dentro do parenteses(O valor que a variável receberá depende do seu tipo)
+'''
+int = Variavel que só aceita números inteiros
+
+float = Variavel que aceita números reais ou números quebrados 
+
+bool = Variavel que só recebem valores True ou False
+
+str = Variavel que só recebe string(palavras ou letras)
+
+'''
+#Como usar
+
+'''
+Para converter um tipo para outro e necessario
+passar os dados dentro do parenteses(O valor que a
+variável receberá depende do seu tipo)
+'''
 
 ''' n1 = int(input('Digite um número))'''
 
@@ -10,7 +26,3 @@ n1 = float(input('Digite um número : ' ))
 print(f'Esse e o número escolhido {n1}')
 
 #Exemplo
-
-m1 = float(input('Adicione um valor : '))
-m2 = float(input('Adicione outro valor : '))
-print(f'Esse e o valor da soma : {m1 + m2}')
