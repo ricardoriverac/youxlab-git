@@ -1,0 +1,7 @@
+frase=str(input('Digite uma frase: '))
+num_a=frase.count("a")
+print(f"Sua frase tem {num_a} letras a!")
+posicao=frase.find("a")
+print(f"Ela aparece a primeira vez na posição: {posicao}")
+fim=frase.rfind("a")
+print(f"Sua ultima posição é: {fim}")
