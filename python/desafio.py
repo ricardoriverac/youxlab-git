@@ -1,0 +1,5 @@
+dia = int (input ('que dia você nasceu?'))
+mês = input ('que mês você nasceu?')
+ano = int (input ('que ano você nasceu?'))
+print(dia, mês, ano) 
+print (7+4)
