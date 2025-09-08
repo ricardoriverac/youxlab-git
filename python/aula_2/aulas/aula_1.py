@@ -6,11 +6,11 @@
 
 #Exemplo
 
-n1 = int(input('Digite um número : ' ))
+n1 = float(input('Digite um número : ' ))
 print(f'Esse e o número escolhido {n1}')
 
 #Exemplo
 
-m1 = int(input('Adicione um valor : '))
-m2 = int(input('Adicione outro valor : '))
+m1 = float(input('Adicione um valor : '))
+m2 = float(input('Adicione outro valor : '))
 print(f'Esse e o valor da soma : {m1 + m2}')
