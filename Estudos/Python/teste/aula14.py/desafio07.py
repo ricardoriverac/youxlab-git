@@ -1,0 +1,6 @@
+nome = str(input('Qual o seu nome? '))
+#print(f'Seu primeiro nome é: {nome.split(" ")} ')
+parteUm= nome.split(" ")
+print(f' A primeira parte do seu nome é: {parteUm[0]}')
+parteDois= nome.split(" ")
+print(f'A segunda parte do seu nome é: {parteDois [-1]}')
