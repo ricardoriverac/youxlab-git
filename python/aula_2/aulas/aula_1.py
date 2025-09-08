@@ -2,10 +2,6 @@
 
 #Para comverter um tipo para outro e necessario passar os dados dentro do parenteses(O valor que a variável receberá depende do seu tipo)
 
-
-'''Exemplo:
-n = int('11')'''
-
 ''' n1 = int(input('Digite um número))'''
 
 #Exemplo
@@ -13,3 +9,8 @@ n = int('11')'''
 n1 = int(input('Digite um número : ' ))
 print(f'Esse e o número escolhido {n1}')
 
+#Exemplo
+
+m1 = int(input('Adicione um valor : '))
+m2 = int(input('Adicione outro valor : '))
+print(f'Esse e o valor da soma : {m1 + m2}')
