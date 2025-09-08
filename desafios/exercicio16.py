@@ -1,0 +1,1 @@
+int(float('Digite o numero nao inteiro: '))

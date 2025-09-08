@@ -9,7 +9,7 @@ git checkout -b <nome-branch>
 ```
 
 ### 2. Adicionar informações na tabela
-Adicionar o nome, idade e comida favorita na tabela HTML.
+A<dicionar o nome, idade e comida favorita na tabela HTML.>
 
 ### 3. Adicionar arquivos ao staging
 ```bash
