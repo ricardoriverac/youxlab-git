@@ -1,4 +1,4 @@
-#Como verificar tipod primtivos
+#Como verificar tipos primtivos
 
 '''
 Para verificar tipos primitivos
@@ -41,4 +41,10 @@ print(tipo_da_variavel.isnumeric())
 .isalnum = Fala se a variavel contem letras e números 
 
 .isupper = Demonstra se o valor da variavel esta em maiusculo
+
+.islower = Detecta se contem somente letras minusculas
+
+.istitle = E quando a palavra contem letras maiusculas e minusculas
+
+.isspace = Detecta se tem somente espaço na variavel 
 '''
