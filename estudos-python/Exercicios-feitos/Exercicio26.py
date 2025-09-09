@@ -1,0 +1,5 @@
+phrase = input ('Enter some random phrase').strip()
+phrase = phrase.upper()
+print ("There is {} 'A' in that phrase".format(phrase.count('A')))
+print ('The first letter A appeared in the position {}'.format(phrase.find('A')+1))
+print ('The last letter A appeared in the position {}'.format(phrase.rfind('A')+1))
