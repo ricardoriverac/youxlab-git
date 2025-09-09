@@ -1,0 +1,6 @@
+número_0 = int(input('Digite um número: '))
+número = (str(número_0))
+print ('unidade {}'.format(número[3]))
+print ('dezena {}'.format(número[2]))
+print ('centena {} '.format(número[1]))
+print ('milhar {}'.format(número[0]))
