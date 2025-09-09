@@ -1,3 +1,4 @@
+#Mostra quandos 'A' tem em uma frase e também sua primeira e última aparição
 phrase = input ('Enter some random phrase').strip()
 phrase = phrase.upper()
 print ("There is {} 'A' in that phrase".format(phrase.count('A')))
