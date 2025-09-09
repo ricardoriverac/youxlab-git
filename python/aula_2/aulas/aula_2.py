@@ -27,7 +27,3 @@ os parenteses, e ele tem a mesma função
 
 #Exemplo
 print(f'A soma de {n1} com {n2} e equivalente a {r}\n')
-
-
-
-

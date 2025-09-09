@@ -6,5 +6,7 @@ as informações possiveis sobre ele
 
 #Responda
 
-informação_quaisquer = input('Digite qualquer coisa : ')
+informação_quaisquer = input('')
 
+tipo_da_variavel = type(informação_quaisquer)
+print(tipo_da_variavel)
