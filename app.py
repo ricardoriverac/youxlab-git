@@ -1,0 +1,1 @@
+print('\033[30mola mundo!\033[m')
