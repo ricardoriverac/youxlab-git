@@ -1,10 +1,9 @@
-frase = 'Curso em Vídeo Python'
+'''frase = 'Curso em Vídeo Python'
 dividido = frase.split()
-print(dividido[2][3])
+print(dividido[2][3])'''
 
 '''frase = 'Curso em Vídeo Python'
 print(frase.split())'''
-
 
 '''frase = 'Curso em Vídeo Python'
 print(frase.lower().find('vídeo'))'''
