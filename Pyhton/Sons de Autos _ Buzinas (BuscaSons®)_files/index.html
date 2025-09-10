@@ -1,0 +1,224 @@
+
+<!-- saved from url=(0152)https://www.buscasons.com/_template/player/index.php?autoplay=1&SID=https%3A%2F%2Fwww.buscasons.com%2F_arq%2F2025%2Fbuzina-antiga-short-202502141718.mp3 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><style>
+.wave-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;  /* Permite que os elementos "quebrem" quando necessário */
+}
+
+#wave-loading {
+  font-family: sans-serif;
+  font-size: 16px;
+  color: #fff;
+  background-color: #2727B2;
+  padding: 10px 15px;
+  border-radius: 6px;
+  display: inline-block;
+  white-space: nowrap;
+  flex-shrink: 0; /* Impede que o loading diminua em tamanho */
+}
+
+#wave-loading b {
+  font-weight: bold;
+}
+
+#wave-loading::after {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #fff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+#waveform {
+  flex: 1;
+  height: 100px;
+  background: #eee;
+  display: none;
+  min-width: 0; /* Impede que o elemento ultrapasse o tamanho do container */
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#play {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  flex-shrink: 0; /* Impede que o botão diminua em tamanho */
+}
+
+@media (max-width: 768px) {
+  .wave-wrapper {
+    flex-direction: column; /* Coloca os elementos em coluna quando a tela for pequena */
+    align-items: center;
+  }
+
+  #wave-loading {
+    margin-bottom: 10px;
+  }
+
+  #waveform {
+    width: 100%; /* Ajusta o tamanho do wave para 100% da largura do container */
+    height: 80px; /* Ajusta a altura do wave */
+  }
+
+  #play {
+    margin-bottom: 10px;
+  }
+}
+
+</style>
+
+
+  
+  
+
+</head><body><div class="wave-wrapper">
+  <button id="play">
+    <img id="play-icon" src="./icon_play_02.png" title="Play/Pause" height="39px">
+  </button>
+
+  <div id="wave-loading" style="display: none;">A carregar o áudio (<b>100%</b>)</div>
+  <div id="waveform" style="display: block;"><div><template shadowrootmode="open">
+      <style>
+        :host {
+          user-select: none;
+          min-width: 1px;
+        }
+        :host audio {
+          display: block;
+          width: 100%;
+        }
+        :host .scroll {
+          overflow-x: auto;
+          overflow-y: hidden;
+          width: 100%;
+          position: relative;
+        }
+        :host .noScrollbar {
+          scrollbar-color: transparent;
+          scrollbar-width: none;
+        }
+        :host .noScrollbar::-webkit-scrollbar {
+          display: none;
+          -webkit-appearance: none;
+        }
+        :host .wrapper {
+          position: relative;
+          overflow: visible;
+          z-index: 2;
+        }
+        :host .canvases {
+          min-height: 100px;
+        }
+        :host .canvases > div {
+          position: relative;
+        }
+        :host canvas {
+          display: block;
+          position: absolute;
+          top: 0;
+          image-rendering: pixelated;
+        }
+        :host .progress {
+          pointer-events: none;
+          position: absolute;
+          z-index: 2;
+          top: 0;
+          left: 0;
+          width: 0;
+          height: 100%;
+          overflow: hidden;
+        }
+        :host .progress > div {
+          position: relative;
+        }
+        :host .cursor {
+          pointer-events: none;
+          position: absolute;
+          z-index: 5;
+          top: 0;
+          left: 0;
+          height: 100%;
+          border-radius: 2px;
+        }
+      </style>
+
+      <div class="scroll" part="scroll" style="overflow-x: hidden;">
+        <div class="wrapper" part="wrapper" style="width: 100%;">
+          <div class="canvases" part="canvases" style="min-height: 100px; clip-path: polygon(100% 0px, 100% 0px, 100% 100%, 100% 100%);"><div style="height: 100px;"><canvas width="1770" height="100" style="width: 1770px; height: 100px; left: 0px;"></canvas></div></div>
+          <div class="progress" part="progress" style="width: 100%;"><div style="height: 100px;"><canvas width="1770" height="100" style="width: 1770px; height: 100px; left: 0px;"></canvas></div></div>
+          <div class="cursor" part="cursor" style="background-color: rgb(39, 39, 178); width: 1px; left: 100%; transform: translateX(-1px);"></div>
+        </div>
+      </div>
+    <audio src="blob:https://www.buscasons.com/78325d7c-8c8c-48f3-8c08-54fe8cd28a1c"></audio></template></div></div>
+</div>
+
+
+
+<script src="./audioWave.js"></script>
+<script>
+  const waveformContainer = document.getElementById('waveform');
+  const loadingIndicator = document.getElementById('wave-loading');
+  const playBtn = document.getElementById('play');
+  const playIcon = document.getElementById('play-icon');
+
+  const wavesurfer = WaveSurfer.create({
+    container: waveformContainer,
+    waveColor: '#999',
+    progressColor: '#2727B2',
+    height: 100,
+    responsive: true
+  });
+
+  wavesurfer.load('https://www.buscasons.com/_arq/2025/buzina-antiga-short-202502141718.mp3');
+
+  wavesurfer.on('loading', (progress) => {
+    loadingIndicator.innerHTML = `A carregar o áudio (<b>${progress}%</b>)`;
+  });
+
+  wavesurfer.on('ready', () => {
+    loadingIndicator.style.display = 'none';
+    waveformContainer.style.display = 'block';
+    playBtn.disabled = false;
+
+    // Tocar automaticamente ao carregar
+    wavesurfer.play();
+
+    // Controla play/pause pelo botão
+    playBtn.addEventListener('click', () => {
+      wavesurfer.playPause();
+    });
+
+    // Muda ícone para "pause" quando toca
+    wavesurfer.on('play', () => {
+      playIcon.src = 'https://www.buscasons.com/_img/icon_pause_02.png'; // ícone pause
+    });
+
+    // Muda ícone para "play" quando pausa
+    wavesurfer.on('pause', () => {
+      playIcon.src = 'https://www.buscasons.com/_img/icon_play_02.png'; // ícone play
+    });
+  });
+
+  wavesurfer.on('error', e => console.error('Erro:', e));
+</script>
+
+
+
+
+
+</body></html>
