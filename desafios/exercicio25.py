@@ -1,5 +1,3 @@
-nome = input('Digite seu nome: ')
-print(nome)
-print(nome.count('a'))
-print(nome.find('a'))
-print(nome.rfind('a'))
+nome = input ('Digite o seu nome: ').upper()
+print (nome)
+print ('SILVA' in nome)
