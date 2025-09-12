@@ -1,5 +1,16 @@
-year = int(input('Enter a year to verify'))
-if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
-    print (f'O ano {year} é bissexto')
-else:
-    print (f'O ano {year} não é bissexto')
+firstNumber = int(input('Enter the first number'))
+secondNumber = int(input('Enter the first number'))
+thirdNumber = int(input('Enter the first'))
+if firstNumber < secondNumber and firstNumber < thirdNumber:
+    lowest = firstNumber
+if secondNumber < firstNumber and secondNumber < thirdNumber:
+    lowest = secondNumber
+if thirdNumber < secondNumber and thirdNumber < firstNumber:
+    lowest = thirdNumber
+if firstNumber > secondNumber and firstNumber > thirdNumber:
+    highest = firstNumber
+if secondNumber > firstNumber and secondNumber > thirdNumber:
+    highest = secondNumber
+if thirdNumber > secondNumber and thirdNumber > firstNumber:
+    highest = thirdNumber
+print (f'The lowest number is {lowest} and the highest is {highest}')
