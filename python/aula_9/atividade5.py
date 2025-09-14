@@ -1,0 +1,5 @@
+frase = str(input("Digite uma frase: "))
+q_vezes = frase.count('a')
+print(q_vezes)
+print(frase.find("a"))
+print(frase.rfind("a"))
