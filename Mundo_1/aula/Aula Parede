@@ -1,0 +1,4 @@
+larg = float(inpu('Largura da Parede'))
+alt = float (input(''Altura da Parede'))
+área = larg * alt 
+print('Sua parede tem a dimensão de {}x{} e a sua area é de {}'m².'.format(larg,alt,área'))                 

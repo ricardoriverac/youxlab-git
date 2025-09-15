@@ -1,0 +1,4 @@
+real = float(input('Quanto voce tem na carteira? '))
+dolar = real / 5,43
+print ('Com R${} voce pode comprar US${}'.format (real,dolar))
+
