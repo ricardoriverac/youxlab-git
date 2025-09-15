@@ -1,0 +1,8 @@
+'''
+Style - Estilo Tipo: padrão(0), negrito(1), sublinhado(4) e negativo(7)
+Text - Cores
+Back - Cores de fundo
+Números das cores - 30-37 branco, vermelho, verde, amarelo, azul, roxo, ciano, cinza
+Estrutura - \033[Style;Text;Backm , E agora a sua string\033[m
+'''
+print ('\033[4;36;40m Marechal Teodoro\033[m')
