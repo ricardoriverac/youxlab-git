@@ -1,5 +1,5 @@
 distancia = float(input('qual a distancia dessa viagem? '))
-print('Aperte os cintos a sua viagem,{}ira começar')
+print('Aperte os cintos a sua viagem ira começar')
 if  distancia <= 200:
     preço = distancia *0.50
 else:
