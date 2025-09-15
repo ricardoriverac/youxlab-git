@@ -1,6 +1,4 @@
-larg = float(input('Largura da parede: ' ))
-alt = float(input('Altura da parede: ' ))
-area = larg * alt
-tinta = area / 2
-print('sua parede tem a dimensão de {}x{} e sua área é de {}m²'.format(larg, alt, area))
-print('para pintar essa parede, você precisará de {} litros de tinta'.format(tinta))
+n = int(input('digite um numero: '))
+a = n - 1
+s = n + 1
+print('ao analisar o numero {},vemos que o seu antecessor é {} e o seu sucessor é {}'.format(n, a, s))
