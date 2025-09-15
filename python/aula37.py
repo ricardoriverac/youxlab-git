@@ -1,12 +1,14 @@
-casa = float(input('valor da casa: R$'))
-salario = float(input('salario do comprador: R$'))
-anos = int(input('quantos anos de financiamento?'))
-prestacao = casa / (anos * 12)
-minimo = salario * 30 / 100
-print('para pagar uma casa de R${:.2f} em {} anos'.format(casa, anos), end='')
-print('a prestacao sera de R${:.2f}'.format(prestacao))
-if prestacao <= minimo:
-    print('emprestimo pode ser CONCEDIDO')
+num = int(input('digite um numero inteiro:'))
+print(''' escolha uma das bases para conversao:
+[1] converter para BINARIO
+[2] converter para OCTAL
+[3] converter para HEXADECIMAL''')
+opcao = int(input('sua opcao:'))
+if opcao == 1:
+    print('{} convertido para BINARIO e igual a {}'.format(num, bin(num)[2:]))
+elif opcao == 2:
+    print('{} convertido para OCTAL e igual a {}'.format(num, oct(num)[2:]))
+elif opcao == 3:
+    print(' {} convertido para HEXADECIMAL e igual a {}'.format(num, hex(num)[2:]))
 else:
-    print('emprestimo NEGADO!')
-
+    print('opcao invalida. tente novamente.')
