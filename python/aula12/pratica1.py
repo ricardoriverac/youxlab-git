@@ -1,3 +1,4 @@
+
 nome = str(input('Digite seu nome: '))
 if nome == 'Lucas':
     print('que nome bonito')
