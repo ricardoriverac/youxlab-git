@@ -1,9 +1,10 @@
-import time
-nome=str(input('digite seu numero inteiro ')).strip()
-time.sleep(1)
-print('analizando seu nome...')
-time.sleep(1)
-print('Seu nome em maíusculo é {} '.format(nome.upper()))
-print('Seu nome em minúsculo é {}'.format(nome.lower()))
-print('Seu nome tem ao todo {} letras'.format(len(nome)-nome.count(' ')))
-print('Seu primeiro nome tem {} letras'.format(nome.find(' ')))
+numero=int(input("informe um número: "))
+u=numero // 1 % 10
+d=numero // 10 % 10
+c=numero // 100 % 10
+m=numero // 1000 % 10
+print('analisando o numero {}'.format(numero))
+print('Unidade: {}'.format(u))
+print('Dezena: {}'.format(d))
+print('Centena: {}'.format(c))
+print('Milhar: {}'.format(m))
