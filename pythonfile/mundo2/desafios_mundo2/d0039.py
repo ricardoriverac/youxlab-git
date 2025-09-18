@@ -1,10 +1,11 @@
-nota = float(input('Digite a primeira nota: '))
-nota2 = float(input('Digite a segunda nota: '))
-media = (nota + nota2) /2
-print('A media do aluno é '.format(nota, nota2 , media))
-if media >=5 and media <7:  
-    print('Voce esta de recuperação')
-elif media <5:
-    print('Voce esta reprovado')
-else:
-    print('Voce esta aprovado')
+from datetime import date
+atual = date.today().year
+nascimento = int(input('Digite o ano que você nasceu: '))
+idade = atual - nascimento
+print(f'Quem nasceu em {nascimento} tem {idade} anos em {atual}')
+if idade == 18:
+     print('Voce tem que se alistar ')
+elif idade < 18:
+     print('Voce ainda nao tem 18 anos ')   
+elif idade > 18:
+     print ('Voce ja deveria ter se alistado')
