@@ -1,0 +1,14 @@
+#aula 12 - condições alinhadas
+
+
+#elif:sempre precisa do if mas nao precisa do else,e pode ter quantos elif quiser
+#else: so poder 0 ou 1 vez nunca mais que o 1 
+
+
+nome = str(input("qual seu nome? "))
+if nome == "joao":
+    print("que nome bonito")
+elif nome  == "maria":
+    print("que nome lindo")
+else:
+    print("que nome feio")    

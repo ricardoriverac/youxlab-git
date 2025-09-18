@@ -1,0 +1,8 @@
+
+
+Explicação
+
+Esta aula tratou dos tipos primitivos de dados em Python, como int (inteiro), float (número com ponto decimal), str (texto) e bool (valores True ou False).
+ Vimos como usar o input() para receber dados do usuário. Vale destacar que, por padrão, o input() sempre retorna uma string, então, se precisarmos de outro tipo de dado,
+  como inteiro ou flutuante, precisamos usar funções de conversão como int() ou float(). Aprendemos a importância de realizar essas conversões para manipular os dados de 
+  maneira adequada em cálculos ou condições.

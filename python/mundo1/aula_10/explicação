@@ -4,8 +4,8 @@
 #(se,senão
 #se: virar pra esquerda segue o caminho
 #senão: virar pra direita e segue o caminho
-#if carro.esquerda(): ,         else 
-# BLOCO true,                    bloco false)
+#if carro.esquerda():          else 
+# BLOCO true                    bloco false)
 #tempo = int(input("quantos anos tem seu carro: "))
 #if tempo<=3:
 #print("carro novo")    
@@ -14,12 +14,13 @@
 #print("carro novo"if tempo <=3 else"carro velho")
 
 #PRATICA:
-#(NOME = str(input("qual seu nome: "))
-#if NOME == "joão":
-#    print("que nome lindo voce tem")
-#else:
-#    print("seu nome e feio")    
-#print(f"bom dia,{NOME}! ") )
+NOME = str(input("qual seu nome: "))
+if NOME == "joão":
+    print("que nome lindo voce tem")
+else:
+    print("seu nome e feio")    
+print(f"bom dia,{NOME}! ") 
+
 
 nota1 = float(input("digite a primeira nota: "))
 nota2 = float(input("digite a sua segunda nota: "))

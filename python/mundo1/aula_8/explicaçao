@@ -1,0 +1,7 @@
+Aula 8 – Laços de Repetição
+
+Explicação Resumida:
+A Aula 8 abordou os laços de repetição em Python, essenciais para repetir blocos de código várias vezes. O for é usado para iterar sobre uma sequência de elementos
+ como uma lista ou string. Já o while repete um bloco de código enquanto uma condição for verdadeira. Também aprendemos sobre o comando break, que interrompe a execução
+  do laço, e o continue, que pula para a próxima iteração do laço, ignorando o restante do código dentro do loop. Esses laços são essenciais para automatizar processos 
+  repetitivos.

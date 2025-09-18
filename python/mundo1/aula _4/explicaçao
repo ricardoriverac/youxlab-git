@@ -1,0 +1,13 @@
+Aula 4 – Primeiros comandos em Python
+
+Ele explica como abrir e usar o interpretador do Python para começar a testar comandos simples.
+
+Mostra como exibir mensagens na tela utilizando o comando de impressão.
+
+Ensina a pedir informações ao usuário com a função de entrada de dados, como por exemplo solicitar o nome ou a idade.
+
+Fala sobre os tipos de dados básicos que o Python utiliza, como números inteiros, números decimais e textos.
+
+Explica que, como toda informação digitada pelo usuário entra como texto, é preciso converter quando queremos trabalhar com números 
+(por exemplo, transformar um texto em número inteiro).
+Mostra como escrever comentários dentro do código, que servem apenas para anotações e não são executados.

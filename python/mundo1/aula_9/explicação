@@ -1,0 +1,41 @@
+Perfeito 👍 você quer só a função/comando e pra que serve, sem exemplos de código.
+Aqui vai o resumo da Aula 9 – Manipulando Texto (Curso Guanabara Python):
+
+
+---
+
+🔹 Comandos e suas funções
+
+len() → mostra o tamanho da string (quantos caracteres tem).
+
+count() → conta quantas vezes um caractere ou conjunto aparece.
+
+find() → mostra em qual posição começa um trecho específico; retorna -1 se não encontrar.
+
+in → verifica se uma palavra ou letra existe dentro da string.
+
+replace() → substitui um trecho da string por outro.
+
+upper() → transforma toda a string em maiúsculas.
+
+lower() → transforma toda a string em minúsculas.
+
+capitalize() → coloca só a primeira letra da frase em maiúscula.
+
+title() → coloca a primeira letra de cada palavra em maiúscula.
+
+strip() → remove espaços extras no início e no fim.
+
+rstrip() → remove espaços apenas da direita.
+
+lstrip() → remove espaços apenas da esquerda.
+
+split() → divide a string em uma lista de palavras.
+
+join() → junta elementos (caracteres ou palavras) em uma única string, com um separador escolhido.
+
+
+
+---
+
+Quer que eu faça isso em formato de tabela bem organizada (comando | para que serve)?

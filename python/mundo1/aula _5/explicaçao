@@ -1,0 +1,7 @@
+Aula 5 – Variáveis e Saída de Dados
+
+Explicação 
+Na Aula 5, vimos como variáveis são usadas para armazenar dados em Python. Cada variável pode armazenar um tipo específico de dado, como números inteiros (int),
+ números de ponto flutuante (float) ou texto (string). Aprendemos a usar a função print() para exibir esses valores na tela, e como usar f-strings para formatar a saída,
+  colocando variáveis dentro de uma string de maneira mais legível e organizada. A função input() foi apresentada para capturar dados do usuário, que são sempre 
+  recebidos como strings.

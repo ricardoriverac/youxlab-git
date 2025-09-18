@@ -1,0 +1,10 @@
+
+Aula 7 – operadores aritméticos
+
+Explicação dos operadores
+os operadores aritméticos usados para fazer cálculos em Python. São eles: + (soma), - (subtração), * (multiplicação), / (divisão), // (divisão inteira), % 
+(resto da divisão), e ** (potência). 
+resuminho()
+Cada operador tem um comportamento específico, por exemplo, a divisão sempre retorna um float, enquanto a divisão inteira usa // para retornar apenas a parte inteira.
+ A ordem de precedência das operações também foi discutida, onde multiplicação e divisão têm prioridade sobre soma e subtração.
+ O uso de parênteses pode alterar essa ordem.
