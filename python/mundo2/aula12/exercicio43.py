@@ -1,11 +1,14 @@
-valor1=float(input('Primeiro segmento: '))
-valor2=float(input('Segmento: '))
-valor3=float(input('Terceiro segmento: '))
-if valor1<valor2+valor3 and valor2<valor1+valor3 and valor3<valor1+valor2:
-    print('Os segmentos acima PODEM FORMA um triângulo' , end='')
-    if valor1==valor2==valor3:
-        print('EQUILATERO!')
-    elif valor1!=valor2!=valor3!=valor1:
-        print('ESCALENO!')
-else:
-    print('Os segmentyos acima NAO PODEM FORMA triangulo')
+peso=float(input('Qual é seu peso?  kg'))
+altura=float(input('Qual é sua altura?  m'))
+imc=peso/(altura**2)
+print('O IMC dessa pessoa é de {:.1f}'.format(imc))
+if imc<18.5:
+    print('Você esta ABAIXO DO PESO normal')
+elif 18.5<=imc<25:
+    print('PARABENS,você esta na faixa de PESO NORMAL')
+elif 25 <= imc<30:
+    print('Você esta em SOBREPESO')
+elif 30<=imc<40:
+    print('Você esta em OBESIDADE!')
+elif imc >=40:
+    print('Você esta em OBESIDADE MORBIDA,cuidado!')
