@@ -1,0 +1,9 @@
+primeiro=int(input('primeiro numero:'))
+segundo=int(input('segundo numero:'))
+if primeiro > segundo:
+    print('o primerio numero é maior doque o segundo')
+elif primeiro < segundo :
+    print('o segundo é menor doque o primeiro')
+elif primeiro == segundo:
+    print('os dois são iguais')
+    
