@@ -4,8 +4,6 @@ prestacao = int(input('Quantidade de quantos anos que você prentende pagar: '))
 totalMeses = prestacao * 12
 prestacao = valorCasa / totalMeses
 limitePrestacao = salario * 0.30
-
-
 if prestacao <= limitePrestacao:
     print('Empréstimo APROVADO')
     print(f"Valor da casa: R$ {valorCasa:,.2f}")
