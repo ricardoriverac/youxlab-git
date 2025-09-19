@@ -18,9 +18,9 @@ for ano_de_nascimento in pessoas:
     if (ano_atual - ano_de_nascimento) >= 18:
         contador_maior += 1
         # contador_maior = contador_maior +1
-        print("Você já é maior de idade!")
-else:
-    (ano_atual - ano_de_nascimento) < 18   
-print("Você é menor de idade!")
+    else:  
+        contador_menor += 1
+
 print(f"Ha {contador_maior} pessoas maior de idade!")
+print(f" Ha {contador_menor} pessoas menores de idade!")
     
