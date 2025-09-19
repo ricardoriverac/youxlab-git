@@ -11,3 +11,4 @@ elif opçao==2:
     print(oct(numero))
 elif opçao==3:
     print(hex(numero))
+    

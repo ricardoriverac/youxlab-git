@@ -10,4 +10,4 @@ else:
     if reta1+reta2<reta3:
       if reta1+reta3<reta2:
        reta2+reta3<reta1
-    print('As retas nao formam um triangulo!')       
+    print('As retas não formam um triangulo!')       
