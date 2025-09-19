@@ -1,0 +1,6 @@
+print('-='*20)
+print('Analisador de triangulos')
+print('-='*20)
+print('Primeiro segmento:')
+print('Segundo segmento:')
+print('Terceiro segmento:')
