@@ -1,4 +1,4 @@
-preco = float(input('Preço das contas: R$'))
+preco = float(input('Preço da compra: R$'))
 print("""FORMAS DE PAGAMENTO
       [1]Dinheiro/Cheque
       [2]Cartão
@@ -12,10 +12,10 @@ elif opcao == 2:
 elif opcao == 3:
     total = preco
     parcelas = total / 2
-    print(f'Sua compra será parcelada de 2x de R${preco:.2f} no cartão')
+    print(f'Sua compra será parcelada de 2x de R${preco} no cartão')
 elif opcao == 4:
     total = preco 
     quantidade = int(input('Quantas parcelas? '))
     parcelas = total / quantidade
     print(f'Sua compra será parcelada em {quantidade}x de R${parcelas} COM JUROS ')
-print(f'Sua compra de R${preco:.3f} vai custar R${parcelas:.2f} no final')
+print(f'Sua compra de R${preco} vai custar R${parcelas} no final')
