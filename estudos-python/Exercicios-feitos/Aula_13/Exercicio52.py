@@ -6,7 +6,7 @@ for contagem in range (1, numero+1):
         vezesQueFoiDividido += 1
     else:
         print (f'\033[31m {contagem}\033[')
-print (f'Ele foi dividido {vezesQueFoiDividido} vezes')
+print (f'WEle foi dividido {vezesQueFoiDividido} vezes')
 if vezesQueFoiDividido == 2:
     print ('\033[32m Ele é um número primo!!!\033[32m')
 else:
