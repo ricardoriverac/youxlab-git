@@ -1,18 +1,16 @@
-reta1 = float(input('Digite o comprimento da primeira reta: '))
-reta2 = float(input('Digite o comprimento da segunda reta: '))
-reta3 = float(input('Digite o comprimento da terceira reta: '))
-
-# Verifica se as retas podem formar um triângulo
-if reta1 + reta2 > reta3 and reta1 + reta3 > reta2 and reta2 + reta3 > reta1:
-    print("Essas retas PODEM FORMAR um triângulo.")
-
-    # Verifica o tipo de triângulo
-    if reta1 == reta2 == reta3:
-        print("É um triângulo EQUILÁTERO.")
-    elif reta1 == reta2 or reta1 == reta3 or reta2 == reta3:
-        print("É um triângulo ISÓCELES.")
-    else:
-        print("É um triângulo ESCALENO.")
-
+peso = float(input("Qual é o seu peso (em KG)? "))
+altura = float(input("Qual é a sua altura (em metros)? "))
+imc = peso / (altura ** 2)
+print(f"O seu IMC é: {imc:.2f}")
+if imc < 18.5:
+    print("Você está ABAIXO do peso.")
+elif imc > 18 and imc <= 25:
+    print("Você está com o peso IDEAL.")
+elif imc > 25 and imc <= 30:
+    print("Você está com o peso SOBREPESO.")
+elif imc > 30 and imc <= 40:
+    print("Você está com o peso OBESIDADE.")
+elif imc >= 40:
+    print("Você está com o peso OBESIDADE MÓRBITA.")
 else:
-    print("Essas retas não PODEM FORMAR um triângulo.")
+    print("Você está acima do peso.")
