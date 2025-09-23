@@ -1,0 +1,7 @@
+numero1 = int(input('Informe um número:'))
+numero2 = str(numero1)
+print('Analisando o número {}'.format(numero1))
+print('Unidade: {}'.format(numero2[3]))
+print('Dezena: {}'.format(numero2[2]))
+print('Centenas: {}'.format(numero2[1]))
+print('Milhar: {}'.format(numero2[0]))
