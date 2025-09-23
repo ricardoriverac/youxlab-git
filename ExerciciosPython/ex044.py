@@ -1,19 +1,27 @@
-# 1. Pedir ao utilizador o peso e a altura
-peso = float(input("Qual é o seu peso (em KG)? "))
-altura = float(input("Qual é a sua altura (em metros)? "))
+print('{:=^40}'.format('LOJAS JUJU'))
+precoNormal = float(input('Preço das compras:R$'))
+print('''FORMAS DE PAGAMENTO
+[1] á vista dinheiro/cheque
+[2] á vista cartão
+[3] 2x no cartão 
+[4] 3x ou mais no cartão''')
+opcoes = int(input('Qual é a opção: '))
 
-# 2. Calcular o IMC
-# A fórmula do IMC é peso dividido pela altura ao quadrado.
-# Em Python, ** 2 eleva o número ao quadrado.
-imc = peso / (altura ** 2)
-
-# 3. Exibir o resultado do IMC
-print(f"O seu IMC é: {imc:.2f}") # Formata para 2 casas decimais
-
-# 4. (Opcional) Classificar o IMC
-if imc < 18.5:
-    print("Você está abaixo do peso.")
-elif imc < 25:
-    print("Você está com o peso normal.")
+if opcoes == 1:
+        total = precoNormal - (precoNormal * 10 / 100)
+elif opcoes == 2:
+        total = precoNormal - (precoNormal * 5 / 100)
+elif opcoes == 3:
+        total = precoNormal 
+        parcela = total / 2
+        print(f'Sua compra será parcelada em 2x de R${parcela:.2f} SEM JUROS')
+elif opcoes == 4:
+        total = precoNormal + (precoNormal * 20 / 100)
+        parcela = total / 3
+        totalParcela = int(input('Quantas parcelas: '))
+        parcela = total / totalParcela
+        print(f'Sua compra será parcelada em {totalParcela}x de R${parcela:.2f} COM JUROS')
 else:
-    print("Você está acima do peso.")
+    total = 0
+    print('OPÇÃO INVÁLIDA de pagamento. Tente novamente!')
+print(f'Sua compra de R${precoNormal:.2f} vai custar R${total:.2f} no final.')
