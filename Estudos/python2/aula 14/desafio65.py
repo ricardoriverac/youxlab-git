@@ -16,3 +16,4 @@ while Continuação == 's':
         menor=NúmerosArmazenados
     Continuação = str(input('Você quer continuar? [s/n]'))
 print(f'Você digitou {count} números e a media foi {media}\n O maior valor foi {maior} e o menor foi {menor}')
+
