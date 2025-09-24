@@ -12,4 +12,4 @@ for person in range(1,8):
         totalMenor += 1
         print (f'This person is {age} years old!\nThis person is underage!')
 print (f'We got a total of {totalMenor} person of legal age!')
-print (f'We got a total of {totalMaior} minors')
+print (f'We got a total of {totalMaior} minors!')
