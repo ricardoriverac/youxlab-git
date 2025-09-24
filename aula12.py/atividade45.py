@@ -37,10 +37,10 @@ elif computador == 1: # computador jogou papel
 COMPUTADOR PERDEU""")
     else:
         print("JOGADA INVALIDA")
-
+        
 elif computador == 2: # computador jogou tesoura 
     if jogada == 0:
-        print("""JOGADOR VENCEU"
+        print("""JOGADOR VENCEU
 COMPUTADOR PERDEU""")
     elif jogada == 1:
         print("COMPUTADOR VENCEU")
