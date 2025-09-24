@@ -20,8 +20,8 @@ for dados in range (0, 5):
             somapessoas += 1
         elif sexualidade == 'F':
             if idade < 20:
-                mulhernome = nome + ','
-                mulhereidade = idade + ','
+                mulhernome = nome 
+                mulhereidade = idade
                 somapessoas2 += 1
     else:
         print('Erro, por favor tente novamente')
