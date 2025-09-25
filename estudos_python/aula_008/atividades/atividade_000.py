@@ -8,4 +8,3 @@ numero_digitado = float(input('Digite um número : '))
 raiz_quadrada = sqrt(numero_digitado)
 
 print(f'A raiz quadrada de {numero_digitado} e equivalente a  {trunc(raiz_quadrada)}')
-print('TA MALUCO')
