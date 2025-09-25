@@ -1,10 +1,10 @@
 n = int(input('digite um numero para celular seu fotorial: '))
-c = nf = 1
+c = n
 f = 1
-print('calculando {}! = '.format(n), end='')
+print(f'calculando {n}! =')
 while c > 0:
-    print('{}'.format(c), end='')
-    print(' x ' if c > 1 else ' = ', end='')
+    print(f'{c}')
+    print(f' x ' if c > 1 else ' = ')
     f *= c
     c -= 1
-print('{}'.format(f))
+print(f'{f}')
