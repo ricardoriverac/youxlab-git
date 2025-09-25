@@ -16,9 +16,10 @@ while numero!=5:
             print(f'O maior numero é {valor1}')
     elif numero ==3:
         print(f'O maior numero é {valor2}')
+    elif numero>5 or numero<1:
+        print('Invalido.Tente novamente')
     elif numero==4:
         valor1=int(input('Digite um valor: '))
         valor2=int(input('Digite outro: '))
-    numero=int(input('Digite a opção: '))
+    # numero=int(input('Digite a opção: '))
 print('Obrigado,volte sempre!')
-    
