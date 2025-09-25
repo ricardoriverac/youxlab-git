@@ -7,8 +7,8 @@ progressao = 10
 while progressao != 0:
     total = total+progressao
     while count <= total:
-        print(f'{termo}', end='')
-        termo = + termo
+        print(f'{termo}', end=' ')
+        termo += razao
         count +=1
     print('\nPausa')
     progressao= int(input('Quais termos quer adicionar? '))
