@@ -1,1 +1,3 @@
-'''Pulado por enquanto! Aula 013, Tempo: 31:50'''
+palindromo = str(input('Digite a palavra: '))
+for c in range():
+    
