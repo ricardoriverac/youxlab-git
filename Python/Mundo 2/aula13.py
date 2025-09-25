@@ -19,13 +19,14 @@
 #  for c in range(0, 7, 2):
 #     print('c')
 # print('FIM')
-# ===========pula de dois em dois===============
+# ===========pula de dois em dois=========================
 
 # TESTE 1
 # numero = int(input('Digite um número: '))
 # for c in range(0, numero + 1):
 #     print(c)
 # print('FIM')
+# ==========================================================================================================
 # TESTE 2 
 # inicio = int(input('Início: ')) # determina o inicio
 # fim = int(input('Fim: ')) # determina o final das casas
@@ -33,17 +34,18 @@
 # for c in range(inicio, fim + 1, passo):
 #     print(c)
 # print('FIM')
+# ==========================================================================================================
 # TESTE 3
 # for c in range(0, 3):
 #     valor = int(input('Digite um valor: '))
 # print('FIM')
-# ==========quantidade de vezes que repete a frase==========
+# ==========quantidade de vezes que repete a frase==========================================================
 # TESTE 4
-soma = 0
-for c in range(0, 3):
-    valor = int(input('Digite um valor: '))
-    soma += valor 
-print(f'O somátorio de todos os valores foi {soma}')
+# soma = 0
+# for c in range(0, 3):
+#     valor = int(input('Digite um valor: '))
+#     soma += valor 
+# print(f'O somátorio de todos os valores foi {soma}')
 #
 #
 #

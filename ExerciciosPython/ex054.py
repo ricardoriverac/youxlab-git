@@ -9,5 +9,5 @@ for c in range(7):
         maioridadeCount += 1
     else:
         menorIdadeCount += 1
-print(f'\nTotal de pessoas com maioridade: {maioridadeCount}')
-print(f'Total de pessoas sem maioridade: {menorIdadeCount}')
+print(f'\nTotal de pessoas COM maioridade: {maioridadeCount}')
+print(f'Total de pessoas SEM maioridade: {menorIdadeCount}')

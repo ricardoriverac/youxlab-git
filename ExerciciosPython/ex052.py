@@ -11,6 +11,6 @@ else:
         if numero % i == 0:
             eh_primo = False 
 if eh_primo:
-    print(f"{numero} é um número primo.")
+    print(f"{numero} É um número primo.")
 else:
-    print(f"{numero} não é um número primo.")
+    print(f"{numero} NÃO é um número primo.")

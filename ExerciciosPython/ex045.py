@@ -6,6 +6,12 @@ print('''Suas opções:
 [1] PAPEL
 [2] TESOURA''')
 jogador = int(input('Qual é a sua jogada? '))
+print('JO')
+sleep(1)
+print('KEN')
+sleep(1)
+print('PÔ!!!')
+sleep(1)
 print('-=' * 13)
 print(f'O computador escolheu {(opcoes[computador])}')
 print(f'Jogador jogou {(opcoes[jogador])}')

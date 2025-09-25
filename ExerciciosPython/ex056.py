@@ -14,8 +14,5 @@ for c in range(1, 5):
     else:
         if idade < 20:
             contadorMulheres20Anos +=1
-
-
-
 media = somaIdades / 4
 print(f'A idade média do grupo é {media};\nO homem mais velho se chama {nomeHomemVelho};\n{contadorMulheres20Anos} mulheres tem menos de 20 anos.')
