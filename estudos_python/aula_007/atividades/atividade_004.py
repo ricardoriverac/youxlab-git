@@ -4,6 +4,8 @@
 
 numero_da_tabuada = int(input('Digite um numero inteiro : '))
 
+print(f'TABUADA DE {numero_da_tabuada} : ')
+
 print(f'\n{numero_da_tabuada} * 1 = {numero_da_tabuada * 1}')
 print(f'{numero_da_tabuada} * 2 = {numero_da_tabuada * 2}')
 print(f'{numero_da_tabuada} * 3 = {numero_da_tabuada * 3}')

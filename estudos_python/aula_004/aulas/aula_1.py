@@ -2,7 +2,7 @@
 
 #Atividade sobre print é input (toda palavra tem que ter aspas quando for escrita)
 print('Olá, mundo')
-
+print('eu odeio os minions')
 #Caulculos de números 
 print(7+3)
 

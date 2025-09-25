@@ -5,9 +5,7 @@ com o valor digitado'''
 
 #RESPOSTAS
 
-a = 'otto'
+a = input('Qual o seu nome : ')
 b = 'Boas-vindas'
-
-a = input('Qual o seu nome?')
 
 print(b,a, '!!')
