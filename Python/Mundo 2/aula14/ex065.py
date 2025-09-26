@@ -19,7 +19,7 @@ while continuar != 'n':
         if numero < menor:
             menor = numero
     # continuar  = str(input('Deseja continuar? [S/N] ')).upper().strip()[0]
-print(f'Você digitou {contadorMedia} e a média é {media}.')
+print(f'Você digitou {contadorMedia} vezes e a média é {media}.')
 print(f'O maior número é {maior} e o menor número é {menor}.')
 
 
