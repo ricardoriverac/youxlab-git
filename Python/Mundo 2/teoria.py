@@ -32,7 +32,7 @@
 #     soma += numero 
 # print(f'A soma vale {soma}.')
 # EX.:5
-nome = 'Júlia'
-idade = 16
-salario = 300.00
-print(f'O {nome:-^20} tem {idade} anos  e ganha R${salario:.2f}')
+# nome = 'Júlia'
+# idade = 16
+# salario = 300.00
+# print(f'O {nome:-^20} tem {idade} anos e ganha R${salario:.2f}')
