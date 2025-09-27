@@ -7,4 +7,4 @@ while True:
     contador += 1 
     soma += numero
     
-print(f'ACABOU. Soma vale {soma} e a quantidade de números é {contador}')
+print(f'ACABOU. Soma vale {soma} e a quantidade de números é {contador} vezes.')
