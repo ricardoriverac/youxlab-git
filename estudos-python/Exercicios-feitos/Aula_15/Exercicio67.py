@@ -14,3 +14,4 @@ while True:
     print (f'{number} * 8 = {number*8}')
     print (f'{number} * 9 = {number*9}')
     print (f'{number} * 10 = {number*10}')
+print ('Multiplication table completed')
