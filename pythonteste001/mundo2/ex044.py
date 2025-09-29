@@ -19,6 +19,8 @@ elif opção == 4:
     parcelastotais = int(input('Dejesa parcelar em quantas vezes? '))
     parcelas = total / parcelastotais
     print('Sua compra será dividida em {} parcelas de R${:.2f}, COM JUROS.'.format(parcelastotais,parcelas))
+else:
+    print('\033[0;31;47mFORMA DE PAGAMENTO INVÁLIDA! TENTE NOVAMENTE!\033[m')
 print('Sua compra de R${:.2f} vai custar R${:.2f} no final.'.format(preço, total))
 confirmação = input('Tem certeza que deseja prosseguir com esta forma de pagamento? ')
 # voltar depois para fazer um jeito de comfirmar o modo de pagamento
