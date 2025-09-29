@@ -16,7 +16,7 @@ elif 10 < imc < 18.5:
 elif 18.5 <= imc < 25:
     print('Você está no PESO IDEAL!')
     pygame.mixer.init()
-    mp3_path = "/home/youx/Downloads/kids-saying-yay-sound-effect_3.mp3"
+    mp3_path = "/home/youx/Downloads/children-yaysound-effect.mp3"
     pygame.mixer.music.load(mp3_path)
     pygame.mixer.music.play()
     while pygame.mixer.music.get_busy():
