@@ -13,4 +13,5 @@ while resposta == "Sim":
     else:
         if idade < 20:
             contador_mulher += 1
+    resposta = input("Você deseja continuar? [S/N]: ")
 print(f"Ha {contador_maior18} com mais de 18 anos, {contador_homens} cadastrados e {contador_mulher} com menos de 20 anos!")
