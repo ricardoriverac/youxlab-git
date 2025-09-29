@@ -15,6 +15,12 @@ elif 10 < imc < 18.5:
     print('Você está ABAIXO DO PESO normal!')
 elif 18.5 <= imc < 25:
     print('Você está no PESO IDEAL!')
+    pygame.mixer.init()
+    mp3_path = "/home/youx/Downloads/kids-saying-yay-sound-effect_3.mp3"
+    pygame.mixer.music.load(mp3_path)
+    pygame.mixer.music.play()
+    while pygame.mixer.music.get_busy():
+        pygame.time.Clock().tick(10)
 elif 25 <= imc < 30:
     print('Você está SOBREPESO!')
 elif 30 <= imc < 40:
