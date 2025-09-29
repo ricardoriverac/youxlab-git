@@ -6,6 +6,12 @@ imc = peso / (altura ** 2)
 
 if imc < 18.5:
     print('Você está ABAIXO DO PESO normal!')
+    pygame.mixer.init()
+    mp3_path = "/home/youx/Downloads/spongebob-sad-song.mp3"
+    pygame.mixer.music.load(mp3_path)
+    pygame.mixer.music.play()
+    while pygame.mixer.music.get_busy():
+        pygame.time.Clock().tick(10)
 elif 18.5 <= imc < 25:
     print('Você está no PESO IDEAL!')
 elif 25 <= imc < 30:
