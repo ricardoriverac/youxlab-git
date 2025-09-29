@@ -7,7 +7,7 @@ while True:
     s += n 
 print('A soma vale {}'.format(s))
 
-# forma diferente 
+# forma diferente usando string
 n = s = 0
 while True:
     n = int(input('Digite um numero: '))
