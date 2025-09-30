@@ -7,5 +7,3 @@ for produtos in range(2):
 print("nome/preço")
 for ordem in range(0,len(nomes_preços), 2):
    print(nomes_preços[ordem], " -> ",nomes_preços[ordem+1])
-   
-
