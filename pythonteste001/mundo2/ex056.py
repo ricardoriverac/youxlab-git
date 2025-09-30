@@ -15,9 +15,9 @@ for p in range(1, 5):
     if sexo in 'Mm' and idade > maioridadehomem:
         maioridadehomem = idade
         nomevelho = nome
-        if sexo in 'Ff' and idade < 20:
-            totalmulher20 += 1
-médiaidade = somaidade / 4 
-print(f'A média de idade do grupo é de {médiaidade} anos.')
-print(f'O homem mais velho tem {maioridadehomem} anos e se chama {nomevelho}.')
-print(f'Ao todo se tem {totalmulher20} mulheres com menos de 20 anos no grupo!')
+    if sexo in 'Ff' and idade < 20:
+        totalmulher20 =+ 1
+média = somaidade / 4
+print(f'a média das idades é {média}')
+print(f'o homem mais velho é {nomevelho} e sua idade é {maioridadehomem}')
+print(f'ao total {totalmulher20} tem menos de 20 anos')
