@@ -1,8 +1,9 @@
-import re
-def verificar_palindromo(frase):
-    frase_processada = re.sub(r'[^a-z0-9]', '', frase.lower())
-    frase_invertida = frase_processada[::-1]
-    if frase_processada == frase_invertida:
-        print(f'"{frase}" é um palíndromo!')
-    else:
-        print(f'"{frase}" não é um palíndromo.')
+frase = str(input('Digite uma frase: ')).strip().upper()
+palavras = frase.split()
+junto = ''.join(palavras)
+inverso = junto[::-1]
+print('O inverso de {} é {}'.format(junto, inverso))
+if inverso == junto:
+    print('Temos um palidromo!')
+else:
+    print('A frase digitada não e um polidromo. ')

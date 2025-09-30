@@ -1,0 +1,6 @@
+print('-' * 20)
+print('Primeira Pessoa')
+print('-' * 20)
+pessoa1 = float(input(f'Digite o seu peso: '))
+idade = float(input(f'Digite a sua idade: '))
+sexo = float(input(f'Digite o seu sexo: '))
