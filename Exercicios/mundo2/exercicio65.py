@@ -12,6 +12,6 @@ while resposta in "Sim":
             maior = numero
         if numero < menor: 
             menor = numero 
-    resposta = str(Input("Quer continuar? [S/N]"))
+    resposta = str(input("Quer continuar? [S/N]"))
 media = soma / quantidade
 print(f"Você digitou {quantidade} e o menor foi {menor}")
