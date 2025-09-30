@@ -6,7 +6,7 @@ while True:
     total = jogador + computador
     tipo = ' '
     while tipo not in 'PI':
-        tipo = str(input('Par ou Impar? [P/I] ')).strip()
+        tipo = str(input('Par ou Impar? [P/I] ')).strip().upper()
     print(f'Você jogou {jogador} e o computador {computador}. Total de {total}')
     if tipo == 'P':
         if total % 2 == 0:
