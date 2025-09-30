@@ -17,4 +17,4 @@ for c in range(0, 5):
 
 
 print(f'O maior é {maior} e o menor é {menor}')
-print(f'numeros completos {numeros}')        
+print(f'numeros completos {numeros}')
