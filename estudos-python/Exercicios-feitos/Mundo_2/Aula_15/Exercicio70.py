@@ -22,7 +22,3 @@ while True:
 print (f'You have to pay {sum:.2f} dollars!')
 print (f'There is {expensiveProduct} products that cost more than 1000 dollars!')
 print (f'And the cheapest product was {cheapestProduct}!')
-print ('|')
-print ("\")
-print ('-')
-print ('/')
