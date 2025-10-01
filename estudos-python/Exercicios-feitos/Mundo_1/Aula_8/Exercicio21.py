@@ -1,6 +1,6 @@
 import pygame
 pygame.init()
-pygame.mixer.music.load('bomevelhorizz.mp3')
+pygame.mixer.music.load('acorda.mp3')
 pygame.mixer.music.play()
 input()
 pygame.event.wait()

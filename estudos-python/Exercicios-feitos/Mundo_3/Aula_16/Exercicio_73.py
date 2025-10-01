@@ -3,5 +3,9 @@ print (f'Lista de times: {times}')
 print (f'Os cinco melhores times são: {times[:5]}')
 print (f'Os quatro piores são: {times[16:]}')
 print (f'Times em ordem alfabética:{sorted(times)}')
-print (f'O time da Chapecoense está na posição:')
+print ('O time da Chapecoense está na posição:')
 print (times.index('Chapecoense'))
+index = 0
+while index < 20:
+    print (times[index], end=' -> ')
+    index += 1
