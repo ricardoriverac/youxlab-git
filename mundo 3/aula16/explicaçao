@@ -1,0 +1,28 @@
+#VARIAVEIS COMPOSTAS>>>
+
+#tupla
+#dicionario
+lanche = ("hamburguer","suco","pizza","pudim")
+print(lanche[-1])
+print(lanche[2])
+print(lanche[0:])
+print(lanche[:3])
+print(f"eu vou comer {lanche}")
+for comida in lanche:
+    print(f"eu vou comer {comida}")
+print(len(lanche))    
+for cont in range (0 , len(lanche)):
+    print(cont)
+
+for pos, comida in enumerate(lanche):
+    print(f"eu vou comer {comida} na posiçao {pos}")
+print(sorted(lanche))  
+
+a = (2,5,4)
+b = (5,8,1,2)
+c = a + b
+print(c)
+print(c.index(1))
+print(c.count(2)) 
+pessoa = ("joao",15,"M",72.76)
+print(pessoa)
