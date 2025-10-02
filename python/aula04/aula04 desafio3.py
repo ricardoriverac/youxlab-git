@@ -1,9 +1,9 @@
 #Crie um script Python que leia dois números e tente mostrar as soma entre eles
 
-x = input("Calculadora de adição entre dois numeros: Digite o primeiro numero")
-y = input("Agora digite o segundo numero")
+x = input("Calculadora de adição entre dois números: Digite o primeiro número")
+y = input("Agora digite o segundo número")
 x = int(x)
 y = int(y)
 soma = x + y
-print("seu numero final é", soma)
+print("seu número final é", soma)
 
