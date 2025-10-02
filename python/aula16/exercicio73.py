@@ -1,0 +1,7 @@
+times = ('Flamengo', 'Cruzeiro', 'Palmeiras', 'Mirassol', 'Botafogo', 'Bahia', 'São Paulo', 'Fluminense')
+print('-='*10, f'\nLista de times do Brasileirão: {times}')
+print('-='*10, f'\nOs cinco primeiros: {times[:5]}')
+print('-='*10, f'\nOs últimos 4 colocados: {times[-4:]}')
+print('-='*10, f'\nTimes em ordem alfabética: {sorted(times)}')
+print('-='*10, f'\nPosição do Mirassol: {times.index("Mirassol")}')
+print('-='*10)
