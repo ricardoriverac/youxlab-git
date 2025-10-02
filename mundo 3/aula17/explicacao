@@ -1,0 +1,6 @@
+exemplo3 = []
+for cont in range(0,5):
+    exemplo3.append(int(input("digite um numero: ")))
+
+for c, v in enumerate(exemplo3):
+    print(f"na posiçao {c} encontrei o valor {v}")     #em cada posiçao que um numero estiver ele vai falar a posiçao eo numero encontrado 

@@ -15,4 +15,4 @@ par = 0
 for numero in minha_tupla:
     if numero % 2 == 0:
         par += 1
-print(par)         
+print(f"{par} esse eo total de numeros pares ")         
