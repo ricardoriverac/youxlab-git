@@ -1,0 +1,5 @@
+times = ('Flamengo', 'Cruzeiro', 'Palmeiras', 'Mirassol', 'Botafogo', 'Bahia', 'São Paulo', 'Fluminense', 'Bragantino', 'Grêmio', 'Vasco', 'Corinthians', 'Ceará', 'Atlético-MG', 'Internacional', 'Santos','Juventude','Vitória', 'Fortaleza','Sport')
+print(times [0:6])
+print(times [-4:])
+print(sorted(times))
+print('o cruzeiro esta {cruzeiro} posicao 1')
