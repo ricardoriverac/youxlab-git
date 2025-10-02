@@ -14,3 +14,7 @@ valores.append(4)
 for c,v in enumerate(valores):
     print(f'Na posicao {c} encontrei o valor {v}!')
 print('Cheguei ao final da lista ')    
+#for cont in range (0,5)
+#valores.append(int(input('Digite um valor: ')))
+#b = a[:] vai ta copiando a lista 
+#b = a vai ta fazendo uma ligacao entre as listas
