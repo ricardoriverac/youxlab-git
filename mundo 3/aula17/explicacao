@@ -1,6 +1,43 @@
-exemplo3 = []
-for cont in range(0,5):
-    exemplo3.append(int(input("digite um numero: ")))
+# VARIAVEIS COMPOSTAS
+#PRIMEIRO EXEMPLO
+numero = (2,5,9,1)
+print(numero)
+numero[2] = 3 #nao pode tupla com () e inmutavel
+#SEGUNDO EXEMPLO
+numero = [3,4,8,10]
+numero[3] = 11
+print(numero) #assim pode,quando estiver em []  
 
+#FUNÇOES DE ALGUNS COMANDOS
+numero.append() #adiciona numero
+
+numero.sort() #organiza os numeros em ordem
+
+numero.sort(reverse=True) # escreve do maior para o menor
+
+print((f"essa lista tem {len(numero)} elementos")) #o len serve para contar elementos
+
+numero.insert(2,0) # na posiçao 2 eu quero adicionar o valor 0
+
+numero.pop(3) #elimina  o elemnto 3 mas se estiver assim,numero.pop() elimina o ultimo elemnto
+
+if 4 in numero:  # se tiver um numero 4 ele vai apagar todos numeros 4,mas se o comando tiver sozinho acontece oq eu expliquei na linha debaixo 
+    numero.remove(4) #remove o numero escolhido mas se tiver dois numeros iguais ele apaga o primeiro que aparecer 
+else:
+    print("NAO ACHEI O VALOR ESCOLHIDO")
+
+#TERCEIRO EXEMPLO
+exemplo3 = []
+exemplo3.append(1)
+exemplo3.append(2)
+exemplo3.append(3)
+for v in exemplo3:
+    print("que numero bonito") 
+#2    
 for c, v in enumerate(exemplo3):
     print(f"na posiçao {c} encontrei o valor {v}")     #em cada posiçao que um numero estiver ele vai falar a posiçao eo numero encontrado 
+#1
+for cont in range(0,5):
+    exemplo3.append(int(input("digite um numero:")))
+
+    

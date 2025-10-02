@@ -18,3 +18,4 @@ while True:
 print(f" {recebedor} esse sao os valores digitados")
 
 
+ 

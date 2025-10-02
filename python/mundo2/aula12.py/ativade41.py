@@ -6,7 +6,7 @@ elif (idade > 9) and (idade <= 14):
 elif (idade >= 15) and (idade <=19):
     print("voce e da classe junior: ") 
 elif (idade == 20):
-    print("voce e da clase senior")
+    print("voce e da classe senior")
 elif (idade > 20):
     print("voce e da classe master")               
 

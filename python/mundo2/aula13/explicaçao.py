@@ -33,9 +33,9 @@
 # for c in range (0,n+1):
 ##print("fim")   
 
-i = int(input("inicio: ")) 
-f = int(input("fim:"))
-p = int(input("passo"))
-for c in range (i,f+1,p):
+inicio = int(input("inicio: ")) 
+fim = int(input("fim:"))
+passos = int(input("passo"))
+for c in range (inicio,fim+1,passos):
     print(c)
 print("fim")    
