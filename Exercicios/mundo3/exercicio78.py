@@ -2,7 +2,7 @@ lista = []
 
 for valores in range(5):
     numeros = int(input(f"Digite o {valores+1}ª valor: "))
-    lista += [numeros,]
+    lista.append(numeros)
 print(f"Os numeros listados foram: {lista}")
 valor_maior = max(lista)
 valor_menor = min(lista)

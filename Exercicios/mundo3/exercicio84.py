@@ -7,9 +7,9 @@ loop = True
 
 
 while loop:
-    nomes = str(input("Digite seu nome: "))
+    nome = str(input("Digite seu nome: "))
     peso = float(input("Digite seu peso: kg "))
-    lista += (nomes, peso)
+    lista += (nome, peso)
     contador += 1
     contador_peso += peso
     pergunta = str(input("Deseja continuar? [S/N]: ")).upper()
@@ -20,8 +20,9 @@ print("nome/peso")
 for ordem in range(0,len(lista), 2):
    print(lista[ordem], " -> ",lista[ordem+1])
 media = contador_peso/contador
-for i in range(0,len(lista)):
-    peso = lista[i][1]
+
+for i in range(1,len(lista),2):
+    peso = lista[i]
     if peso > media:
         lista_pesados.append(peso)
     else:
