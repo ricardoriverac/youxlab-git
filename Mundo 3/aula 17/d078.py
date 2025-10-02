@@ -12,4 +12,4 @@ for v, pos in enumerate (valores):
     print(f'O número {pos} está na posição {v}')
 print(f'Lista: {valores}')
 print(f'O MAIOR número é: {maiorNumero}.')
-print(f'O MENOR número é: {menorNumero}')
+print(f'O MENOR número é: {menorNumero}') 
