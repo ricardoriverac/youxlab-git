@@ -1,0 +1,9 @@
+soma = cont = 0
+while True:
+ número = int(input('Digite um valor (999 para parar):'))
+ if número == 999:
+   break
+ cont += 1
+ soma += número 
+ print(f'A soma dos valores foi {soma}!')
+ 
