@@ -6,3 +6,4 @@ print(lanche[c])
 for p,d in enumerate(lanche):
     print(f'{p} {d}')
     print(sorted(lanche))
+#sorted organiza a tupla
