@@ -13,4 +13,3 @@ for p in range(1, 5):
  if sexo in 'Mm' and idade  > maioridadehomem:
 mediaidade = somaidade / 4 
 print('A media de idade do grupo é de {} anos'.format(mediaidade))
- 
