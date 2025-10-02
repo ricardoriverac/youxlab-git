@@ -16,11 +16,12 @@ while loop:
     if pergunta == "N":
         loop = False
 
+print("nome/peso")
+for ordem in range(0,len(lista), 2):
+   print(lista[ordem], " -> ",lista[ordem+1])
 media = contador_peso/contador
 for i in range(0,len(lista)):
-    print(lista)
     peso = lista[i][1]
-    print(f"peso: {peso}")
     if peso > media:
         lista_pesados.append(peso)
     else:

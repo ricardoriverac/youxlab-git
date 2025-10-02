@@ -1,16 +1,14 @@
-lista = []
-lista_pares = []
-lista_impares = []
+lista = [[], []]
+valor = 0
 
-for valores in range(7):
-    resposta = int(input(f"Digite o {valores+1}ª numero: "))
-    if valores % 2 == 0:
-        lista_pares.append(valores)
+for i in range(1, 8):
+    valor = int(input(f"Digite o {i}ª valor: "))
+    if valor % 2 == 0 :
+        lista[0].append(valor)
     else:
-        lista_impares.append(valores)
-lista.append(lista_pares, lista_impares)
-lista_pares.sort()
-lista_impares.sort()
-print("Números pares:", lista)
-print("Números ímpares:", lista)
-    
+        lista[1].append(valor)
+lista[0].sort()
+lista[1].sort()
+
+print(f"Os numeros digitados pares foram: {lista[0]}")
+print(f"E os numeros impares digitados foram: {lista[1]}")
