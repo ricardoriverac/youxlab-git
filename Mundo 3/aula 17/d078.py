@@ -8,7 +8,7 @@ for quantia in range(0, 5):
             menorNumero = valor
         if valor > maiorNumero:
             maiorNumero = valor
-for v, pos in enumerate(valores):
+for v, pos in enumerate (valores):
     print(f'O número {pos} está na posição {v}')
 print(f'Lista: {valores}')
 print(f'O MAIOR número é: {maiorNumero}.')
