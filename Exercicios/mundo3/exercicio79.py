@@ -1,11 +1,16 @@
 lista = []
+continuar = 'S'
 
-for numero in range(5):
-    valor = int(input(f"Digite o {numero+1}ª valor: "))
-    if valor not in lista:
-        lista.append(valor)
-    else:
-        print("Este valor ja existe!")
+
+numero = int(input("Digite um número: "))
+lista.append(numero)
+
+while continuar != 'N':
+    continuar = str(input('Quer continuar? [S/N]: ')).upper()
+
+
+
+
 lista.sort()
 print(f"Sua lista em ordem crescente é: {lista}")
     
