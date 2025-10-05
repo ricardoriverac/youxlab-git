@@ -9,4 +9,4 @@ for comida in lanche:
 print('Comi pra caramba')
 #sorted - vai mostrar minha variavel organizada
 #print(c.count(5)) vai me mostrar quantas vezes o numero 5 aparece na variavel c
-#index mostra a posiçao
+#index mostra a
