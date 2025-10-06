@@ -1,20 +1,26 @@
 from time import sleep
 
 def contador(i, f, p):
+    if p < 0:
+        p *= -1
+    if p == 0:
+        p = 1 
     print(f'contagem de {i} até {f} de {p} em {p}')
     sleep(2)
+
+
     if i < f:
         contagem = i
         while contagem <= f:
             print(f'{contagem}', end= ' ',flush=True)
-            sleep(0.5)
+            sleep(0.3)
             contagem += p
         print()
     else:
         contagem = i
         while contagem >= f:
             print(f'{contagem}', end= ' ', flush=True)
-            sleep(0.5)
+            sleep(0.3)
             contagem -= p
         print()
 
