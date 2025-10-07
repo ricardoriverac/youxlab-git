@@ -9,4 +9,4 @@ print('^'*25)
 for posição in range(0, len(listagem), 2): 
     print(f'{listagem[posição]:.<76}', 'R$', f'{listagem[posição+1]:>10}')
 print('-'*25)
- DAR GIT 
+ 
