@@ -1,0 +1,5 @@
+tabela=('Palmeiras','Flamengo','Cruzeiro','Botafogo','Bahia','Mirassol','Fluminense','São Paulo','Bragantino','Ceará','Vasco','Corinthians','Grêmio','Internacional','Atlético-MG','Santos','Vitória','Fortaleza','Juventude','Sport')
+print(f'Os 5 primeiros colocados são {tabela[0:6]}')
+print(f'Os 4 ultimos colocados são {tabela[16:21]}')
+print(f'Os times em ordem alfabetica:{sorted(tabela)}')
+print(f'A posição do Palmeiras é {tabela.index("Palmeiras")+1}')
