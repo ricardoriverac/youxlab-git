@@ -11,7 +11,7 @@ print('Comi pra caramba')
 print(len(lanche))
 for cont in range(0, len(lanche)):
     print(lanche[cont])
-for pos, comida in enumerate( lanche):
+''''for pos, comida in enumerate( lanche):
     print(f'Eu vou comer {comida} na posição {pos}')
 print(sorted(lanche))
 a = 2, 5, 4
@@ -22,4 +22,4 @@ print(b)
 print(c)
 print(c.count(5))
 print(c.index(8))
-print(c.index(2, 4))
+print(c.index(2, 4))'''
