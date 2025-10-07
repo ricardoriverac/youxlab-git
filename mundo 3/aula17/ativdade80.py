@@ -6,10 +6,10 @@ for c in range(0,5):
     elif numero > lista_boa[len(lista_boa)-1]:
         lista_boa.append(numero)   
     else: 
-        pos = 0 
-        while pos < len(lista_boa):
-            if numero <= lista_boa[pos]:     
-                lista_boa.insert(pos,numero)
+        lugar = 0 
+        while lugar < len(lista_boa):
+            if numero <= lista_boa[lugar]:     
+                lista_boa.insert(lugar,numero)
                 break
-            pos += 1
+            lugar += 1
 print(f"a ordem dos valores e {lista_boa}")              

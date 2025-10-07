@@ -5,7 +5,6 @@ while True:
     numero = int(input("digite um numero: "))
     resposta = str(input("quer continuar [s/n] ")).lower()
     lista.append(numero)
-    #for numero in lista: 
     if numero  % 2 == 0:      
             numero_par.append(numero)
     else:
