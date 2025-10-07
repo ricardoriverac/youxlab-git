@@ -1,25 +1,17 @@
-def notas(*n, sit=False):
-    """
-    -> Função para analisar notas e situações de vários alunos.
-    :para n: Uma ou mais notas dos alunos (aceita  varias)
-    :para sit: valor opcional, indicando se deve ou não adicionar a solução.
-    :return: dicionário com várias informações sobre a turma.
-    """
-    r = dict()
-    r['total'] = len(n)
-    r['maior'] = max(n)
-    r['menor'] = min(n)
-    r['media'] = sum(n)/len(n)
-    if sit:
-        if r['media'] >= 7:
-            r['situacao'] = 'boa'
-        elif r['media'] >= 5:
-            r['situacao'] = 'mediana'
+def lerInt(msg):
+    ok = False
+    valor = 0
+    while True:
+        n = str(input(msg))
+        if n.isnumeric():
+            valor = int(n)
+            ok = True
         else:
-            r['situacao'] = 'ruim'
-    return r
+            print('Digite um número válido')
+        if ok:
+            break
+    return valor
 
 
-resposta = notas(5.5, 2.5, 1.5, sit=True)
-print(resposta)
-help(notas)
+n = lerInt('Digite um valor ')
+print(f'Você digitou o número {n}')

@@ -1,17 +1,15 @@
-def lerInt(msg):
-    ok = False
-    valor = 0
-    while True:
-        n = str(input(msg))
-        if n.isnumeric():
-            valor = int(n)
-            ok = True
-        else:
-            print('Digite um número válido')
-        if ok:
-            break
-    return valor
+def ficha(jogador='desconhecido', gol=0):
+    print(f'O jogador {jogador} fez {gol} gol(s) no campeonato')
 
 
-n = lerInt('Digite um valor ')
-print(f'Você digitou o número {n}')
+# printipal
+n = str(input("Nome do jogador: "))
+g = str(input("Gols feito pelo jogador: "))
+if g.isnumeric():
+    g = int(g)
+else:
+    g = 0
+if n.strip() == '':
+    ficha(gol=g)
+else:
+    ficha(n, g)
