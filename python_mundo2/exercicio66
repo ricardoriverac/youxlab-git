@@ -1,0 +1,11 @@
+n = 0
+nf = 0
+ns = 0
+while n != 999:
+    nu = int(input('digite um número: '))
+    n = nu
+    nf = nf +1 
+    ns = ns + nu
+    nd = ns - 999
+print ('você digitou {} e todos eles somados são {}'. format(nf - 1, nd))
+
