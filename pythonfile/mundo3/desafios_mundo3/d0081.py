@@ -12,8 +12,8 @@ while True:
         
         if resposta == 'N':
             break
-
 lista.sort(reverse=True)
+
 print(f'Foi digitado {contador} numeros')
 print(f'A lista em ordem decrescente: {lista}')
-print(f'O numero 5 esta {(lista.index(5))} posição')
+print(f'O numero 5 esta na posição: {(lista.index(5))}')
