@@ -4,6 +4,11 @@ O programa vai perguntar quantos jogos serão gerados e vai sortear 6 números e
 cadastrando tudo em uma lista composta.
 '''
 
+# imprimir:
+# * 05,08,09,23,35,60 *
+# * 08,13,24,26,36,48 *
+
+
 from random import randint
 
 quantidade_jogos = int(input('Quantos jogos serão gerados? '))
