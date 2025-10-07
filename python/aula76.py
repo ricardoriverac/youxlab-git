@@ -6,3 +6,4 @@ for c in range(0, len(minhaTupla)):
         print(f'{minhaTupla[c]:.<30}', end = ' ')
     else:
         print(f'{minhaTupla[c]:.>7}')
+      
