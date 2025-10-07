@@ -2,7 +2,7 @@ def ficha(jogador='desconhecido', gol=0):
     print(f'O jogador {jogador} fez {gol} gol(s) no campeonato')
 
 
-# printipal
+# principal
 n = str(input("Nome do jogador: "))
 g = str(input("Gols feito pelo jogador: "))
 if g.isnumeric():
