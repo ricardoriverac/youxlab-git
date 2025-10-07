@@ -24,8 +24,7 @@ while True:
     if certo in 'Nn':
         break
 print('=' * 50)
-print('Os cadastros informados foi {}'.format(comeco))
-print(f'Esse foi o tanto de pessoas cadastradas foi: {numero}.')
+print(f'Esse foi o tanto de pessoas cadastrou: {comeco}.')
 print(f'O maior peso que vc cadastrou foi: {numero} ', end='')
 for i in comeco:
     if i[1] == numero:
@@ -33,5 +32,6 @@ for i in comeco:
 print()
 print(f'O menor peso cadastrado foi: {cadastro}', end='')
 for i in comeco:
-    print(f'[{i[0]}]', end='')
-    print()
+    if i[1] == cadastro:
+        print(f'[{i[0]}] ', end='')
+print()
