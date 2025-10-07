@@ -59,7 +59,7 @@
 # print('Cheguei ao final da lista')
 
 lista = [3, 5, 9, 8]
-lista1 = lista [:] # interliguei as duas listas / [:] - copia uma lista na outra 
+lista1 = lista [:] # interliguei as duas listas / [:] - copia uma lista na outra, mas os valores ficam diferentes
 lista1 [2] = 10
 print(f'Lista A: {lista}')
 print(f'Lista B: {lista1}')
