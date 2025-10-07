@@ -6,5 +6,5 @@ for a in range(0,3):
 
 for a in range(0,3):
     for b in range(0,3):
-       print(matriz[a][b],end=" ")
+       print(matriz[a][b],end=", ")
     print()
