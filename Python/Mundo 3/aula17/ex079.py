@@ -2,7 +2,6 @@
 # Caso o número já exista lá dentro, ele não será adicionado. No final, serão exibidos todos os valores únicos digitados, em ordem crescente. 
 
 valores = []
-
 valor = ''
 
 while valor != 'sair':
@@ -13,7 +12,7 @@ while valor != 'sair':
         if valor not in valores:
             valores.append(valor) 
         
-print(f'Os valores digitados são: {sorted(valores)}') # sorted() - organiza so no momento, dentro dos {} // sort() - deixa o codigo em o
+print(f'Os valores digitados são: {sorted(valores)}') # sorted() - organiza so no momento, dentro dos {} // sort() - deixa o codigo em ordem apartir daquele momento 
 
 
 
