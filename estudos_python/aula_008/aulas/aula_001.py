@@ -17,3 +17,8 @@ random
        choices = aleatoriza algoritimos que estão dentro de uma lista ( o que esta dentro dos couchetes é uma lista)
        shuffle = embaralha a lista de uma variavel 
 '''
+
+'''
+datetime
+       date = verifica a data do seu conputador 
+'''

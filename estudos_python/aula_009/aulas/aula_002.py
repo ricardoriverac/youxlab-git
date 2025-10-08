@@ -85,7 +85,7 @@ o "capitalize()  pega a string, joga ela para minuscula e a primeira letra em ma
 print(palavra.capitalize())
 
 '''
-o "title", deixa as primriras letras das palavras dentro da string maiusculas
+o "title", deixa as primeiras letras das palavras dentro da string maiusculas
 '''
 #Exemplo
 print(palavra.title())

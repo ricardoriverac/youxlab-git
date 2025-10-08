@@ -31,7 +31,7 @@ algum valor de variavel
 
 print(tipo_da_variavel.isnumeric())
 
-#Tipos de metodos]
+#Tipos de metodos
 
 '''
 .isnumeric = Metodo utilizado para saber se o valor da variavel e um número ou  não

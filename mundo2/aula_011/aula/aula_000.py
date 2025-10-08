@@ -1,0 +1,4 @@
+'''
+Cores no terminal
+'''
+
