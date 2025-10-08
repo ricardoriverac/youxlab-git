@@ -1,5 +1,0 @@
-print ('Olá, seja bem vindo! ')
-dia = int(input ('Qual dia você nasceu? ')) 
-mês = str(input ('Qual mês você nasceu? '))
-ano = int(input ('Qual ano você nasceu? '))
-print (f'Vocẽ nasceu no dia {dia}, do mês {mês}, do ano {ano}. Correto ?')
