@@ -28,7 +28,7 @@ print(numero_de_pessoas)
 pessoas_pesadas = list()
 pessoas_leves = list()
 for p in pessoas:
-    if p[1] > 90:
+    if p[1] >= 90:
         pessoas_pesadas.append(p[0])
     if p[1] < 60:
         pessoas_leves.append(p[0])   

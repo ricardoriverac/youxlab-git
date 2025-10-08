@@ -1,0 +1,39 @@
+#DICIONARIO
+dados = dict()
+dados ={"nome":"pedro","idade":25}
+dados["sexo"]= "m" #adiciona mais informaçoes no dados,numero nao precisa de ""
+del dados["idade"] #apaga o elemento eo valor 
+filme = {"titulo":"star wars",
+         "ano":1977,
+"diretor":"george lucas"
+} 
+print(filme.values()) # = valores ex: star wars,1977,diretor
+print(filme.keys()) # = ela printa as chaves titulo,ano,diretor
+print(filme.items()) # vai aparecer todos os itens do dicionario filme
+for k,v in filme.items():
+    print(f"o {k} e {v}")
+locadora = []
+locadora.append(filme)
+
+pessoas = {"nome": "joao", "sexo": "masculino", "idade": 22}
+print(f"0 {pessoas['nome']} tem {pessoas['idade']} anos" )
+for k ,v in pessoas.items():
+    print(f"{k} = {v}")
+pessoas["nome"] = "leandro"   #muda o conteudo da chave 
+
+
+brasil = []
+estado1 = {"uf": "rio de janeiro","sigla": "rj"  }
+estado2 = {"uf": "sao paulo", "sigla": "sp" }
+brasil.append(estado1)
+brasil.append(estado2)
+print(brasil)
+
+estado = dict()
+brasil = list()
+for c in range(0,3):
+    estado["uf"] = str(input("unidade federativa: "))
+    estado["sigla"] = str(input("sigla do estado " ))
+    brasil.append(estado.copy()) 
+    estado.clear()
+print(brasil)    
