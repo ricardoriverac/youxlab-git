@@ -1,30 +1,25 @@
-galera = list()
-pessoa = dict()
-soma = média = 0
+resposta = "S"
+pessoas = []
+contador = 0
+mulheres = {}
+while resposta == "S":
+    dados = dict()
+    dados['nome']= str(input("Qual o seu nome?: "))
+    dados['sexo'] = str(input("Qual o seu sexo? [F/M]: ")).upper()
+    dados['idade'] = str(input("Digite sua idade: "))
+    pessoas.append(dados)
+    contador += 1
+    resposta = str(input("Deseja continuar? [S/N]: ")).upper()
+    while resposta != "S" and resposta != "N":
+        resposta = str(input("Deseja continuar? [S/N]: ")).upper()
 
-while True:
-    pessoa.clear()
-    pessoa ['nome'] = str(input('Nome: '))
-    while True:
-        pessoa ['sex'] = str(input('Sexo: [M/F]')).upper()[0]
-        if pessoa ['sex'] in 'MF':
-            break
-        print('ERRO! Por favor, digite apenas Mou F.')
-    pessoa ['idade'] = int(input('Idade: '))
-    soma += pessoa ['idade']
-    galera.append(pessoa.copy())
-    while True:
-        resp = str(input('Quer continuar? [S/N]')).upper()[0]
-        if resp in 'SN':
-            break
-        print('ERRO! Responda apenas Sou N.')
-if resp 'N':
-break
+nome_mulheres = []
+for nome, pessoas in dados.items():
+    if dados.get('sexo') == "F":
+        nome_mulheres.append(nome)
+    
+print(pessoas)
+print(f"Foram cadastradas {contador} pessoas!")
+print(f"As mulheres foram {nome_mulheres}")
 
-print(f'A) Ao todo temos (len(galera) pessoas cadastradas.')
-
-média = soma / len(galera)
-
-print(f'B) A média de idade é de (média: 5.2f) anos.')
-
-print('C) As mulheres cadastradas foram', end='')
+    
