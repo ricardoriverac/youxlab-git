@@ -26,4 +26,4 @@ while opcao == 'S':
     escolha = int(input('Qual aluno você gostaria de ver as notas?'))
     print(listaDeAlunos[escolha][1])
     opcao = input('Você gostaria de continuar?\nSe sim, digite S ou s: ').strip().upper()
-print = ('-'*5'|FIM|''-'*5)
+print = ('Fim')
