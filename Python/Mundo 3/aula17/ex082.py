@@ -23,7 +23,7 @@ while valor != 'sair':
 print('-'*60)
 print(f'Os valores digitados são: {valores}')
 print('-'*60)
-print(f'Os valores pares saõ: {pares}')
+print(f'Os valores pares são: {pares}')
 print('-'*60)
 print(f'Os valores impares são: {impares}')
 print('-'*60)

@@ -18,12 +18,13 @@ while valor != 'sair':
             valores.sort(reverse = True)
 
 if 5 in valores:
-            print(f'O valor 5 está na lista. E aparece {valores.count(5)} vezes.')
+    print(f'O valor 5 está na lista. E aparece {valores.count(5)} vezes.')
 
 else:
-            print('O valor 5 não está na lista.')
+    print('O valor 5 não está na lista.')
 print(valores)
 print(f'A quantidade de números digitados foram {len(valores)}')   
+
 
 
 

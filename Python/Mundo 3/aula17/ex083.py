@@ -7,10 +7,6 @@
 # 3. quando achar um parenteses fechado conta ele
 # 4. compara os dois contadores se forma iguais a expressão esta com o numero correto de parenteses
 
-
-
-
-
     
 expressao = input('Digite uma expressão: ')
 count = 0
