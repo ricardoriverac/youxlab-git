@@ -1,4 +1,5 @@
 numero = 1
+
 while numero != 0:
     numero = int(input('De qual número deseja ver a tabuada: '))
     if numero < 0:
@@ -16,5 +17,6 @@ while numero != 0:
         print(f'{numero} x {8} = {numero * 8}')
         print(f'{numero} x {9} = {numero * 9}')
         print('-' * 25)
+
 print('-' * 25)
 print('Programa encerrado. Volte sempre!')

@@ -1,5 +1,6 @@
 numero = int(input('Digite o número que deseja saber se é um número primo: '))
 contagem = 0
+
 for c in range(1, numero+1):
     if numero % c == 0: 
         contagem += 1

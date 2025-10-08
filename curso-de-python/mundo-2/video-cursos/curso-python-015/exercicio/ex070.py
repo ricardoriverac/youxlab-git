@@ -27,6 +27,13 @@ while True:
     if continuar == 'N':
         break
 
-print(f'O valor total gasto na compra é de R${soma}')
-print(f'{produtoMil} produtos custam mais que R$1000.')
-print(f'O nome do produto mais barato é {nomeMenorPreco} que custa R${menorPreco:.2f}')
+print(f'O valor total gasto na compra é de R${soma:.2f}')
+
+if produtoMil == 0:
+    print('Nenhum produto custa mais que R$1000.')
+if produtoMil == 1:
+    print('Apenas 1 produto custa mais que R$1000.')
+if produtoMil > 1:
+    print(f'{produtoMil} produtos custam mais que R$1000.')
+
+print(f'O nome do produto mais barato é o "{nomeMenorPreco}" que custa R${menorPreco:.2f}')
