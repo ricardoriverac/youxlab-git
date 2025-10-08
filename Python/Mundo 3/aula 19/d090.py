@@ -9,7 +9,7 @@ while sair == 'S':
     media['Média'] = int(input('-> Média do estudante: '))
     situacao.append(nome.copy())
     situacao.append(media.copy())
-    sair = str(input('-> Escreva S para sair: '), end='\n').upper().strip()
+    sair = str(input('-> Escreva S para sair: ')).upper().strip()
     if sair == 'S':
         break
 if media['Média'] < 7:
