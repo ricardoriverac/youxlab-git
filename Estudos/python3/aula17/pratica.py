@@ -1,0 +1,1 @@
+tupla= ('Mru', 'MRUV')
