@@ -6,4 +6,3 @@ elif primeiro < segundo :
     print('o segundo é menor doque o primeiro')
 elif primeiro == segundo:
     print('os dois são iguais')
-    

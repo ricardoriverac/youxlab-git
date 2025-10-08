@@ -10,8 +10,8 @@ for c in range(1, num + 1):
         print('\033[m', end='')
     print('{} '.format(c),end='')
     #..............................
-    num = int(input('digite um numero: '))
-    tot = 0
+num = int(input('digite um numero: '))
+tot = 0
 for c in range(1, num + 1):
     if num % c == 0:
         print('\033[34m', end='')
@@ -19,6 +19,10 @@ for c in range(1, num + 1):
     else:
         print('\033[m', end='')
     print('{} '.format(c),end='')
-    print('\n\033[m0 o numeroo {} foi divisivel{} vezes'.format(num, tot))
+print('\n\033[m0 o numero {} foi divisivel{} vezes'.format(num, tot))
+if tot == 2:
+    print('por isso ele é primo')
+else:
+    print('e por isso ele não é primo')
 
 

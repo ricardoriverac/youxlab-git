@@ -1,6 +1,6 @@
-nomes = list()
-nota_1 = list()
-nota_2 = list()
+nomes = []
+nota_1 = []
+nota_2 = []
 while True:
     nome = str(input('NOME: '))
     n1 = float(input('NOTA 1: '))
@@ -8,6 +8,9 @@ while True:
     nomes.append(nome)
     nota_1.append(n1)
     nota_2.append(n2)
+    print(nota_1)
+    print(nota_2)
+    print(nomes)
     resposta = str(input('Deseja continuar [S/N]: ')).strip().upper()[0]
     if resposta in 'N':
         break

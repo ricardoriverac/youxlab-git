@@ -2,8 +2,8 @@ pessoas = list()
 dados = list()
 maior = menor = 0
 while True:
-    dados.append(str(input('Digite seu nome: ').strip().capitalize()))
-    dados.append(int(input('Digite seu peso: ')))
+    dados.append(str(input('Digite o nome da pessoa: ').strip().capitalize()))
+    dados.append(int(input('Digite peso da pessoa: ')))
     if not pessoas:
         maior = menor = dados[1]
     pessoas.append(dados[:])
@@ -29,7 +29,7 @@ for valor in pessoas:
     if valor[1] >= maior:
         print(valor[0], end='. ')
 print(f'\nO menor peso registrado foi: {menor}Kg.')
-print(f'As pessoas mais leves foram:', end=' ')
+print(f'As pessoas mais leves foram: ', end=' ')
 for valor in pessoas:
     if valor[1] <= menor:
         print(valor[0], end='. ')

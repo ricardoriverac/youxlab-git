@@ -1,8 +1,10 @@
-valores = []
-for v in range(0, 5):
-    valores.append(int(input(f'Digite um valor para a posição {v}: ')))
-print('-='*30)
-print(f'Você digitou os valores {valores}')
-print(f'O maior valor digitado foi {max(valores)} na posição {valores.index(max(valores))}')
-print(f'O menor valor digitado foi {min(valores)} na posição {valores.index(min(valores))}')
-print('-='*30)
+palavras = ('aprender', 'programar', 'linguagem', 'python',
+            'curso', 'grátis', 'estudar', 'praticar',
+            'trabalhar', 'mercado', 'programador', 'futuro')
+vogais = ('a', 'e', 'i', 'o', 'u')
+
+for palavra in palavras:
+    print(f'\nNa palavra {palavra.upper()} temos ', end='')
+    for letra in palavra:
+        if letra.lower() in vogais:
+            print(letra, end=' ')
