@@ -1,13 +1,24 @@
-from datetime import date
-dados = dict()
-dados['Nome'] = str(input('Nome: '))
-nascimento = int(input('Ano de nascimento: '))
-dados['Idade'] = date.today().year - nascimento
-dados['CTPS'] = int(input('Número da Carteira de trabalho [Digite 0 se não tiver: '))
-if dados['CTPS'] != 0:
-    dados['Ano de contratação'] = int(input('Ano de contratação: '))
-    dados['Salário'] = float(input('Salário: '))
-    dados['Aposentadoria'] = (dados['Ano de contratação'] + 35) - nascimento
-print('-=-' *15)
-for k, v in dados.items():
-    print(f'{k}: {v}.')
+resp = 'S'
+cadastro = []
+dados = {}
+anoAtual = 2025
+while resp == 'S':
+    dados['Nome'] = str(input('-> Nome: '))
+    dados['Ano de Nascimento'] = int(input('-> Ano de Nascimento: '))
+    idade = anoAtual - dados["Ano de Nascimento"]
+    dados['Carteira de Trabalho'] = int(input('-> CTPS (Carteira de Trabalho): '))
+    cadastro.append(dados["Nome"])
+    cadastro.append(idade)
+    cadastro.append(dados['Carteira de Trabalho'])
+    if dados['Carteira de Trabalho'] != 0:
+        dados['Ano de Contratação'] = int(input('-> Ano de contratação: '))
+        dados['Salario'] = float(input('Salário: '))
+        cadastro.append(dados['Ano de Contratação'])
+        cadastro.append(dados['Salário'])
+        aposentadoria = dados['Ano de Contratação'] + 35
+        aposentadoria = dados['Ano de Contratação'] - dados['Ano de Nascimento']
+        cadastro.append(aposentadoria)
+        print(f'nome : {cadastro['Nome']}\n idade: {cadastro['idade']}\n ctps: {cadastro['Carteira de trabalho']}\n salario: {cadastro['Salario']} ')
+        resp = str(input('Digite N para sair: '))
+        if resp == 'N':
+            print('FINALIZANDO...')
