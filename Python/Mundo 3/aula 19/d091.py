@@ -18,7 +18,7 @@ for j in range(0, 4):
         for pos, d in enumerate(dicionario):
             if jogadas['jogada'] > d['jogada']:
                 dicionario.insert(pos, jogadas)
-                print(f'->jogador{j} tirou {jogadas["jogada"]}')
+                print(f'-> jogador{j} tirou {jogadas["jogada"]}')
                 sleep(1)
                 break
 print('=-'*20)
