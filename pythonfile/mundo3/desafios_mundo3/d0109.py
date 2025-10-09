@@ -1,4 +1,4 @@
-import moeda
+from pacotes.moeda import moeda
 
 preco = float(input('Digite o preço: R$ '))
 print(f'O dobro de {moeda.moeda(preco)} é {moeda.dobro(preco, True)}')
