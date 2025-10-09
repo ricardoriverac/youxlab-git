@@ -1,31 +1,33 @@
-resposta = "S"
 pessoas = []
-contador = 0
-soma = 0
-dados = dict()
 mulheres = []
-acima_media = []
-while resposta == "S":
-    dados.clear()
-    dados['nome']= str(input("Qual o seu nome?: "))
-    dados['sexo'] = str(input("Qual o seu sexo? [F/M]: ")).upper()
-    dados['idade'] = int(input("Digite sua idade: "))
-    resposta = str(input("Deseja continuar? [S/N]: ")).upper()
-    pessoas.append(dados)
-    contador += 1
-    soma += dados['idade']
-    while resposta != "S" and resposta != "N":
-        resposta = str(input("Deseja continuar? [S/N]: ")).upper()
-        
-    media = soma / contador   
-for idade in pessoas:
-    if idade['idade'] > media:
-        acima_media.append(idade['idade'])
 
-for pessoa in pessoas:
-    if pessoa['sexo'] == "F":
-        mulheres.append(pessoa['nome'])
-print(soma)
-print(media)
-print(acima_media)
-print(mulheres)
+while True:
+    nome = input("Nome: ")
+    sexo = input("Sexo [M/F]: ").strip().upper()
+    idade = int(input("Idade: "))
+
+    pessoa = {'nome': nome, 'sexo': sexo, 'idade': idade}
+    pessoas.append(pessoa)
+
+    if sexo == 'F':
+        mulheres.append(nome)
+
+    continuar = input("Quer continuar? [S/N]: ").strip().upper()
+    if continuar == 'N':
+        break
+
+# Exibir dados
+print("-=" * 30)
+print(f"A) Total de pessoas cadastradas: {len(pessoas)}")
+
+media = sum(p['idade'] for p in pessoas) / len(pessoas)
+print(f"B) Média de idade: {media:.2f} anos")
+
+print(f"C) Mulheres cadastradas: {', '.join(mulheres) if mulheres else 'Nenhuma'}")
+
+print("D) Pessoas com idade acima da média:")
+for p in pessoas:
+    if p['idade'] > media:
+        print(f"   Nome = {p['nome']}; Sexo = {p['sexo']}; Idade = {p['idade']}")
+
+print("<< ENCERRADO >>")
