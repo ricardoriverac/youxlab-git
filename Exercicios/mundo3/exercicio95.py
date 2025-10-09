@@ -1,22 +1,38 @@
-resultados = dict()
+#refazendo o exercicio 93 adicionando uma quantidade ilimitada de quantos jogadores e podendo ver os dados de cada um.
 
-while True:
-    resultados['nome_do_jogador'] = str(input("Qual o nome do jogador: "))
-    resultados['partidas'] = int(input("Quantas partidas o jogador jogou?: "))
-    resultados['gols'] = list()
-    resultados['total'] = 0
-    for jogo in range(resultados['partidas']):
-        print(f"Gols {jogo}")
-        gols = int(input("Quantos gols ele acertou?: "))
-        resultados['gols'].append(gols)
-    for index, gol in enumerate(resultados['gols']):
-        resultados['total'] += gol
-    resposta = str("Deseja continuar? [S/N]: ").upper
-    if resposta == "S":
-       resposta = str("Deseja continuar? [S/N]: ").upper  
-    else:
-        break 
+jogadores = []
+jogos = {}
+partidas = []
+resposta = "S"
+
+while resposta != "N":
+    jogos.clear()
+    jogos['nome'] = str(input("Qual o nome do jogador?: "))
+    total = int(input("Quantas partidas ele jogou?: "))
+    partidas.clear()
     
-print(f"No total ele acertou: {resultados['total']}")
-print(resultados['gols'])
-print(f"Na partida {index} o jogador marcou {gol} gols")
+    for i in range(1, total+1):
+        partidas.append (int(input(f"Quantos gols ele fez na {i}ª partida?: ")))
+    
+    jogos['gols'] = partidas [:]
+    jogos['total'] = sum(partidas)
+    jogadores.append(jogos.copy())
+    
+    resposta = str(input("Deseja continuar? [S/N]: ")).upper()
+    
+for i in jogos.keys():
+    print(f"{i}", end="   ")
+print()
+
+for c, d in enumerate(partidas):
+    print(f"{c}", end=" ")
+    for e in d.values():
+        print(f"{str(e)}", end="  ")
+    print()
+    
+while True:
+    busca = int(input("Mostra dados de qual jogador (1 para encerrar): "))
+    if busca == 1:
+        break
+    if busca >= len(jogadores):
+        print(jogadores)
