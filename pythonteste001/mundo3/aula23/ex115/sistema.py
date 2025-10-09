@@ -14,10 +14,12 @@ while True:
     if resposta == 1:
         #listar conteudo de um arquivo
         lerArquivo(arq)
-
-
     elif resposta == 2:
-        cabeçalho('Cadastrar Nova Pessoa')
+        # cadastra nova pessoa
+        cabeçalho('\033[35mNOVO CADASTRO')
+        nome = str(input('Nome: \033[32m'))
+        idade = int(input('\033[mIdade: \033[32m'))
+        cadastrar(arq, nome, idade)
     elif resposta == 3:
         cabeçalho('\033[32mSistema Fechado')
         break
