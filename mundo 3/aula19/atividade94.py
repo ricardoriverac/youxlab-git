@@ -24,10 +24,10 @@ while resposta == 's':
     while sexo != "m" and sexo != "f":
         sexo = str(input("digite seu sexo [f/m] : ")).lower()
         
-    meu_dicionario["pessoas adicionadas "] = pessoas  
-    meu_dicionario["media do grupo "] = media
-    meu_dicionario["todas mulheres "] =  sexo_femino
-    meu_dicionario["acima da media"] = acima_da_media
+    meu_dicionario  = {"pessoas adicionadas": pessoas,  
+    "media do grupo ":media,
+    "todas mulheres" :  sexo_femino,
+    "acima da media": acima_da_media}
     minha_lista.append(meu_dicionario.copy())
 
     resposta = str(input("quer continuar [s/n] ")).lower()  
