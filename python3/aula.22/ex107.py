@@ -1,4 +1,4 @@
-import moeda
+from ex111.utilidadescev import moeda
 listapessoas = []
 dobro = antecessor = sucessor = metade = 0
 for c in range(0,5):

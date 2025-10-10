@@ -1,4 +1,4 @@
-from ex111 import moeda
+from ex111.utilidadescev import moeda
 
 preco = float(input('Digite um valor:'))
 print(f'A metade de{moeda.real(preco)} é {moeda.real(moeda.metade(preco))}')
