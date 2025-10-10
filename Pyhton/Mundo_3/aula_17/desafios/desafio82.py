@@ -1,6 +1,6 @@
-numero = list[]
-numeroPar = list[]
-numeroImpar = list[]
+numero = list()
+numeroPar = list()
+numeroImpar = list()
 while True:
     numero.append(int(input('Digite um número:')))
     resposta = str(input('Você quer continuar? [S/N]? '))
