@@ -3,6 +3,11 @@ def contador(i, f, p):
     print('-=' * 30)
     print(f'Contagem de {i} até {f} de {p} em {p}.')
     sleep(2.5)
+    if p < 0:
+        p*= -1
+    if p == 0:
+        p = 1
+    
     if i < f:
         cont = i
         while cont <= f:
