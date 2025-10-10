@@ -2,5 +2,10 @@ numeroExtenso = ('zero', 'um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete
 
 for resposta in numeroExtenso:
     numero = int(input('Digite um númer de 1 a 20: '))
+
+    if numero < 0 or numero > 20:
+        print('Número inválido. Tente novamente.')
+        break
+
     print(f'Você digitou o número {numeroExtenso[numero]}.')
     break
