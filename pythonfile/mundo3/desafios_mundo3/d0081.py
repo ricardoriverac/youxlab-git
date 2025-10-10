@@ -11,7 +11,7 @@ while True:
         contador += 1
         
         if resposta == 'N':
-            break
+           break
 lista.sort(reverse=True)
 
 print(f'Foi digitado {contador} numeros')

@@ -1,6 +1,7 @@
 galera = list()
 dados = list()
 total_maior = total_menor = 0
+
 for c in range(0, 3):
     dados.append(str(input('Nome: ')))
     dados.append(int(input('Idade: ')))

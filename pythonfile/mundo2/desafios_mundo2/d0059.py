@@ -1,5 +1,5 @@
-valor = float(input('Digite o primeiro valor'))
-valor2 = float(input('Digite o segundo valor'))
+valor = int(input('Digite o primeiro valor'))
+valor2 = int(input('Digite o segundo valor'))
 opcao = 0
 while opcao != 5:
 

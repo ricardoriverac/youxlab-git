@@ -1,4 +1,3 @@
-
 numero = 0
 while True:
     numero = int(input('Qual tabuada você quer ver?: '))
@@ -15,4 +14,4 @@ while True:
 {numero*8}
 {numero*9}
 {numero*10}''')
-print('Fim do programa')
+print('Fim do programa! ')

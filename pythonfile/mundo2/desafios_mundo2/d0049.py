@@ -1,14 +1,3 @@
-numero= int(input('\033[31m Digite um numero \033[31m'))
-for c in range (numero):
-    print(c)
-print ('\033[31ma sua tabuada é: \033[31m')
-print(f'\033[34m {numero} X 1 = {numero*1}\033[34m')
-print(f'\033[34m{numero} X 2 = {numero*2}\033[34m')
-print(f'\033[34m{numero} X 3 = {numero*3}\033[34m')
-print(f'\033[34m{numero} X 4 = {numero*4}\033[34m')
-print(f'\033[34m{numero} X 5 = {numero*5}\033[34m')
-print(f'\033[34m{numero} X 6 = {numero*6}\033[34m')
-print(f'\033[34m{numero} X 7 = {numero*7}\033[34m')
-print(f'\033[34m{numero} X 8 = {numero*8}\033[34m')
-print(f'\033[34m{numero} X 9 = {numero*9}\033[34m')
-print(f'\033[34m{numero} X 10 = {numero*10}\033[34m')
+numero=int(input("Escreva um numero para montar a tabuada: "))
+for tabuada in range(0,11):
+    print(f'{numero} x {tabuada} = {numero*tabuada}')

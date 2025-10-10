@@ -2,7 +2,6 @@
 preco = float(input('Digite um preço'))
 condicao = str(input('Digite a forma de pagamento'))
 if condicao == 'cartão' :
-
     parcela = int(input('Digite como quer parcelar'))
 desconto = -1
 valor_final = -1

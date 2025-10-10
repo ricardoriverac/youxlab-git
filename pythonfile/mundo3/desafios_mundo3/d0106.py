@@ -9,12 +9,12 @@ cores = {
 }
 
 
-def titulo(msg, cor='limpa'):
+def titulo(mensagem, cor='limpa'):
 
     print(cores[cor], end='')
-    print('-' * (len(msg) + 4))
-    print(f"  {msg}")
-    print('-' * (len(msg) + 4))
+    print('-' * (len(mensagem) + 4))
+    print(f"  {mensagem}")
+    print('-' * (len(mensagem) + 4))
     print(cores['limpa'], end='')
 
 
@@ -28,9 +28,9 @@ def mostrar_ajuda(comando):
 
 while True:
     titulo("SISTEMA DE AJUDA PyHELP", 'azul')
-    opc = input(f"{cores['verde']}Função ou biblioteca > {cores['limpa']}").strip()
-    if opc.upper() == 'FIM':
+    opcao = input(f"{cores['verde']}Função ou biblioteca > {cores['limpa']}").strip()
+    if opcao.upper() == 'FIM':
         break
-    mostrar_ajuda(opc)
+    mostrar_ajuda(opcao)
 
 titulo("ATÉ LOGO! ", 'vermelho')
