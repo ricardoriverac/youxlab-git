@@ -1,9 +1,3 @@
-# def ficha(nome, gols):
-#     print(f"O nome do jogador é {nome}")
-#     print(f"O jogador marcou {gols} gols!")
-    
-# ficha()
-
 def ficha(nome="Fernando", gols=2):
     if not isinstance(gols, int):
         gols = 2
