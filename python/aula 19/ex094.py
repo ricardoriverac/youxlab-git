@@ -18,7 +18,7 @@ while True:
             break
         print('Nosso programa não entendeu, por favor informe apenas com S ou N.')
     if i == 'N':
-        break
+       break
 print('=' * 50)
 print(f'A) Esse é o total de pessoas cadastradas: {len(numero1)}')
 média = certo / len(numero2)
