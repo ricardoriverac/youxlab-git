@@ -10,4 +10,4 @@ print()
 print(f'O menor valor numérico é o {min(lista)} na posição ', end='')
 for int, v in enumerate(lista):
     if min(lista) == v:
-        print(f'{int}', end='ª ')
+        print(f'{int}', end=' ')
