@@ -1,10 +1,23 @@
-def contador(a, b, c):
+from time import sleep
+def contador(i, f, p):
     print('-=' * 30)
-    print(f'Contagem de {a} até {b} de {c} em {c}.')
-    for c in range(a, b, c):
-        print(c, end=' ')
-    print('FIM!')
+    print(f'Contagem de {i} até {f} de {p} em {p}.')
+    sleep(2.5)
+    if i < f:
+        cont = i
+        while cont <= f:
+            print(f'{cont}', end = ' ', flush = True)
+            sleep(0.5)
+            cont += p
+        print('FIM!')
+    else:
+        cont = i
+        while cont >= f:
+            print(f'{cont}', end = ' ', flush=True)
+            sleep(0.5)
+            cont -= p
+        print('FIM!')
 contador(1, 10, 1)
-contador(10, -1, -2)
-print('Agora é sua vez de personalizar a contagem!')
-contador(a= int(input('Início: ')), b = int(input('Objetivo: ')), c = int(input('Parâmetro: ')))
+contador(10, -1, 2)
+print('Agora é sua vez de personalizar i contagem!')
+contador(i= int(input('Início: ')), f = int(input('Objetivo: ')), p = int(input('Parâmetro: ')))
