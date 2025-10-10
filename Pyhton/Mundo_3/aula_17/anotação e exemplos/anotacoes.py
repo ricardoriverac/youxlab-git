@@ -1,4 +1,4 @@
-'''#Listas: Variaveis compostas
+#Listas: Variaveis compostas
 #Nâo é possível mudar as tuplas
 
 #Tuplas = ( )               Listas = [ ]
@@ -45,4 +45,4 @@ valores.sort(reverse = True)
 valores = [8,2,5,4,9,3,0]
 len(valores)
 
-resultado = 7'''
+resultado = 7
