@@ -20,10 +20,10 @@ while True:
 print("-=" * 30)
 print(f"A) Total de pessoas cadastradas: {len(pessoas)}")
 
-media = sum(p['idade'] for p in pessoas) / len(pessoas)
+# media = sum(p['idade'] for p in pessoas) / len(pessoas) <- explicar
 print(f"B) Média de idade: {media:.2f} anos")
 
-print(f"C) Mulheres cadastradas: {', '.join(mulheres) if mulheres else 'Nenhuma'}")
+# print(f"C) Mulheres cadastradas: {', '.join(mulheres) if mulheres else 'Nenhuma'}")
 
 print("D) Pessoas com idade acima da média:")
 for p in pessoas:
