@@ -2,7 +2,7 @@ pares=list()
 impares=list()
 numeros=list()
 count=0
-for c in range (0, 7+1):
+for c in range (0, 8):
     count+=1
     numero=(int(input(f'Digite o {count}o valor: ')))
     numeros.append(numero)
