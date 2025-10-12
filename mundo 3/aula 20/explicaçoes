@@ -26,6 +26,7 @@ def contador(* núm):
 contador(2,1,7)
 contador(4,8)
 contador(9,10,5,6 )
+
 def dobra(list):
      pos = 0 
      while pos <len(list):
