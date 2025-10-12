@@ -14,6 +14,7 @@ jogador = {"nome do jogador": nome_do_jogador,
 'gol feitos em cada partida': gols_feito,
 'partidas jogadas': partidas_jogadas,
 'total de gols': sum(gols_feito) }  
+
 print("-="*20) 
 print("RESULTADOS DO JOGADOR DURANTE O CAMPEONATO") 
 

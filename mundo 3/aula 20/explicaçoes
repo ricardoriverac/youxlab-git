@@ -1,0 +1,37 @@
+#@ FUNÇOES
+def mostraLinha():
+    print("----------")
+print("SISTEMA DE ALUNOS   ")    
+mostraLinha() #--- vai repetir o primeiro print
+
+
+def título(txt):
+     print("-="*20)
+     print(txt)
+     print("-="*20)
+#programa principal     
+título("curso em video python")  
+título("python e muito bom")  
+
+#calculando parametro
+def soma(a,b):
+     s = a + b
+     print(s)
+soma(a = 4,b = 5)
+soma(8,9)
+soma(2,1)
+
+def contador(* núm):
+    print(núm)
+contador(2,1,7)
+contador(4,8)
+contador(9,10,5,6 )
+def dobra(list):
+     pos = 0 
+     while pos <len(list):
+          list[pos] *=2
+          pos += 1
+valores  = [ 2,3,7,8,9]        
+dobra(valores)  
+print(valores)
+
