@@ -1,4 +1,10 @@
-def leiaInt(leia):
-    n = input(Leia)
-    while not n.isnumeric():
-        print('\033[31mErro! Digite um número inteiro válido\033[0;0m')
+def leiaint(string):
+    while True:
+        num = input(string)
+        if num.isnumeric():
+            return num
+        else:
+            print('ERRO! Digite um número inteiro válido.')
+n = leiaint('Digite um número: ')
+print(f'Você acabou de digitar o número {n}')
+
