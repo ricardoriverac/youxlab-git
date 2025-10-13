@@ -1,14 +1,15 @@
-numeros = list()
+lista = []
 while True:
-    n = int(input('Digite algum valor:'))
-    if n not in numeros:
-        numeros.append(n)
-        print('Valor adicionado')
+    entrada = (int(input('Digite um valor: ')))
+    if entrada not in lista:
+        lista.append(entrada)
+        print('Número adicionado com sucesso!')
     else:
-        print('Valor duplicado')
-    r = str(input(Quer continuar? [S/N]))
-    if r in 'Nn':
+        print('ERROR:0xd07! o número já se encontra na lista..')
+    perg = ' '
+    while perg not in 'NS':
+        perg = str(input('Deseja continuar? [S/N]')).upper()
+    if perg in 'N':
         break
-print('-=' * 30)
-numeros.sort()
-print(f'Você digitou os valores {numeros}')
+print('-='*30)
+print(f'Você digitou os valores {sorted(lista)}.')
