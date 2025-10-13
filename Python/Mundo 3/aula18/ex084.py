@@ -5,19 +5,19 @@
 
 dados = []
 pessoas = []
-maior_peso = menor_peso = 0
+maiorPeso = menorPeso = 0
 
 while True:
     dados.append(str(input('Nome: ')))
     dados.append(float(input('Peso: ')))
     
     if len(pessoas) == 0:
-        maior_peso = menor_peso = dados[1]
+        maiorPeso = menorPeso = dados[1]
     else:
-        if dados[1] > maior_peso:
-            maior_peso = dados[1]
-        if dados[1] < menor_peso:
-            menor_peso = dados[1]
+        if dados[1] > maiorPeso:
+            maiorPeso = dados[1]
+        if dados[1] < menorPeso:
+            menorPeso = dados[1]
     
     pessoas.append(dados[:])  
     dados.clear()             
@@ -29,18 +29,18 @@ while True:
 print('-' * 30)
 print(f'A) Foram cadastradas {len(pessoas)} pessoas.')
 
-print(f'B) O maior peso foi de {maior_peso}Kg. Peso de ', end='') # end=' ----> serve para colocar a próxima frase na frente 
+print(f'B) O maior peso foi de {maiorPeso}Kg. Peso de ', end='') # end=' ----> serve para colocar a próxima frase na frente 
 # ex.: print("Olá", end='') Olá
 # ex.: print("Mundo") Mundo
 # ex.: resposta ---> OláMundo
 
 for p in pessoas:         
-    if p[1] == maior_peso:
+    if p[1] == maiorPeso:
         print(f'[{p[0]}] ', end='')
 print()
 
-print(f'C) O menor peso foi de {menor_peso}Kg. Peso de ', end='')
+print(f'C) O menor peso foi de {menorPeso}Kg. Peso de ', end='')
 for p in pessoas:
-    if p[1] == menor_peso:
+    if p[1] == menorPeso:
         print(f'[{p[0]}] ', end='')
 print()
