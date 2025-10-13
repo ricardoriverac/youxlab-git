@@ -1,0 +1,7 @@
+while True:
+    comando = input('Digite o nome de uma função ou biblioteca (ou FIM para sair): ')
+    if comando.upper() == 'FIM':
+        print('Tchau! Até a próxima.')
+        break
+    else:
+        help(comando)
