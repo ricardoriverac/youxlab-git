@@ -1,33 +1,15 @@
 def aumentar(n = 0, a = 0):
-    valor = 0
-    valor2 = 0
-    ok = False
-    ok2 = False
-    while True:
-        din = float(input(n))
-        au = float(input(a))
-        if din == 0:
-            print('Digite outro valor para calcular o aumento.')
-        else:
-            valor = din
-        if au == 0:
-            print('Digite um valor diferente.')
-        else:
-            valor2 = au
-        if valor != 0 and valor2 != 0:
-            ok = True
-            ok2 = True
-            aumento = valor + (valor * valor2/100)    
-        if ok and ok2:
-            break
-    
-    return aumento
-    
+    txt = float(input(n))
+    au = float(input(a))
+    return txt + (txt*au/100)
+def diminuir(n, d):
+    preco = float(input(n))
+    des = float(input(d))
+    return preco - (preco * des/100)
+def dobro(n):
+    num = float(input(n))
+    return num * 2
 
-#def diminuir(n):
-
-#def dobro(n):
-    #return n * 2
-
-#def metade(n):
-    #return n/2
+def metade(num):
+    numero = float(input(num))
+    return numero/2
