@@ -19,12 +19,12 @@ while True:
     if opcao == 'N':
         break
 busca = 0
-while busca != 999:
+while True:
     busca = int(input('Qual jogador você gostaria de ver os dados?\nSe quiser encerrar digite 999!\n->'))
+    if busca == 999:
+        break
     while busca<0 or busca>len(todoJogador):
         print('Esse número está fora do alcance da lista!')
         print('Escreva um número dentro do alcance da lista!')
         busca = int(input('Qual jogador você gostaria de ver os dados?\nSe quiser encerrar digite 999!\n->'))
-        if busca == 999:
-            break
     print(todoJogador[busca])
