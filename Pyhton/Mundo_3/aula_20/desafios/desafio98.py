@@ -7,6 +7,6 @@ def contador(inicio,fim,passo):
         sleep(0.5)
 
 
-contador(1,11,1)   
-contador(10,-2,-2)
-contador(0,18,3)
+contador(1,10,1)   
+contador(10,0,-2) #arrumar para contar o último número.
+contador(0,15,3)
