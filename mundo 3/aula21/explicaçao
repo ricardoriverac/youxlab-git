@@ -1,0 +1,74 @@
+#1. return em funções
+
+#Até agora, as funções só faziam coisas (ex: print()), mas não devolviam valores.
+
+#Com return, a função devolve um valor, e você pode guardar esse valor em uma variável.
+
+def somar(a, b):
+    return a + b
+
+# Agora posso guardar o resultado:
+res = somar(3, 4)
+print(res)  # 7
+
+#✅ 2. Vários return diferentes
+
+#Você pode fazer a função retornar qualquer tipo de dado: número, texto, lista, dicionário...
+
+def maior(x, y):
+    if x > y:
+        return x
+    else:
+        return y
+
+#✅ 3. Parâmetros opcionais com valor padrão
+
+#Você pode dar um valor padrão para um parâmetro, usando =:
+
+def somar(a=0, b=0, c=0):
+    return a + b + c
+
+print(somar(5))        # 5
+print(somar(5, 2))     # 7
+print(somar(1, 2, 3))  # 6
+
+#✅ 4. Função pode retornar mais de um valor
+
+#Basta retornar uma tupla (usando vírgulas):
+
+def estatisticas(valores):
+    return max(valores), min(valores), sum(valores)/len(valores)
+
+maior, menor, media = estatisticas([10, 20, 30])
+
+# 5. Documentação (docstring)
+
+#Você pode escrever uma explicação dentro da função, e o Python mostra com help():
+
+def contador(i, f, p):
+    """
+    Faz uma contagem e mostra na tela.
+    i: início
+    f: fim
+    p: passo
+    """
+    cont = i
+    while cont <= f:
+        print(cont, end=' ')
+        cont += p
+    print('FIM!')
+
+
+# Agora você pode usar help(contador) para ver a explicação.
+
+# ✅ 6. Funções dentro de programa principal
+
+# O código pode ficar organizado: primeiro as funções, depois o programa principal.
+
+# def somar(a, b):
+#     return a + b
+
+# Programa principal
+x = int(input('Digite um valor: '))
+y = int(input('Digite outro: '))
+print(f'A soma vale {somar(x, y)}')
