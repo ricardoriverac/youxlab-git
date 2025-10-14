@@ -1,6 +1,6 @@
 import random
 print('Pensarei em um número aleatório de 0 a 10. . . Tente acertar! ')
-numero = random.choice(range(0,10))
+numero = random.choice(range(0,2))
 resposta = int(input('Minha escolha é: '))
 e = 1
 while resposta != numero:
