@@ -8,4 +8,4 @@ while count != lista['partidas']:
     count+= 1
     lista2.append(int(input('Numeros de gols feitos: ')))
     lista['gols'] = lista2[:]
-print (lista)
+print (f'o nome do jogador é {lista["nome"]} e ele jogou {lista["partidas"]}, e fez {lista["gols"]} gols')
