@@ -32,4 +32,5 @@ for p in pessoas:
         pessoas_pesadas.append(p[0])
     if p[1] < 60:
         pessoas_leves.append(p[0])   
-print(f"total de pessoas pesadas {pessoas_pesadas} e esse eo total de pessoas leve {pessoas_leves}")        
+print(f"total de pessoas pesadas {pessoas_pesadas} e esse eo total de pessoas leve {pessoas_leves}")  
+primt(x)      
