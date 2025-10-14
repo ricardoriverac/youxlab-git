@@ -14,7 +14,6 @@ for l in range(0, 3):
     soma = soma + matriz[l][2]
     print()
 maior = max(matriz[1][0], matriz[1][1], matriz[1][2])
-print('=' * 30)
 print(f'Soma dos valores pares: {pares}')
 print(f'Soma dos valores da 3ª coluna: {soma}')
 print(f'Maior valor da 2ª coluna: {maior}')
