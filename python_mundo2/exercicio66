@@ -9,3 +9,4 @@ while n != 999:
     nd = ns - 999
 print ('você digitou {} e todos eles somados são {}'. format(nf - 1, nd))
 
+

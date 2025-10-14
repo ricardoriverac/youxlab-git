@@ -1,5 +1,5 @@
 def linha():
-    print(f'_' * 20)
+    print(f'=' * 30)
 def contador():
     linha()
     print (f'Contagem de 1 a 10 de 1 em 1:')

@@ -21,4 +21,4 @@ while True :
     else:
         pass
 print ('o preço total da compra é {}R$, você comprou {} produtos com o valor acima de 1000R$' \
-'e o produto mais barato é {}' .format(ptdc, qpcm, pmb))
+ ' e o produto mais barato é {}' .format(ptdc, qpcm, pmb))
