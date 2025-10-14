@@ -14,7 +14,7 @@ def notas(*num, sit=False):
             tot += 1
             if num[c] > mai:
                 mai = num[c]
-            if nun[c] < men:
+            if num[c] < men:
                 men = num[c]
     média = sum(num)/len(num)
     dicion['total'] = tot+1
