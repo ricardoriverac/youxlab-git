@@ -24,14 +24,14 @@ print('    COMO EMPACOTAR: ')
 
 print('-'*30)
 print('    TEORIAS PARTE 3')
-print('     USANDO DEF COM LISTAS')
-def dobra(lst):
-    posicao = 0
-    while posicao < len(lst):
-        lst[posicao] *= 2
-        posicao += 1
+print('   USANDO DEF COM LISTAS')
+#def dobra(lst):
+#    posicao = 0
+#    while posicao < len(lst):
+#        lst[posicao] *= 2
+#        posicao += 1
 
 
-valores = [6, 3, 9, 1, 0, 2]
-dobra(valores)
-print(valores)
+#valores = [6, 3, 9, 1, 0, 2]
+#dobra(valores)
+#print(valores)
