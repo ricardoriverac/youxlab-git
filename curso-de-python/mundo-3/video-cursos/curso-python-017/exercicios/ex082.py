@@ -26,7 +26,6 @@ while True:
         print('-' * 25)
         break
 
-
 print(f'O números que \033[33mvocê\033[m digitou são: \033[33m{numeros}\033[m')
 print(f'Os números \033[36mpares\033[m digitados são: \033[33m{pares}\033[m')
 print(f'Os números \031[35mimpares\033[m digitados são: \033[33m{impares}\033[m')
