@@ -1,5 +1,5 @@
 def escreva(escrita):
-    print('=-'*30)
+    print('='*(len(escrita) + 4))
     print(f'  {escrita}')
-    print('=-'*30)
+    print('='*(len(escrita) + 4))
 escreva(str(input('Escreva alguma coisa!:\n->')))
