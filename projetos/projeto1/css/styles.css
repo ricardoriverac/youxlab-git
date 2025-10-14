@@ -1,0 +1,74 @@
+/* geral */
+* h1 {
+    font-weight: bold;
+}
+
+/* img */
+#heron {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%
+}
+
+/* background e estilização */
+body {
+    padding: 10px;
+    background-image: url("../img/modern-medical-health-care-scientific-600nw-2622843095.webp");
+    background-size: cover;
+}
+
+/* descrição */
+#full-name {
+    color: #414040;
+}
+
+#about-container #me {
+    display: flex;
+    font-family: 'BBH Sans Bogle';
+}
+
+#quem-sou-eu {
+    font-family: 'Playwrite DE SAS', cursive;
+}
+
+.fonte-doida {
+    font-family: 'Playwrite DE SAS', cursive;
+}
+
+/* hobbies e habilidades */
+#descricao #hobbies {
+    font-family: 'Playwrite DE SAS', cursive;
+    text-align: left;
+    align-self: start;
+}
+
+/* me contate/mande sua mensagem */
+#input-name,
+#input-e-mail {
+    padding: 10px;
+    border: 2px solid #bbddb8;
+    border-radius: 3px;
+    transition: 0.4s;
+}
+
+
+#input-name:hover,
+#input-e-mail:hover {
+    background-color: #bbddb8;
+}
+
+/* estilo responsivo */
+@media (max-width: 450px) {
+
+
+
+}
+
+#rickroll {
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    position: fixed;
+    right: 0rem;
+    bottom: 0rem;
+}
