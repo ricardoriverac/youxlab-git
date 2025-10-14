@@ -1,3 +1,4 @@
+
 def escreva(txt):
     print('-' * len(txt))
     print(txt)
