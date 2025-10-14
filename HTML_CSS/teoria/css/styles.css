@@ -1,0 +1,230 @@
+/* 2-integração inicial */
+
+h1 {
+    color:blue;
+}
+
+/* 2-comentários com CSS */
+/* testando comentários */
+
+/* 3-id-#*/
+#title {
+    color:red;
+}
+
+/* 4-classes-. */
+.text {
+    color:chocolate;
+}
+
+/* 5-background */
+.background {
+    background-color:bisque;
+    color:cadetblue;
+    font-size: 30px;
+}
+
+/* 6-dois elementos, uma regra */
+p, .title-small {
+    color:darkmagenta;
+}
+
+.title-small {
+    font-size: 25px;
+}
+
+/* 7-background image */
+.background-image {
+    background-image: url("../img/images.jpg");
+    padding: 101;
+    color:darkgreen;
+    width: fit-content;
+}
+
+/* 8-largura e altura */
+#width-height {
+    width: 225px;
+    height: 100px;
+    background-color: black;
+}
+
+/* 9-padding */
+#padding {
+    background-color: magenta;
+    padding: 20px;
+}
+
+/* 10-margin */
+#margin {
+    width: 200px;
+    height: 200px;
+    background-color: gold;
+    font-size: 60px;
+    margin: 10px;
+}
+
+/* 11-border */
+#border {
+    border: 3px solid blue;
+    width: fit-content;
+    height: 83px;
+    padding: 7px;
+    margin: 7px;
+}
+
+/* 12-border radius */
+#border-radius {
+    width: 200px;
+    height: 200px;
+    background-color: darkcyan;
+    border-radius: 10px;
+    font-size: 60px;
+}
+
+/* 13-cores */
+#rgb,
+#hsl,
+#hex {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+}
+
+#hex {
+    background-color: #0dff00;
+}
+
+#rgb {
+    background-color: rgb(57, 156, 167);
+}
+
+#hsl {
+    background-color: hsl(35, 39%, 29%);
+}
+
+/* 14-alinhamento de texto */
+#center {
+    text-align: center;
+}
+
+p {
+    font-size: 35px;
+}
+
+/* 15-decoration */
+#underline {
+    text-decoration: underline;
+}
+
+#line {
+    text-decoration: line-through;
+}
+
+#sem-underline {
+    text-decoration: none;
+}
+
+/* 16-font-size */
+#fonte-pequena {
+    font-size: 10px;
+}
+
+/* 17-transform */
+#lower {
+    text-transform: lowercase;
+}
+
+#upper {
+    text-transform:uppercase;
+}
+
+/* 18-font-family */
+#serif {
+    font-family: Georgia;
+}
+
+#sans-serif {
+    font-family: Helvetica;
+}
+
+#cursive {
+    font-family: cursive;
+}
+
+/* 19-display */
+.inline {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    margin: 5px;
+    display: inline-block;
+}
+
+.block {
+    width: 50px;
+    height: 50px;
+    background-color: green;
+    margin: 5px;
+    display: block;
+}
+
+/* 20-ocultando elementos */
+#none {
+    display: none;
+}
+
+/* 21-position */
+#relative,
+#absolute,
+#fixed {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+#relative {
+    background-color: blueviolet;
+    position: relative;
+    top: 50px;
+    left: 20px;
+}
+
+#absolute {
+    background-color: #321;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+
+#fixed {
+    background-color: #455;
+    position: fixed;
+    top: 50px;
+    right: 50px;
+}
+
+/* 22-relative e absolute */
+#relative-2 {
+    width: 300px;
+    height: 300px;
+    border: 1px solid red;
+    position: relative;
+}
+
+#absolute-1,
+#absolute-2 {
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    position: absolute;
+}
+
+#absolute-1 {
+    top: 10px;
+    left: 10px;
+}
+
+#absolute-2 {
+    bottom: 10px;
+    right: 10px;
+}
