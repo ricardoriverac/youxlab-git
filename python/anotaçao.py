@@ -3,3 +3,4 @@
 #range ele conta o numero de 0 idiante
 #append ele vai ler a lista
 #len e o tamnho da lista
+#input e pra amarzenar
