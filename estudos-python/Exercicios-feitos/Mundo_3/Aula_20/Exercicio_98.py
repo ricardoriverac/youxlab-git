@@ -12,6 +12,6 @@ while contagem2 > -1:
 print('Personalize sua pŕopria sequência:')
 def contador(a, b, c):
     while a != b:
-        print(a, end=' > ')
+        print(a, end=' ')
         a += c
 contador(a=int(input('Insira o número inicial: ')), b=int(input('Insira o número final: ')), c=int(input('Insira o número e a passagem: ')))
