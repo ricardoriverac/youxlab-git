@@ -1,10 +1,10 @@
 def fatorial (num=1, show=False):
-    operacao=[]
     """fatorial(n,show=false)
            -> Calcula o fatorial de um número.
               :param num: o numero a ser calculado
               : param show: (opcional) Mostrar ou não a conta
               : param return: o valor do Fatorial é um número n"""
+    operacao=[]
     ocultamento=str(input('Escolha se quer ver apenas o resultado final ou a operação completa [RF/O]').upper())
     f=1
     for c in range (num, 0, -1):
