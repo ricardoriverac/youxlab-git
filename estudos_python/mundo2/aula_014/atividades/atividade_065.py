@@ -7,7 +7,7 @@ se ele quer ou não continuar a digitar valores.
 #resposta
 
 #Variaveis
-repeticao = False
+repeticao = True
 digite_numero = 0
 soma = 0
 contador = 0
@@ -15,9 +15,9 @@ media = 0
 maior = 0
 menor = 1000
 
-while repeticao == False : 
+while repeticao == True : 
     digite_numero = int(input('Digite um número: '))
-    quer_continua = str(input('Quer continuar digitando números[S/N]: ').upper())
+    quer_continua = str(input('Quer continuar digitando números[S/N]: ')).upper()
     contador += 1
 
     #Mostrando qual e o maior e o menor número 
@@ -29,8 +29,11 @@ while repeticao == False :
     #Qualcular a media  
     soma += digite_numero
 
-    if quer_continua == 'S' :
-        repeticao == True
+    if quer_continua == 'N' :
+        repeticao = False
+
+    if quer_continua != 'N' and quer_continua != 'S' :
+        print('Valor invalido. Quer continua digitando números[S/N]: ')
 
 media = soma / contador
 
