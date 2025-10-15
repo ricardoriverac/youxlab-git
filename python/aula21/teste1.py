@@ -9,5 +9,3 @@ def contador(i, f, p):
         print(f'{c}', end = '..')
         c += p
     print('FIM!')
-
-help(contador)

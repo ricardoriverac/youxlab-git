@@ -3,3 +3,4 @@ computador = (randint(0,10), randint(0,10), randint(0,10), randint(0,10), randin
 print(computador)
 print(max(computador))
 print(min(computador))
+

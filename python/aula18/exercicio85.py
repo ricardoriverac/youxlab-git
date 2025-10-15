@@ -8,4 +8,5 @@ for c in range(1,8):
         lista[1].append(num)
 lista[0].sort()
 lista[1].sort()
-print(lista)
+print(f'{lista[0]}')
+print(f'{lista[1]}')

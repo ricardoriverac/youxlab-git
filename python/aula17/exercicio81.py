@@ -8,7 +8,7 @@ while True:
             break
 lista.sort(reverse=True)
 print(f'A lista possui {len(lista)} números.')
-print(f'A lista é: {lista}')
+print(f'A lista, em ordem decrescente, é: {lista}')
 if 5 in lista:
     print('O número 5 está presente')
 else:

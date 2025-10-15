@@ -7,5 +7,5 @@ while continuar in 'Ss':
 	if count > 5:
 		print('Por quê?')
 	else:
-		print('Idiota')
-print('babaca')
+		print('hm')
+print('tchau')
