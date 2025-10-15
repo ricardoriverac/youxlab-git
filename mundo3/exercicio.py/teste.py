@@ -1,7 +1,7 @@
 import moeda
 
 
-perg = int(input('Digite um número: '))
+perg = int(input('Digite um valor R$ '))
            
 moeda.metade(perg)
 moeda.dobro(perg)
