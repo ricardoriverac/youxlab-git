@@ -17,7 +17,6 @@ def maior(* numero):
         print(f'O maior valor informado foi {maior}!')
     else:
         print('Nenhum valor foi informado!')
-#Programa principal
 maior(2, 9, 4, 3, 5, 7)
 maior(8, 9, 3)
 maior(7, 3)
