@@ -28,6 +28,9 @@ while a == True:
 
     #Logica do codigo 
 
+    if continuar != 'N' or continuar != 'S':
+        print('Resposta invalida.')
+        continuar = str(input('\nDeseja continuar[s/n]: ').upper())
 
     #quantas pessoas tem mais de 18
     if idade >= 18:
@@ -40,6 +43,7 @@ while a == True:
     #quantas mulheres tem menos de 20 anos 
     if sexo == 'F' and idade < 20:
         mulher_menos_20 =+ 1
+
 
     if continuar == 'N':
         break
