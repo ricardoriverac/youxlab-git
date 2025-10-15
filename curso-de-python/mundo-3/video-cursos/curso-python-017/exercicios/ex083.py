@@ -4,7 +4,7 @@ valido = True
 
 expressao = str(input('Digite a expressão: '))
 
-for i, v in enumerate(expressao):
+for v in enumerate(expressao):
     if v == '(':
         pilhaAbreParenteses.append('(')
 
