@@ -22,45 +22,63 @@ body {
     color: #414040;
 }
 
-#about-container #me {
-    display: flex;
+h1{
     font-family: 'BBH Sans Bogle';
-}
-
-#quem-sou-eu {
-    font-family: 'Playwrite DE SAS', cursive;
-}
-
-.fonte-doida {
-    font-family: 'Playwrite DE SAS', cursive;
+    text-align: center;
 }
 
 /* hobbies e habilidades */
-#descricao #hobbies {
-    font-family: 'Playwrite DE SAS', cursive;
-    text-align: left;
-    align-self: start;
+#hobbies,
+#habilidades {
+    display: flex;
+    background-color: #bbddb8;
+    padding: 1%;
+    border: 2px solid #808080;
+    max-width: fit-content;
 }
 
 /* me contate/mande sua mensagem */
 #input-name,
 #input-e-mail {
     padding: 10px;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
     border: 2px solid #bbddb8;
     border-radius: 3px;
     transition: 0.4s;
+    color: #000;
 }
 
+#input-submit {
+    padding: 0.7rem;
+    width: 25.9rem;
+    border: 2px solid #bbddb8;
+    border-radius: 3px;
+    transition: 0.4s
+}
 
 #input-name:hover,
-#input-e-mail:hover {
+#input-e-mail:hover,
+#input-submit:hover {
     background-color: #bbddb8;
+    color: #000;
+}
+
+#input-name,
+#input-e-mail,
+#input-submit {
+    border: 2px solid black;
 }
 
 /* estilo responsivo */
 @media (max-width: 450px) {
-
-
+    #input-submit {
+    padding:0.7rem;
+    width: 12.5rem;
+    border: 2px solid #bbddb8;
+    border-radius: 3px;
+    transition: 0.4s
+    }
 
 }
 

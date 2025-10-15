@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-    <html lang="en">
+    <html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,17 +9,19 @@
         <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bogle&family=Playwrite+DE+SAS:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/styles.css">
     </head>
+    <header>
+        <h1>Portifólio</h1>
+    </header>
     <body>
         <img src="img/rickroll-roll.gif" alt="rickroll" id="rickroll">
         <div id="about-container">
             <div id="me">
-                <img id="heron" src="img/2025-08-25-134446.jpg" alt="Heron Lopes Alves">
-                <h1><- Meu Portfólio</h1>
+                <img id="heron" src="img/2025-08-25-161722.jpg" alt="Heron Lopes Alves">
             </div>
             <p id="full-name">Heron Lopes Alves</p>
         </div>
-        <div id="descricao">
-            <h3 id="quem-sou-eu">Olá, meu nome é Heron,tenho 17 anos e estou atualmente fazendo parte de um programa de preparação para o mercado de trabalho.</h3>
+        <section id="descricao">
+            <h3 class="quem-sou-eu">Prazer, meu nome é Heron,tenho 17 anos e estou atualmente fazendo parte de um programa de preparação para o mercado de trabalho.</h3>
             <div id="hobbies">
                 <h4>Meus hobbies são:</h4>
                 <ul>
@@ -27,13 +29,30 @@
                     <li>Jogar</li>
                     <li>Ver filmes e/ou séries</li> 
                     <li>Gostar de bicho(não estou falando do jogo)</li>
+                    <Li>Sair com minha familha</Li>
                 </ul>
             </div>
-        </div>
-        <div id="contate-me" class="fonte-doida">
-            <p>Contate-me</p>
+        </section>
+        <footer>
+            <h3 class="quem-sou-eu">Também possuo várias habilidades que considero úteis no dia a dia.</h3>
+            <div id="habilidades">
+                <h4>Por exemplo:</h4>
+                <ul>
+                    <li>Rapido aprendizado</li>
+                    <li>Alta comunicação em grupo</li>
+                    <li>Bilingue(português e Inglês)</li> 
+                    <li>Organizado</li>
+                    <li>Paciênte</li>
+                </ul>
+            </div>
+        </footer>
+        <div class="contate-me">
+            <p>Se você deseja me contatar,informe:</p>
             <input type="text" name="nome" id="input-name" placeholder="Nome completo">
             <input type="email" name="e-mail" id="input-e-mail" placeholder="seu e-mail">
+        </div>
+        <div class="contate-me">
+            <input type="submit" name="enviar" id="input-submit" value="Enviar mensagem por e-mail">
         </div>
     </body>
 </html>
