@@ -1,0 +1,230 @@
+/* 1 - Integração inicial */
+h1 {
+    color:rgb(186, 43, 226);
+}
+
+/* 2 - Comentarios com CSS*/
+
+/* 3 - id - # */
+h3 {
+    color:chocolate;
+}
+
+#title {
+    color:blueviolet
+}
+
+/* 4 - classes */
+.text {
+    color:brown
+}
+
+/* 5 - backgroud */
+.background {
+    background-color: red;
+    color:blue;
+    font-size: 30px;
+}
+
+/* 6 - dois elemntos, uma regra */
+p,
+.title-sma11 {
+    color: darkmagenta
+}
+
+.title-sma11 {
+    font-size: 25px;
+}
+
+/* 7 - background image */
+.background-image {
+    background-image: url('../img/meteoro.jpg');
+    padding: 20px;
+}
+
+/* 8 - largura e altura */
+#width-height {
+    width: 200px;
+    height: 100px;
+    background-color: black;
+}
+
+/* 9 - padding */
+#padding {
+    background-color: crimson;
+    padding: 20px;
+}
+
+/* 10 - margin */
+#margin {
+    width: 200px;
+    height: 200px;
+    background-color: plum;
+    margin: 20px;
+}
+
+/* 11 - border */
+#border {
+    border: 3px solid red;
+    width: 100px;
+    height: 100px;
+    padding: 40px;
+    margin: 30px;
+}
+
+/* 12 - Border radius */
+#border-radius {
+    width: 200px;
+    height: 200px;
+    background-color: antiquewhite;
+    border: 3px dashed purple;
+    border-radius: 10px;
+}
+
+/*13 - cores */
+#rgb,
+#hs1,
+#hex {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+}
+
+#hex {
+    background-color: #04bde7;
+}
+
+#rgb {
+    background-color: rgb(123, 40, 99);
+}
+
+#hs1 {
+    background-color: hsl(281, 76%, 44%);
+}
+
+/* 14 - alinhamento */
+#center {
+    text-align: center;
+}
+
+p {
+    font-size: 35px;
+}
+
+/* 15 - decoration */
+#undeline {
+    text-decoration: underline;
+}
+
+#line {
+    text-decoration: line-through;
+}
+
+#sem-underline {
+    text-decoration: none;
+}
+
+/* 16 - font size */
+#fonte-pequena {
+    font-size: 10px;
+}
+
+/* 17 - transform */
+#upper {
+    text-transform: uppercase;
+}
+
+#lower {
+    text-transform: lowercase;
+}
+
+/* 18 - font family */
+#serif {
+    font-family: Georgia;
+}
+
+#sans-serif {
+    font-family: Helvetica
+}
+
+#cursive {
+    font-style: italic;
+}
+
+/* 19 - display */
+.inline {
+    width: 50px;
+    height: 50px;
+    background-color: darkcyan;
+    margin: 5px;
+    display: inline-block;
+}
+
+.block {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(83, 0, 139);
+    margin: 5px;
+    display: block;
+}
+
+/* 20 - ocultando elementos */
+#none {
+    display: none;
+}
+
+/* 21 - position */
+#relative,
+#absolute,
+#fixed {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+#relative {
+    background-color: aqua;
+    position: relative;
+    top: 50px;
+    left: 20px;
+}
+
+#absolute {
+    background-color: #321;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+
+#fixed {
+    background-color: rgb(246, 191, 236);
+    position: fixed;
+    top: 100px;
+    left: 45px;
+}
+
+/* 22 - relative com absolute */
+#relative-2 {
+    width: 300px;
+    height: 300px;
+    border: 1px solid palevioletred;
+    position: relative;
+}
+
+#absolute-1,
+#absolute-2 {
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    position: absolute;
+}
+
+#absolute-1 {
+    top: 10px;
+    left: 10px;
+}
+
+#absolute-2 {
+    bottom: 10px;
+    right: 10px;
+}

@@ -1,0 +1,200 @@
+<html>
+    <head> 
+        <title>Curso de HTML e CSS</title>
+
+        <!-- 10 - CSS no head-->
+        <style>
+            body {
+                padding-bottom: 500px;
+            }
+            h2 {
+                color:aquamarine;
+            }
+        </style>
+
+        <!-- 16 - Adicionando arquivo de CSS-->
+        <link rel="stylesheet" href="CSS/styles.css">
+    </head>
+    <body>
+        <!-- 1- Elementos do HTML-->
+        <h1>testando 4</h1>
+        <p>Algum texto do meu site</p>
+
+        <!--2 - Titulos-->
+        <h2>Titulo</h2>
+        <h3>Outro titulo</h3>  
+        <h2>Um outro h2</h2>
+        
+        <!-- Parágrafos-->
+        <p>A gente vai utilizar muito a tag p</p>
+
+        <!--4 - Atributos-->
+        <a href="https://www.google.com"> acessar o Google</a>
+
+        <!-- 5- Elementos sem fechamento-->
+        <hr />
+        <br />
+        <hr />
+
+        <!-- 6- Imagem-->
+        <img src="img/meteoro.jpg"/>
+        <hr />
+
+        <!--7 - Atributo alt --> 
+        <img src="img/praia.jpg" alt="Uma praia em um dia de sol" />
+        <hr />
+
+        <!-- 8 - Imagem externa-->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1024px-HTML5_logo_and_wordmark.svg.png" 
+        alt="Logo html" 
+        />
+        <hr />
+
+        <!-- 9 - CSS inline-->
+        <p style="color: blue">Testando o CSS</p>
+        <p style="color: pink">Testando o CSS</p>
+
+        <!-- Comentarios -->
+        <!-- Meu primeiro comentário-->
+
+        <!--12 - Div-->
+        <div>
+            <h3>Produto X</h3>
+            <p>R$ 50,00</p>
+            <a href="#">Compar</a>
+        </div>
+        <hr />
+
+        <!-- 13 - Tabelas-->
+         <table>
+            <thead>
+            <tr>
+                <th>ID:</th>
+                <th>Nome:</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Daniella</td>
+                <tr>
+                    <td>2</td>
+                    <td>malia</td>
+                </tr>
+                </tr>
+            </tbody>
+         </table>
+
+    <!-- 14 - Listas-->]
+     <ul>
+        <li>Maça</li>
+        <li>Laranja</li>
+        <li>Limão</li>
+     </ul>
+
+     <ol>
+        <li>Estudar HTML</li>
+        <li>Estudar CSS</li>
+        <li>Estuda JavaScript</li>
+     </ol>
+
+     <!-- 15 - Elementos de blocos e inline-->
+      <p>Paragrafo</p>
+      <p>é de bloco</p>
+      <span>Na mesma</span>
+      <span>Linha</span>
+
+      <p> Clique neste <a href="#">link</a></p>
+
+      <!-- 17 - Integração com CSS-->
+       <h1>Testando integração</h1>
+
+       <!-- 18 - id -->
+        <h3 id="title"> Meu titulo</h3>
+        <h3>Meu segundo titulo</h3>
+
+        <!-- 19 - classes -->
+         <p class="text">Meu paragrafo</p>
+         <p class="text">Mais um paragrafo</p>
+         <p class="text">E outro</p>
+         <p>E o último</p>
+
+         <!-- 20 - backgound -->
+        <p class="background">Mude o meu background</p> 
+        
+        <!-- 21 - Dois elementos, uma regra-->
+         <p>Meu texto</p>
+         <p class="title-sma11">Um texto do site</p>
+
+        <!-- 22 - background image -->
+         <h3 class="background-image">Testando imagem background</h3>
+
+         <!-- 23 -  conceito de Box Model -->
+
+         <!-- 24 - Largura e altura -->
+          <div id="width-height"></div>
+
+        <!-- 25 - padding -->
+         <div id="padding">Testando padding</div>
+
+         <!-- 26 - margin -->
+          <div id="margin">Testando Margin</div>
+
+        <!-- 27 - border -->
+         <div id="border">Testando borda</div>
+
+        <!-- 28 - raio da borda -->
+         <div id="border-radius">Testando raio da borda</div>
+        
+        <!-- 29 - cores -->
+         <div id="hex"></div>
+         <div id="rgb"></div>
+         <div id="hs1"></div>
+
+        <!-- 30 - Alinhamento de texto -->
+         <div id="center">
+            <p>Alinhamento de texto</p>
+            <p>Outro texto</p>
+         </div>
+
+        <!-- 31 - decoration -->
+         <p id="underline">Texto com underline</p>
+         <p id="line">Linha no texto</p>
+         <a id="sem-underline" href="#">Link</a>
+
+        <!-- 32 - font size  -->
+         <h2 id="fonte-pequena">Meu titulo menor</h2>
+
+         <!-- 33 - transform  -->
+          <p id="lower">TODO EM CAIXA BAIXA</p>
+          <p id="upper">todo em caixa alta</p>
+
+        <!-- 34 - alteração de fonte  -->
+         <p id="serif">Exemplo de fonte serifada</p>
+         <p id="sans-serif">Exemplo de fonte sem serifa</p>
+         <p id="cursive">Exemplo de frase cursiva</p>
+
+        <!-- 35 - display  -->
+        <!-- Se o elemento é de bloco ou não  -->
+         <div class="inline">A</div>
+         <div class="inline">B</div>
+         <div class="inline">C</div>
+
+        <!-- 36 - ocultando elementos -->
+         <p id="none">Estou invisível</p>
+
+        <!-- 37 - position -->
+         <div id="relative"></div>
+         <p>Relativo ficou na frente</p>
+
+         <div id="absolute"></div>
+
+         <div id="fixed"></div>
+
+        <!-- 38 - relative e absolute  -->
+         <div id="relative-2">
+            <div id="absolute-1"></div>
+            <div id="absolute-2"></div>
+        </div>
+    </body>
+</html>
