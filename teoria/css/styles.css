@@ -1,0 +1,59 @@
+/* 1 - integraçao inicial */
+
+
+#title{
+    color:darkblue
+}
+/* id - # */
+/* classes - . */
+.text{
+    color:blueviolet
+}
+/* backgroud */
+.backgroud{
+    background-color: peru;
+    font-size: 30px; 
+    /* muda o tamanho ea cor da fonte */
+
+}
+/* dois elementos,uma regra */
+p,
+.title-small{
+    font-size :25px;
+}
+/* background image */
+.background-image{
+    background-image: url("../img/meteoro.jpg");
+    padding: 20px;
+    color:white
+}
+/* largura e altura */
+#width-height{
+    width: 200px ;
+    height: 100px;
+    background-color:  black;
+}
+/* padding */
+#padding{
+    background-color: powderblue;
+    padding: 15px;
+
+}
+/* margin  */
+#margin{
+    width: 200px;
+    height: 200px;
+    background-color: aliceblue;
+    margin: 20px;
+}
+/* borda */
+#border{
+    border: 3px solid red;
+}
+/* border radius */
+#border-radius{
+    width:200px;
+    height: 200px;
+    background-color:red;
+    border-radius: 10px;
+}
