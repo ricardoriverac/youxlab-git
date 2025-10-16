@@ -1,11 +1,17 @@
-import random
-numeros_aleatorios = []
-for v in range(5):
-    numero = random.randint(1, 100)
-    numeros_aleatorios.append(numero)
-    tupla_numeros = tuple(numeros_aleatorios)
-print(tupla_numeros)
-minha_tupla = (numeros_aleatorios)
-maior_valor = max(minha_tupla)
-menor_valor = min(minha_tupla)
-print(f'O maior valor é {maior_valor}, e o menor é {menor_valor}')
+times = ('flamengo', 'cruzeiro', 'palmeiras', 'botafogo', 'bahia', 'são paulo', 'fluminense',
+        'gremio', 'ceara', 'vasco', 'corinthians', 'santos', 'fortaleza', 'internacional', 'Chapeconhense',
+            'mirassol', 'vitoria', 'bragantino', 'botafogo', 'atletico-mg')
+
+for cont in range(0, len(times)):
+    print(f'Os 5 primeiros times são {times[:5]}')
+
+for ultimos in range(0, len(times)):
+    print(f'\nOs 4 ultimos times são {times[16:]}')
+
+    timesOrdem = sorted(times)
+    for c in timesOrdem:
+        print(f'Ordem alfabetica: {c}')
+
+    for index,d in enumerate(times):
+        if (times[index] == 'Chapeconhense'):
+            print(f'A posiçpão do chapecoense esta em {index +1}')

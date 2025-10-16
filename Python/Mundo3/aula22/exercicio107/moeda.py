@@ -1,15 +1,15 @@
-def aumentar(n = 0, a = 0):
-    txt = float(input(n))
-    au = float(input(a))
-    return txt + (txt*au/100)
-def diminuir(n, d):
-    preco = float(input(n))
-    des = float(input(d))
-    return preco - (preco * des/100)
-def dobro(n):
-    num = float(input(n))
-    return num * 2
+def aumentar (valor = 0, taxa = 0):
+    res = valor + (valor*taxa /100)
+    return res
 
-def metade(num):
-    numero = float(input(num))
-    return numero/2
+def diminuir (valor = 0, taxa = 0, formato = False):
+    res = valor - (valor*taxa / 100)
+    return res
+
+def dobro (valor = 0, formato =False):
+    res = valor * 2
+    return res 
+
+def metade (valor = 0, formato = False):
+    res = valor / 2
+    return res
