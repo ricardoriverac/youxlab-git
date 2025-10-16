@@ -1,4 +1,3 @@
-
 def monetario (mo):
     mo= f'{round(mo)},00'
     return mo
