@@ -1,5 +1,5 @@
 print('-'*40)
-print('       FICGA DO JOGADOR:')
+print('       FICHA DO JOGADOR:')
 print()
 
 def ficha(jog='<desconhecido>', gol=0): # jog = '<desconhecido>' → se ninguém digitar o nome, usa isso.
