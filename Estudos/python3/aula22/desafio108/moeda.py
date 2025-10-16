@@ -11,6 +11,5 @@ def aumento (a):
     a=a * 1.10
     return a
 def monetario (mo):
-    
     mo= f'{mo},00'
     return mo
