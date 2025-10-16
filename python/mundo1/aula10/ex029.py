@@ -6,4 +6,4 @@ car = int(input('Digite qual é a velocidade do seu carro: '))
 if car  > 80 :
     print(f'Você foi multado, o seu veículo ultrapassou de 80km/h !')
 multa = (car - 80) * 7
-print(f'O valor a pagar da multa é de R${multa}')
+print(f'O valor a pagar dga multa é de R${multa}')
