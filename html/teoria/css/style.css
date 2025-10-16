@@ -1,0 +1,156 @@
+/*comentário 1*/
+#h1 {
+    color: blueviolet;
+}
+#title {
+    color: green
+}
+
+#text {
+    color: crimson;
+}
+
+#background {
+    color: blueviolet;
+    background-color: chocolate;
+    font-size: 30px;
+}
+#title-small {
+    font-size: 25px;
+}
+#background-image {
+    background-image: url("../img/raulzito.jpeg");
+    padding: 200px;
+}
+#width-height {
+    width: 200px;
+    height: 100px;
+    background-color: black;
+    color: red;
+}
+#padding {
+    background-color: brown;
+    padding: 20px;
+}
+#margin {
+    color: white;
+    margin: 20px;
+    background-color: black;
+}
+#border {
+    border: 5px solid greenyellow;
+    background-color: aqua;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+}
+#hex, #hsl, #rgb {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+}
+#hex{
+    background-color: #25af1e;
+}
+#rgb {
+    background-color: rgb(222, 14, 163);
+}
+#hsl {
+    background-color: hsl(242, 76%, 44%);
+}
+#center {
+    text-align: center;
+}
+#underline {
+    text-decoration: none;
+}
+#line-through {
+    text-decoration: line-through;
+}
+#fonte-pequena {
+    font-size: 10px;
+}
+#lower {
+    text-transform: lowercase;
+}
+#upper {
+    text-transform: uppercase;
+}
+#serif {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#sans-serif{
+    font-family: Arial, Helvetica, sans-serif;
+}
+#cursive {
+    font-family: cursive;
+}
+.inline {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    margin: 5px;
+    display: inline-block;
+}
+.block {
+    width: 50px;
+    height: 50px;
+    background-color: green;
+    margin: 5px;
+    display: block;
+}
+#relative {
+    width: 100px;
+    height: 100px;
+    margin: 100px;
+}
+#relative {
+    position: relative;
+    background-color: aquamarine;
+    top: 50px;
+    left: 20px;
+}
+#absolute {
+    width: 100px;
+    height: 100px;
+    margin: 100px;
+    position: absolute;
+    background-color: black;
+    color: antiquewhite;
+    top: 50px;
+    right: 50px;
+}
+#fixed {
+    width: 100px;
+    height: 100px;
+    margin: 100px;
+    position: fixed;
+    background-color: #25af1e;
+    top: 20px;
+    right: 0px;
+}
+#relative-2 {
+    width: 300px;
+    height: 300px;
+    margin: 300px ;
+    position: relative;
+    border: 1px solid red;
+}
+#absolute-1, #absolute-2 {
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    position: absolute;
+
+}
+
+#absolute-1 {
+    top: 10px;
+    left: 10px;
+}
+#absolute-2 {
+    bottom: 10px;
+    right: 10px;
+}
