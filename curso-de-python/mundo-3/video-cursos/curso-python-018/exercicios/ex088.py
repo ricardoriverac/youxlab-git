@@ -30,5 +30,5 @@ for i, jogo in enumerate(jogos):
 print('-' * 35)
 print('Esses foram todos o jogos sorteados.')
 print('-' * 35)
-print(f'\033[32m{"BOA SORTE!":^35}\033[m')
+print(f'\033[32m{"BOA SORTE!":^35}\033')
 print('-' * 35)
