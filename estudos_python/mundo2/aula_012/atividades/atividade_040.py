@@ -1,5 +1,7 @@
 '''
-Cria um programa qua leia duas notas de um aluno e calcule sua média. mostrando uma mensagem no final, de acordo com a média atingida:
+Cria um programa qua leia duas notas de um aluno e calcule sua 
+média. mostrando uma mensagem no final, de acordo com a média atingida:
+
 Média abaixo da 5.0: REPROVADO
 Média entre 5.0 6.9: RECUPERAÇÃO
 Média 7.0 ou superior: APROVADO

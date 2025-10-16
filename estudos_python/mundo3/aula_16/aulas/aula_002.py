@@ -9,4 +9,15 @@ for comida in lanche:
     print(f'{comida}')
 
 for cont in range(0, len(lanche)):
-    print(lanche[cont])
+    i = int(input(lanche[cont]) )
+#Somando tuplas
+'''
+Quando você soma duas tuplas, você acaba juntando as 
+duas tuplas
+'''
+
+#Exemplo
+
+numeros = ('1' , '2' , '3' , '4' , '5')
+numeros += lanche
+print(numeros)
