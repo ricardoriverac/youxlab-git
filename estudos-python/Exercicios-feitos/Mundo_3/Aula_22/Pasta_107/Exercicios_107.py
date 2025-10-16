@@ -1,0 +1,15 @@
+import __init__
+num = int(input('Enter a number'))
+double = __init__.doubler(num)
+half = __init__.halfer(num)
+increased = __init__.increase(num)
+decreased = __init__.decrease(num)
+print(f'A metade de {num} é {half}')
+print(f'O dobro de {num} é {double}')
+print(f'Aumentando 10% de {num} é igual a {increased}')
+print(f'Diminuindo 20% de {num} é igual a {decreased}')
+#Ou eu poderia fazer assim:
+#print(f'A metade de {num} é {__init__.halfer(num)}')
+#print(f'O dobro de {num} é {__init__.doubler(num)}')
+#print(f'Aumentando 10% de {num} é igual a {__init__.increase(num)}')
+#print(f'Diminuindo 20% de {num} é igual a {__init__.decrease(num)}')
