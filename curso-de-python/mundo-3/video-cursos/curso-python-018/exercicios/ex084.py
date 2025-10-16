@@ -39,5 +39,4 @@ print(f'O menor peso registrado foi o peso \033[33m{maisLeve:.0f}\033[m. As pess
 for p in cadastroPessoa:
     if p[1] == maisLeve:
         print('\033[33m', p[0], '\033[m', end='')
-
 print()
