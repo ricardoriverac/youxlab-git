@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./Aula 22/ex111/utilidadescev"
+    ]
+}
