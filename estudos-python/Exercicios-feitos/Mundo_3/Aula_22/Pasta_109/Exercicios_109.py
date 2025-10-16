@@ -1,0 +1,11 @@
+import Modulo_109
+num = float(input('Enter a number'))
+money = (Modulo_109.money(num))
+halved = (Modulo_109.halfer(num))
+doubled = (Modulo_109.doubler(num))
+increased = (Modulo_109.increase(num))
+decreased = (Modulo_109.decrease(num))
+print(f'The half of {money} is R${halved}')
+print(f'The double of {money} is R${doubled}')
+print(f'{money} increased by 10% equals to R${increased}')
+print(f'{money} decreased by 20% equals to R${decreased}')
