@@ -1,4 +1,4 @@
 from Utilidades.moeda import moeda
 
-num = float(input('Enter a number:\n->'))
+num = str(input('Enter a number:\n->'))
 print(moeda.moneyator(num))
