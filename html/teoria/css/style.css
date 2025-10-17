@@ -154,3 +154,7 @@
     bottom: 10px;
     right: 10px;
 }
+#bg-img-2 {
+    background-image: url("../img/raulzito.jpeg");
+    padding: 200px;
+}
