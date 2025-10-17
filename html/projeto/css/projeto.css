@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto";
+}
+
+#body {
+    display: flex;
+    flex-wrap: wrap;
+}
+/*Apresentação do evento*/
+#playlist {
+    text-align: center;
+    position: relative;
+    text-transform: uppercase;
+}
+.listaDaPlaylist{
+    display: inline-block;
+    margin: 5px;
+    
+}
+
+#users-containers {
+    position: relative;
+}
+/*formulário*/
