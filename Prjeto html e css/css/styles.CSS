@@ -1,0 +1,219 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'Roboto';
+    background-color: #ffffff;
+    color: #472874;
+    line-height: 1.6; 
+    max-width: px;
+    margin: 0 auto; 
+    padding: 14px;
+}
+
+header {
+    background-color: #52547f;
+    color: white;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+    
+#about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    text-align: center;
+}
+#Daniella {
+    width: 200px;
+    height: 200px;
+    border-radius: 0%; 
+    object-fit: cover;
+    border: 2px solid rgb(51, 48, 92);
+    margin-bottom: 30px;
+    display: grid;
+}
+
+#dog_container {
+    display: flex;
+
+}
+
+
+#Akira {
+    width: 200px;
+    height: 200px;
+    border-radius: 0%; 
+    object-fit: cover;
+    border: 2px solid rgb(51, 48, 92);
+    margin-bottom: 30px;
+    
+}
+
+
+#Teo {
+    width: 200px;
+    height: 200px;
+    border-radius: 0%; 
+    object-fit: cover;
+    border: 2px solid rgb(51, 48, 92);
+    margin-bottom: 30px;
+    
+}
+#Teddy {
+    width: 200px;
+    height: 200px;
+    border-radius: 0%; 
+    object-fit: cover;
+    border: 2px solid rgb(51, 48, 92);
+    margin-bottom: 30px;
+   
+    box-shadow: 0 0 10px rgb(115, 106, 237);
+}
+
+#full-name {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+
+#descricao, footer {
+    background-color: #aecef5;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 8px;
+    
+}
+
+.quem-sou-eu {
+    
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: #040406;
+}
+
+#passatempos, #habilidades {
+    margin-top: 15px;
+}
+
+#passatempo h4 {
+    color: #2e3557;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+ul {
+    list-style-type: none; 
+    padding-left: 0;
+    display: flex; 
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+ul li {
+    background-color: #e0f2f1; 
+    color: #0a1c50;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.95em;
+    font-weight: 500;
+}
+
+footer h3.quem-sou-eu {
+    text-align: center;
+}
+
+
+
+.contato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.contato p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+input[type="text"], 
+input[type="email"] {
+    width: 100%;
+    max-width: 350px;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#input-submit {
+    background-color: rgb(154, 190, 249);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+#input-submit:hover {
+    background-color: #5500cc; 
+}
+
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    
+    header {
+        padding: 30px;
+        width: 100%;
+
+    }
+
+    #dog_container {
+   flex-wrap: wrap;
+    
+}
+
+    #full-name {
+        font-size: 1.5em;
+    }
+
+    .quem-sou-eu {
+        font-size: 1.1em;
+        text-align: center;
+    }
+    
+    ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    ul li {
+        width: 100%;
+    }
+
+
+    input[type="text"], 
+    input[type="email"],
+    #input-submit {
+        max-width: 90%;
+    }
+}
