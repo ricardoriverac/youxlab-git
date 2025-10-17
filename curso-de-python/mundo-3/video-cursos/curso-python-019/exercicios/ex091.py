@@ -15,7 +15,7 @@ for k, v in jogo.items():
     sleep(1)
 
 print('-' * 25)
-print(F'{"--RANK DE VITÓRIA--":^25}')
+print(f'{"--RANK DE VITÓRIA--":^25}')
 print('-' * 25)
 
 for p, v in enumerate(rank):
