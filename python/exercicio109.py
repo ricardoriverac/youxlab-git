@@ -1,4 +1,4 @@
-from exercicio107 import moeda#importar o modulo moeda pra pasta exercicio107
+from exercicio109 import moeda#importar o modulo moeda pra pasta exercicio107
 
 p = int(input('digite o preço: R$'))
 print(f'a metade de R${p} e R${moeda.metade(p)}')

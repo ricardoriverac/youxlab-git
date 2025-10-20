@@ -5,7 +5,7 @@ media = 0
 maior = 0
 menor = 0
 while resp in 'Ss':
-    num = int(input('digite um numero'))
+    num = int(input('digite um numero: '))
     soma += num
     #soma = soma + num
     quant += 1
