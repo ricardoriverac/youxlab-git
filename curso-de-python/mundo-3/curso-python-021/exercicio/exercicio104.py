@@ -1,7 +1,7 @@
 def leiaInt(msg):
 
     aceito = False
-    valor = 1
+    valor = 0
     while True:
         n = str(input(msg))
         if n.isnumeric():# ele vai indicar se verdade ou mentira
