@@ -1,7 +1,5 @@
 valores = []
 valores.append(5) 
-4
-5
 valores.append(9)
 valores.append(4)
 for c, v in enumerate(valores):

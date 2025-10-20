@@ -17,6 +17,6 @@ os seguintes comandos
 n = alimentos[:]
 
 
-#Como similar uma variavel e necessario fazer isso:
+#Como similar uma lista e necessario fazer isso:
 
 m = n 

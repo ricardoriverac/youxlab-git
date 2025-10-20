@@ -5,16 +5,21 @@ valor digitado e as suas respectivas posições na lista.
 '''
 
 #Resposta
-maior = 0
-menor = 100000
+
 lista = []
 for c in range(0, 5):
     lista.append(int(input('Digite um número: ')))
-    if lista < maior:
-        maior = lista
-    elif lista > menor:
-        menor = lista
+    
+c1 = c2 = 0
+max = (max(lista))
+min = (min(lista))
 
-print(lista)
-print(maior)
-print(menor)
+print(f'O maior número e {max} e as posições que ele esta:', end='') 
+for c, v in enumerate(lista):      
+    if v == max:
+        print(f' {c}...',end='')
+
+print(f'\nO menor número e {min}, e as posições que ele esta:' , end= '')
+for c, v in enumerate(lista):      
+     if v == min:
+        print(f' {c}...',end='')
