@@ -1,0 +1,165 @@
+/* 1 -INTEGRAÇÃO INICIAL- */
+h1 {
+    color: red;
+}
+
+/* 2 -COMENTÁRIOS COM CSS */
+
+/* 3 -ID- */
+#teste{
+    color:blueviolet
+}
+
+/* 4 -CLASSES- */
+.numeros{
+        color: dodgerblue;
+}
+
+/* 5 -BACKGROUND- */
+#Background{
+    background-color: red;
+    color: blue;
+    font-size: 30px;
+}
+
+/* 6 -DOIS ELEMENTOS EM UMA REGRA- */
+p, .doiselementos{
+    color: brown;
+}
+.doiselementos{
+    font-size: 30px;
+}
+
+/* 7 -BACKGROUND IMAGE- */
+.background-image{
+    background-image: url("../img/download.jpeg");
+    padding: 70px;
+    color: white
+}
+
+/* 8 -LARGURA E ALTURA- */
+#width-height{
+    width: 200px;
+    height: 100px;
+    background-color: black;
+    margin: 20px;
+}
+
+/* 9 -PADDING- */
+#padding{
+    background-color: magenta;
+    padding: 20px;
+}
+
+/* 10 -MARGEM- */
+#margin{
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    margin: 20px;
+}
+
+/* 11 -BORDERS- */
+#border{
+    border: 12px solid red;
+    width: 200px;
+    height: 100px;
+    padding: 30px;
+    margin: 10px;
+}
+
+/* 12 -RAIOS DA BORDA- */
+#radius-border{
+    width: 200px;
+    height: 100px;
+    padding: 30px;
+    margin: 5px;
+    background-color: blue;
+    border-radius: 10px;
+    border: 10px solid red;
+}
+
+/* 13 -CORES- */
+#hex, #hsl, #rgb{
+    width: 200px;
+    height: 200px;
+    padding: 30px;
+    margin: 5px;
+}
+
+#hex{
+    background-color: #01b401;
+}
+#rgb{
+    background-color: rgb(100, 32, 30);
+}
+#hsl{
+    background-color: hsl(30, 20%, 50%);
+}
+
+/* 14 -ALINHAMENTO DE TEXTO- */
+#centro{
+    text-align: center;
+
+}
+
+/* 15 -Decoração de Texto- */
+#underline{
+    text-decoration: underline;
+
+}
+
+#line{
+    text-decoration: line-through;
+}
+
+/* 16 -Transformação- */
+#caixabaixa{
+    text-transform: lowercase;
+}
+
+/* 17 -Fontes- */
+#sanserif{
+    font-family: Helvetica
+}
+#serif{
+    font-family: Georgia
+}
+#cursive{
+    font-family: cursive;
+}
+
+p{
+    font-size: 30px;
+}
+
+/* 19 -Display- */
+.inline{
+    width: 250px;
+    height: 300px;
+    background-color: red;
+    margin: 5px;
+    
+}
+
+/* 20 -Ocultando Elemento- */
+#none{
+    display: none;
+}
+/* 21 -Posicionando elementos */
+
+.relative, .absolute{
+    width: 200px;
+    height: 50px;
+    background-color: red;
+}
+.relative{
+    position: relative;
+    top: 20px;
+    left: 300px;
+}
+.absolute{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
