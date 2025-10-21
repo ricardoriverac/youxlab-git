@@ -1,0 +1,108 @@
+    /* 1 - Integração inicial */
+    h1 {
+        color: blue;
+    }
+
+    /* 2 - Comentários com CSS */
+
+    /* 3 - ID  - # */
+    h3 {
+        color: green;
+    }
+
+    #title {
+        color: blue;
+    }
+
+    /* - classes - . */
+    .text {
+        color: blueviolet;
+    }
+
+    /* 5 - backgroud */
+    .backgroud {
+        background-color: red;
+        color: blue;
+        font-size: 30px;
+    }
+    
+    /* 6 - dois elementos, uma regra */
+    p,
+    .title-small {
+        color: darkmagenta;
+    }
+    .title-small {
+        font-size: 25px;
+    }
+
+    /* 7 - backgroud image */
+    .backgroud-image { 
+        background-image:  url("../img/meteoro.jpg");
+        padding: 20px;
+        color: white;
+    }
+
+
+    /* 8 - largura e altura */
+    #width-height {
+        width: 200px;
+        height: 100px;
+        background-color: black;
+    }
+
+    /* 9 - padding */
+    #padding {
+        background-color: magenta;
+    }
+
+    /* 10 - margin */
+    #margin {
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+        margin: 20px;
+    }
+        /* 11 - border */
+        #border {
+            border: 3px solid red;
+            width: 100px;
+            height: 100px;
+            padding: 40px;
+            margin: 30px; 
+        }
+
+        /* 12 - Border radius */
+        #border-radius {
+
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border: 3px solid blue;
+            border-radius: 10px;
+        }
+        /* 13 - cores */
+        #rgb,
+        #hsl,
+        #hex {
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+        }
+
+        #hex {
+            background-color: #0fe704;
+        }
+
+
+        #rgb {
+            background-color: rgb(123, 40, 99);
+        }
+        #hsl {
+            background-color:  hsl(242, 76%, 44%);
+        }
+
+        /* 14 - Alinhamento */
+        #center {
+            text-align: center;
+        }
+        
