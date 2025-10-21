@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Roboto";
+    background-color: #ffffff;
+    color: #472874;
+    line-height: 1.6;
+    max-width: 1200px;
+    margin:0 auto;
+    padding: 14px
+}
+header{
+    background-color: beige;
+    color: black;
+    padding: 20px ;
+    width: 100% ;
+    text-align:center ;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+#cardapio-burguer{
+    background-color: #fff;
+    color:#472874;
+    padding: 30px;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+.item-title{
+    margin-bottom: 10px;
+}
+#cardapio-x-tudo img{
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 8px 0;
+    border-radius: 5px;
+}
+#formulario-pedido {
+    margin-top: 30px;
+    padding: 10px;
+}
+
+#formulario-pedido input,
+#formulario-pedido select {
+    padding: 6px;
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+#formulario-pedido button {
+    padding: 6px 12px;
+    background-color: #472874;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
