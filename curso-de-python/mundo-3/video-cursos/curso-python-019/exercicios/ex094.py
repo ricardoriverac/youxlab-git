@@ -22,7 +22,7 @@ while True:
 
     media = countIdade / countPessoas
 
-    if cadastro['idade'] > media:
+    if cadastro['idade'] >= media:
         maiorIdade.append(cadastro.copy())
 
     cadastroLista.append(cadastro.copy())
@@ -40,6 +40,8 @@ print(f'A média de idade das pessoas é \033[33m{media:.0f}\033[m')
 print(f'As mulheres cadastradas são: ')
 for m in mulheres:
     print(f'-{m}')
+
+print('-' * 25)
 
 print('As pessoas maiores de que a média são:')
 
