@@ -12,7 +12,6 @@ def maior(*numeros):
 
     maior_valor = max(numeros)  
     print(f'O maior valor informado foi {maior_valor}.')
-    print('-=' * 20)
 
 
 
