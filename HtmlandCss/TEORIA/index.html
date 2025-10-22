@@ -1,0 +1,223 @@
+<html>
+    <head> <!-- head = configuração -->
+        <title>BolasEsportivas//www.com.br</title>
+        <!--padding-bottom = adiciona espaçamento-->
+        <style> 
+            body {
+                padding-bottom: 500px; 
+            } 
+            h2 {
+                color: yellowgreen;
+            }
+
+            .meu-botao{
+                background-color: plum;
+                color: white;
+                padding: 6px 5px;
+                border: none;
+                border-radius: 56px;
+                cursor: pointer;
+                font-size: 12px;
+                box-shadow: 4px 2px 8px rgba(0, 0, 0, 0.9);
+            }
+
+
+
+        </style>
+        <!-- ADICIONANDO ARQUIVO DE CSS-->
+         <link rel="stylesheet" href="CSS/styles.css"/>
+    </head>
+    <body> <!-- corpo da página--> 
+        <!--ELEMENTOS DO HTML-->
+        <h1>Bolas Esportivas</h1>
+        <h2>Seja Bem-Vindo(a) ao site  de bolas esportivas</h2> 
+        <img src="img/Bolas.jpeg" alt="Está bola de Vôlei é da marca Mikasa"/><!--O alt faz comentários-->
+        <br /><!--da espaço no código-->
+        <h3> Bola de Vôlei </h3>
+        <img src="img/Volei.jpeg"/>
+        <hr /> <!--faz linha no site-->
+        <h3>Bola de Futebol</h3>
+        <img src="img/Futebol.jpeg"/>
+        <hr />
+        <h3>Bola de Basquete</h3>
+        <img src="img/Basquete.jpeg"/>
+        <hr />
+
+        <p style="color: red">Informações</p><!--Color =  a cor do elem-->
+        
+        <p>Segue o link abaixo para mais informações!</p>
+        
+        <a href="https://www.google.com"> Acessar o Google</a> <!--link para acessar-->
+        <hr />
+<!-- O comando <DIV> ele funciona como um contêiner genérico para agrupar conteúdos semelhantes,
+como títulos, parágrafos e imagens, permitindo que estilos (como cor de fundo, tamanho e posicionamento)-->
+        <div>           
+            <h3> Produto x</h3>
+            <p> R$ 50,00</p>
+            <p>Clique neste link <a href="#">Comprar</a> </p> <!--link para acessar-->
+            <button class="Meu-botao">Compre</button>
+        </div>
+        <hr />
+
+        <!-- TABELAS -->
+        <table>
+             <thead>
+                 <tr>
+                     <th> ID:</th>
+                     <th>Nome:</th>
+                 </tr>
+             </thead>
+             <tbody>
+                 <tr>
+                     <td>1</td>
+                     <td>Juju</td>
+                 </tr>
+                 <tr>
+                     <td>2</td>
+                     <td>Laís</td>
+                 </tr>
+                 <tr>
+                     <td>3</td>
+                     <td>Igor</td>
+                 </tr>
+             </tbody>
+         </table>
+        <hr />   
+
+         <!--LISTAS-->
+         <ul>
+             <li>Uva</li>
+             <li>Amora</li>
+             <li>Manga</li>
+         </ul>
+         <hr />
+         <!--Lista ordenadas ex.: receitas-->
+         <ol>
+             <li>Estudar HTML </li>
+             <li>Estudar CSS</li>
+             <li>Estudar JAVASCRIPT</li>
+         </ol>
+         <hr />
+
+         <!--ELEMENTOS DE BLOCO E INCLINE-->
+         <p> Paragrafo</p> <!--deixa a frase uma em cada linha-->
+         <span> Na mesma linha</span> <!--deixa tudo na mesma linha-->
+         <hr />
+
+            <!--INTEGRAÇÃO COM CSS-->
+            <h1>Testando integração</h1>
+            <!-- ID -->
+            <h3 id="title">Meu título</h3>
+            <h3>Meu segundo título</h3>
+        <hr />
+
+         <!--19 CLASSES -->
+         <p class="text"> Paragrafo </p>
+         <p class="text"> 2. Paragrafo </p>
+         <p class="text"> 3. Paragrafo</p>
+         <p> 4. Paragrafo</p>
+         <hr />
+
+         <!-- 20 BACKGROUND -->
+         <p class="background">Mude o meu background</p>
+         <hr />
+
+         <!-- 21 DOIS ELEMENTOS, UMA REGRA-->
+         <p>Meu texto</p>
+         <p class="title-small">Meu texto do site </p>
+         <hr />
+
+         <!-- 22 BACKGROUND IMAGE -->
+         <h3 class="background-image">Testando imagem de background</h3>
+         <hr />
+
+        <!--23 CONCEITO DE BOX MODEL -->
+        <!-- 24 LARGURA E ALTURA -->
+        <div id="width-height"></div>
+         
+
+         <!--25 PADDING -->
+        <div id="padding">Testando padding</div>
+
+         <!-- 26 - MARGIN -->
+         <div id="margin">Testando margin</div>
+
+         <!-- 27 BORDER -->
+          <div id="border">Testando borda</div>
+
+         <!-- 28 RAIO DA BORDA -->
+         <div id="border-radius">Testando raio da borda</div>
+
+         <!-- 29 CORES  -->
+         <div id="hex"></div>
+         <div id="rgb"></div>
+         <div id="hsl"></div>
+         <hr />
+
+         <!-- 30 ALINHAMENTO DE TEXTO -->
+         <div id="center">
+            <p>Alinhando o texto</p>
+            <p>outro texto</p>
+         </div>
+         <hr />
+
+         <!-- 31 DECORATION -->
+         <p id="underline">Linha no texto</p>
+         <a id="sem-underline" href="#">Link</a>
+
+         <!-- 32. font size -->
+         <h2 id="fonte-pequena">Titulo</h2>
+
+         <!-- 33. tranform -->
+         <p id="lower">TODO EM CAIXA BAIXA</p>
+         <p id="upper">todo em caixa alta</p>
+
+         <!-- 34. alteração de fonte -->
+         <p id="serif">fonte serifada</p>
+         <p id="sans-serif">fonte sem sarifa</p>
+         <p id="cursive">fonte cursiva</p>
+
+         <!-- 35. display -->
+         <!-- se o elemento é de bloco ou não -->
+         <div class="inline"></div>
+        <div class="inline"></div>
+        <div class="inline"></div>
+
+         <span class="block">A</span>
+         <span class="block">B</span>
+         <span class="block">C</span>
+
+         <!-- 36. ocultando elementos -->
+         <p id="none">Estou invisível</p>
+
+         <!-- NÃO DEU CERTO!!! -->
+         <!-- 37. position -->
+        <div id="relative"></div>
+        <p>Relativo ficou na frente</p>
+
+         <div id="absolute"></div>
+
+         <div id="fixed"></div>
+
+         <div id="relative-2">
+            <div id="absolute-1"></div>
+            <div id="absolute-2"></div>
+
+         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+</html>

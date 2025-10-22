@@ -1,0 +1,278 @@
+/* 1. Integração inicial */
+h1{
+    color: blue;
+}
+/* 2. Comentarios com CSS */
+
+/* 3. id */
+h3{
+    color: green;
+}
+
+#title {
+    color: red;
+}
+
+/* 4. Classes - .*/
+.text {
+    color: chocolate;
+}
+
+/* 5. backgroud */
+.background {
+    background-color: cadetblue;
+    color: beige;
+    font-size: 50px;
+}
+
+/* 6. dois elementos, uma regra*/
+p,
+.title-small {
+    color: crimson;
+}
+
+.title-small {
+    font-size: 30px;
+}
+
+/* 7. background image */
+.background-image{
+    background-image: url("../img/Volei.jpeg");
+    padding: 20px;
+    color: darkmagenta;
+}
+
+/* 8. Largura e altura */
+#width-height {
+    width: 300px;
+    height: 200px;
+    background-color: fuchsia;
+}
+
+/* 9. Padding */
+#padding {
+    background-color: hotpink;
+    padding: 30px;
+}
+
+/* 10. Margin */
+#margin {
+    width: 200px;
+    height: 200px;
+    background-color: coral;
+    margin: 30px;
+}
+
+/* 11. Border */
+#border {
+    width: 200px;
+    height: 200px;
+    margin: 30px;
+    border: 50px solid rebeccapurple;
+}
+
+/* 12. Border radius */
+#border-radius {
+    width: 200px;
+    height: 200px;
+    background-color: rosybrown;
+    border: 5px solid bisque; 
+    /* border: 5px dashed blanchedalmond; deixa pontilhado */
+    border-radius: 10px;
+}
+
+/* 13. Cores */
+#rgb,
+#hsl,
+#hex{
+    width: 40px;
+    height: 40px;
+    margin: 40px;
+}
+
+
+#hex {
+    background-color: indigo;
+}
+
+#rgb {
+    background-color: rgb(123, 23, 678);
+}
+
+#hsl {
+    background-color: hsl(100, 45%, 34%);
+}
+
+/* 14. alinhamento */
+#center {
+    text-align: center;
+}
+
+p {
+    font-size: 25px;
+}
+/* 15. decoration */
+#underline {
+    text-decoration: underline;
+}
+
+#line {
+    text-decoration: line-through;
+}
+
+#sem-underline {
+    text-decoration: none;
+}
+
+/* 16. font-size */
+#fonte-pequena{
+    font-size: 20px;
+}
+
+/*  17. tranform  */
+#upper{
+    text-transform: uppercase;
+}
+
+#lower{
+    text-transform: lowercase;
+}
+
+/* 18. font family */
+#serif{
+    font-family: Georgia;
+}
+
+#sans-serif {
+    font-family: Helvetica
+}
+#cursive{
+    font-family: cursive;
+}
+
+/* 19. display */
+.inline{
+     width: 50px;
+    height: 50px;
+    background-color: palegreen;
+    margin: 5px;
+    display: inline-block;
+}
+
+.block{
+     width: 50px;
+    height: 50px;
+    background-color: royalblue;
+    margin: 5px;
+    display: block;
+}
+
+/* 20.ocultando elemento */
+#none{
+    display: none;
+}
+
+/* 21. position */
+#relative,
+#absolute,
+#fixed {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+#relative{
+    background-color: lightpink;
+    position: relative;
+    top: 50px;
+    left: 20px;
+}
+
+#absolute{
+    background-color: #321;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+
+
+#fixed{
+    background-color: tan;
+    position: fixed;
+    top: 100px;
+    right: 45px;
+}
+
+/* #relative com absolute */
+#relative-2{
+   width: 300px;
+   height: 300px;
+   border: 1px solid skyblue; 
+   position: relative;
+}
+
+#absolute-1, #absolute-2{
+    width: 30px;
+   height: 30px;
+   background-color: orange;
+   position: absolute;
+}
+
+#absolute-1{
+    top: 10px;
+    left: 10px;
+}
+
+#absolute-2{
+    bottom: 20px;
+    right: 34px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
