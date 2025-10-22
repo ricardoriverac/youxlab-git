@@ -1,0 +1,247 @@
+/* 1 - Integração inicial*/
+
+h1 {
+  color:palegreen
+}
+
+/* 2 - Comentários com CSS */
+
+/* 3 - id */
+
+h3 {
+    color: darkcyan;
+}
+
+#title {
+    color: crimson;
+}
+
+/* 4 - classes */
+
+.text {
+    color:darkorange
+}
+
+#teste {
+    color:blueviolet
+}
+
+/* 5 - background */
+
+.background {
+    background-color: olivedrab;
+    color: aqua;
+    font-size: 50px;
+}
+
+/* 6 - Dois elemntos, 1 regra*/
+
+p, .title-small {
+    color:seagreen;
+}
+
+.title-small {
+    font-size: 25px;
+}
+
+/* 7 - background image */
+
+.background-image {
+    background-image: url("../img/Fundo.jpeg");
+    padding: 20px;
+    color: whitesmoke;
+}
+
+/* 8 - Largura e Altura*/
+
+#width-height {
+    width: 200px;
+    height: 100px;
+    background-color: black;
+}
+
+/* 9 - padding */
+
+#padding {
+    background-color: cadetblue;
+    padding: 20px;
+}
+
+/* 10 - margin */
+
+#margin {
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    margin: 20px;
+}
+
+/* 11 - border */
+
+#border {
+    border: 5px solid crimson;
+    width: 200px;
+    height: 200px;
+    background-color: royalblue;
+    margin: 40px;
+}
+
+/* 12 - border radius */
+
+#border-radius {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    border: 5px solid blue;
+    border-radius: 10px;
+}
+
+/* 13 - cores */
+
+#rgb,
+#hsl,
+#hex {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+}
+
+#hex {
+    background-color: #015fca;
+}
+#rgb {
+    background-color: rgb(41, 161, 81);
+}
+
+#hsl {
+    background-color: hsl(50,60%,54%);
+}
+
+/* 14 - alinhamento */
+#center {
+    text-align: center;
+}
+
+/* 15 - decoration */
+
+#underline {
+    text-decoration: underline;
+}
+
+#line {
+    text-decoration: line-through;
+}
+
+#sem-underline {
+    text-decoration: none;
+}
+
+/* 16 - font size */
+
+#fonte-pequena {
+    font-size: 12px;
+}
+
+/* 17 - transform */
+
+#lower {
+    text-transform: lowercase;
+}
+
+#upper {
+    text-transform: uppercase;
+}
+
+/* 18 - font family */
+
+#serif {
+    font-family: Georgia;
+}
+#sans-serif {
+    font-family: Helvetica;
+}
+#cursive {
+    font-family: cursive;
+}
+
+/* 19 - display */
+
+.inline {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    margin: 5px;
+    display: inline-block;
+}
+
+.block {
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    margin: 5px;
+    display: block;
+}
+
+/* 20 - Ocultando elementos */
+
+#none {
+    display: none;
+}
+
+/* 21 - position */
+
+#relative,
+#absolute,
+#fixed {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+#relative {
+    background-color: forestgreen;
+    position: relative;
+    top: 50px;
+    left: 20px;
+}
+
+#absolute {
+    background-color: black;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+
+#fixed {
+    background-color: blue;
+    position: fixed;
+    top: 50px;
+    right: 200px;
+    display: block;
+}
+
+/* 22 - relative com aboslute */
+#relative-2 {
+    width: 300px;
+    height: 300px;
+    border: 1px solid red;
+    position: absolute;
+}
+
+#absolute-1,
+#absolute-2 {
+    width: 50px;
+    height: 50px;
+    background-color: chartreuse;
+    position: absolute;
+}
+
+#absolute-1 {
+    top: 10px;
+    left: 10px;
+}
+
+#absolute-2 {
+    bottom: 10px;
+    right: 10px;
+}
