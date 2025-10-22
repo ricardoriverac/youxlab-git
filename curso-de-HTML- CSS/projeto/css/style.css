@@ -86,7 +86,8 @@ body {
 }
 
 .user-card .user-role {
-    
+    color: #aaa;
+    font-size: 0.9rem;
 }
 
 /* Formulário */

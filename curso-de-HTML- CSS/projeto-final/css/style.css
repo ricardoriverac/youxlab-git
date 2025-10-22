@@ -1,0 +1,154 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Parkinsans;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #fffff8;
+}
+
+#cabecalho {
+    min-height: 67vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#foto {
+        width: 350px;
+        border-radius: 4%;
+        border: 0.4px solid #aaa;
+        box-shadow: 12px 10px 7px -2px rgba(0,0,0,0.25);
+        animation: flutuar 5s ease-in-out infinite;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin: 15px;
+    text-shadow: 4px 3px 5px #858585;
+}
+
+#sobre-mim {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+#sobre-mim h3 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 4px 3px 5px #858585;
+}
+
+#sobre-mim p {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 16px;
+    border: 1px solid #dddddd;
+    backdrop-filter: blur(10px);
+    background-color: #f8f8f8;
+    box-shadow: 12px 10px 7px -2px rgba(0,0,0,0.25);
+}
+
+#lista-hobbies {
+    max-width: 400px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    padding: 1.7rem;
+}
+
+#lista-hobbies h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    text-shadow: 4px 3px 5px #858585;
+}
+
+#lista-hobbies ul {
+    padding: 2rem;
+    margin: 0 auto;
+    border-radius: 16px;
+    border: 1px solid #dddddd;
+    backdrop-filter: blur(10px);
+    background-color: #f8f8f8;
+    box-shadow: 12px 10px 7px -2px rgba(0,0,0,0.25);
+}
+
+.contatos {
+    padding: 6rem 2rem;
+
+}
+
+#contato-titulo {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    text-shadow: 4px 3px 5px #858585;
+}
+
+.formulario-contato {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #f8f8f8;
+    backdrop-filter: blur(50px);
+    padding: 2rem;
+    border: 1px solid #dddddd;
+    border-radius: 16px;
+}
+
+.campo-form {
+    width: 100%;
+    padding: 1rem;
+    background: #f8f8f8;
+    border-radius: 8px;
+    color: #858585;
+    border: 1px solid #aaa;
+    outline: none;
+}
+
+.campo-form:focus {
+    border-color: rgb(168, 77, 243);
+    box-shadow: 0px 0px 9px 3px rgba(200, 66, 241, 0.61);
+}
+
+
+.grupo-form{
+    margin-bottom: 1.3rem;
+}
+
+.botao-form {
+    color: #dddddd;
+    background: rgb(127, 30, 156);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: all 0.5 ease;
+}
+
+.botao-form:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 0px 9px 3px rgba(200, 66, 241, 0.61);
+}
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
