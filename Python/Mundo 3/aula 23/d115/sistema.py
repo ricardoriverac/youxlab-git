@@ -1,5 +1,5 @@
-from d115.lib.interface import *
-from d115.lib.arquivo import *
+from lib.interface import *
+from lib.arquivo import *
 from time import sleep
 
 arq = 'luislab.txt'

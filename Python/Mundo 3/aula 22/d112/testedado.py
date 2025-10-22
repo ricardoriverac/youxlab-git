@@ -1,5 +1,5 @@
-from d112.utilidadescev import moeda
-from d112.utilidadescev import dado
+from utilidadescev import moeda
+from utilidadescev import dado
 
 preco = dado.leiadinheiro('Digite o preço: R$')
-moeda.resumo(preco, 20, 12)
+moeda.resumo(preco, 35, 22)
