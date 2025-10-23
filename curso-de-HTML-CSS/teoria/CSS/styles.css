@@ -1,0 +1,175 @@
+h1 {
+    color: #800000;
+}
+
+h3 {
+    color: #800000
+}
+
+#title {
+    color: #008000
+}
+
+.background {
+    background-color: #A9A9A9;
+    color: black;
+    font-size: 35px;
+    text-align: center;
+
+}
+
+.background-image {
+    background-image: url("../img/cor.jpeg");
+    color: aliceblue;
+    font-size: 35px;
+    text-align: center;
+}
+
+#width-height {
+    width: 854px;
+    height: 100px;
+    background-color: #008000;
+}
+
+#padding {
+    background-color: #000;
+    padding: 5px;
+    color: aliceblue;
+}
+
+#margin {
+    width: 100px;
+    height: 100px;
+    background-color: #008000;
+    margin: 20px 0px;
+    color: aliceblue;
+    text-align: center;
+}
+
+#border {
+    border: 3px solid #800000;
+    width: 95px;
+    height: 100px;
+    margin: 20px 0px;
+    text-align: center;
+}
+
+#border-radius {
+    width: 95px;
+    height: 100px;
+    background-color: #fff;
+    border: 2px dashed #800000;
+    border-radius: 10px;
+    text-align: center;
+
+}
+
+#rgb,
+#hsl,
+#hex {
+    width: 50px;
+    height: 50px;
+    margin: 20px 10px;
+}
+
+#hex {
+   background: #000; 
+}
+
+#rgb {
+    background-color: #008000;
+}
+
+#hsl {
+    background-color: #800000;
+}
+
+#center {
+    text-align: center;
+    background-color:#A9A9A9;
+    border: 3px dashed #800000;
+
+}
+
+p {
+    font-size: 25px;
+}
+
+#underline {
+    text-decoration: underline;
+}
+
+#line {
+    text-decoration: line-through;
+}
+
+#sem-underline {
+    text-decoration: none;
+}
+
+#fonte-pequena {
+    font-size: 20px;
+}
+
+#upper {
+    text-transform: uppercase;
+}
+
+#lower {
+    text-transform: lowercase;
+}
+
+#serif {
+    font-family: Georgia;
+}
+
+#sans-serif {
+    font-family:Helvetica;
+}
+
+#cursive {
+    font-family: cursive;
+}
+
+.inline {
+    width: 100px;
+    height: 100px;
+    background-color: #008000;
+    margin: 20px 10px;
+    display: inline-block;
+}
+
+.block {
+    width: 100px;
+    height: 100px;
+    background-color: #800000;
+    margin: 20px 10px;
+    display: block;
+    color: #fff;
+    text-align: center;
+}
+
+#none {
+    display: none;
+}
+
+#relative, 
+#absolute {
+    width: 100px;
+    height: 100px;
+    margin: 20px 10px;
+}
+
+#relative {
+    background-color:#000;
+    position: relative;
+    top: 20px 10px;
+    left: 0px;
+}
+
+#absolute {
+    background-color: #008000;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
