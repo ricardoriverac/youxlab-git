@@ -1,6 +1,8 @@
 body{
     background-color: #283748;
-    
+    text-align: center;
+    border: 2px solid #fff;
+    width: 100%;
 }
 h1 {
     color: #5f89b9;
@@ -24,8 +26,28 @@ h4 {
     color: #5f89b9;
 }
 
+#lista {
+    color: white;
+}
+
 img {
     border-radius: 10%;
     width: 150px;
     height: 200px;
+    border-radius: 100%;
+    
 }
+
+#name {
+    width: 80px;
+}
+
+#lastname {
+    width: 70px;
+}
+
+#falar {
+    width: 100px;
+}
+
+
