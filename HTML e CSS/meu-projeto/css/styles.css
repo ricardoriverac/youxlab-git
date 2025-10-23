@@ -1,0 +1,31 @@
+body{
+    background-color: #283748;
+    
+}
+h1 {
+    color: #5f89b9;
+
+}
+
+h3 {
+    color: #5f89b9;
+}
+
+p {
+    color: white;
+}
+
+h2 {
+    color: #5f89b9;
+
+}
+
+h4 {
+    color: #5f89b9;
+}
+
+img {
+    border-radius: 10%;
+    width: 150px;
+    height: 200px;
+}
