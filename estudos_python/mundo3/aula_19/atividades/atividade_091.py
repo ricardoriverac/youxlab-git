@@ -5,11 +5,12 @@
 '''
 
 #Resposta
+ 
 import random
 
-dicionario_que_recebe_numeros_aleatorios = {}
-for c in range(0, 6):
-     numero_aleatorio = random.randint(1,6)
-     
-     
-     
+dados = {}
+
+for c in range(0, 4):
+    n_aleatorio = random.randint
+    dados[c] = n_aleatorio
+    print(dados)
