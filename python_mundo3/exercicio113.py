@@ -5,6 +5,8 @@ def leiaint(msg):
         except (ValueError, TypeError):
             print (f'''ERROR
 tente novamente''')
+        except (KeyboardInterrupt):
+            print (f'O usuario não digitou nada')
             continue
         else:
             return n
