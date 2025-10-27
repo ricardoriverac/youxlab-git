@@ -1,0 +1,64 @@
+* {
+    font-family: "Roboto";
+    text-align: center;
+}
+
+.hobbies {
+    border: 3px solid black;
+    /*width: 34rem;*/
+    padding: 1rem;
+    margin: 1rem;
+    background-image: url(../img/Captura\ de\ tela\ de\ 2025-10-23\ 17-44-34.png);
+    color: #13db88;   
+    margin: 1rem;
+    text-align: center;
+    align-self: start;
+}
+
+.hobbies h3 {
+    color: rgb(21, 184, 0);
+    text-align: center;
+}
+
+#about-container{
+    align-items: center;
+}
+
+#container img {
+    width: 15rem;
+    border-radius: 50%
+}
+
+body {
+    background-color: #1a8357;
+    text-align: center;
+    border: 2px solid #000000;
+}
+
+#mensagem {
+    max-width: 100%;
+}
+
+#form-inner {
+    background-image: url(../img/images.jpeg);
+    height: 8rem;
+}
+
+#seguido {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    text-align: center;
+}
+
+
+@media (max-width: 450px) {
+    body {
+        flex-direction: column;
+    }
+
+    #about-container {
+        padding: 2rem;
+        padding-bottom: 0;
+    }
+}
