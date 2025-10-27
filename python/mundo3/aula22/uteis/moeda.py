@@ -13,3 +13,7 @@ def aumentar(p):
 def diminuir(p):
     diminuição= p * 0.87
     return diminuição
+
+def monetario(mo):
+    mo = f'{mo},00'
+    return mo
