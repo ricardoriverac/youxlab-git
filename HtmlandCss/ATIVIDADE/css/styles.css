@@ -1,0 +1,172 @@
+/* GERAL */
+*{
+  margin: 100;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Barlow Condensed";
+  position: center;
+}
+
+body {
+    background-color: rebeccapurple;
+    text-align: center;
+    
+}
+
+header{
+    background-image: url("../img/fundoroxo.jpeg");
+    padding: 20px 0;
+    color: indigo;
+    text-align: center;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+#form-inner {
+    margin: 3rem;
+    padding: 3rem;
+    border: 2px solid #7644c0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#about-container {
+    flex: 1.4;
+    padding: 2rem 4rem;
+}
+
+
+/* #form-container {
+    flex: 5;
+    background-size: cover;
+    background-color: plum;
+    color: white;
+    padding: 6px 5px;
+  border: none;
+  width: 1000px;
+  text-align: center;
+  border-radius: 56px;
+  cursor: pointer;
+  font-size: 12px;
+  box-shadow: 4px 2px 8px rgba(0, 0, 0, 0.9);
+  } */
+
+#form-container1 {
+    margin-top: 30px;
+    border-radius: 50%;
+}  
+
+img {
+      background-image: url("../img/Eu.jpeg");
+      width: 170px;
+      border: none;
+      border-radius: 50%;
+      text-align: center;
+      margin-top: 20px;
+  }
+
+  img { 
+      background-image: url("../img/my.jpeg");
+      width: 170px;
+      border: none;
+      border-radius: 50%;   
+      text-align: center;
+      margin-top: 20px;
+  } 
+
+h1 {
+    color: aliceblue;
+}
+
+.text {
+  color: wheat;
+}
+p {
+  font-size: 15px;
+}
+
+section{
+    width: 100%;
+}
+
+section button{
+    background-color: aliceblue;
+    font-size: 22px;
+    border-radius: 14px;
+    padding: 10px;
+    box-shadow: 2px 2px 5px black (0, 0, 0, 0, 3);
+    border: none;
+    color: #7644c0;
+}
+
+.container-sobre {
+    margin-top: 2rem;
+}
+
+.hobbies {
+    color: rgb(158, 72, 201);
+} 
+.Julia {
+  border: 5px solid beige; 
+}
+
+
+.name-container {
+    display: flex;
+    gap: 0.5rem;
+    width: 300px;
+    margin: 0 auto;
+}
+
+
+/* altura do cabeçalho */
+#register-form input {
+    padding: 0.8rem 0.6rem;
+    border: none;
+    border-radius: 3px;
+}
+
+/* largura do cabeçalho */
+#register-form {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Faz parte do efeito do cadastro */
+#register-form input[type="submit"] {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#register-form input[type="submit"]:hover {
+    background-color: #fff;
+    color: rgb(217, 83, 217);
+}
+
+h2 {
+    color: rgb(158, 72, 201);
+}
+
+.footer a {
+    color: rgb(217, 83, 217);
+}
+
+@media (max-width: 450px) {
+  body {
+    flex-direction: column;
+}
+/* #email {
+    min-width: 50%;
+} */
+}
