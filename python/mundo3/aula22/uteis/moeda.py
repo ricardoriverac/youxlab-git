@@ -1,19 +1,34 @@
-def metade(p):
-    divisao=p / 2
-    return divisao
-
-def dobro(p):
-    multiplicação= p * 2
-    return multiplicação
-
-def aumentar(p):
-    aumento= p * 1.10
-    return aumento
-
-def diminuir(p):
-    diminuição= p * 0.87
-    return diminuição
-
 def monetario(mo):
-    mo = f'{mo},00'
+    mo = f'R${round(mo)},00'
     return mo
+    
+    
+def metade(p, m=True):
+    p = p / 2
+    if m is not False:
+       return monetario(p)
+    else:
+       return p
+        
+        
+def dobro(p, m=True):
+    p= p * 2
+    if m is not False:
+       return monetario(p)
+    else:
+       return p
+        
+        
+def aumentar(p, m=True):
+    p= p * 1.10
+    if m is not False:
+      return  monetario(p)
+    else:
+        return p
+def diminuir(p, m=True):
+    p= p * 0.87
+    if m is not False:
+       return monetario(p)
+    else:
+        return p
+        
