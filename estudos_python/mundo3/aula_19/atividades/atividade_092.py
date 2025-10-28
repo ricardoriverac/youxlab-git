@@ -6,19 +6,19 @@ e o salário. Calcule e acrescente, além da idade, com quantos anos a pessoa va
 
 #Responda
 
-import datetime
-data_atual = datetime.date.today()
-ano_atual = data_atual.year
-print(ano_atual)
+from datetime import date
+dados = dict()
 
-nome = str(input('Digite o seu nome: '))
-ano_nascimento = int(input('Digite o ano em que você nasceu: '))
-idade = ano_atual - ano_nascimento
-carteira_de_trabalho = int(input('Qual a sua carteira de trabalho(0, não tem): '))
-dados = { 'Nome':nome , 'Ano_de_nascimento':ano_nascimento , 'Carteira_de_trabalho':carteira_de_trabalho}
-print('\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=')
-print(f'''
-Nome: {dados["Nome"]}
-Idade: {idade}
-Ctps: {dados["Carteira_de_trabalho"]}''')
-if carteira_de_trabalho != 0:
+dados['Nome'] = str(input('Nome: '))
+nascimento = int(input('Ano de nascimento: '))
+dados['Idade'] = date.today().year - nascimento
+dados['CTPS'] = int(input('Número da Carteira de trabalho [Digite 0 se não tiver: '))
+
+if dados['CTPS'] != 0:
+    
+    dados['Ano de contratação'] = int(input('Ano de contratação: '))
+    dados['Salário'] = float(input('Salário: '))
+    dados['Aposentadoria'] = (dados['Ano de contratação'] + 35) - nascimento
+
+for k, v in dados.items():
+    print(f'{k}: {v}.')
