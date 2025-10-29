@@ -4,13 +4,13 @@ def monetario (mo):
     return mo
 def metade (m, formato=False):
     m=m/2
-    if format  is not False:
+    if formato  is not False:
       return monetario(m)
     
 
 def dobro (d, formato=False):
     d=d*2
-    if format  is not False:
+    if formato  is not False:
         return monetario(d)
        
 
