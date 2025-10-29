@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto";
+}
+
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+}
+#infoIniciais {
+    padding: 20px 20px;
+    align-items: flex-start;
+    background-image: url("../img/black-pattern.webp");
+    background-size: cover;
+    background-color: black;
+    color: #fff;
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+}
+#infoIniciais h1{
+    padding-bottom: 20px;
+}
+#persona {
+    border: 2px solid #ccc;
+    padding: 1rem;
+    width: 180px;
+    text-align: center;
+}
+#persona img {
+    width: 120px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+#texto1 {
+    font-size: large;
+    color: goldenrod;
+}
+#form {
+    flex: 1;
+
+}
