@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto";
+}
+
+#title-area {
+    background-image: url("../img/Fundo_Legal.jpg");
+    background-size: cover;
+    color: whitesmoke;
+}
+
+#conteudo-titulo {
+    padding-left: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    font-size: 2rem;
+}
+
+#minha-foto {
+    position: relative; /* importante! permite posicionar os spans dentro */
+    display: inline-block;
+}
+
+#minha-foto img {
+    width: 300px; /* ajuste como quiser */
+    border-radius: 10px;
+    display: block;
+}
+
+#minha-foto .titulo {
+    position: absolute;
+    top: 20px;        /* distância do topo da imagem */
+    left: 20px;       /* distância da esquerda */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    z-index: 10;      /* garante que fica na frente */
+}
+
+#info {
+    padding-left: 5rem;
+}
+
+h1 {
+    padding-top: 3rem;
+    font-size: 3rem;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+}
+
+
+#habilidades {
+    font-size: 1.5rem;
+}
+
+#contato {
+    flex: 1;
+}
