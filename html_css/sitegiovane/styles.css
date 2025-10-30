@@ -1,0 +1,38 @@
+/* Geral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto";
+}
+
+
+#infoIniciais {
+    padding: 20px 20px;
+    align-items: flex-start;
+    background-image: url("../img/blackground.jpeg");
+    background-size: cover;
+    background-color: white;
+    color: #fff;
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+}
+
+#container {
+  background-image: url('img/blackground.jpeg');
+}
+
+#paragrafo1 {
+  color: black
+}
+
+    #minhaimagem {
+      width: 200x;
+      height: 200px;
+    }
+
+#hobbies {
+  background-color: #fff;
+  color: black;
+}
