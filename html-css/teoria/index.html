@@ -1,0 +1,206 @@
+<html>
+    <head>
+        <title>Curso de HTML e CSS</title>
+
+        <!-- 10 - CSS no head -->
+        <style>
+          body {
+              padding-bottom: 500px;
+          }
+
+          h2 {
+            color: purple;
+          }
+
+        </style>
+
+        <!-- 16 - Adicionando arquivo  de CSS -->
+         <link rel="stylesheet" href="css/styles.css" />
+    </head>
+    <body>
+      <!-- 1 - Elementos do HTML -->
+      <h1>Testando 4</h1>
+      <p>Algum texto do meu site</p>
+
+      <!-- 2 - Títulos -->
+      <h2>Título</h2>
+      <h3>Outro título</h3>
+      <h2>Um outro h2</h2>
+
+      <!-- 3 - Parágrafos -->
+      <p>A gente vai utilizar muito a tag p</p>
+
+      <!-- 4 - Atributos -->
+      <a href="https://ww.google.com">Acessar o Google</a>
+
+      <!-- 5 - Elementos sem fechamento -->
+      <hr />
+      <br />
+      <hr />
+
+      <!-- 6 - Imagens -->
+      <img src="img/meteoro.jpg" />
+      <hr>
+
+      <!-- 7 - Atributo alt -->
+      <img      
+      src="img/praia.jpg" alt="Uma praia em um dia de sol" />
+       <hr />
+
+      <!-- 8 - Imagem externa -->
+       <img 
+         src="data:image/png;base64,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" 
+         alt="Logo HTML">
+       <hr />
+
+       <!-- 9 - CSS inline -->
+       <p style="color: rgb(9, 34, 177)">Testando o CSS</p>
+       <p style="color: rgb(13, 79, 221)">Testando o CSS</p>
+
+       <!-- 11 - Comentários -->
+       <!-- Meu primeiro comentário -->
+
+       <!-- 12 - Div -->
+    <div>
+        <h3>Produtos X</h3>
+        <p>R$ 50,00</p>
+        <a href="#">Comprar</a>
+    </div>
+    <hr />
+
+    <!-- 13 - Tabelas -->
+     <table>
+         <thead>
+             <tr>
+              <th>ID</th>
+              <th>NOME:</th>
+
+             </tr>
+         </thead>
+         <tbody>
+          <tr>
+              <td>1</td>
+              <td>Matheus</td>
+          </tr>
+          <tr>
+              <td>2</td>
+              <td>João</td>
+          </tr>
+         </tbody>
+     </table>
+      <!-- 14 - Listas -->
+    <ul>
+        <li>Maça</li>
+        <li>Laranja</li>
+        <li>Limão</li>
+    </ul>
+
+    <ol>
+        <li>Estudar HTML</li>
+        <li>Estudar CSS</li>
+        <li>Estudar JavaScript</li>
+    </ol>
+
+    <!-- 15 - Elementos de bloco e inline -->
+    <p>Parágrafo</p>
+    <p>É de bloco</p>
+    <span>Na mesma</span>
+    <span>Linha</span>
+
+    <p>Clique neste <a href="#">link</a></p>
+
+    <!-- 17 - Integração com CSS -->
+    <h1>Testando integração</h1>
+    
+    <!-- 18 - id -->
+    <h3 id="title">Meu título</h3>
+    <h3>Meu segundo título</h3>
+
+    <!-- 19 - classe -->
+    <p class="text">Meu parágrafo</p>
+    <p class="text">Mais um parágrafo</p>
+    <p class="text">E outro</p>
+    <p>E o último</p>
+
+    <!-- 20 - background -->
+    <p class="background"> Mude o meu background</p>
+
+    <!-- 21 - Dois elementos, uma regra -->
+    <p>Meu texto</p>
+    <p class="title-small">Um texto do site</p>
+
+    <!-- 22 - background image -->
+    <h3 class="background-image">Testando imagem de background</h3>
+
+    <!-- 23 - Conceito de Box Model -->
+
+    <!-- 24 - Largura e altura -->
+    <div id="width-height"></div>
+
+    <!-- 25 - padding -->
+    <div id="padding">Testando paddimg</div>
+
+    <!-- 26 - margin -->
+    <div id="margin">Testando Margin</div>
+
+    <!-- 27 - border -->
+    <div id="border">Testando borda</div>
+
+    <!-- 28 - raio da borda -->
+    <div id="border-radius">Testando raio da borda</div>
+
+    <!-- 29 - cores -->
+    <div id="hex"></div>
+    <div id="rgb"></div>
+    <div id="hsl"></div>
+
+    <!-- 30 - Alinhamento de texto -->
+    <div id="center">
+      <p>Alimentar o texto</p>
+      <p>Outro texto</p>
+    </div>
+    <!-- 31 - decoration -->
+    <p id="underline">Texto com underline</p>
+    <p id="line">Linha no texto</p>
+    <a id="sem-underline" href="#">Link</a>
+
+    <!-- 32 - font size -->
+    <h2 id="fonte-pequena">Meu título menor</h2> 
+
+    <!-- 33 - transform -->
+    <p id="lower">TODO EM CAIXA BAIXA</p>
+    <p id="upper">todo em caixa alta</p>
+
+    <!-- 34 - alteração de fonte -->
+    <p id="serif">Exemplo de fonte serifada</p> 
+    <p id="sans-serif">Exemplo de fonte sem serifada</p>
+    <p id="cursive">Exemplo de fonte cursiva</p>
+
+    <!-- 35 - display -->
+    <!-- se o elemento é de bloco ou não -->
+    <div class="inline"></div>
+    <div class="inline"></div>
+    <div class="inline"></div>
+
+    <span class="block">A</span>
+    <span class="block">B</span>
+    <span class="block">C</span>
+
+    <!-- 36 - ocultando elementos -->
+    <p id="none">Estou invisível</p>
+
+    <!-- 37 - position -->
+    <div id="relative"></div>
+    <p>Relativo ficou na frente</p>
+
+    <div id="absolute"></div>
+
+    <div id="fixed"></div>
+
+    <!-- 38 - relative e absolute -->
+    <div id="relative-2">
+        <div id="absolute-1"></div>
+        <div id="absolute-2"></div>
+    </div>
+  </body>
+</html>
