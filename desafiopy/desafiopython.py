@@ -1,7 +1,6 @@
-nome = input('Qual o nome do titular da conta: ')
-limite = float(input('Limite de saque: R$ '))
-saldo = float(input('Saldo inicial: R$ '))
-extrato = []
+def ver_saldo(saldo):
+    print(f'Saldo: R$ {saldo:.2f}\n')
+
 
 def depositar(saldo, extrato):
     valor = float(input('Valor do depósito: R$ '))
@@ -11,6 +10,7 @@ def depositar(saldo, extrato):
         print('Depósito realizado com sucesso!')
     else:
         print('Valor inválido!')
+    ver_saldo(saldo)
     return saldo, extrato
 
 def sacar(saldo, extrato, limite):
@@ -25,6 +25,7 @@ def sacar(saldo, extrato, limite):
         saldo -= valor
         extrato.append(f'- Saque: R$ {valor:.2f}')
         print('Saque realizado com sucesso!')
+    ver_saldo(saldo)
     return saldo, extrato
 
 def mostrar_extrato(saldo, extrato):
@@ -37,8 +38,11 @@ def mostrar_extrato(saldo, extrato):
     print(f'\nSaldo atual: R$ {saldo:.2f}')
     print('=' *20)
 
-def ver_saldo(saldo):
-    print(f'Saldo: R$ {saldo:.2f}\n')
+
+nome = input('Qual o nome do titular da conta: ')
+limite = float(input('Limite de saque: R$ '))
+saldo = float(input('Saldo inicial: R$ '))
+extrato = []
 
 menu = '''
 [1] Depositar
