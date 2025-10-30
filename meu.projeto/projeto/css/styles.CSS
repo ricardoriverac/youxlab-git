@@ -1,0 +1,227 @@
+  body {
+    background-color: #000000e8;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .centralizar {
+    margin: 60px;
+  }
+
+
+  .username {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  /* .stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 10px;
+  }
+
+  .stat {
+    font-size: 14px;
+  } */
+
+  .bio {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /*
+  .edit-btn {
+    margin-top: 15px;
+    background-color: #1a1a1a;
+    border: 1px solid #444;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .highlights {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .highlight {
+    text-align: center;
+  }
+
+  .highlight img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #222;
+    object-fit: cover;
+  }
+
+  .highlight p {
+    font-size: 12px;
+    color: #aaa;
+    margin-top: 5px;
+  }
+
+  .name-container {
+    display: flex;
+    gap: 0.5rem;
+    width: 300px;
+    margin: 0 auto;
+  }
+*/
+  /* altura do cabeçalho */
+  #register-form input {
+    padding: 0.8rem 0.6rem;
+    border: none;
+    border-radius: 3px;
+  }
+
+  /* largura do cabeçalho */
+  #register-form {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.90rem;
+    margin-bottom: 2rem;
+  }
+
+  #register-form input[type="submit"] {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+
+  #register-form input[type="submit"]:hover {
+    background-color: #fff;
+    color: rgb(217, 83, 217);
+  }
+
+  .animacao {
+    animation: fadeIn 2s;
+  }
+
+  .foto-perfil {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    object-fit: cover;
+
+    background-color: #001e36;
+    color: white;
+    border: none;
+    padding: 30px 700px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  /*
+  .foto-perfil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    background-color: #fff;
+    margin: 40px auto;
+    border-radius: 12px;
+    max-width: 950px;
+    box-shadow: 0 0 15px rgba (200, 90, 80, 0.9);
+  }*/
+
+  .segundafoto {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin: 5px;
+  }
+
+  .primeirafoto {
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgb(61, 61, 61);
+  }
+
+  .container {
+    display: inline-flex;
+    bottom: unset;
+  }
+
+  .fundo-perfil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    background-color: #fff;
+    margin: 40px auto;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 950px;
+    box-shadow: 0 0 15px rgba (100, 70, 49, 0.2);
+  }
+
+  img {
+    width: 200px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+
+  img:hover {
+    transform: scale(1.05);
+  }
+
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .overlay img {
+    width: 60%;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .close-btn:hover {
+    background: darkred;
+  }
+  

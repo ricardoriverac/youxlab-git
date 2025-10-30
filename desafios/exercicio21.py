@@ -1,1 +1,0 @@
-print ('Mandarão não fazer')
