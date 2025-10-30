@@ -1,0 +1,12 @@
+insert into clientes (idcliente, nome, cpf, rg, data_nascimento, genero, profissao, municipio, uf) values ('16', 'Maicon', '12349596421', '1234', '10-10-1995', 'F', 'Empresário', 'Florianópolis', 'PR');
+insert into clientes (idcliente, nome, rg, genero, profissao, nacionalidade, logradouro, numero, complemento, bairro,  municipio, uf) values ('17', 'Getúlio', '4631', 'F', 'Estudante', 'Brasileira', 'Rua central', '343', 'Apartamento', 'Centro', 'Curitiba', 'SC');
+insert into clientes (idcliente, nome, genero, profissao, nacionalidade, numero, complemento) values ('18', 'Sandra', 'M', 'Professor', 'Italiana', '12', 'Bloco A');
+update clientes set cpf = '45390569432' where idcliente = 16;
+update clientes set genero = 'M', nacionalidade = 'Brasileira', uf = 'SC' where  idcliente = 16;
+update clientes set genero = 'M', data_nascimento = '01-04-1978' where idcliente = 17;
+update clientes set genero = 'F', profissao= 'Professora', numero= '123' where idcliente = 18;
+select * from clientes;
+delete from clientes where idcliente = '16';
+select * from clientes;
+delete from clientes where idcliente= '18';
+select * from clientes;
