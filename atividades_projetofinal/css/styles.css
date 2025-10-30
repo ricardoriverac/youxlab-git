@@ -1,0 +1,85 @@
+/*Geral*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto";  
+}
+.exclusive {
+    color: rgb(209, 139, 163);
+    font-size: 3rem;
+}
+h2{
+    color: rgb(209, 139, 163);
+}
+
+h3 {
+    color:rgb(209, 139, 163);
+}
+h4 {
+    color:rgb(209, 139, 163);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fotos {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fotos img {
+    height: 20rem;
+    width: 20rem;
+    border-radius: 50%;
+    object-fit: cover;
+    padding: 2rem;
+}
+
+.foto1 {
+    justify-content: center;
+    text-align: center;
+    border-color: rgb(209, 139, 163);
+    border: 2px solid rgb(177, 174, 174) ;
+    border-radius: 12px;
+    padding: 10px;
+}
+.foto2 {
+    justify-content: center;
+    text-align: center;
+    border-color: rgb(209, 139, 163);
+    border: 2px solid rgb(177, 174, 174) ;
+    border-radius: 12px;
+    padding: 10px;
+}
+.foto3 {
+    justify-content: center;
+    text-align: center;
+    border-color: rgb(209, 139, 163);
+    border: 2px solid rgb(177, 174, 174) ;
+    border-radius: 12px;
+    padding: 10px;
+}
+.foto4 {
+    justify-content: center;
+    text-align: center;
+    border-color: rgb(209, 139, 163);
+    border: 2px solid rgb(177, 174, 174) ;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+#form-inner {
+    background-color: rgb(233, 72, 128);
+    width: 300px;
+    height: 225px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 6%;
+}
+.input-form {
+    background-color: rgb(224, 87, 135);
+    padding: 10px;
+}
+.imput-button {
+    background-color: rgb(143, 63, 91);
+}
