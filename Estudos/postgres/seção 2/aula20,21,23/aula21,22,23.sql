@@ -117,3 +117,85 @@ update clientes set idbairro = 1 where idcliente in (6, 8, 9, 2, 17, 3);
 update clientes set idbairro = 2 where idcliente in (5, 4);
 update clientes set idbairro = 3 where idcliente = 7;
 update clientes set idbairro = 4 where idcliente in (1, 12, 13);
+
+create table uf(
+	iduf integer not null,
+	nome varchar(30),
+	sigla char(2),
+	constraint pk_uf_iduf primary key (iduf),
+	constraint un_uf_nome unique (nome),
+	constraint un_uf_sigla unique(sigla)
+);
+select * from clientes;
+--PR - 5, 4, 14, 15
+--SP - 7, 13, 6
+--SC- 1, 12, 11, 10, 2, 17, 3
+--MG- 12
+--RJ- 
+insert into uf (iduf, nome, sigla) values (1, 'Paraná', 'PR');
+insert into uf (iduf, nome, sigla) values (2, 'São Paulo', 'SP');
+insert into uf (iduf, nome, sigla) values (3, 'Santa Catarina', 'SC');
+insert into uf (iduf, nome, sigla) values (4, ' Minas Gerais', 'MG');
+insert into uf (iduf, nome, sigla) values (5, 'Rio de Janeiro', 'RJ');
+insert into uf(iduf, nome, sigla) values (6, 'Rio Grande do Sul', 'RS');
+alter table clientes drop uf;
+alter table clientes add iduf integer;
+alter table clientes add constraint fk_cln_iduf foreign key (iduf) references uf (iduf);
+update clientes set iduf = 1 where idcliente in (5, 4, 14, 15);
+update clientes set iduf = 2 where idcliente in ( 13, 6);
+update clientes set iduf = 3 where idcliente in (1, 12, 11, 10, 2, 17, 3);
+update clientes set iduf = 4 where idcliente = 8;
+update clientes set iduf = 5 where idcliente =7;
+update clientes set iduf = 6 where idcliente = 9;
+select * from clientes
+
+create table municipio(
+	idmunicipio integer not null,
+	nome varchar(30),
+	iduf integer not null,
+
+	constraint pk_mun_idmunicipio primary key (idmunicipio),
+	constraint un_mun_nome unique (nome),
+	constraint fk_mun_iduf foreign key (iduf) references uf (iduf)
+);
+
+select * from clientes;
+--General Carneiro - 5
+--União da vitoria - 14,15
+--Rio de Janeiro - 7
+--São Paulo - 13, 6
+--Porto União - 1, 11, 10, 2
+--Canoinhas - 12, 3
+--Curitiba - 17
+--Porto Vitória - 4
+--Uberlandia - 8 (mudar o nome pra uberlandia)
+--Porto alegre - 9
+
+insert into municipio (idmunicipio, nome, iduf) values (1, 'General Carneiro', 1);
+insert into municipio (idmunicipio, nome, iduf) values (2, 'União da vitoria',  1);
+insert into municipio (idmunicipio, nome, iduf) values (3, 'Rio de Janeiro',    5 );
+insert into municipio (idmunicipio, nome, iduf) values (4, 'São Paulo',          2);
+insert into municipio (idmunicipio, nome, iduf) values (5, 'Porto união',         3);
+insert into municipio (idmunicipio, nome, iduf) values (6, 'Canoinhas',            3);
+insert into municipio (idmunicipio, nome, iduf) values (7,  'Curitiba',             3);
+insert into municipio (idmunicipio, nome, iduf) values (8,   'Porto Vitória',        1);
+insert into municipio (idmunicipio, nome, iduf) values (9,    'Uberlandia',          4);
+insert into municipio (idmunicipio, nome, iduf) values (10,   'Porto alegre',        6);
+
+alter table clientes drop municipio;
+alter table clientes add idmunicipio integer;
+alter table clientes add constraint fk_cliente_idmunicipio foreign key (idmunicipio) references municipio (idmunicipio);
+update clientes set idmunicipio = 1 where idcliente = 5;
+update clientes set idmunicipio = 2 where idcliente in (14, 15);
+update clientes set idmunicipio = 3 where idcliente = 7;
+update clientes set idmunicipio = 4 where idcliente in (13, 6);
+update clientes set idmunicipio = 5 where idcliente in (1, 11, 10, 2);
+update clientes set idmunicipio = 6 where idcliente in (12, 3);
+update clientes set idmunicipio = 7 where idcliente = 17;
+update clientes set idmunicipio = 8 where idcliente = 4;
+update clientes set idmunicipio = 9 where idcliente = 8;
+update clientes set idmunicipio = 10 where idcliente = 9;
+
+select * from clientes;
+select * from municipio;
+select * from uf;
