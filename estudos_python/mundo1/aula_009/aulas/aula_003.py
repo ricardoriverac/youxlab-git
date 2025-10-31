@@ -26,8 +26,8 @@ lugar do espaço
 #Exemplo
 #print(' '.join(palavra))
 #print('-'.join(palavra))
-# n1 = (palavra.split())
-n2 = (' '.join(palavra))
-n1 = (n2.split())
+n1 = (palavra.split())
+n2 = (' '.join(n1))
+#n1 = (n2.split())
 
 print(n2)

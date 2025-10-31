@@ -7,7 +7,7 @@ um sistema de visualização de detalhes do aproveitamento de cada jogador.
 
 #Responda
 
-#Declaração de listas e dicionarios
+#Declaração de listas e dicionários
 time = []
 jogadores_gols = {}
 gols = []
@@ -39,4 +39,4 @@ while True:
             elif deseja_continuar == 'n':
                 break
         if deseja_continuar == 'n':
-            break        
+            break
