@@ -7,7 +7,7 @@ def maior(*num):
     for valor in num:
         print(f'{valor} ', end='', flush=True)
         sleep(0.3)
-        if cont == 0:
+        if cont == 0: 
             maior = valor
         else:
             if valor > maior:
