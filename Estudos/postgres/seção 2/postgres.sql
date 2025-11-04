@@ -743,7 +743,27 @@ left  join transportadora as trans		on cln.idmunicipio = trans.idmunicipio
 
 select
 	trans.nome as transportadora,
-	cln.nome as clientes
+	cln.nome as clientes,
+	cln.idmunicipio
 from clientes as cln
 left join transportadora as trans	on cln.idmunicipio = trans.idmunicipio
 	where cln.idmunicipio in (select trans.idmunicipio from transportadora where trans.nome like 'BS. Transportes' or trans.nome like 'União Transportes');
+
+update pedido set valor = valor + (valor * 5/100) 
+where
+	(select sum(valor) from pedido ) > (select avg(valor) from pedido);
+
+select
+	clientes.nome,
+	(select count(idpedido) from pedido where pedido.idcliente = clientes.idcliente)
+from clientes;
+
+select
+	clientes.nome,
+	count(idpedido) as quantidade
+from pedido
+left join clientes	on clientes.idcliente = pedido.idcliente
+group by clientes.nome having count(idpedido) > 0;
+
+select * from clientes;
+select * from pedido;
