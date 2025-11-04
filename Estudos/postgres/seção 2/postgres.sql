@@ -686,3 +686,64 @@ select
 		end as padrão
 from produto;
 
+select
+	data_pedido,
+	valor
+from 
+	pedido
+where
+	valor> (select avg(valor) from pedido);
+
+select
+	pdd.data_pedido,
+	pdd.valor,
+	(select sum(quantidade) from pedido_produto as pdp where pdp.idpedido = pdd.idpedido)
+from pedido as pdd;
+update pedido set valor = valor + (valor * 5) / 100
+where valor > (select avg(valor) from pedido);
+
+select * from pedido;
+
+select
+	cln.nome,
+	mun.nome
+from clientes as cln
+left outer join municipio as mun on cln.idmunicipio = mun.idmunicipio
+	where 
+		mun.idmunicipio = (select c.idmunicipio from clientes as c where c.nome like 'Manoel') and 
+		cln.nome != 'Manoel';
+
+select
+	data_pedido,
+	valor
+from pedido
+where valor < (select avg(valor) from pedido);
+select * from pedido;
+select * from pedido_produto;
+
+select
+	data_pedido,
+	valor,
+	cln.nome as clientes,
+	vend.nome as vendedores,
+	quantidade
+from pedido_produto as pdd
+left join pedido as ped			on pdd.idpedido = ped.idpedido
+left join clientes as cln		on ped.idcliente = cln.idcliente
+left  join vendedor as vend		on ped.idvendedor = vend.id
+	where ped.idvendedor in
+		(select idvendedor from pedido_produto group by idvendedor having sum(quantidade) > 1);
+
+select
+	trans.nome as transportadora,
+	cln.nome as clientes
+from clientes as cln
+left  join transportadora as trans		on cln.idmunicipio = trans.idmunicipio
+	where  cln.idmunicipio in (select trans.idmunicipio from transportadora where trans.nome like 'BS. Transportes' );
+
+select
+	trans.nome as transportadora,
+	cln.nome as clientes
+from clientes as cln
+left join transportadora as trans	on cln.idmunicipio = trans.idmunicipio
+	where cln.idmunicipio in (select trans.idmunicipio from transportadora where trans.nome like 'BS. Transportes' or trans.nome like 'União Transportes');
