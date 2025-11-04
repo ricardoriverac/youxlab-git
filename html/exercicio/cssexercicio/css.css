@@ -9,37 +9,126 @@
 body {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: black;
+    color: #fff;
+}
+hr{
+    color: gray;
+    margin: 20px;
+    width: 80%;
+    
+}
+#layout1{
+    display: flex;
+    text-align: center;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    
+}
+#textos1 {
+    align-items: center;
+    color: #fff;
+    background-color: black;
+    font-weight: bold;
+    background-size: cover;
+    margin: 5rem;
+    padding: 3rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200%;
+    color: white;
+}
+#form {
+    display: flex;
+    background-color: gray;
+
 }
 #infoIniciais {
     padding: 20px 20px;
-    align-items: flex-start;
+    align-items: center;
     background-image: url("../img/black-pattern.webp");
     background-size: cover;
-    background-color: black;
     color: #fff;
     flex-direction: column;
     display: flex;
     width: 100%;
+
 }
 #infoIniciais h1{
     padding-bottom: 20px;
 }
-#persona {
-    border: 2px solid #ccc;
-    padding: 1rem;
-    width: 180px;
-    text-align: center;
-}
-#persona img {
-    width: 120px;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-}
 #texto1 {
     font-size: large;
-    color: goldenrod;
+    color: gray;
 }
-#form {
-    flex: 1;
+#persona {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1 rem;
+    width: 250px;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    flex-direction: column;
+}
+#persona img {
+    width: 200px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    
+}
+.hobbiesLayout {
+    display: inline-block;
+    padding: 20px;
 
 }
+.hobbiesLayout img{
+    width: 120px;
+    align-items: center;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease-in-out;
+}
+.hobbiesLayout img:hover{
+    transform: scale(1.05);
+}
+#form {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    background-image: url(../img/blackpattern.jpeg);
+    background-size: cover;
+}
+#contatos {
+    flex: 1;
+    display: inline-block;
+    flex-direction: row;
+    padding: 20px;
+}
+#botao {
+    border-color: gray;
+    background-color: gray;
+}
+.cadaContato img{
+    width: 120px;    
+    flex-direction: row;
+}
+#instagram img{
+    padding: 20px;
+}
+#youtube img{
+    width: 130px
+}
+
+
+
