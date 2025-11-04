@@ -765,5 +765,52 @@ from pedido
 left join clientes	on clientes.idcliente = pedido.idcliente
 group by clientes.nome having count(idpedido) > 0;
 
-select * from clientes;
-select * from pedido;
+
+create view cliente_profissao as
+select
+	cln.nome as cliente,
+	prf.nome as profissao
+from clientes as cln
+left join
+	profissao as prf on cln.idprofissao = prf.idprofissao;
+	
+select * from cliente_profissao where profissao = 'Professor';
+
+create view cliente_informacoes as
+	select
+		cln.nome as cliente,
+		prf.nome as profissao,
+		nac.nome as nacionalidade,
+		compl.nome as complemento,
+		mun.nome as municipio,
+		uf.nome as unidade_federativa,
+		bair.nome as bairro,
+		cln.cpf as cpf,
+		cln.rg as rg,
+		cln.data_nascimento as data_nascimento,
+		case
+			when cln.genero = 'M' then 'Masculino'
+			when cln.genero = 'F' then 'Feminino'
+			else 'Não informado'
+		end as genero,
+		cln.logradouro as logradouro,
+		cln.numero as numero,
+		cln.observacoes as observacoes
+from clientes as cln
+left join profissao as prf			on cln.idprofissao= prf.idprofissao
+left join nacionalidade as nac		on cln.idnacionalidade = nac.idnacionalidade
+left join complemento as compl      on cln.idcomplemento = compl.idcomplemento
+left join municipio as mun			on cln.idmunicipio = mun.idmunicipio
+left join uf						on cln.iduf = uf.iduf
+left join bairro as bair 			on cln.idbairro = bair.idbairro;
+
+create view municipio_informacoes as
+select
+	mun.nome as municipio,
+	uf.nome as unidade_federativa,
+	mun.iduf as iduf
+from municipio as mun
+left join uf	on mun.iduf= uf.iduf;
+
+select * from municipio_informacoes;
+		
