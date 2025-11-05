@@ -808,9 +808,62 @@ create view municipio_informacoes as
 select
 	mun.nome as municipio,
 	uf.nome as unidade_federativa,
-	mun.iduf as iduf
+	uf.sigla as sigla_uf
 from municipio as mun
 left join uf	on mun.iduf= uf.iduf;
 
+
 select * from municipio_informacoes;
-		
+drop view municipio_informacoes;
+
+create view produto_informacoes as
+select
+	prod.nome as produto,
+	prod.valor as valor,
+	forn.nome as fornecedor
+from produto as prod
+left join fornecedor as forn		on prod.idfornecedor = forn.id;
+
+select * from produto_informacoes;
+
+create view transportadora_informacoes as
+select
+	trans.nome as transportadora,
+	trans.logradouro as logradouro,
+	uf.nome as unidade_federativa,
+	uf.sigla as sigla_uf
+from transportadora as trans
+left join municipio	as mun		on trans.idmunicipio=mun.idmunicipio
+left join	uf 					on mun.iduf = uf.iduf;
+
+select * from transportadora_informacoes;
+
+create view pedido_informacoes as
+select
+	ped.data_pedido,
+	ped.valor,
+	trans.nome as transportadora,
+	cln.nome as clientes,
+	vend.nome as vendedores
+from pedido as ped
+left join transportadora as trans		on ped.idtransportadora = trans.id
+left join clientes as cln				on ped.idcliente = cln.idcliente
+left join vendedor as vend				on ped.idvendedor = vend.id;
+
+select * from pedido_informacoes;
+
+
+create view pedido_produto_informacoes as
+select
+	pedpro.idpedido,
+	prod.nome,
+	pedpro.quantidade,
+	pedpro.valor_unitario,
+	case
+		when pedpro.quantidade > 0 then (pedpro.valor_unitario * pedpro.quantidade)
+			end as valor_quantitativo
+from pedido_produto as pedpro
+left join produto as prod		on pedpro.idproduto = prod.idproduto;
+
+
+select * from pedido_produto_informacoes;
