@@ -1,0 +1,57 @@
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+    font-family: "Roboto";
+}
+
+
+
+#total-container {
+    background-color: black;
+    color: white;
+    font-size: 30px;
+    height: 1000px;
+}
+
+#about-container {
+    flex: 1.4;
+    /* padding: 4rem 5rem; */
+    height: 500px;
+}
+
+#brand {
+    align-items: center;
+    font-size: 0.8rem;
+    margin-bottom: 1rem; 
+    font-size: 20px;
+}
+
+#brand img {
+    height: 400px;
+    margin-right: 0.6rem;
+    margin: 50px;
+    border-radius: 50%;
+}
+
+#form-container {
+    flex: 1;
+    background-image: url("../img/pattern.png");
+    background-size: cover;
+    color: #fff;
+}
+
+#form-inner {
+    margin: 3rem;
+    padding: 3rem;
+    border: 2px solid #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#form-inner h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}

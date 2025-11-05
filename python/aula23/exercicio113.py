@@ -16,6 +16,5 @@ def leiaInt(mensagem):
     
 
 leiaInt("Digite o proximo numero: ")
-       
-        
-        
+           
+ 
