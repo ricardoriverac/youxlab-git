@@ -867,3 +867,53 @@ left join produto as prod		on pedpro.idproduto = prod.idproduto;
 
 
 select * from pedido_produto_informacoes;
+
+create table exemplo(
+	idexemplo serial not null,
+	nome varchar(50) not null,
+
+	constraint pk_exemplo_idexemplo primary key (idexemplo)
+);
+
+insert into exemplo (nome) values ('Exemplo 1');
+insert into exemplo (nome) values ('Exemplo 2');
+insert into exemplo (nome) values ('Exemplo 3');
+insert into exemplo (nome) values ('Exemplo 4');
+insert into exemplo (nome) values ('Exemplo 5');]
+
+
+select * from exemplo;
+
+select * from bairro;
+
+
+
+create sequence bairro_id_seq minvalue  5;
+alter table bairro alter idbairro set default nextval('bairro_id_seq');
+alter sequence bairro_id_seq owned by bairro.idbairro;
+insert into bairro (nome) values ('Teste 1');
+insert into bairro (nome) values ('Teste 2');
+select * from bairro;
+
+select max(idcliente) +1 from clientes;
+
+create sequence clientes_id_seq minvalue 18;
+alter table clientes alter idcliente set default nextval('clientes_id_seq');
+alter sequence clientes_id_seq owned by clientes.idcliente;
+
+select max(idcomplemento) +1 from complemento;
+create sequence complemento_id_seq minvalue 3;
+alter table complemento alter idcomplemento set default nextval('complemento_id_seq');
+alter sequence complemento_id_seq owned by complemento.idcomplemento;
+
+select max(id) +1 from fornecedor;
+create sequence fornecedor_id_seq minvalue 4;
+alter table fornecedor alter id set default nextval ('fornecedor_id_seq');
+alter sequence fornecedor_id_seq owned by fornecedor.id;
+
+
+create sequence municipio_id_seq minvalue 11;
+alter table municipio alter idmunicipio set default nextval('municipio_id_seq');
+alter sequence municipio_id_seq owned by municipio.idmunicipio;
+
+ 
