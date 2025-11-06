@@ -911,9 +911,41 @@ create sequence fornecedor_id_seq minvalue 4;
 alter table fornecedor alter id set default nextval ('fornecedor_id_seq');
 alter sequence fornecedor_id_seq owned by fornecedor.id;
 
-
+select max(idmunicipio) +1 from municipio;
 create sequence municipio_id_seq minvalue 11;
-alter table municipio alter idmunicipio set default nextval('municipio_id_seq');
+alter table municipio alter idmunicipio set default nextval ('municipio_id_seq');
 alter sequence municipio_id_seq owned by municipio.idmunicipio;
 
- 
+
+create sequence nacionalidade_id_seq minvalue 7;
+alter table nacionalidade alter idnacionalidade set default nextval ('nacionalidade_id_seq');
+alter sequence nacionalidade_id_seq owned by nacionalidade.idnacionalidade;
+
+select max(idpedido) + 1 from pedido;
+
+create sequence pedido_id_seq minvalue 16;
+alter table pedido alter idpedido set default nextval ('pedido_id_seq');
+alter sequence pedido_id_seq owned by pedido.idpedido;
+
+select max(idprofissao) + 1 from profissao;
+
+create sequence profissao_id_seq minvalue 8;
+alter table profissao alter idprofissao set default nextval('profissao_id_seq');
+alter sequence profissao_id_seq owned by profissao.idprofissao;
+
+
+select max(id) + 1 from transportadora;
+
+create sequence transportadora_id_seq minvalue 3;
+alter table transportadora alter id set default nextval('transportadora_id_seq');
+alter sequence transportadora_id_seq owned by transportadora.id;
+
+select max(iduf) + 1 from uf;
+create sequence uf_id_seq minvalue 7;
+alter table uf alter iduf set default nextval('uf_id_seq');
+alter sequence uf_id_seq owned by uf.iduf;
+
+select max(id) +1 from vendedor;
+create sequence vendedor_id_seq minvalue 9;
+alter table vendedor alter id set default nextval ('vendedor_id_seq');
+alter sequence vendedor_id_seq owned by vendedor.id;
