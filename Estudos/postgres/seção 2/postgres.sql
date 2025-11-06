@@ -967,3 +967,9 @@ alter table pedido_produto alter column valor_unitario set default 0;
 alter table produto alter column valor set default 0;
 insert into produto (idproduto, idfornecedor, nome) values (8, 1, 'Teste 1'); 
 select * from produto;
+
+create index idx_cln_nome on clientes(nome);
+
+create index idx_ped_data_pedido on pedido(data_pedido);
+
+create index idx_prod_nome on produto(nome);
