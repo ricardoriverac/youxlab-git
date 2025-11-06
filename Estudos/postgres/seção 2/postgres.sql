@@ -949,3 +949,21 @@ select max(id) +1 from vendedor;
 create sequence vendedor_id_seq minvalue 9;
 alter table vendedor alter id set default nextval ('vendedor_id_seq');
 alter sequence vendedor_id_seq owned by vendedor.id;
+
+alter table pedido alter column data_pedido set default current_date;
+alter table pedido alter column valor set default 0;
+insert into pedido (idcliente, idvendedor) values (1, 1);
+select * from pedido_produto;
+select * from produto;
+
+
+create sequence pedido_produto_id_seq minvalue 16;
+alter table pedido_produto alter idpedido set default nextval('pedido_produto_id_seq');
+alter sequence pedido_produto_id_seq owned by pedido_produto.idpedido;
+
+alter table pedido_produto alter column quantidade set default 1;
+alter table pedido_produto alter column valor_unitario set default 0;
+
+alter table produto alter column valor set default 0;
+insert into produto (idproduto, idfornecedor, nome) values (8, 1, 'Teste 1'); 
+select * from produto;
