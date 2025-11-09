@@ -18,8 +18,6 @@ while True:
 
 
 
-
-#ENTRA PARTE
 def leiaInt(mensagem):
     while True:
         try:
