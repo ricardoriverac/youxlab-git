@@ -6,7 +6,6 @@ def aumentar(preço=0, taxa=0):
     :return: novo valor com o aumento aplicado
     """
     return preço + (preço * taxa / 100)
-
 def diminuir(preço=0, taxa=0):
     """
     -> Calcula a redução de um determinado preço, retornando o resultado.
@@ -15,7 +14,6 @@ def diminuir(preço=0, taxa=0):
     :return: novo valor com o desconto aplicado
     """
     return preço - (preço * taxa / 100)
-
 def dobro(preço=0):
     """
     -> Retorna o dobro de um preço.
@@ -23,6 +21,7 @@ def dobro(preço=0):
     :return: o dobro do preço
     """
     return preço * 2
+
 def metade(preço=0):
     """
     -> Retorna a metade de um preço.
@@ -30,3 +29,11 @@ def metade(preço=0):
     :return: a metade do preço
     """
     return preço / 2
+def moeda(preço=0, moeda='R$'):
+    """
+    -> Formata um valor numérico como moeda.
+    :param preço: valor numérico
+    :param moeda: símbolo da moeda (padrão: 'R$')
+    :return: string formatada, ex: 'R$1.234,56'
+    """
+    return f'{moeda}{preço:>.2f}'.replace('.', ',')
