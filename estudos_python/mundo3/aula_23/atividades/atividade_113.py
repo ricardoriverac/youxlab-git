@@ -8,39 +8,47 @@ também uma função leiaFloat() com a mesma funcionalidade.
 
 #Número inteiro
 def leiaInt(msg):
-    while b == False:
+    while True:
         try:
-            valor = msg
-            int(valor)
+            valor = int(input(msg))
                             
         except KeyboardInterrupt:
-                return print('Valor invalido')
+                print('Valor invalido')
+                continue
         except ValueError:
-                return print('Valor invalido!!') 
+                print('Valor invalido!!') 
+                continue
         except TypeError:
-                return print('Valor invalido!')
+                print('Valor invalido!')
+                continue
+
         else:
-            b = print('Certo')
-            return
+            print('Certo')
+            b = valor
+            return b
+
             
     
 #Número quebrado
 def leiaFloat(msg):
     while True:
         try:
-            valor = msg
-            float(valor)
+            valor = float(input(msg))
                             
         except KeyboardInterrupt:
-                return print('Valor invalido')
+                print('Valor invalido')
+                continue
         except ValueError:
-                return print('Valor invalido!!') 
+                print('Valor invalido!!')
+                continue
         except TypeError:
-                return print('Valor invalido!')
+                print('Valor invalido!')
+                continue
         else:
-            return print('Certo')
-            break
+            print('Certo')
+            b = valor
+            return b
 
 
-n1 = leiaInt(input('Digite um número inteiro: '))
-# n2 = leiaFloat(input('Digite um número quebrado: '))
+n1 = leiaInt('Digite um número inteiro: ')
+n2 = leiaFloat('Digite um número quebrado: ')
