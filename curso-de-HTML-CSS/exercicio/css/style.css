@@ -1,3 +1,173 @@
-h1 {
-    color: red;
+* {
+      box-sizing: border-box;
+      font-family: "Roboto", sans-serif;
+      margin: 0;
+      padding: 0;
 }
+
+body {
+      background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+ }
+
+    /* ====== CONTAINER SOBRE ====== */
+    #about-container {
+      background: #ffffff;
+      width: 100%;
+      max-width: 600px;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .titulo {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #32CD32;
+    }
+
+    #date, #description {
+      margin-bottom: 15px;
+      color: #444;
+    }
+
+    /* ====== CARTÕES DE USUÁRIO ====== */
+    #users-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .user-card {
+      border: 2px solid #ccc;
+      padding: 15px;
+      width: 160px;
+      text-align: center;
+      border-radius: 12px;
+      background: #fff;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .user-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+    }
+
+    .foto-perfil {
+      width: 110px;
+      height: 110px;
+      object-fit: cover;
+      border-radius: 15%;
+      margin-bottom: 10px;
+      border: 2px solid #cfcfcf;
+    }
+
+    /* ====== BOTÕES ====== */
+    .meu-botao {
+      background: linear-gradient(135deg, #176f0f, #428135 );
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+      box-shadow: 0 5px 15px #A9A9A9(0, 117, 255, 0.4);
+    }
+
+    .meu-botao:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px #A9A9A9(0, 117, 255, 0.6);
+    }
+
+    .meu-botao:active {
+      transform: scale(0.98);
+      box-shadow: 0 4px 12px #A9A9A9(0, 117, 255, 0.5);
+    }
+
+    /* Botão Spotify */
+    .spotify-btn {
+      background: #fff;
+      color: #000;
+      border: #000;
+      padding: 12px 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px #000(29, 185, 84, 0.4);
+      margin-bottom: 10px;
+    }
+
+    .spotify-btn:active {
+      transform: scale(0.98);
+      box-shadow: 0 4px 12px rgba(29, 185, 84, 0.5);
+    }
+
+    /* ====== FORMULÁRIO ====== */
+    #form-container {
+      background: #fff;
+      color: #fff;
+      width: 100%;
+      max-width: 600px;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+    }
+
+    #form-inner {
+      text-align: center;
+    }
+
+    #register-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    #name-container {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    #register-form input[type="text"],
+    #register-form input[type="email"] {
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      flex: 1;
+    }
+
+    #register-form input[type="submit"] {
+      background: linear-gradient(135deg, #176f0f,#428135 );
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-weight: bold;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px #A9A9A9(0, 117, 255, 0.4);
+    }
+
+    #register-form input[type="submit"]:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px #444(0, 117, 255, 0.6);
+    }
+
+    #register-form input[type="submit"]:active {
+      transform: scale(0.98);
+      box-shadow: 0 4px 12px #A9A9A9(0, 117, 255, 0.5);
+   }
