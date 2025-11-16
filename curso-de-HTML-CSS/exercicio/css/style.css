@@ -23,13 +23,14 @@ body {
       box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
       text-align: center;
       margin-bottom: 30px;
+      border: 1px solid #ccc;
     }
 
     .titulo {
       font-size: 2rem;
       font-weight: 700;
       margin-bottom: 15px;
-      color: #32CD32;
+      color: #176f0f;
     }
 
     #date, #description {
@@ -58,16 +59,16 @@ body {
 
     .user-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+      box-shadow: 0 8px 20px rgba(138, 13, 13, 0.18);
     }
 
     .foto-perfil {
-      width: 110px;
-      height: 110px;
+      width: 130px;
+      height: 140px;
       object-fit: cover;
-      border-radius: 15%;
+      border-radius: 20%;
       margin-bottom: 10px;
-      border: 2px solid #cfcfcf;
+      border: 3px solid #ccc;
     }
 
     /* ====== BOTÕES ====== */
@@ -77,35 +78,22 @@ body {
       border: none;
       padding: 10px 20px;
       font-weight: bold;
-      border-radius: 25px;
+      border-radius: 100px;
       cursor: pointer;
       transition: all 0.3s ease;
       margin-top: 10px;
-      box-shadow: 0 5px 15px #A9A9A9(0, 117, 255, 0.4);
-    }
-
-    .meu-botao:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 25px #A9A9A9(0, 117, 255, 0.6);
-    }
-
-    .meu-botao:active {
-      transform: scale(0.98);
-      box-shadow: 0 4px 12px #A9A9A9(0, 117, 255, 0.5);
     }
 
     /* Botão Spotify */
     .spotify-btn {
       background: #fff;
       color: #000;
-      border: #000;
       padding: 12px 30px;
       font-size: 1rem;
       font-weight: bold;
       border-radius: 25px;
       cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: 0 5px 15px #000(29, 185, 84, 0.4);
       margin-bottom: 10px;
     }
 
@@ -123,6 +111,7 @@ body {
       padding: 20px;
       border-radius: 12px;
       margin-bottom: 30px;
+      border: 1px solid #ccc;
     }
 
     #form-inner {
@@ -148,6 +137,7 @@ body {
       border-radius: 6px;
       border: none;
       flex: 1;
+      border: 1px solid #000;
     }
 
     #register-form input[type="submit"] {
@@ -164,7 +154,7 @@ body {
 
     #register-form input[type="submit"]:hover {
       transform: scale(1.05);
-      box-shadow: 0 8px 25px #444(0, 117, 255, 0.6);
+      box-shadow: 0 8px 25px (0, 117, 255, 0.6);
     }
 
     #register-form input[type="submit"]:active {
