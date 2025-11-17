@@ -153,3 +153,137 @@ create view LIVROS_IAN as
 	left join livro as l 		on autl.idlivro = l.idlivro
 	where a.nome = 'Ian Graham';
 
+create view EMPRESTIMO_ALUNO as
+	select
+		a.nome as aluno,
+		emprst.data_Emprestimo,
+		emprst.data_Devolucao
+	from EMPRESTIMO as emprst
+	left join aluno as a		on emprst.idAluno = a.idALuno;
+
+select * from emprestimo_aluno;
+
+select * from emprestimo;
+
+create view LIVRO_EMPRESTIMO as
+	select
+		l.nome as livro,
+		emprst.idEmprestimo
+	from EMPRESTIMO_LIVRO as emprst
+	left join LIVRO as l		on emprst.idLivro = l.idLivro
+
+select * from LIVRO_EMPRESTIMO;
+
+select 
+	e.nome, 
+	count(idLivro) as quantidade
+	from LIVRO as l
+	left join EDITORA e on l.idEditora = e.idEditora
+	group by e.nome;
+
+select
+	c.nome,
+	count(idLivro) as quantidade
+	from LIVRO as l
+	left join CATEGORIA c on l.idCategoria = c.idCategoria
+	group by c.nome;
+
+
+select
+	a.nome,
+	count(idLivro) as quantidade
+	from LIVRO_AUTOR as la
+	left join AUTOR a on la.idAutor = a.idAutor
+	group by a.nome;
+
+select * from livro_autor;
+
+select
+	a.nome,
+	count(idEmprestimo) as quantidade
+	from EMPRESTIMO as emprstm
+	left join ALUNO a 		on emprstm.idAluno = a.idAluno
+	group by a.nome;
+
+select
+	a.nome,
+	sum(valor) as valor
+	from EMPRESTIMO as emprstm
+	left join ALUNO a 		on emprstm.idAluno = a.idAluno
+	group by a.nome;
+
+select
+	a.nome,
+	sum(valor) as valor
+	from EMPRESTIMO as emprstm
+	left join ALUNO a		on emprstm.idAluno = a.idAluno
+	group by a.nome having sum(valor) > 7.0;
+
+
+select
+	upper(a.nome)
+	from ALUNO as a
+	order by a.nome desc;
+
+select
+	idEmprestimo
+	from EMPRESTIMO
+	where data_Emprestimo between '01-04-2012' and '30-04-2012';
+
+select * from EMPRESTIMO;
+
+select
+	idEmprestimo,
+	idAluno,
+	data_Emprestimo,
+	data_Devolucao,
+	valor,
+	devolvido,
+	case
+		when devolvido = 'S' then 'Devolução completa'
+		when devolvido = 'N' then 'Em atraso'
+		else 'Não informado'
+	end as devolvido
+from EMPRESTIMO;
+
+select
+	substring(nome, 5, 10)
+from AUTOR;
+
+select
+	idEmprestimo,
+	valor,
+	case
+		when extract(month from data_Emprestimo) = 01 then 'Janeiro'
+		when extract(month from data_Emprestimo) = 02 then 'Fevereiro'
+		when extract(month from data_Emprestimo) = 03 then 'Março'
+		when extract(month from data_Emprestimo) = 04 then 'Abril'
+		when extract(month from data_Emprestimo) = 05 then 'Maio'
+		when extract(month from data_Emprestimo) = 06 then 'Junho'
+		when extract(month from data_Emprestimo) = 07 then 'Julho'
+		when extract(month from data_Emprestimo) = 08 then 'Agosto'
+		when extract(month from data_Emprestimo) = 09 then 'Setembro'
+		when extract(month from data_Emprestimo) = 10 then 'Outubro'
+		when extract(month from data_Emprestimo) = 11 then 'Novembro'
+		when extract(month from data_Emprestimo) = 12 then 'Dezembro'
+		else 'Não informado'
+	end as mês
+from EMPRESTIMO;
+
+select
+	data_emprestimo,
+	valor
+from EMPRESTIMO
+	where valor > (select avg(valor) from EMPRESTIMO);
+
+select
+	idEmprestimo
+from EMPRESTIMO_LiVRO
+	where idEmprestimo in
+		(select idEmprestimo from EMPRESTIMO group by idLivro having count(idEmprestimo > 2));
+
+select
+	data_emprestimo,
+	valor
+from EMPRESTIMO
+	where valor < (select sum(valor) from EMPRESTIMO);
