@@ -15,4 +15,4 @@ def metade(a=0, formato=False):
     return resultado if formato is False else reais(resultado)
 
 def reais(preco=0, simbolo='R$'):
-    return f'{simbolo}{preco:>.2f}'.replace('.', '.')
+    return f'{simbolo}{preco:>.2f}'.replace('.', ',')
