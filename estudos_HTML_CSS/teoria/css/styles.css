@@ -1,0 +1,87 @@
+/* 1 - stilo da teg <li> e <span> */
+li{
+    color: green;
+}
+
+
+span{
+    color: green;
+    font-size: 20px;
+    
+}
+/* 2 - Id */
+#titulo_azul{
+    color: blue;
+}
+
+/* 3 - class */
+.paragrafo_rosa{
+    color: pink;
+}
+/* 4 - backgroud-color e backgroud-image*/
+#cor_fundo{
+    color: white;
+    background-color: black;
+    font-size: 20px;
+}
+.imagen_fundo{
+    background-image: url(../imagens/hollow_knight.jpeg);
+    padding: 10px;
+    color: lawngreen;
+    font-size: px;
+    
+}
+
+
+/* 5 - Altura e Largura*/
+#img_samurai{
+    width: 423px;
+    height: 227px;
+    border-radius: 999px;
+}
+
+#tela_verde{
+    width: 400px;
+    height: 200px;
+    background-color: green;
+}
+
+/* bonús*/
+.img-space{
+    margin-left: 20px;
+
+}
+
+/* 6 - padding*/
+    #ex_padding{
+        color: yellow;
+        background-color: blueviolet;
+        padding: 20px;
+        margin: 50px;
+        margin-left: 0;
+    }
+
+/* 7 - margin*/
+#ex_margin{
+    background-color: coral;
+    width: 400px;
+    height: 200px;
+    margin: 50px;
+    margin-left: 0;
+}
+
+#border{
+    font-size: 40px;
+    padding-left: 550 ;
+    color: red;
+    background-color: black;
+    border: 10px groove red;
+}
+
+#border-radius{
+    background-color: yellow;
+    width: 500px;
+    height:  500px;
+    border-radius: 999px;
+    border: 5px solid pink;
+}

@@ -1,12 +1,18 @@
 <html>
     <!-- Todo o cerebo do código-->
     <head>
+        <!--Adicionando arquivo CSS-->
+        <link rel="stylesheet" href="css/styles.css">
         <title> curso HTML e CSS</title>
 
         <style>
             h1{
                 color: rgb(157, 226, 18);
             }
+            h3{
+                color: red;
+            }
+           
         </style>
     </head>
 <!--Mostra todo o corpo do código-->
@@ -27,22 +33,22 @@
 
         <!--Mostra 3 imagens-->
         <h3>imagem</h3>
-        <img src="imagens/hollow_knight.jpeg" alt="E a imagem do protagonista do jogo Hollow Knight"/>
+        <img src="imagens/hollow_knight.jpeg" alt="E a imagem do protagonista do jogo Hollow Knight" />
+        <p>Eu gosto <span>MUITO</span> de hollow Knight</p>
         <hr />
-        <br />
-        <img src="imagens/Kaworu_Nagisa.png" alt="E uma imagem de um garoto"/>
-        <br />
-        <img src="https://mangatom.com.br/wp-content/uploads/2021/01/samurai-jack.jpg" alt="Desenho do samurai jack"/>
+
+        <img class="img-space"src="imagens/Kaworu_Nagisa.png" alt="E uma imagem de um garoto"/>
+
+        <img class="img-space" id="img_samurai" src="https://mangatom.com.br/wp-content/uploads/2021/01/samurai-jack.jpg" alt="Desenho do samurai jack"/>
 
         <!-- Mostra um vídeo-->
-         <br />
-        <video src="imagens/WhatsApp Video 2025-11-13 at 14.08.40.mp4" controls></video>
+        <video class="img-space" src="imagens/WhatsApp Video 2025-11-13 at 14.08.40.mp4" controls></video>
 
         <!--div-->
         <hr />
         <br />
         <div>
-            <h1>Texto</h1>
+            <h1>Testando o div</h1>
             <p>Esse texto e para testar o div!</p>
             <a href="#">link para comprar</a>
         </div>
@@ -52,9 +58,11 @@
         <table>
             <thead>
                 <tr>
-                    <th>Nomes</th>
-                    <th>Idade</th>
+                    <th>Nomes </th>
+                    <th id="etlth"> Idade</th>
                 </tr>
+
+        
             </thead>
 
             <tbody>
@@ -63,6 +71,50 @@
                 <tr> <td>Luiz</td> <td>54</td> </tr>
             </tbody>
         </table>
-    </body>
 
+        <!--Listas-->
+
+        <h3>Lista sem ordem</h3>
+        <ul>
+            <li>Pão</li>
+            <li>Arroz</li>
+            <li>Moela</li>
+            <li>Cural</li>
+        </ul>
+
+        <h3>Lista em ordem</h3>
+        <ol>
+            <li>Chegar em casa</li>
+            <li>Tomar banho</li>
+            <li>Estudar HTML</li>
+        </ol>
+        <!-- Id -->
+        <h3 id="titulo_azul">Esse título e azul</h3>
+
+        <!--class-->
+        <p>primeiro parágrafo</p>
+        <p class="paragrafo_rosa">segundo parágrafo</p>
+        <p class="paragrafo_rosa">terceiro parágrafo</p>
+        <p>quarto parágrafo</p>
+        <!-- backgroud-->
+        <p id="cor_fundo">A cor de fundo desse parágrafo e preto</p>
+
+        <!-- backgroud-imagem -->
+        <p class="imagen_fundo">Tem uma imagem de fundo</p>
+
+        <!-- Altura e largura -->
+        <div id="tela_verde"></div>
+
+        <!-- Padding -->
+        <div id="ex_padding">Testando Padding</div>
+        
+        <!-- margin -->
+        <div id="ex_margin"></div>
+
+        <!-- border -->
+        <div id="border"> testando border</div>
+
+        <!-- border-radius -->
+        <div id="border-radius"></div>
+    </body>
 </html>
