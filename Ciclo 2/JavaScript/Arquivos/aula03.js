@@ -1,0 +1,26 @@
+/*"use strict"
+
+function teste(){
+    let nome="Bruno"
+    if(true){
+        console.log("dentro do IF do teste: " + nome)
+    }
+    console.log("dentro de teste: " + nome)
+}
+
+teste()
+
+console.log("fora de teste: " + nome)
+ */
+
+"use strict"
+
+let nome="Bruno"
+nome="CFB cursos"
+nome=10
+
+const curso="JavaScript"
+
+
+curso="HTML"
+console.log(curso)
