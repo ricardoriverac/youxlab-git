@@ -605,4 +605,104 @@ order by valor asc;
 select * from pedido where idcliente = 15 and idvendedor = 1
 
 -- 11. Os pedidos que foram transportados pela transportadora União Transportes.
+select * from pedido
 
+select P.* from pedido P
+inner join transportadora T on P.idtransportadora = T.idtransportadora
+where T.nome = 'União Transportes';
+
+-- 12. Os pedidos feitos pela vendedora Maria ou pela vendedora Aline.
+
+select * from pedido where idvendedor = 5 or idvendedor = 7
+
+-- 13. Os clientes que moram em União da Vitória ou Porto União.
+select * from cliente 
+select C.nome from cliente as C
+inner join municipio M on C.idmunicipio = M.idmunicipio
+where M.nome like 'União da Vitória' or M.nome like 'Porto União'
+
+-- 14. Os clientes que não moram em União da Vitória e nem em Porto União.
+
+select * from cliente where idmunicipio <> 1 and idmunicipio <> 9
+
+-- 15. Os clientes que não informaram o logradouro.
+select * from cliente
+select * from cliente where logradouro is null
+
+-- 16. Os clientes que moram em avenidas.
+
+select *
+from cliente
+where logradouro like '%Avenida%' or logradouro like '%Av.%' or logradouro like '%Av %';
+
+-- 17. Os vendedores que o nome começa com a letra S.
+select * from vendedor
+
+select *
+from vendedor
+where nome like 'S%';
+
+-- 18. Os vendedores que o nome termina com a letra A.
+
+select * from vendedor
+
+select *
+from vendedor
+where nome like '%A' or nome like '%a';
+
+-- 19. Os vendedores que o nome não começa com a letra A.
+
+select *
+from vendedor
+where nome not like 'A%';
+
+-- 20. Os municípios que começam com a letra P e são de Santa Catarina.
+select M.nome
+from municipio M
+join uf on M.iduf = uf.iduf
+where sigla = 'SC' and M.nome like 'P%';
+
+-- 21. As transportadoras que informaram o endereço.
+
+select * from transportadora
+select * from transportadora where logradouro is not null
+
+-- 22. Os itens do pedido 01.
+select * from pedido
+select * from pedido where idpedido = '1';
+
+-- 23. Os itens do pedido 06 ou do pedido 10.
+
+select * from pedido where idpedido = '1' or idpedido = '10';
+
+-- AULA 32 - Fuções agregadas
+
+select avg(valor) from pedido
+
+select count(idmunicipio) from municipio
+
+select count(*) from municipio
+
+select * from transportadora
+select count(logradouro) from transportadora
+select count(idtransportadora) from transportadora
+
+select * from municipio
+select count(idmunicipio) from municipio where iduf = 2
+
+select max(valor) from pedido
+
+select min(valor), max(valor) from pedido
+
+select idcliente, sum(valor) from pedido group by idcliente 
+
+select idcliente, sum(valor) from pedido group by idcliente having sum(valor) > 500
+
+-- AULA 33 - Exercicios
+
+-- 1. A média dos valores de vendas dos vendedores que venderam mais que R$ 200,00.
+select
+    vendedor,
+    avg(valor) as media_vendas
+from vendedor
+where  valor > 200.00 group by vendedor;
