@@ -70,6 +70,7 @@ span{
     margin-left: 0;
 }
 
+/* 8 - border */
 #border{
     font-size: 40px;
     padding-left: 550 ;
@@ -78,10 +79,20 @@ span{
     border: 10px groove red;
 }
 
+/* 9 - border-radius */
 #border-radius{
     background-color: yellow;
     width: 500px;
     height:  500px;
-    border-radius: 999px;
+    border-radius: 999px;/*codigo novo*/
     border: 5px solid pink;
+    /*Maior o px mais arredondado fica*/
 }
+
+.alinhamento{
+    text-align: center;/*codigo novo*/
+    font-size: 50px;
+    background-color: blue;
+    border: 5px solid red;
+    /*deixa o texto alinhado no meio*/
+}    
