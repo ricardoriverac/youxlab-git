@@ -5,10 +5,10 @@ let num3 = 10
 console.log(!(num1 == num2))
 
 /*
-> - menor 
->= - menor igual
-< - maior
-<= - maior igual
+> - maior
+>= - maior igual
+< - menor
+<= - menor igual
 == - igual
 != - diferente
 */
