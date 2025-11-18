@@ -14,3 +14,4 @@ while continuar == 'S':
     mnh_list_peso.append(peso)
     continuar = input('Você deseja cadastrar mais pessoas:[S/N]').upper()
 print(f'{len(mnh_list_nome)} pessoas foram cadastradas.')
+calculo = (len()) / (peso ** 2)

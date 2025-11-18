@@ -9,6 +9,8 @@ for char in frase:
         pilha.append('(')
     elif char == ')':
         if len(pilha) > 0:
+         pilha.pop()
+        else:
             pilha.append(')')
             break
 if len(pilha) == 0:
