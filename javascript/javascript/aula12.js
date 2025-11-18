@@ -1,7 +1,8 @@
-let n1=[10,20,30]
-let n2=[11,22,33,44,55]
-let n3=[...n1]
+const objs1=document.getElementsByTagName("div")
+const objs2=[...document.getElementsByTagName("div")]
 
-console.log("n1: " + n1)
-console.log("n2: " + n2)
-console.log("n3: " + n3)
+objs2.forEach(element => {
+    element.innerHTML="Curso"
+});
+console.log(objs1)
+console.log(objs2)
