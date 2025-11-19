@@ -40,6 +40,7 @@
     "Application.a_30.executor": "Run",
     "Application.a_30_ex2.executor": "Run",
     "Application.a_30_ex3.executor": "Run",
+    "Application.a_30_ex4.executor": "Run",
     "Application.ex_a24.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
