@@ -19,5 +19,12 @@ public class a_25 {
 
         area = (ba+BA) / 2.0 * h;
         System.out.println(area);
+
+        int m, n;
+        double resultado;
+        m = 2;
+        n = 5;
+        resultado = (double)n/m;
+        System.out.println(resultado);
     }
 }
