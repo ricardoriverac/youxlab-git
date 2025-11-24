@@ -21,5 +21,6 @@ public class a_37_ex4 {
             duracao = horaFinal - horaInicial;
             System.out.printf("A duração deste evento foi %d horas", duracao);
         }
+        sc.close();
     }
 }
