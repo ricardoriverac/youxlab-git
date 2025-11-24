@@ -4,14 +4,26 @@
 #B) Uma listagem com as pessoas mais pesadas.
 #C) Uma listagem com as pessoas mais leves.
 
-mnh_list_peso = []
-mnh_list_nome = []
-continuar = 'S'
-while continuar == 'S':
-    nome = input('NOME: ')
-    mnh_list_nome.append(nome)
-    peso = float(input('PESO: '))
-    mnh_list_peso.append(peso)
-    continuar = input('Você deseja cadastrar mais pessoas:[S/N]').upper()
-print(f'{len(mnh_list_nome)} pessoas foram cadastradas.')
-calculo = (len()) / (peso ** 2)
+mnh_list_pessoas = []
+continu = 'S'
+while continu == 'S':
+   nome = input('Nome: ')
+   peso = float(input('Peso: '))
+   mnh_list_pessoas.append([nome, peso])
+   continu = input('Você deseja cadastrar mais pessoas?[S/N]').upper()
+print(f'{len(mnh_list_pessoas)} pessoas foram cadastradas.')
+maior = mnh_list_pessoas[0][1]
+menor = mnh_list_pessoas[0][1]
+for p in mnh_list_pessoas:
+    if p[1] > maior:
+        maior = p[1]
+    if p[1] < menor:
+        menor = p[1]
+print(f'O maior peso foi {maior} Kg. Peso de ', end='')
+for p in mnh_list_pessoas:
+    if p[1] == maior:
+        print(f'[{p[0]}]', end='')
+print(f'O menor peso foi {menor} Kg. Peso de ', end='')
+for p in mnh_list_pessoas:
+    if p[1] == menor:
+        print(f'[{p[0]}] ', end='')
