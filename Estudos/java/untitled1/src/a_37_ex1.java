@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class a_36 {
+public class a_37_ex1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -16,5 +16,6 @@ public class a_36 {
         else{
             System.out.printf("O número %d é positivo!", numero);
         }
+        sc.close();
     }
 }
