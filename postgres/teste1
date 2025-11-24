@@ -1,0 +1,22 @@
+create table clientes (
+	idcliente integer not null,
+	nome varchar(50) not null, -- Pedro -> 5 letras, mas será aceito
+	cpf char(11), 
+	rg varchar(15),
+	data_nascimento date, 
+	genero char(1),
+	profissao varchar(30),
+	nacionalidade varchar(30),
+	logradouro varchar(30),
+	numero varchar(10),
+	complemento  varchar(30),
+	bairro varchar(30),
+	municipio varchar(30),
+	uf varchar(30),
+	observarcao text,
+
+	constraint pk_cln_idcliente2 primary key(idcliente)
+)
+
+insert into cliente(idcliente, nome, cpf, rg, data_nascimento, genero, profissao, nacionalidade, logradouro, numero, complemento, bairro, municipio, uf)
+values (1, 'Manuel', '89765432108', '3232', '2001-08-30', 'M', 'Policial', 'Brasileiro', 'Rua Joaquim Nabuco', '23', 'casa', 'ALvarenga', 'São João Barros', 'SC')
