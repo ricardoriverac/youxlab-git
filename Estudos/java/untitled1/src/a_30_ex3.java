@@ -20,5 +20,6 @@ public class a_30_ex3 {
 
         diferenca = produto1 - produto2;
         System.out.printf("A diferença da multiplicação de %d e %d com a multiplicação de %d e %d é igual à %d", fator1, fator2, fator3, fator4, diferenca);
+        sc.close();
     }
 }

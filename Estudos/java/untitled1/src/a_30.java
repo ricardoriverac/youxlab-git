@@ -9,6 +9,6 @@ public class a_30 {
         parcela2 = sc.nextInt();
         soma = parcela1 + parcela2;
         System.out.printf("Soma = %d", soma);
-
+        sc.close();
     }
 }

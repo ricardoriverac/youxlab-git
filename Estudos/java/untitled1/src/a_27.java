@@ -14,6 +14,6 @@ public class a_27 {
         System.out.println(s1);
         System.out.println(s2);
         System.out.println(s3);
-
+        sc.close();
     }
 }

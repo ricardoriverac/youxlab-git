@@ -23,5 +23,6 @@ public class a_30_ex5 {
         areaRetangulo = a * b;
         System.out.printf("Considerando %f e %f como lados do retângulo, a área do quadrado é %f \n", a, b, areaRetangulo);
         Locale.setDefault(Locale.US);
+        sc.close();
     }
 }
