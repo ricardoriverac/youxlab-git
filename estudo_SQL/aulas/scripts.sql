@@ -70,6 +70,7 @@ insert into cliente (idcliente, nome, cpf, rg, data_nascimento, genero, profissa
 values (15, 'Jessica', null, null, null, 'F', 'Estudante', null, null, null, null, null, 'União Vitória', 'PR');
 
 -- Mostrar Tabela
+select * from cliente
 
 -- Mudar o nome da tabela
 select cpf as "CPF dos clientes" from cliente
@@ -78,11 +79,31 @@ select cpf as "CPF dos clientes" from cliente
 select 'CPF: ' || cpf || ' RG: ' || rg as "CPF e RG  do cliente" from cliente
 
 -- Limite de dados
-
 select nome, cpf, data_nascimento from cliente limit 5;
 
--- Filtro de informações
-select nome, data_nascimento from cliente where data_nascimento > '2000-01-01';
+-- Filtrar informações
+select nome, numero from cliente where numero < '200';
 
---  Like
-select nome, data_nascimento from cliente where nome like 'Adriana';
+--  like
+select nome from cliente where nome like 'A';
+-
+-- %like
+select nome from cliente where nome like '%b';
+
+-- %like%
+select nome from cliente where nome like '%a%'
+
+-- like%
+select nome from cliente where nome like 'a%'
+
+-- between
+select nome from cliente where data_nascimento between '2000-01-01' and  '1980-01-01;'
+
+-- is null
+select nome, rg from cliente where rg is null
+
+-- order by 
+select nome from cliente order by nome asc;
+
+-- order by txt  desc 
+select nome from cliente order by nome desc 
