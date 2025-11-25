@@ -43,6 +43,7 @@ public class a_37_ex8 {
             ir = ir + (faixa3 * 0.25f);
             System.out.printf("Caro usuário, você terá que pagar %.2f de imposto de renda", ir);
         }
+        sc.close();
 
     }
 }
