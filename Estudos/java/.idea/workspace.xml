@@ -48,13 +48,15 @@
     "Application.a_36.executor": "Run",
     "Application.a_37_ex2.executor": "Run",
     "Application.a_37_ex3.executor": "Run",
-    "Application.a_37_ex4.executor": "Run",
+    "Application.a_37_ex4.executor": "Debug",
     "Application.a_37_ex5.executor": "Run",
     "Application.a_37_ex6.executor": "Run",
     "Application.a_37_ex7.executor": "Run",
     "Application.a_37_ex8.executor": "Run",
     "Application.a_38.executor": "Run",
     "Application.a_39.executor": "Run",
+    "Application.a_40.executor": "Run",
+    "Application.a_41.executor": "Run",
     "Application.ex_a24.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -78,8 +80,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="a_41" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="a_41" />
+      <module name="untitled1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.a_41" />
         <item itemvalue="Application.a_18" />
       </list>
     </recent_temporary>
@@ -93,5 +103,16 @@
       <updated>1763494685524</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/untitled1/src/a_40.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
