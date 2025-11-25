@@ -1,0 +1,421 @@
+create table editora (
+	ideditora serial,
+	idnome varchar(50) not null,
+
+	constraint pk_edt_ideditora primary key (ideditora),
+	constraint un_edt_nome unique (idnome)
+
+);
+
+alter table editora alter column ideditora type serial;
+drop table editora;
+
+insert into editora (idnome) values 
+('Bookman'),
+('Edgard Blusher');
+
+insert into editora (idnome) values 
+('Nova Terra'),
+('Brasport');
+
+
+create table categoria (
+	idcategoria serial,
+	idnome varchar(50) not null,
+
+	constraint pk_ctg_idcategoria primary key (idcategoria),
+	constraint un_ctg_nome unique (idnome)
+);
+
+insert into categoria (idnome) values 
+('Banco de Dados'),
+('HTML'),
+('Java'),
+('PHP');
+
+create table autor (
+	idautor serial,
+	idnome varchar(50) not null,
+
+	constraint pk_aut_idautor primary key (idautor),
+	constraint un_aut_idnome unique (idnome)
+);
+
+insert into autor (idnome) values
+('Waldemar Setzer'),
+('Flávio Soares'),
+('John Watson'),
+('Rui Rossi dos Santos'),
+('Antonio Pereira de Resende'),
+('Claudiey Calixto Lima'),
+('Evandro Carlos Teruel'),
+('Ivan Graham'),
+('Fabrício Xavier'),
+('Pablo Dalloglio');
+
+
+create table livro (
+	idLivro serial not null,
+	idEditora integer not null,
+	idCategoria integer not null,
+	nome varchar(60) not null,
+	constraint pk_livro_id primary key(idLivro),
+	constraint un_livro_nome unique (nome),
+	constraint fk_livro_ideditora foreign key (idEditora) references editora (idEditora),
+	constraint fk_livro_idcategoria foreign key (idcategoria) references categoria(idcategoria)
+);
+
+
+insert into livro (ideditora, idcategoria, nome) values
+(2, 1, 'Banco de Dados - 1 Edição'),
+(1, 1, 'Oracle DataBase 11G administração'),
+(3, 3, 'Programação de Computadores em Java'),
+(4,3, 'Programação Orientada a Aspectos em Java'),
+(4, 2, 'HTML5 - Guia Pratico'),
+(3, 2, 'XHTML: Guia de Referencia para desenvolvimento na Web'),
+(1,4, 'PHP para Desenvolvimento Profissional'),
+(2, 4, 'PHP com Programação Orientada a Objetos');
+
+create table livro_autor (
+	idlivro_autor integer not null,
+	idlivro integer not null,
+	idautor integer not null,
+
+	constraint pk_livraut_idlivro_autor primary key (idlivro_autor),
+	constraint fk_livraut_idlivro foreign key (idlivro) references livro (idlivro),
+	constraint fk_lvraut_idautor foreign key (idautor) references autor (idautor)
+	
+);
+
+drop table livro_autor;
+create table livro_autor (
+    idlivro integer not null,
+    idautor integer not null,
+    
+    constraint pk_ltr_idlivroautor primary key (idlivro, idautor),
+    constraint fk_ltr_idlivro foreign key (idlivro) references livro (idlivro),
+    constraint fk_ltr_idautor foreign key (idautor) references autor (idautor)
+);
+
+insert into livro_autor (idLivro, idAutor) values 
+(1, 1), (1, 2), 
+(2,3), (3, 4), 
+(4, 5), (4, 6 ),
+(5, 7), (6, 8), 
+(7, 9), (8, 10);
+
+select * from livro_autor;
+create table aluno (
+	idaluno serial,
+	nome varchar(50) not null,
+
+	constraint pk_al_idaluno primary key (idaluno),
+	constraint un_al_nome unique (nome)
+);
+
+insert into aluno (nome) values 
+('Mario'),
+('João'),
+('Paulo'), 
+('Pedro'), 
+('Maria');
+
+
+create table emprestimo (
+	idemprestimo serial,
+	idaluno integer not null,
+	data_emprestimo date default current_date,
+	data_devolucao date not null,
+	valor decimal(10,2) not null,
+	devolvido varchar(1) not null,
+
+
+	constraint pk_emp_idemprestimo primary key (idemprestimo),
+	constraint fk_emp_idaluno foreign key (idaluno) references aluno (idaluno)
+);
+
+insert into emprestimo(idAluno, Data_Emprestimo, data_Devolucao, valor, devolvido) values 
+(1, '02-05-2012', '12-05-2012', 10, 'S'), 
+(1, '23-04-2012', '03-05-2012', 5, 'N'), 
+(2, '10-05-2012', '20-05-2012', 12, 'N'), 
+(3, '10-05-2012', '20-05-2012', 8, 'S'), 
+(4, '05-05-2012', '15-05-2012', 15, 'N'), 
+(4, '07-05-2012', '17-05-2012', 20, 'S'), 
+(4, '08-05-2012', '18-05-2012', 5, 'S');
+
+create table emprestimo_livro(
+	idemprestimo integer not null,
+	idlivro integer not null,
+
+	constraint pk_elv_idemprestimo_idlivro primary key (idemprestimo,idlivro),
+	constraint fk_eliv_idlivro foreign key (idlivro) references livro (idlivro),
+	constraint fk_elvi_idemprestimo foreign key (idemprestimo) references emprestimo (idemprestimo)
+);
+
+insert into emprestimo_livro (idEmprestimo, idLivro) values 
+(1, 1),
+(2,4), 
+(2, 3),
+(3, 2), 
+(3, 7), 
+(4, 5), 
+(5, 4), 
+(6, 6), 
+(6, 1), 
+(7,8);
+
+create index idx_emprestimo_emprestimo on emprestimo(data_Emprestimo);
+create index idx_emprestimo_devolucao on emprestimo(data_Devolucao);
+
+--CONSULTAS SIMPLES
+--19. O nome dos autores em ordem alfabética.
+select idnome from autor order by idnome;
+
+--20. O nome dos alunos que começam com a letra P.
+select nome from aluno where nome like 'P%';
+
+--21. O nome dos livros da categoria Banco de Dados ou Java.
+select * from livro where idcategoria = 1 or idcategoria = 3;
+
+--22. O nome dos livros da editora Bookman.
+select * from livro where ideditora = 1; 
+
+--23. Os empréstimos realizados entre 05/05/2012 e 10/05/2012.
+select * from emprestimo where data_emprestimo between '2012-05-05' and '2012-05-10';
+select* from emprestimo
+
+--24. Os empréstimos que não foram feitos entre 05/05/2012 e 10/05/2012
+select * from emprestimo where data_emprestimo not between '2012-05-05' and '2012-05-10';
+
+--25. Os empréstimos que os livros já foram devolvidos.
+select * from emprestimo where devolvido like 'S';
+
+
+--CONSULTAS COM AGRUPAMENTO SIMPLES
+--26. A quantidade de livros.
+select count(idlivro) from livro;
+
+--27. O somatório do valor dos empréstimos.
+select sum(valor) from emprestimo;
+
+--28. A média do valor dos empréstimos.
+select avg(valor) from emprestimo;
+--29. O maior valor dos empréstimos.
+select max(valor) from emprestimo;
+--30. O menor valor dos empréstimos.
+select min(valor) from emprestimo;
+--31. O somatório do valor do empréstimo que estão entre 05/05/2012 e 10/05/2012.
+select sum(valor) as somatorio_valores from emprestimo where data_emprestimo  between '05-05-2012' and '10-05-2012';
+--32. A quantidade de empréstimos que estão entre 01/05/2012 e 05/05/2012.
+select count(idemprestimo) as quantidade_emprestimo from emprestimo where data_emprestimo between '01-05-2012' and '05-05-2012';
+
+
+--CONSULTAS COM JOIN
+
+--33. O nome do livro, a categoria e a editora (LIVRO) – fazer uma view
+create view livros as
+	select
+		l.nome as livro,
+		ctg.idnome as categoria,
+		edtr.idnome as editora
+from livro as l
+left outer join 
+	categoria ctg on l.idcategoria= ctg.idcategoria
+left outer join 
+	editora as edtr on l.ideditora = edtr.ideditora;
+
+select * from livros
+--34. O nome do livro e o nome do autor (LIVRO_AUTOR) – fazer uma view.]
+
+create view livro_autor_informacoes as
+select 
+	lv.nome as livro,
+	atr.idnome as autor
+from livro_autor lva
+left outer join
+	livro lv on lva.idlivro = lv.idlivro
+left outer join
+	autor atr on lva.idautor = atr.idautor;
+
+--35. O nome dos livros do autor Ian Graham (LIVRO_AUTOR).
+create view livros_iam as
+	select
+		a.idnome as autor,
+		l.nome as livro 
+from livro_autor autl
+left outer join 
+	autor a on autl.idautor = a.idautor
+left outer join
+	livro l on autl.idlivro = l.idlivro
+where a.idautor = 8;
+select * from livros_iam
+
+
+--36. O nome do aluno, a data do empréstimo e a data de devolução (EMPRESTIMO).
+create view emprestimo_aln as
+	select
+		a.nome as aluno,
+		emp.data_emprestimo,
+		emp.data_devolucao
+from emprestimo as emp
+left outer join 
+	aluno as a on emp.idaluno = a.idaluno;
+
+--37. O nome de todos os livros que foram emprestados (EMPRESTIMO_LIVRO).
+create view livro_emprestimo as
+	select
+		l.nome as livro,
+		emp.idEmprestimo
+from emprestimo_livro as emp
+left outer join livro l on emp.idLivro = l.idLivro
+select * from livro_emprestimo
+
+
+--CONSULTAS COM AGRUPAMENTO + JOIN
+--38. O nome da editora e a quantidade de livros de cada editora (LIVRO).
+select 
+	e.idnome, 
+	count(idLivro) as quantidade
+from livro as l
+left outer join
+	editora e on l.idEditora = e.idEditora
+	group by e.idnome;
+
+--39. O nome da categoria e a quantidade de livros de cada categoria (LIVRO).
+select 
+	ctg.idnome as categoria,
+	count(idLivro) as quantidade
+from livro as l
+left outer join
+	categoria ctg on l.idcategoria = ctg.idcategoria
+	group by ctg.idnome;
+
+--40. O nome do autor e a quantidade de livros de cada autor (LIVRO_AUTOR).
+select
+	a.idnome,
+	count(idLivro) as quantidade
+from livro_autor as la
+left join
+	autor a on la.idAutor = a.idAutor
+	group by a.idnome;
+--41. O nome do aluno e a quantidade de empréstimo de cada aluno (EMPRESTIMO_LIVRO).
+select
+	a.nome,
+	count(idEmprestimo) as quantidade
+from emprestimo as emp
+left join aluno a on emp.idaluno = a.idaluno
+	group by a.nome;
+
+--42. O nome do aluno e o somatório do valor total dos empréstimos de cada aluno (EMPRESTIMO).
+select
+	a.nome,
+	sum(valor) as valor
+from emprestimo as emp
+left join aluno a on emp.idAluno = a.idAluno
+	group by a.nome;
+
+--43. O nome do aluno e o somatório do valor total dos empréstimos de cada aluno somente daqueles que o somatório for maior do que 7,00 (EMPRESTIMO).
+select
+	a.nome,
+	sum(valor) as valor
+from emprestimo emp
+left outer join 
+	aluno a on emp.idaluno = a.idaluno
+	group by a.nome
+having 
+	sum(emp.valor) > 12;
+
+--CONSULTAS COMANDOS DIVERSOS
+
+--44. O nome de todos os alunos em ordem decrescente e em letra maiúscula.
+select 
+	upper(nome)
+from aluno 
+order by nome desc;
+
+--45. Os empréstimos que foram feitos no mês 04 de 2012.
+select * from emprestimo;
+select
+	*
+	from emprestimo
+	where data_emprestimo between '01-04-2012' and '30-04-2012';
+	
+--46. Todos os campos do empréstimo. Caso já tenha sido devolvido, mostrar a mensagem “Devolução completa”, senão “Em atraso”.
+select 
+	idemprestimo,
+	idaluno,
+	data_emprestimo,
+	data_devolucao,
+	valor,
+	case devolvido
+		when 'S' then 'Devolução completa'
+		else 'Em atraso'
+	end as devolucao
+from emprestimo;
+	 
+--47. Somente o caractere 5 até o caractere 10 do nome dos autores.
+select
+	substring(idnome, 5, 10)
+from autor;
+
+--48. O valor do empréstimo e somente o mês da data de empréstimo. Escreva “Janeiro”, “Fevereiro”, etc
+
+select 
+	valor,
+	case extract(month from data_emprestimo)
+		when '01' then 'JANEIRO'
+		when '02' then 'FEVEREIRO'
+		when '03' then 'MARÇO'
+		when '04' then  'ABRIL'
+		when '05' then 'MAIO'
+		when '06' then 'JUNHO'
+		when '07' then 'JULHO'
+		when '08' then 'AGOSTO'
+		when '09' then 'SETEMBRO'
+		when '10' then 'OUTUBRO'
+		when '11' then 'NOVEMBRO'
+		when '12' then 'DEZEMBRO'
+	end as mes 
+from emprestimo;
+
+	
+--SUBCONSULTAS
+
+--49. A data do empréstimo e o valor dos empréstimos que o valor seja maior que a média de todos os empréstimos.
+select 
+	data_emprestimo,
+	valor
+from 
+	emprestimo
+where 
+	valor < (select avg(valor) from emprestimo);
+--50. A data do empréstimo e o valor dos empréstimos que possuem mais de um livro.
+select
+    emp.data_emprestimo,
+    emp.valor,
+    (select count(elv.idemprestimo) from emprestimo_livro elv where elv.idemprestimo = emp.idemprestimo)
+from
+    emprestimo emp
+where
+    (select 
+         count(elv.idemprestimo) 
+     from 
+         emprestimo_livro elv 
+      where elv.idemprestimo = emp.idemprestimo) > 1
+
+select * from emprestimo_livro
+
+--51. A data do empréstimo e o valor dos empréstimos que o valor seja menor que a soma de todos os empréstimos.
+select
+	data_emprestimo,
+	valor
+from emprestimo
+	where valor < (select sum(valor) from emprestimo);
+
+select * from aluno
+
+select * from livros
+select * from editora
+select * from emprestimo
+select * from emprestimo_livro;
+select * from autor;
