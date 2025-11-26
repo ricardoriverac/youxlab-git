@@ -57,6 +57,8 @@
     "Application.a_39.executor": "Run",
     "Application.a_40.executor": "Run",
     "Application.a_41.executor": "Run",
+    "Application.a_49_ex1.executor": "Run",
+    "Application.a_49_ex2.executor": "Debug",
     "Application.ex_a24.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
