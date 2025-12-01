@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a43b457e-3572-4a1b-9e8f-9a396a3e7823" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled1/src/a_55_ex3.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled1/src/a_54_ex3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled1/src/a_55_ex4.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled1/src/a_54_ex4.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,56 +32,57 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.a_18.executor": "Run",
-    "Application.a_24.executor": "Run",
-    "Application.a_25.executor": "Run",
-    "Application.a_26.executor": "Run",
-    "Application.a_27.executor": "Run",
-    "Application.a_28.executor": "Run",
-    "Application.a_30.executor": "Run",
-    "Application.a_30_ex2.executor": "Run",
-    "Application.a_30_ex3.executor": "Run",
-    "Application.a_30_ex4.executor": "Run",
-    "Application.a_30_ex5.executor": "Run",
-    "Application.a_35.executor": "Run",
-    "Application.a_36.executor": "Run",
-    "Application.a_37_ex2.executor": "Run",
-    "Application.a_37_ex3.executor": "Run",
-    "Application.a_37_ex4.executor": "Debug",
-    "Application.a_37_ex5.executor": "Run",
-    "Application.a_37_ex6.executor": "Run",
-    "Application.a_37_ex7.executor": "Run",
-    "Application.a_37_ex8.executor": "Run",
-    "Application.a_38.executor": "Run",
-    "Application.a_39.executor": "Run",
-    "Application.a_40.executor": "Run",
-    "Application.a_41.executor": "Run",
-    "Application.a_49_ex1.executor": "Run",
-    "Application.a_49_ex2.executor": "Run",
-    "Application.a_50.executor": "Run",
-    "Application.a_50_ex3.executor": "Run",
-    "Application.a_54_ex1.executor": "Run",
-    "Application.a_54_ex2.executor": "Run",
-    "Application.a_55_ex3.executor": "Run",
-    "Application.a_55_ex4.executor": "Run",
-    "Application.ex_a24.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "pedro-couto",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/youx/Documentos/youxlab-git/Estudos/java",
-    "onboarding.tips.debug.path": "/home/youx/Documentos/youxlab-git/Estudos/java/untitled1/src/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.a_18.executor&quot;: &quot;Run&quot;,
+    &quot;Application.a_24.executor&quot;: &quot;Run&quot;,
+    &quot;Application.a_25.executor&quot;: &quot;Run&quot;,
+    &quot;Application.a_26.executor&quot;: &quot;Run&quot;,
+    &quot;Application.a_27.executor&quot;: &quot;Run&quot;,
+    &quot;Application.a_28.executor&quot;: &quot;Run&quot;,
+    &quot;Application.a_30.executor&quot;: &quot;Run&quot;,
+    &quot;Application.a_30_ex2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.a_30_ex3.executor&quot;: &quot;Run&quot;,
+    &quot;Application.a_30_ex4.executor&quot;: &quot;Run&quot;,
+    &quot;Application.a_30_ex5.executor&quot;: &quot;Run&quot;,
+    &quot;Application.a_35.executor&quot;: &quot;Run&quot;,
+    &quot;Application.a_36.executor&quot;: &quot;Run&quot;,
+    &quot;Application.a_37_ex2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.a_37_ex3.executor&quot;: &quot;Run&quot;,
+    &quot;Application.a_37_ex4.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.a_37_ex5.executor&quot;: &quot;Run&quot;,
+    &quot;Application.a_37_ex6.executor&quot;: &quot;Run&quot;,
+    &quot;Application.a_37_ex7.executor&quot;: &quot;Run&quot;,
+    &quot;Application.a_37_ex8.executor&quot;: &quot;Run&quot;,
+    &quot;Application.a_38.executor&quot;: &quot;Run&quot;,
+    &quot;Application.a_39.executor&quot;: &quot;Run&quot;,
+    &quot;Application.a_40.executor&quot;: &quot;Run&quot;,
+    &quot;Application.a_41.executor&quot;: &quot;Run&quot;,
+    &quot;Application.a_49_ex1.executor&quot;: &quot;Run&quot;,
+    &quot;Application.a_49_ex2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.a_50.executor&quot;: &quot;Run&quot;,
+    &quot;Application.a_50_ex3.executor&quot;: &quot;Run&quot;,
+    &quot;Application.a_54_ex1.executor&quot;: &quot;Run&quot;,
+    &quot;Application.a_54_ex2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.a_55.executor&quot;: &quot;Run&quot;,
+    &quot;Application.a_55_ex3.executor&quot;: &quot;Run&quot;,
+    &quot;Application.a_55_ex4.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ex_a24.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;pedro-couto&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/youx/Documentos/youxlab-git/Estudos/java&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/home/youx/Documentos/youxlab-git/Estudos/java/untitled1/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="a_18" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="a_18" />
@@ -97,8 +100,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.a_45" />
         <item itemvalue="Application.a_18" />
+        <item itemvalue="Application.a_45" />
       </list>
     </recent_temporary>
   </component>
