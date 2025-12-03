@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a43b457e-3572-4a1b-9e8f-9a396a3e7823" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled1/application/a_64.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/application/a_64.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled1/desafiocultural/desafioCultural.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled1/src/application/entities/a_65.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled1/src/application/entities/Triangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/cursor/a_67.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/cursor/entities/Produto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/cursor/entities/Produto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled1/src/cursor/a_67.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled1/src/cursor/a_67.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled1/src/cursor/entities/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled1/src/cursor/entities/Produto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

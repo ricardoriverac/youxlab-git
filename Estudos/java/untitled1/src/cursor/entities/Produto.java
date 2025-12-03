@@ -14,4 +14,7 @@ public class Produto{
     public void removerEstoque (int quantidade){
         this.quantidade -= quantidade;
     }
+    public String toString(){
+        return  nome + ", $ " + preco + ", " + quantidade + " units" + " Total: $ " + estoque();
+    };
 }

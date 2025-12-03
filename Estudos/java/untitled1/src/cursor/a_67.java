@@ -19,8 +19,18 @@ public class a_67 {
         x.preco = sc.nextDouble();
         System.out.print("Caro usuário, insira a quantidade em estoque de seu produto: ");
         x.quantidade = sc.nextInt();
-        System.out.printf("Product data: %s, $ %.2f, %d units", x.nome, x.preco, x.quantidade);
+        System.out.println("Dados do produto: " + x);
 
         System.out.print("Caro usuário, quantas unidades você deseja adicionar ao estoque? ");
+        int quantidadeAdicionar = sc.nextInt();
+        x.adicionarEstoque(quantidadeAdicionar);
+        System.out.println("Dados do produto atualizados: " + x);
+
+        System.out.println("Caro usuário, quantas unidades você deseja remover do estoque? ");
+        int quantidadeRemover = sc.nextInt();
+        x.removerEstoque(quantidadeRemover);
+        System.out.println("Dados do produto autalizados: " + x);
+
+        sc.close();
     }
 }
