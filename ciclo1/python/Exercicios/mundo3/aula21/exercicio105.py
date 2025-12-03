@@ -6,7 +6,7 @@ def notas(*n, situacao=False):
     
     i = dict()
     i['total_notas'] = len(n)
-    i['maior_nota'] = max(n)
+    i['maior_nota'] = max(i)
     i['menor_nota'] = min(n)
     i['media_turma'] = sum(n) / len(n)
     if situacao:

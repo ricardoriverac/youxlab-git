@@ -701,8 +701,909 @@ select idcliente, sum(valor) from pedido group by idcliente having sum(valor) > 
 -- AULA 33 - Exercicios
 
 -- 1. A média dos valores de vendas dos vendedores que venderam mais que R$ 200,00.
+
+select  round(avg(valor)), idvendedor from pedido group by idvendedor having sum(valor) > 200;
+
+-- 2. Os vendedores que venderam mais que R$ 1500,00.
+
+select sum(valor), idvendedor from pedido group by idvendedor;
+
+-- 3. O somatório das vendas de cada vendedor.
+
+select idvendedor, sum(valor) from pedido group by idvendedor having sum(valor) > 1500;
+
+-- 4. A quantidade de municípios.
+
+select * from municipio;
+
+-- 5. A quantidade de municípios que são do Paraná ou de Santa Catarina.
+
+select count(idmunicipio) from municipio where iduf = 1 or iduf= 3;
+
+-- 6. A quantidade de municípios por estado.
+
+select count(idmunicipio) from municipio group by iduf;
+
+-- 7. A quantidade de clientes que informaram o logradouro.
+
+select count(idcliente) from cliente where logradouro is not null;
+
+
+-- 8. A quantidade de clientes por município.
+
+select count(idcliente) from cliente group by idmunicipio;
+
+-- 9. A quantidade de fornecedores.
+
+select count(idfornecedor) from fornecedor;
+
+-- 10. A quantidade de produtos por fornecedor.
+
+select idfornecedor, count(idproduto) from produto group by idfornecedor
+
+-- 11. A média de preços dos produtos do fornecedor Cap. Computadores.
+
+select * from fornecedor 
+select avg(valor) from produto where idfornecedor = 1
+
+-- 12. O somatório dos preços de todos os produtos.
+
+select sum(valor) from produto
+
+-- 13. O nome do produto e o preço somente do produto mais caro.
+
+select nome, valor from produto order by valor desc limit 1
+
+-- 14. O nome do produto e o preço somente do produto mais barato.
+
+select nome, valor from produto order by valor asc limit 1
+
+-- 15. A média de preço de todos os produtos.
+
+select avg(valor) from produto
+
+-- 16. A quantidade de transportadoras.
+
+select count(idtransportadora) from transportadora
+
+-- 17. A média do valor de todos os pedidos.
+
+select avg(valor) from pedido
+
+-- 18. O somatório do valor do pedido agrupado por cliente.
+
+select idcliente, sum(valor) from pedido group by idcliente
+
+-- 19. O somatório do valor do pedido agrupado por vendedor.
+
+select idvendedor, sum(valor) from pedido group by idvendedor
+
+-- 20. O somatório do valor do pedido agrupado por transportadora.
+
+select idtransportadora, sum(valor) from pedido group by idtransportadora
+
+-- 21. O somatório do valor do pedido agrupado pela data.
+
+select data_pedido, sum(valor) from pedido group by data_pedido
+
+-- 22. O somatório do valor do pedido agrupado por cliente, vendedor e transportadora.
+
+select idcliente, idvendedor, idtransportadora, sum(valor) from pedido group by idcliente, idvendedor, idtransportadora
+
+-- 23. O somatório do valor do pedido que esteja entre 01/04/2008 e 10/12/2009 e que seja maior que R$ 200,00.
+
+select sum(valor) from pedido where data_pedido between '2008-04-01' and '2009-12-10' and valor > 200
+
+-- 24. A média do valor do pedido do vendedor André.
+select * from vendedor
+select * from pedido
+
+select * from pedido where idvendedor = '1';
+select avg(valor) as media from pedido where idvendedor = '1'
+
+-- 25. A média do valor do pedido da cliente Jéssica.
+
+select * from cliente 
+select avg(valor) as media from pedido where idcliente = '15'
+
+-- 26. A quantidade de pedidos transportados pela transportadora BS. Transportes.
+
+select * from transportadora
+select count(idpedido) from pedido where idtransportadora = 1
+
+-- 27. A quantidade de pedidos agrupados por vendedor.
+
+select idcliente, count(idpedido) from pedido group by idcliente 
+
+-- 28. A quantidade de pedidos agrupados por cliente.
+
+select idcliente, count(idpedido) from pedido group by idcliente
+
+-- 29. A quantidade de pedidos entre 15/04/2008 e 25/04/2008.
+
+select count(idpedido) from pedido where data_pedido between '2008-04-15' and '2008-04-25'
+
+-- 30. A quantidade de pedidos que o valor seja maior que R$ 1.000,00.
+
+select count(idpedido) from pedido where valor > 1000
+
+-- 31. A quantidade de microcomputadores vendida.
+
+select * from produto 
+select sum(quantidade) from pedido_produto group by idproduto
+
+-- 32. A quantidade de produtos vendida agrupado por produto.
+
+select idproduto, sum(quantidade) from pedido_produto group by idproduto
+
+-- 33. O somatório do valor dos produtos dos pedidos, agrupado por pedido.
+
+select idpedido, sum(valor_unitario) from pedido_produto group by idpedido
+
+-- 34. A quantidade de produtos agrupados por pedido.
+
+select idpedido, sum(quantidade) from pedido_produto group by idpedido
+
+-- 35. O somatório dos valores unitários de todos os produtos.
+
+select sum(valor_unitario) from pedido_produto
+
+-- 36. A média dos produtos do pedido 6.
+
+select avg(valor_unitario) from pedido_produto where idpedido = 6
+
+-- 37. O valor do maior produto do pedido.
+
+select max(valor_unitario) from pedido_produto
+
+-- 38. O valor do menor produto do pedido.
+
+select min(valor_unitario) from pedido_produto
+
+-- 39. O somatório da quantidade de produtos por pedido.
+
+select idpedido, sum(quantidade) from pedido_produto group by idpedido
+
+-- 40. O somatório da quantidade de todos os produtos do pedido.
+
+select sum(valor_unitario) from pedido_produto
+
+-- AULA 38 - Relacionamentos com joins
+
+select 
+	cln.nome,
+	prf.nome
+from 
+	cliente as cln
+left outer join 
+	profissao as prf on cln.idprofissao = prf.idprofissao
+
+select 
+	cln.nome as cliente,
+	prf.nome as profissao
+from
+	cliente as cln
+inner join 
+	profissao as prf on cln.idprofissao = prf.idprofissao
+
+select 
+	cln.nome as cliente,
+	prf.nome as profissao
+from 
+	cliente as cln
+right outer join
+	profissao as prf on cln.idprofissao = prf.idprofissao
+
+-- AULA 39 - Exercicios
+
+-- 1. O nome do cliente, a profissão, a nacionalidade, o logradouro, o número, o complemento, o bairro, o município e a unidade de federação.
+select 
+	cln.nome as cliente,
+	prf.nome as profissao,
+	ncl.nome as nacionalidade,
+	cln.logradouro,
+	cln.numero,
+	cpm.nome as complemento,
+	brr.nome as bairro,
+	mcp.nome as municipio,
+	uf.sigla as sigla
+from 
+	cliente as cln
+left outer join
+	profissao as prf on cln.idprofissao = prf.idprofissao
+left outer join 
+	nacionalidade ncl on cln.idnacionalidade = ncl.idnacionalidade
+left outer join
+	complemento cpm on cln.idcomplemento = cpm.idcomplemento
+left outer join 
+	bairro brr on cln.idbairro = brr.idbairro
+left outer join 
+	municipio mcp on cln.idmunicipio = mcp.idmunicipio
+left outer join 
+	uf on mcp.iduf = uf.iduf
+
+-- 2. O nome do produto, o valor e o nome do fornecedor.
+
+select 
+	prd.nome as produto,
+	prd.valor,
+	fnc.nome as fornecedor
+from 
+	produto prd
+left outer join
+	fornecedor fnc on prd.idfornecedor = fnc.idfornecedor
+
+-- 3. O nome da transportadora e o município.
+
+select 
+	tns.nome as transportadora,
+	mnc.nome as municipio
+from
+	transportadora tns
+left outer join 
+	municipio mnc on tns.idmunicipio = mnc.idmunicipio
+	
+-- 4. A data do pedido, o valor, o nome do cliente, o nome da transportadora e o nome do vendedor.
+
+select 
+	dpd.data_pedido,
+	dpd.valor,
+	cln.nome as cliente,
+	tsp.nome as transportadora,
+	vnd.nome as vendedor
+from
+	pedido dpd
+left outer join
+	cliente cln on dpd.idcliente = cln.idcliente
+left outer join
+	transportadora tsp on dpd.idtransportadora = tsp.idtransportadora
+left outer join 
+	vendedor vnd on dpd.idvendedor = vnd.idvendedor
+	
+-- 5. O nome do produto, a quantidade e o valor unitário dos produtos do pedido.
+
+select 
+	prt.nome as produto,
+	pp.quantidade,
+	pp.valor_unitario
+from
+	pedido_produto pp
+left outer join
+	produto prt on pp.idproduto = prt.idproduto
+	
+-- 6. O nome dos clientes e a data do pedido dos clientes que fizeram algum pedido (ordenado pelo nome do cliente).
+
+select 
+	cln.nome,
+	dpd.data_pedido
+from
+	cliente cln
+inner join 
+	pedido dpd on dpd.idcliente = cln.idcliente
+order by
+	cln.nome
+
+-- 7. O nome dos clientes e a data do pedido de todos os clientes, independente se tenham feito pedido (ordenado pelo nome do cliente).
+
+select 
+	cln.nome,
+	dpd.data_pedido
+from
+	cliente cln
+left outer join
+	pedido dpd on dpd.idcliente = cln.idcliente
+order by
+	cln.nome
+
+-- 8. O nome da cidade e a quantidade de clientes que moram naquela cidade.
+
+select 
+	mnc.nome as municipio,
+	count(cln.idcliente) as quantidade
+from
+	cliente cln
+inner join 
+	municipio mnc on cln.idmunicipio = mnc.idmunicipio
+group by 
+	mnc.nome
+
+-- 9. O nome do fornecedor e a quantidade de produtos de cada fornecedor.
+select * from produto
+select 
+	frn.nome as fornecedor,
+	count(pdd.idproduto)
+from
+	produto pdd
+left outer join
+	fornecedor frn on pdd.idfornecedor = frn.idfornecedor
+group by 
+	frn.nome
+
+-- 10.O nome do cliente e o somatório do valor do pedido (agrupado por cliente).
+
+select 
+	cln.nome as cliente,
+	sum(pdd.valor)
+from
+	pedido pdd
+left outer join
+	cliente cln on pdd.idcliente = cln.idcliente
+group by 
+	cln.nome
+
+-- 11.O nome do vendedor e o somatório do valor do pedido (agrupado por vendedor).
+
+select 
+	vnd.nome as valor,
+	sum(pdd.valor) as total
+from
+	pedido pdd 
+left outer join
+	vendedor vnd on pdd.idvendedor = vnd.idvendedor
+group by
+	vnd.nome
+
+-- 12.O nome da transportadora e o somatório do valor do pedido (agrupado por transportadora).
+
 select
-    vendedor,
-    avg(valor) as media_vendas
-from vendedor
-where  valor > 200.00 group by vendedor;
+	trn.nome as transportadora,
+	sum(pdd.valor) as total
+from
+	pedido pdd
+inner join 
+	transportadora trn on pdd.idtransportadora = trn.idtransportadora
+group by 
+	trn.nome
+
+-- 13.O nome do cliente e a quantidade de pedidos de cada um (agrupado por cliente).
+
+select 
+	cln.nome as cliente,
+	count(pdd.idpedido) as total
+from
+	pedido pdd
+left outer join
+	cliente cln on pdd.idcliente = cln.idcliente
+group by 
+	cln.nome
+
+-- 14.O nome do produto e a quantidade vendida (agrupado por produto).
+
+select
+	pdt.nome as produto,
+	sum(pp.quantidade) as total
+from
+	pedido_produto pp
+left outer join
+	produto pdt on pp.idproduto = pdt.idproduto
+group by 
+	pdt.nome
+
+-- 15.A data do pedido e o somatório do valor dos produtos do pedido (agrupado pela data do pedido).
+select * from pedido
+select
+	p.data_pedido,
+	sum(pp.valor_unitario) as total
+from
+	pedido_produto pp
+left outer join
+	pedido p on p.idpedido = pp.idpedido
+group by 
+	p.data_pedido
+
+-- 16.A data do pedido e a quantidade de produtos do pedido (agrupado pela data do pedido).
+
+select
+	dpd.data_pedido,
+	sum(pp.quantidade) as quantidade
+from
+	pedido_produto pp
+left outer join
+	pedido dpd on dpd.idpedido = pp.idpedido
+group by 
+	dpd.data_pedido
+
+-- AULA 43 - Comandos adicionais
+
+select * from pedido
+
+select 
+	data_pedido, 
+	extract(day from data_pedido),
+	extract(month from data_pedido),
+	extract(year from data_pedido)
+from 
+	pedido
+
+select nome, substring(nome from 1 for 5), substring(nome, 2) from cliente
+
+select nome, upper(nome) from cliente
+
+select nome, cpf, coalesce(cpf, 'Não informado') from cliente
+
+select
+	case sigla
+		when 'PR' then 'Paraná'
+		when 'SC' then 'Santa Catarina'
+	else 'Outros'
+	end as uf
+from 
+	uf
+
+-- AULA 44 - Exercicios
+
+-- 1. O nome do cliente e somente o mês de nascimento. Caso a data de nascimento não esteja preenchida mostrar a mensagem “Não informado”.
+
+-- jeito correto ↓
+select nome, coalesce(to_char(data_nascimento, 'MM'), 'Não informado') from cliente
+
+--jeito dele ↓
+select nome, coalesce(extract(month from data_nascimento), 0) from cliente
+
+-- 2. O nome do cliente e somente o nome do mês de nascimento (Janeiro, Fevereiro etc). Caso a data de nascimento não esteja preenchida mostrar a mensagem “Não informado”.
+select * from cliente
+select 
+    nome,
+    case
+        when data_nascimento is null 
+            then 'Não informado'
+        else to_char(data_nascimento, 'TMMonth')
+    end as mes
+from 
+	cliente;
+
+-- 3. O nome do cliente e somente o ano de nascimento. Caso a data de nascimento não esteja preenchida mostrar a mensagem “Não informado”.
+
+select 
+    nome,
+    case
+        when data_nascimento is null
+            then 'Não informado'
+        else extract(year from data_nascimento)::text
+    end as ano_nascimento
+from 
+	cliente;
+
+-- 4. O caractere 5 até o caractere 10 de todos os municípios.
+
+select 
+    substring(nome from 5 for 6) as trecho
+from municipio;
+
+select 
+    upper(nome) as nome_maiusculo
+from municipio;
+
+
+-- 6. O nome do cliente e o gênero. Caso seja M mostrar “Masculino”, senão mostrar “Feminino”.
+select * from cliente
+select
+    nome,
+    case
+        when genero = 'M' then 'Masculino'
+        else 'Feminino'
+    end as gerero
+from 
+	cliente;
+
+-- 7. O nome do produto e o valor. Caso o valor seja maior do que R$ 500,00 mostrar a mensagem “Acima de 500”, caso contrário, mostrar a mensagem “Abaixo de 500”.
+
+select
+    upper(nome) as nome_maiusculo
+from municipio;
+
+-- AULA 46 - Subconsultas
+
+-- Selecionar data do pedido e o valor onde o valor seja maior que a meédia  dos valores de todos os pedidos 
+
+select 
+	data_pedido,
+	valor
+from
+	pedido
+where
+	valor > (select avg(valor) from pedido)
+	
+-- Exemplo com count
+
+select 
+	pdd.data_pedido,
+	pdd.valor,
+	(select sum(quantidade) from pedido_produto pdp where pdp.idpedido = pdd.idpedido)
+from
+	pedido pdd
+
+select * from pedido_produto
+
+-- Exemplo com update
+
+select * from pedido
+
+update pedido set valor = valor + ((valor * 5) / 100)
+where valor > (select avg(valor) from pedido)
+
+-- AULA 47 - Exercicios
+
+-- 1. O nome dos clientes que moram na mesma cidade do Manoel. Não deve ser mostrado o Manoel.
+
+select 
+	nome,
+	idmunicipio
+from
+	cliente 
+where
+	idmunicipio = (select idmunicipio from cliente where nome = 'Manoel')
+and 
+	idcliente <> 1
+
+select * from cliente
+
+-- 2. A data e o valor dos pedidos que o valor do pedido seja menor que a média de todos os pedidos.
+
+select 
+	data_pedido,
+	valor
+from
+	pedido
+where
+	valor < (select avg(valor) from pedido)
+	
+-- 3. A data,o valor, o cliente e o vendedor dos pedidos que possuem 2 ou mais produtos.
+
+select 
+	pdd.data_pedido,
+	pdd.valor,
+	cln.nome as cliente,
+	vnd.nome as vendedor,
+	(select sum(quantidade) from pedido_produto pdp)
+from 
+	pedido pdd
+left outer join 
+	cliente cln on pdd.idcliente = cln.idcliente
+left outer join 
+	vendedor vnd on pdd.idvendedor = vnd.idvendedor
+where 
+	(select sum(quantidade) from pedido_produto pdp where pdp.idpedido = pdd.idpedido) >= 2
+
+select * from pedido_produto
+	
+-- 4. O nome dos clientes que moram na mesma cidade da transportadora BSTransportes.
+
+select 
+	nome,
+	idmunicipio
+from 
+	cliente
+where
+	idmunicipio = (select idmunicipio from transportadora where idtransportadora = 1)
+-- 5. O nome do cliente e o município dos clientes que estão localizados no mesmo município de qualquer uma das transportadoras.
+
+select 
+	nome,
+	idmunicipio
+from 
+	cliente 
+where
+	idmunicipio in (select distinct (idmunicipio) from transportadora)
+	
+-- 6. Atualizar o valor do pedido em 5% para os pedidos que o somatório do valor total dos produtos daquele pedido seja maior que a média do valor total de todos os produtos de todos os pedidos
+
+update 
+	pedido 
+set 
+	valor = valor + ((valor * 5) / 100)
+where 
+	(select sum(pdp.valor_unitario) from pedido_produto pdp where pdp.idpedido = idpedido) > (select avg(valor_unitario) from pedido_produto)
+
+
+select idpedido,
+	(select sum(valor_unitario) from pedido_produto pdp where pdp.idpedido = pdd.idpedido)
+from 
+	pedido pdd
+	
+select avg(valor_unitario) from pedido_produto
+select * from pedido
+
+-- 7. O nome do cliente e a quantidade de pedidos feitos pelo cliente.
+
+select 
+	cln.nome,
+	(select count(idpedido) from pedido pdd where pdd.idcliente = cln.idcliente) as total
+from
+	cliente cln
+	
+-- 8. Para revisar, refaça o exercício anterior (número 07) utilizando group by e mostrando somente os clientes que fizeram pelo menos um pedido.
+
+select 
+	cln.nome as cliente,
+	count(pdd.idpedido) as total
+from
+	pedido pdd
+left outer join 
+	cliente cln on pdd.idcliente = cln.idcliente
+group by 
+	cln.nome
+
+-- AULA 50 - Views
+drop view cliente_profissao;
+
+create view cliente_profissao as 
+select 
+	cln.nome as cliente,
+	cln.cpf,
+	prf.nome as profissao
+from
+	cliente cln
+left outer join
+	profissao prf on cln.idprofissao = prf.idprofissao
+
+select cliente from cliente_profissao where profissao = 'Porfessor'
+select * from cliente_profissao
+
+-- AULA 51 - Exercicio
+
+-- 1. O nome, a profissão, a nacionalidade, o complemento, o município, a unidade de federação, o bairro, o CPF,o RG, a data de nascimento, o gênero (mostrar “Masculino” ou “Feminino”), o logradouro, o número e as observações dos clientes.
+
+create view clientes_dados  as 
+select
+	cln.nome as cliente,
+	prf.nome as profissao,
+	ncn.idnacionalidade as nacionalidade,
+	cln.nome as complemento,
+	mnc.idmunicipio as municipio,
+	uf.nome as unidade_federacao,
+	brr.nome as bairro,
+	cln.rg,
+	cln.cpf,
+	cln.data_nascimento,
+	case cln.genero
+		when 'M' then 'Masculino'
+		when 'F' then 'Feminino'
+	end as genero,
+	cln.logradouro,
+	cln.numero,
+	cln.observacoes
+from 
+	cliente cln
+left outer join 
+	profissao prf on cln.idprofissao = prf.idprofissao
+left outer join 
+	nacionalidade ncn on cln.idnacionalidade = ncn.idnacionalidade
+left outer join
+	complemento cmp on cln.idcomplemento = cmp.idcomplemento 
+left outer join
+	municipio mnc on cln.idmunicipio = mnc.idmunicipio
+left outer join 
+	uf on mnc.iduf = uf.iduf
+left outer join
+	bairro brr on cln.idbairro = brr.idbairro
+
+
+
+select * from clientes_dados
+
+-- 2. O nome do município e o nome e a sigla da unidade da federação.
+
+create view informacoes_municipio as
+select 
+	mnc.nome as municipio,
+	uf.nome as unidade_federacao,
+	uf.sigla
+from 
+	municipio mnc
+left outer join 
+	uf on mnc.iduf = uf.iduf 
+	
+select * from informacoes_municipio
+
+--3. O nome do produto, o valor e o nome do fornecedor dos produtos.
+
+create view informacoes_produto as
+select
+	pdd.nome,
+	pdd.valor,
+	frn.nome as fornecedor
+from produto pdd
+left outer join
+	fornecedor frn on pdd.idfornecedor = frn.idfornecedor
+	
+select * from informacoes_produto
+
+--4. O nome da transportadora, o logradouro, o número, o nome da unidade de federação e a sigla da unidade de federação das transportadoras.
+
+select 
+	trn.nome as transportadora,
+	trn.logradouro,
+	trn.numero,
+	uf.nome as unidade_federacao,
+	uf.sigla
+from 
+	transportadora trn
+left outer join
+	municipio mnc on trn.idmunicipio = mnc.idmunicipio
+left outer join
+	uf on mnc.iduf = uf.iduf
+	
+--5. A data do pedido, o valor, o nome da transportadora, o nome do cliente e o nome do vendedor dos pedidos.
+
+create view dados_pedido as
+select 
+	pdd.data_pedido,
+	pdd.valor,
+	trn.nome as transportadora,
+	cln.nome as vendedor
+from
+	pedido pdd
+left outer join
+	transportadora trn on pdd.idtransportadora = trn.idtransportadora
+left outer join
+	cliente cln on pdd.idcliente = cln.idcliente
+left outer join 
+	vendedor vnd on pdd.idvendedor = vnd.idvendedor
+
+select * from dados_pedido
+
+--6. O nome do produto, a quantidade, o valor unitário e o valor total dos produtos do pedido.
+
+create view produto_pedido as
+select 
+	prd.nome as produto,
+	pdp.quantidade,
+	pdp.valor_unitario
+from
+	pedido_produto pdp
+left outer join 
+	produto prd on pdp.idproduto = prd.idproduto
+
+select * from produto_pedido
+
+-- AULA 54 - Autocremento
+
+create table exemplo(
+	idexemplo serial not null,
+	nome varchar(50) not null,
+
+	constraint pk_exemplo_idexemplo primary key (idexemplo)
+);
+
+insert into exemplo (nome) values ('Exemplo 1');
+insert into exemplo (nome) values ('Exemplo 2');
+insert into exemplo (nome) values ('Exemplo 3');
+insert into exemplo (nome) values ('Exemplo 4');
+insert into exemplo (nome) values ('Exemplo 5');
+
+
+select * from exemplo;
+
+select max(idbairro) = 1 from bairro;
+create sequence bairro_id_seq minvalue  5;
+alter table bairro alter idbairro set default nextval('bairro_id_seq');
+alter sequence bairro_id_seq owned by bairro.idbairro;
+insert into bairro (nome) values ('Teste 1');
+insert into bairro (nome) values ('Teste 2');
+
+select * from bairro;
+
+-- AULA 55 - Exercicio
+-- Criar sequências para todas as outras tabelas da base de dados
+ -- A) cliente
+ 
+select max(idcliente) +1 from cliente;
+
+create sequence clientes_id_seq minvalue 18;
+alter table cliente alter idcliente set default nextval('clientes_id_seq');
+alter sequence clientes_id_seq owned by cliente.idcliente;
+
+-- B) complemento
+
+select max(idcomplemento) +1 from complemento;
+create sequence complemento_id_seq minvalue 3;
+alter table complemento alter idcomplemento set default nextval('complemento_id_seq');
+alter sequence complemento_id_seq owned by complemento.idcomplemento;
+select * from complento 
+
+-- C) fornecedor 
+
+select * from fornecedor
+select max(idfornecedor) +1 from fornecedor;
+create sequence fornecedor_id_seq minvalue 4;
+alter table fornecedor alter idfornecedor set default nextval ('fornecedor_id_seq');
+alter sequence fornecedor_id_seq owned by fornecedor.idfornecedor;
+
+-- D) municipio
+
+select max(idmunicipio) +1 from municipio;
+create sequence municipio_id_seq minvalue 11;
+alter table municipio alter idmunicipio set default nextval ('municipio_id_seq');
+alter sequence municipio_id_seq owned by municipio.idmunicipio;
+select * from municipio
+
+-- E) nacionalidade
+
+create sequence nacionalidade_id_seq minvalue 7;
+alter table nacionalidade alter idnacionalidade set default nextval ('nacionalidade_id_seq');
+alter sequence nacionalidade_id_seq owned by nacionalidade.idnacionalidade;
+select * from nacionalidade
+
+-- F) pedido
+
+select max(idpedido) + 1 from pedido;
+
+create sequence pedido_id_seq minvalue 16;
+alter table pedido alter idpedido set default nextval ('pedido_id_seq');
+alter sequence pedido_id_seq owned by pedido.idpedido;
+select * from pedido
+
+-- G) profissao
+
+select max(idprofissao) + 1 from profissao;
+
+create sequence profissao_id_seq minvalue 8;
+alter table profissao alter idprofissao set default nextval('profissao_id_seq');
+alter sequence profissao_id_seq owned by profissao.idprofissao;
+select * from profissao
+
+-- H) transportadora
+
+select max(idtransportadora) + 1 from transportadora;
+
+create sequence transportadora_id_seq minvalue 3;
+alter table transportadora alter idtransportadora set default nextval('transportadora_id_seq');
+alter sequence transportadora_id_seq owned by transportadora.idtransportadora;
+select * from transportadora
+
+-- I) uf
+
+select max(iduf) + 1 from uf;
+create sequence uf_id_seq minvalue 7;
+alter table uf alter iduf set default nextval('uf_id_seq');
+alter sequence uf_id_seq owned by uf.iduf;
+
+-- J) vendedor
+
+select max(idvendedor) +1 from vendedor;
+create sequence vendedor_id_seq minvalue 9;
+alter table vendedor alter idvendedor set default nextval ('vendedor_id_seq');
+alter sequence vendedor_id_seq owned by vendedor.idvendedor;
+
+-- AULA 57 - Campos default 
+
+alter table pedido alter column data_pedido set default current_date;
+alter table pedido alter column valor set default 0;
+insert into pedido (idcliente, idvendedor) values (1, 1);
+select * from pedido_produto;
+select * from produto;
+
+
+create sequence pedido_produto_id_seq minvalue 16;
+alter table pedido_produto alter idpedido set default nextval('pedido_produto_id_seq');
+alter sequence pedido_produto_id_seq owned by pedido_produto.idpedido;
+
+-- AULA 58 - Exercicio
+-- 1 - a)
+
+alter table pedido_produto alter column quantidade set default 1;
+
+-- 1 - b)
+
+alter table pedido_produto alter column valor_unitario set default 0;
+
+-- 2 - a) 
+
+alter table produto alter column valor set default 0;
+insert into produto (idproduto, idfornecedor, nome) values (8, 1, 'Teste 1'); 
+select * from produto;
+
+-- AULA 60 - Indices 
+
+create index idx_cln_nome on cliente(nome);
+
+-- 1 - Adicione índices nas seguintes tabelas e campos
+-- a) Pedido - data_pedido
+
+create index idx_ped_data_pedido on pedido(data_pedido);
+
+-- b) produto - nome
+
+create index idx_prod_nome on produto(nome);
+
