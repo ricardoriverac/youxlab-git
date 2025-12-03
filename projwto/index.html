@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Denuncie Lixo na Rua</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Denuncie Lixo jogado na rua</h1>
+    <p class="lead">Use este formulário para registrar ocorrências de descarte irregular de resíduos. Os relatórios ficam salvos no seu navegador e podem ser baixados como arquivo JSON para enviar à prefeitura ou ONG.</p>
+
+    <form id="reportForm">
+      <label for="titulo">Título (ex: Lixo na Rua X)</label>
+      <input id="titulo" name="titulo" type="text" placeholder="Ex: Lixo na esquina da Av. A com Rua B" required />
+
+      <label for="endereco">Endereço (ou ponto de referência)</label>
+      <input id="endereco" name="endereco" type="text" placeholder="Ex: Av. Paulista, 1000 / Próx. ponto de ônibus" required />
+
+      <div class="row">
+        <div class="half">
+          <label for="datahora">Data e hora</label>
+          <input id="datahora" name="datahora" type="datetime-local" />
+        </div>
+        <div class="half">
+          <label for="categoria">Categoria</label>
+          <select id="categoria" name="categoria">
+            <option value="geral">Descarte geral</option>
+            <option value="mobiliario">Móveis/eletrodomésticos</option>
+            <option value="entulho">Entulho/Construção</option>
+            <option value="residuo_perigoso">Resíduo perigoso</option>
+            <option value="outro">Outro</option>
+          </select>
+        </div>
+      </div>
+
+      <label for="descricao">Descrição</label>
+      <textarea id="descricao" name="descricao" placeholder="Descreva o que encontrou, quantidade, recorrência, etc."></textarea>
+
+      <label for="foto">Adicionar foto (opcional)</label>
+      <input id="foto" name="foto" type="file" accept="image/*" />
+
+      <div class="actions">
+        <button class="btn" type="submit">Salvar denúncia</button>
+        <button class="btn secondary" type="button" id="exportBtn">Baixar todas (JSON)</button>
+        <button class="btn secondary" type="button" id="clearBtn">Limpar relatórios</button>
+      </div>
+
+      <p class="note">Os dados são armazenados localmente no seu navegador. Para enviar formalmente, baixe o JSON e anexe na denúncia à prefeitura ou ONG responsável.</p>
+    </form>
+
+    <section class="reports">
+      <h2>Relatórios salvos</h2>
+      <div id="list"></div>
+    </section>
+  </div>
+
+  <script>
+    // util: read file as data URL
+    function readFileAsDataURL(file){
+      return new Promise((res, rej)=>{
+        if(!file) return res(null);
+        const r = new FileReader();
+        r.onload = ()=>res(r.result);
+        r.onerror = ()=>rej(new Error('erro ao ler imagem'));
+        r.readAsDataURL(file);
+      });
+    }
+
+    const form = document.getElementById('reportForm');
+    const listEl = document.getElementById('list');
+    const exportBtn = document.getElementById('exportBtn');
+    const clearBtn = document.getElementById('clearBtn');
+
+    function loadReports(){
+      try{ return JSON.parse(localStorage.getItem('denuncias_lixo') || '[]') }catch(e){ return [] }
+    }
+    function saveReports(arr){ localStorage.setItem('denuncias_lixo', JSON.stringify(arr, null, 2)) }
+
+    function render(){
+      const arr = loadReports();
+      listEl.innerHTML = '';
+      if(arr.length===0){ listEl.innerHTML = '<p class="note">Nenhum relatório salvo.</p>'; return }
+      arr.slice().reverse().forEach((r, idx)=>{
+        const div = document.createElement('div'); div.className='card-report';
+        div.innerHTML = `<strong>${escapeHtml(r.titulo)}</strong> <div class="note">${escapeHtml(r.endereco)} — ${r.datahora ? new Date(r.datahora).toLocaleString() : ''}</div><p>${escapeHtml(r.descricao || '')}</p>`;
+        if(r.foto) { const img = document.createElement('img'); img.src = r.foto; img.style.maxWidth='100%'; img.style.borderRadius='8px'; img.style.marginTop='8px'; div.appendChild(img) }
+        const btns = document.createElement('div'); btns.style.marginTop='8px';
+        const del = document.createElement('button'); del.className='btn secondary'; del.textContent='Remover'; del.onclick = ()=>{ if(confirm('Remover este relatório?')){ removeReport(arr.length-1-idx); } };
+        const copy = document.createElement('button'); copy.className='btn secondary'; copy.textContent='Copiar JSON'; copy.onclick = ()=>{ navigator.clipboard.writeText(JSON.stringify(r, null, 2)); alert('JSON copiado para área de transferência'); };
+        btns.appendChild(copy); btns.appendChild(del); div.appendChild(btns);
+        listEl.appendChild(div);
+      })
+    }
+
+    function removeReport(index){ const arr = loadReports(); arr.splice(index,1); saveReports(arr); render(); }
+
+    form.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const titulo = document.getElementById('titulo').value.trim();
+      const endereco = document.getElementById('endereco').value.trim();
+      const datahora = document.getElementById('datahora').value || new Date().toISOString();
+      const categoria = document.getElementById('categoria').value;
+      const descricao = document.getElementById('descricao').value.trim();
+      const fotoFile = document.getElementById('foto').files[0];
+      const fotoData = await readFileAsDataURL(fotoFile);
+
+      if(!titulo || !endereco){ alert('Por favor preencha título e endereço.'); return }
+
+      const report = {id: Date.now(), titulo, endereco, datahora, categoria, descricao, foto: fotoData };
+      const arr = loadReports(); arr.push(report); saveReports(arr);
+      form.reset(); render();
+      alert('Denúncia salva localmente.');
+    })
+
+    exportBtn.addEventListener('click', ()=>{
+      const arr = loadReports();
+      if(arr.length===0){ alert('Não há relatórios para exportar.'); return }
+      const blob = new Blob([JSON.stringify(arr, null, 2)], {type:'application/json'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = 'denuncias_lixo.json'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    })
+
+    clearBtn.addEventListener('click', ()=>{
+      if(confirm('Apagar todos os relatórios salvos?')){ localStorage.removeItem('denuncias_lixo'); render(); }
+    })
+
+    // small helper to prevent XSS when inserting text
+    function escapeHtml(str){ if(!str) return ''; return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+
+    // initial render
+    render();
+  </script>
+</body>
+</html>
