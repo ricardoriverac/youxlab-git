@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a43b457e-3572-4a1b-9e8f-9a396a3e7823" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled1/cursor/a_67.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/cursor/a_67.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/application/a_70.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +72,7 @@
     "Application.a_64.executor": "Run",
     "Application.a_67.executor": "Run",
     "Application.a_70.executor": "Run",
+    "Application.a_70_ex2.executor": "Run",
     "Application.desafioCultural.executor": "Run",
     "Application.ex_a24.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
