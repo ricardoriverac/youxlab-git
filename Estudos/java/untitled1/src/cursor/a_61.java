@@ -1,3 +1,4 @@
+package cursor;
 import java.util.Scanner;
 
 public class a_61 {

@@ -1,3 +1,4 @@
+
 public class a_59 {
     public static void main(String[] args) {
 
