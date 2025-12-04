@@ -1,9 +1,9 @@
-/*
-const cursos = ["HTML", "CSS", "JavaScript", "PHP", "REact"]
-cursos.map((el,i)=>{
-    console.log("Cursos: " + el + " - Posição do curso: " +i);
-})
-*/
+
+// const cursos = ["HTML", "CSS", "JavaScript", "PHP", "REact"]
+// cursos.map((elementos,indice)=>{
+//     console.log("Cursos: " + elementos + " - Posição do curso: " +indice);
+// })
+
 
 /*
 const cursos = ["HTML", "CSS", "JavaScript", "PHP", "REact"]
