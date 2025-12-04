@@ -10,7 +10,6 @@ public class a_77 {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        Calculator calculator = new Calculator();
         System.out.print("Caro usuário, por favor insira o raio de sua circunferência: ");
         double raio = sc.nextDouble();
 
