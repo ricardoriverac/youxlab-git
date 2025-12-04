@@ -5,7 +5,7 @@ import application.entities.Retangulo;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class a_70_ex1 {
+public class a_75_ex1 {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);

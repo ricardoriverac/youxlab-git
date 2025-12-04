@@ -5,7 +5,7 @@ import application.entities.Funcionarios;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class a_70_ex2 {
+public class a_75_ex2 {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);

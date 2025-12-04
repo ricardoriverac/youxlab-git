@@ -5,7 +5,7 @@ import application.entities.Estudantes;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class a_70_ex3 {
+public class a_75_ex3 {
     public static void main(String[] args) {
 
         Locale.setDefault(Locale.US);
