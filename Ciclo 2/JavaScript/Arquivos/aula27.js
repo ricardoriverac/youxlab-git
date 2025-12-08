@@ -12,18 +12,6 @@ console.log(itc.next().value)
 console.log(itc.next().value)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 console.log("-----------------------------------------------")
 
 
