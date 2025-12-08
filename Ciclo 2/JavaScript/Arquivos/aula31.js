@@ -15,3 +15,4 @@ console.log(colecaoHTML)
 colecaoHTML.map((e)=>{
     console.log(e)
 })
+//
