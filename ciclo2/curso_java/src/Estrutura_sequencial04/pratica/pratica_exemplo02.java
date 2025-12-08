@@ -1,10 +1,10 @@
-package Estrutura_sequencial.pratica;
+package Estrutura_sequencial04.pratica;
 // AULA 26 - Entrada de dados em Java - parte 1
 
 import java.util.Locale;
 import java.util.Scanner;
 
-public class pratica_exemplo02 {
+    public class pratica_exemplo02 {
 
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);

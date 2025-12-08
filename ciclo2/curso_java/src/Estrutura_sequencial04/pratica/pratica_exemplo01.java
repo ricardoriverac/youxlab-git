@@ -1,4 +1,4 @@
-package Estrutura_sequencial.pratica;
+package Estrutura_sequencial04.pratica;
 // AULA 24 - Saídas de dados em Java
 
 import java.util.Locale;

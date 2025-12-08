@@ -1,4 +1,4 @@
-package Estrutura_sequencial.pratica;
+package Estrutura_sequencial04.pratica;
 
 // AULA 33 - Funções matemáticas em Java
 

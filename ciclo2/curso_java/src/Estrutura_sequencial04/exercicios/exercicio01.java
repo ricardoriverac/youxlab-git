@@ -1,4 +1,4 @@
-package Estrutura_sequencial.exercicios;
+package Estrutura_sequencial04.exercicios;
 // Aula 25 - exercicio
 
 

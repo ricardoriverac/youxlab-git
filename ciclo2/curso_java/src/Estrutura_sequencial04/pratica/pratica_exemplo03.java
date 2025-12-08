@@ -1,4 +1,4 @@
-package Estrutura_sequencial.pratica;
+package Estrutura_sequencial04.pratica;
 
 // AULA 32 - Entrada de dados em Java - parte 2
 
