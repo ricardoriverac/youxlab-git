@@ -7,7 +7,7 @@ const btnRemoverCurso=document.getElementById("btnRemoverCurso")
 
 cursos.map((el,chave)=>{
     const novoElemento=document.createElement("div")
-    novoElemento.setAttribute("id","c"+chave)
+    novoElemecnto.setAttribute("id","c"+chave)
     novoElemento.setAttribute("class","curso c1")
     novoElemento.innerHTML=el
 
