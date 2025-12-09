@@ -19,5 +19,7 @@ public class a_94 {
         }
         double avg = sum / n;
         System.out.printf("média da altura: " + avg);
+
+        sc.close();
     }
 }

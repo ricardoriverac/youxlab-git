@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a43b457e-3572-4a1b-9e8f-9a396a3e7823" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/application/a_94.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/application/a_94.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled1/src/application/a_94.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled1/src/application/a_94.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +84,7 @@
     "Application.a_84.executor": "Run",
     "Application.a_87.executor": "Run",
     "Application.a_92.executor": "Run",
+    "Application.a_94.executor": "Run",
     "Application.desafioCultural.executor": "Run",
     "Application.ex_a24.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
