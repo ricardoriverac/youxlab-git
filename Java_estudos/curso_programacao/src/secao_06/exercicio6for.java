@@ -2,7 +2,7 @@ package secao_06;
 
 import java.util.Scanner;
 
-public class exercicio6 {
+public class exercicio6for {
     static void main() {
         System.out.println("Digite um valor inteiro para ver o seus divisores :");
         Scanner sc = new Scanner(System.in);
