@@ -1,4 +1,4 @@
-package Programacao_Orientada_Objetos.entities;
+package Programacao_Orientada_Objetos.Trinagulo.entities;
 
 public class triangulo {
 

@@ -1,6 +1,6 @@
-package Programacao_Orientada_Objetos.C_Principal;
+package Programacao_Orientada_Objetos.Trinagulo.codigo_principal;
 
-import Programacao_Orientada_Objetos.entities.triangulo;
+import Programacao_Orientada_Objetos.Trinagulo.entities.triangulo;
 
 import java.util.Locale;
 import java.util.Scanner;
