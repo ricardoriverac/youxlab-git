@@ -14,3 +14,5 @@ console.log(it_texto.next())
 console.log(it_texto.next())
 console.log(it_texto.next())
 console.log(it_texto.next())
+
+// ITERADORES são objetos de javaScript que permite percorrer os elementos de uma coleção
