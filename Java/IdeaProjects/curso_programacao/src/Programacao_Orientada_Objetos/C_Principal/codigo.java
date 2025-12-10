@@ -1,4 +1,6 @@
-package Programacao_Orientada_Objetos.Triangulo;
+package Programacao_Orientada_Objetos.C_Principal;
+
+import Programacao_Orientada_Objetos.entities.triangulo;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -9,22 +11,22 @@ public class codigo {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        double xA, xB, xC, yA, yB, yC;
+        triangulo x, y;
+        x = new triangulo();
+        y = new triangulo();
+
         System.out.println("Digite os lados do triângulo X");
-        xA = sc.nextDouble();
-        xB = sc.nextDouble();
-        xC = sc.nextDouble();
+        x.a = sc.nextDouble();
+        x.b = sc.nextDouble();
+        x.c = sc.nextDouble();
 
         System.out.println("Digite os lados do triângulo Y");
-        yA = sc.nextDouble();
-        yB = sc.nextDouble();
-        yC = sc.nextDouble();
+        y.a = sc.nextDouble();
+        y.b = sc.nextDouble();
+        y.c = sc.nextDouble();
 
-        double p = (xA + xB + xC) / 2.0;
-        double areaX = Math.sqrt(p * (p - xA) * (p - xB) * (p - xC));
-
-        p = (yA + yB + yC) / 2.0;
-        double areaY = Math.sqrt(p * (p - yA) * (p - yB) * (p - yC));
+        double areaX = x.area();
+        double areaY = y.area();
 
         System.out.printf("Área do triângulo X = %.4f%n", areaX);
         System.out.printf("Área do triângulo Y = %.4f%n", areaY);
