@@ -5,7 +5,7 @@
     font-family: "Roboto";
 }
 
-#body {
+body {
     display: flex;
     flex-wrap: wrap;
 }
@@ -23,4 +23,7 @@
 
 #users-containers {
     position: relative;
+}
+#form-containers{
+    flex: 1;
 }
