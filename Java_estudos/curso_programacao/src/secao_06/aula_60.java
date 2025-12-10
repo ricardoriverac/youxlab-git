@@ -14,7 +14,7 @@ public class aula_60 {
         double F = 9.0 * C  / 5.0 + 32.0;
         System.out.printf("Equivalente em Fahremheit: %.2f%n", F);
         System.out.printf("Deseja repetir (s/n)? ");
-        char resp = sc.next().charAt(0);
+        resp = sc.next().charAt(0);
 
         while (resp != 'n'){
             System.out.print("Digite a temperatura em celsius: ");
