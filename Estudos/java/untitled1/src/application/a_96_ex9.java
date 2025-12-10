@@ -27,7 +27,6 @@ public class a_96_ex9 {
             if((nota1[i] + nota2[i]) / 2 >= 6.0){
                 System.out.println(nome[i]);
             }
-
         }
     }
 }
