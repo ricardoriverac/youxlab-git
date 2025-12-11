@@ -2,7 +2,7 @@ package secao_07;
 
 import java.util.Scanner;
 
-import static sun.swing.MenuItemLayoutHelper.max;
+
 
 public class aula_66 {
     static void main() {
