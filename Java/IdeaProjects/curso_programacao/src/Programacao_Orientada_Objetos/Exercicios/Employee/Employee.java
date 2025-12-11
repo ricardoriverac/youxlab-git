@@ -1,15 +1,15 @@
 package Programacao_Orientada_Objetos.Exercicios.Employee;
 
-public class employee {
-    public static String name;
+public class Employee {
+    public String name;
     public double grossSalary;
-    public static double tax;
+    public double tax;
 
-    public static double netSalary() {
+    public double netSalary() {
         return grossSalary - tax;
     }
 
     public void increaseSalary(double porcentage) {
-        this.grossSalary *= (porcentage / 100);
+        this.grossSalary +=  (this.grossSalary * (porcentage / 100));
     }
 }
