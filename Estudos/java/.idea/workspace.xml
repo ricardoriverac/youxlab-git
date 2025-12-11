@@ -98,6 +98,7 @@
     "Application.a_96_ex9.executor": "Run",
     "Application.a_99_desafioPensionato.executor": "Run",
     "Application.desafioCultural.executor": "Run",
+    "Application.desafioPOO.executor": "Run",
     "Application.ex_a24.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -110,7 +111,8 @@
     "onboarding.tips.debug.path": "/home/youx/Documentos/youxlab-git/Estudos/java/untitled1/src/Main.java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "editing.templates"
   }
 }]]></component>
   <component name="RecentsManager">
