@@ -9,12 +9,14 @@ public class Main {
         int s1;
         String x, y, z;
         double m;
+        System.out.println("Digite os dados");
         m = sc.nextDouble();
         s1 = sc.nextInt();
         sc.nextLine();
         x = sc.nextLine();
         y = sc.nextLine();
         z = sc.nextLine();
+
         System.out.println(s1);
         System.out.println(x);
         System.out.println(y);
