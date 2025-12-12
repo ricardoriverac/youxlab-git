@@ -13,5 +13,6 @@ public class exer1 {
                 System.out.println(i);
             }
         }
+        sc.close();
     }
 }
