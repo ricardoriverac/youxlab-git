@@ -1,6 +1,6 @@
-package Programacao_Orientada_Objetos.Exercicios.Rectangle.Program;
+package Programacao_Orientada_Objetos.Introducao.Exercicios.Rectangle.Program;
 
-import Programacao_Orientada_Objetos.Exercicios.Rectangle.entities.rectangle;
+import Programacao_Orientada_Objetos.Introducao.Exercicios.Rectangle.entities.rectangle;
 
 import java.util.Locale;
 import java.util.Scanner;

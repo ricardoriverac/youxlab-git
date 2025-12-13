@@ -1,4 +1,4 @@
-package Programacao_Orientada_Objetos.Exercicios.Student;
+package Programacao_Orientada_Objetos.Introducao.Exercicios.Student;
 
 public class Student {
     public String name;

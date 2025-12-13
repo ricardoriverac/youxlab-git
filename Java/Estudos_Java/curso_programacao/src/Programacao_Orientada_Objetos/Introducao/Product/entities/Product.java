@@ -1,4 +1,4 @@
-package Programacao_Orientada_Objetos.Product.entities;
+package Programacao_Orientada_Objetos.Introducao.Product.entities;
 
 public class Product {
     public String name;

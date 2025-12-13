@@ -1,6 +1,6 @@
-package Programacao_Orientada_Objetos.Product.codigo_principal;
+package Programacao_Orientada_Objetos.Introducao.Product.codigo_principal;
 
-import Programacao_Orientada_Objetos.Product.entities.Product;
+import Programacao_Orientada_Objetos.Introducao.Product.entities.Product;
 
 import java.util.Locale;
 import java.util.Scanner;

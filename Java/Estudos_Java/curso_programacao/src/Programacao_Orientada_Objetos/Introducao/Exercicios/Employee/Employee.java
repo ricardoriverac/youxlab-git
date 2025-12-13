@@ -1,4 +1,4 @@
-package Programacao_Orientada_Objetos.Exercicios.Employee;
+package Programacao_Orientada_Objetos.Introducao.Exercicios.Employee;
 
 public class Employee {
     public String name;

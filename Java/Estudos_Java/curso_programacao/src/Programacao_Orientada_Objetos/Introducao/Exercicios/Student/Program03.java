@@ -1,6 +1,5 @@
-package Programacao_Orientada_Objetos.Exercicios.Student;
+package Programacao_Orientada_Objetos.Introducao.Exercicios.Student;
 
-import java.awt.*;
 import java.util.Locale;
 import java.util.Scanner;
 

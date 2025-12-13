@@ -1,4 +1,4 @@
-package Programacao_Orientada_Objetos.Exercicios.Rectangle.entities;
+package Programacao_Orientada_Objetos.Introducao.Exercicios.Rectangle.entities;
 
 public class rectangle {
     public static double widht;
