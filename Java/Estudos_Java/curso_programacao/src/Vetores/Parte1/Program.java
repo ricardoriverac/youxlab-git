@@ -1,4 +1,4 @@
-package Vetores;
+package Vetores.Parte1;
 
 import java.util.Locale;
 import java.util.Scanner;
