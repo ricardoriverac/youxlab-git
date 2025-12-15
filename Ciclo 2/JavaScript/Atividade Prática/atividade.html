@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha</title>
+    <link rel="stylesheet" href="atividade.css">
+</head>
+<body>
+    <h1>Jogo da velha</h1>
+    <h2>Bem vindo(a)</h2>
+    <div id="name-container">
+            <input
+             type="text"
+             name="JogadorX" 
+             id="JogadorX" 
+             placeholder="Jogador X" />
+            <input
+              type="text"
+              name="Jogador O"
+              id="Jogador O"
+              placeholder="Jogador O"
+            />
+           <button id="botaoJogar">Jogar</button>
+    </div>
+
+    <p id="jogadorDaVez">Jogador da vez: X</p>
+
+    <div id="tabuleiro" class="tabuleiro">
+        <div data-posicao="1"></div>
+        <div data-posicao="2"></div>
+        <div data-posicao="3"></div>
+        <div data-posicao="4"></div>
+        <div data-posicao="5"></div>
+        <div data-posicao="6"></div>
+        <div data-posicao="7"></div>
+        <div data-posicao="8"></div>
+        <div data-posicao="9"></div>
+    </div>
+
+    <p id="mensagem"></p>
+
+    <div class="placar">
+        <p>Vitórias X: <span id="vitoriasX">0</span></p>
+        <p>Vitórias O: <span id="vitoriasO">0</span></p>
+    </div>
+
+    <button onclick="reiniciarPartida()">Reiniciar partida</button>
+    <button onclick="zerarPlacar()">Zerar placar</button>
+
+    <script src="atividade.js"></script>
+</body>
+</html>
