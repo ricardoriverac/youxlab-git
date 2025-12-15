@@ -1,14 +1,22 @@
 package Programacao_Orientada_Objetos.Contrutores.entities;
 
 public class Product {
-    public String name;
-    public double price;
-    public int quantity;
+    public String name; // Valor padrao é null
+    public double price; // Valor padrao é 0.0
+    public int quantity; // Valor padrao é 0
+
+    public Product(){
+    }
 
     public Product(String name, double price, int quantity) { // construtor
         this.name = name;
         this.price = price;
         this.quantity = quantity;
+    }
+
+    public Product(String name, double price) { // construtor
+        this.name = name;
+        this.price = price;
     }
 
     public double totalValueInStock() {
