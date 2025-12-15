@@ -10,6 +10,7 @@ public class exercicio2  {
         pi = 3.14159;
         area = pow(raio, 2) * pi;
         System.out.println("A área é " + area);
+        sc.close();
     }
 
 }

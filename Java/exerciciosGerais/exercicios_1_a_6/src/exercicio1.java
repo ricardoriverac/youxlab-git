@@ -8,5 +8,6 @@ public class exercicio1 {
         y = sc.nextInt();
         z = x + y;
         System.out.println("Soma = " + z);
+        sc.close();
     }
 }

@@ -16,5 +16,6 @@ public class exercicio6 {
         areaRet = A * B;
 
         System.out.println("TRIÂNGULO: " + areaTri + "\nCÍRCULO: " + areaCirc + "\nTRAPÉZIO: " + areaTrap + "\nQUADRADO: " + areaQuad + "\nRETÂNGULO: " + areaRet);
+        sc.close();
     }
 }

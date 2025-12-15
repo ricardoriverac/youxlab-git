@@ -16,6 +16,7 @@ public class exercicio4 {
 
         System.out.println("O ID do funcionário " + idFunc);
         System.out.printf("\nO salário é U$ %.2f%n", salario);
+        sc.close();
     }
 
 }

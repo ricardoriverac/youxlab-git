@@ -12,5 +12,6 @@ public class exercicio3 {
 
         diferenca = (A*B) - (C*D);
         System.out.println("A diferença é " + diferenca);
+        sc.close();
     }
 }

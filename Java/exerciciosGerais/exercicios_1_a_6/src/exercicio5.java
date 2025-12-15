@@ -20,5 +20,6 @@ public class exercicio5 {
 
         System.out.printf("ID da peça: ", idPeca1 + "\nValor a pagar: R$ %.2f%n", valorPago1);
         System.out.printf("ID da peça: ", idPeca2 + "\nValor a pagar: R$ %.2f%n", valorPago2);
+        sc.close();
     }
 }
