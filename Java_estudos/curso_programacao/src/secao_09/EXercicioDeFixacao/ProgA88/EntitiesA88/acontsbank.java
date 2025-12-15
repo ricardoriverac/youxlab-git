@@ -11,7 +11,7 @@ public class acontsbank {
         this.number = number;
     }
 
-    public  acontsbank (String holder, int number, double initialDeposit){
+    public acontsbank (String holder, int number, double initialDeposit){
         this.holder = holder;
         this.number = number;
         this.balence = initialDeposit;
@@ -21,7 +21,7 @@ public class acontsbank {
     public double getBalence() {
         return balence;
     }
-    public  void deposit(double amount){
+    public void deposit(double amount){
         this.balence += amount;
     }
 
