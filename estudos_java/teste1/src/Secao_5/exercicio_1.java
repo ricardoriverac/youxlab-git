@@ -1,3 +1,5 @@
+package Secao_5;
+
 import java.util.Scanner;
 
 public class exercicio_1 {

@@ -1,3 +1,5 @@
+package Secao_5;
+
 import java.util.Scanner;
 import java.util.Locale;
 
@@ -18,6 +20,8 @@ public class exercicio_5 {
 
         double totalPrice = firstPiecePrice * firstPieceAmount + secondPiecePrice * secondPieceAmount;
 
+        System.out.printf("%nFirst Piece code:  %d%n",firstPieceCode);
+        System.out.printf("Second Piece code: %d%n",secondPieceCode);
         System.out.printf("Amount to pay: R$ %.2f", totalPrice);
     }
 }
