@@ -12,7 +12,18 @@ public class exercicio01vet {
 
         double[] vect = new double[N];
         for (int i = 0; i < N; i++) {
+            System.out.print("Digite um número: ");
             vect[i] = sc.nextDouble();
+        }
+        System.out.println("Números negativos: ");
+
+        for (int i = 0; i < N; i++) {
+            if (vect[i] < 0){
+                System.out.println(vect[i]);
+
+            }
+
+            sc.close();
 
         }
 
