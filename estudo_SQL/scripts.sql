@@ -635,6 +635,472 @@ select * from produto where idproduto = 1
 
 -- funções agregadas --
 
+-- Função avg 
+/* a função 'avg' soma todos os valores de uma
+respequitiva tabela, e depois mostra a media 
+da soma de todos os valores da tabela */
+
+select avg(valor) from pedido
+
+-- Função count 
+/* Essa função conta somente aqueles que 
+tem alguma informação (Somente os not null)*/
+
+select count(logradouro) from transportadora
+
+-- max, min, sum
+/* MAX: serve para mostrar o maior valor da coluna de uma 
+determinada tabela
+
+MIN: serve para mostrar o menor valor de uma
+coluna de uma determinada tabela 
+
+SUM: ele soma todos os valores da coluna e 
+mostra o resultado no final */
+
+select max(valor) from pedido
+
+select min(valor) from pedido
+
+select sum(valor) from pedido
+
+-- group by
+/*Serve para agrupar colunas das tabelas,
+mas só funciona se estiver usando uma função
+agregada (max, min, sum, count e avg*/
+
+select idcliente, sum(valor) from pedido group by idcliente having sum(valor) > 500;
+
+-- Exercicios
+
+-- 1.
+select avg(valor), idvendedor from pedido GROUP BY idvendedor having sum(valor) > 200;
+
+-- 2.
+select idvendedor from pedido group by idvendedor having sum(valor) > 1500 
+
+-- 3.
+select idvendedor, sum(valor) from pedido group by idvendedor;
+
+-- 4.
+select count(idmunicipio) from municipio;
+
+-- 5.
+select count(idmunicipio) from municipio where iduf = 1 or iduf = 2;
+
+-- 6.
+select iduf, count(idmunicipio) from municipio group by iduf;
+
+-- 7.
+select count(idcliente) from cliente where logradouro is not null;
+
+-- 8.
+select idmunicipio, count(idcliente) from cliente group by idmunicipio;
+
+-- 9.
+select count(idfornecedor) from fornecedor;
+
+-- 10.
+select count(idproduto) from Produto group by idfornecedor;
+
+-- 11.
+select avg(valor) from produto where idfornecedor = 1 
+
+-- 12.
+select sum(valor) from produtos
+
+-- 13.
+select nome, valor from produto where idproduto = 2 
+
+-- 14.
+select nome, valor from produto where idproduto = 7
+
+-- 15.
+select avg(valor) from produto;
+
+-- 16.
+select count(idtransportadora) from transportadora;
+
+-- 17.
+select avg(valor) from produto;
+
+-- 18.
+select idcliente, sum(valor) from pedido group by idcliente;
+
+-- 19.
+select idvendedor, sum(valor) from pedido group by idvendedor;
+
+-- 20.
+select idtransportadora, sum(valor) from pedido group by idtransportadora
+
+-- 21.
+select data_pedido, sum(valor) from pedido group by data_pedido
+
+-- 22.
+select sum(valor) from pedido group by idcliente, idvendedor, idtransportadora;
+
+-- 23.
+select data_pedido, sum(valor) from pedido where valor > 200 and data_pedido between '2008-04-01' and '2008-12-10' group by data_pedido;
+
+-- 24.
+select sum(valor) from pedido where idvendedor = 1;
+
+-- 25.
+select sum(valor) from pedido where idcliente = 15;
+
+-- 26.
+select count(idtransportadora) from pedido where idtransportadora = 1;
+
+-- 27.
+select count(idpedido )from pedido group by idvendedor
+
+-- 28.
+select count(pedido) from pedido group by idcliente
+
+-- 29.
+select count(idpedido) from pedido where data_pedido between '2008-04-15' and '2008-04-25';
+
+-- 30.
+select count(valor) from pedido where valor > 1000
+
+-- 31.
+select sum(quantidade) from pedido_produto where idproduto = 1
+
+-- 32.
+select sum(quantidade) from pedido_produto group by idproduto;
+
+-- 33.
+select sum(valor) from pedido group by idpedido
+
+-- 34.
+select count(quantidade) from pedido_produto group by idpedido
+
+-- 35.
+select sum(valor_unitario) from pedido_produto;
+
+-- 36.
+select avg(idpedido) from pedido_produto where idpedido = 6;
+
+-- 37.
+select max(valor_unitario) from pedido_produto;
+
+-- 38.
+select sum(quantidade) from pedido_produto group by idpedido;
+
+-- 39
+select sum(quantidade) from pedido_produto;
+
+-- Relacionamentos com joins --
+
+-- left outer join 
+select
+	cliente.nome,
+	profissao.nome
+from
+	cliente
+left outer join
+	profissao on profissao.idprofissao = cliente.idprofissao
+
+-- inner join
+select
+	cliente.nome,
+	profissao.nome
+from
+	cliente
+inner join
+	profissao on profissao.idprofissao = cliente.idprofissao
+
+-- right outer join
+select
+	cliente.nome,
+	profissao.nome
+from
+	cliente
+right outer join
+	profissao on profissao.idprofissao = cliente.idprofissao
+
+-- Exercício
+
+-- 1.
+select
+	cliente.nome,
+	profissao.nome as profissao,
+	nacionalidade.nome as nacionalidade,
+	cliente.logradouro,
+	cliente.numero,
+	complemento.nome as complemento,
+	bairro.nome as bairro,
+	municipio.nome as municipio,
+	uf.nome as unidade_federativa
+from
+	cliente
+left outer join 
+	profissao as profissao on profissao.idprofissao = cliente.idprofissao
+left outer join
+	nacionalidade on nacionalidade.idnacionalidade = cliente.idnacionalidade
+left outer join 
+	complemento on complemento.idcomplemento = cliente.idcomplemento
+left outer join
+	bairro on bairro.idbairro = cliente.idbairro
+left outer join
+	municipio on municipio.idmunicipio = cliente.idmunicipio
+left outer join
+	uf on uf.iduf = municipio.iduf
+
+-- 2.
+select 
+	fornecedor.nome as fornecedor,
+	produto.nome as produto,
+	produto.valor as valor
+from 
+	produto
+left outer join
+	fornecedor on fornecedor.idfornecedor = produto.idfornecedor
+
+-- 3.
+select * from transportadora
+
+select
+	transportadora.nome as transportadora,
+	municipio.nome as municipio
+from 
+	transportadora
+right outer join
+	municipio on municipio.idmunicipio = transportadora.idmunicipio
+
+-- 4.
+select
+	pedido.data_pedido as data_pedido,
+	pedido.valor as valor,
+	cliente.nome as cliente,
+	transportadora.nome as transportadora,
+	vendedor.nome as vendedor
+from 
+	pedido
+left outer join
+	cliente on cliente.idcliente = pedido.idcliente
+left outer join
+	transportadora on transportadora.idtransportadora = pedido.idtransportadora
+left outer join
+	vendedor on vendedor.idvendedor = pedido.idvendedor
+
+-- 5.
+select
+	produto.nome as produto,
+	pedido_produto.quantidade, 
+	pedido_produto.valor_unitario
+from 
+	pedido_produto
+left outer join
+	produto on produto.idproduto = pedido_produto.idproduto
+
+-- 6.
+select
+	cliente.nome,
+	pedido.data_pedido
+from
+	cliente 
+inner join
+	pedido  on cliente.idcliente = pedido.idcliente
+group by
+	cliente.nome,
+	data_pedido
+
+-- 7.
+select
+	cliente.nome,
+	pedido.data_pedido
+from
+	cliente 
+left join
+	pedido  on cliente.idcliente = pedido.idcliente
+
+-- 8.
+select
+	municipio.nome,
+	count(*)
+from
+	municipio 
+left outer join
+	cliente  on municipio.idmunicipio = cliente.idmunicipio
+group by
+	municipio.nome
+
+--  9.
+select
+	fornecedor.nome,
+	count(idproduto)
+from
+	produto 
+left outer join
+	fornecedor  on pro.idfornecedor = fornecedor.idfornecedor
+group by
+	fornecedor.nome
+
+-- 10.
+select
+	cliente.nome,
+	sum(valor)
+from
+	pedido
+left outer join
+	cliente on pedido.idcliente = cliente.idcliente
+group by
+	cliente.nome
+
+-- 11.
+select 
+	vendedor.nome as vendedor,
+	sum(pedido.valor)
+from 
+	pedido
+left outer join
+	vendedor on vendedor.idvendedor = pedido.idvendedor
+group by
+	vendedor
+
+-- 12.
+select
+	trasportadora.nome,
+	sum(valor)
+from
+	pedido pdd
+left outer join
+	transportadora on pdd.idtransportadora = trasportadora.idtransportadora
+group by
+	trasportadora.nome
+	
+-- 13.
+select
+	cliente.nome,
+	count(idpedido)
+from
+	pedido
+left outer join
+	cliente on pedido.idcliente = cliente.idcliente
+group by
+	cliente.nome
+
+-- 14.
+select
+	produto.nome,
+	sum(quantidade)
+from
+	pedido_produto
+left outer join
+	produto on pedido_produto.idproduto = produto.idproduto
+group by
+	produto.nome
+
+-- 15
+select
+	data_pedido,
+	sum(valor_unitario) as somatorio
+from
+	pedido_produto 
+left outer join
+	pedido on pedido_produto.idpedido = pdd.idpedido
+group by
+	data_pedido
+
+-- 16.
+select
+	data_pedido,
+	sum(quantidade) as 
+from
+	pedido_produto
+left outer join
+	pedido on pedido_produto.idpedido = pedido_produto.idpedido
+group by
+	data_pedido
+
+-- Comandos adicionais
+
+select
+	data_pedido,
+	extract(day from data_pedido),
+	extract(month from data_pedido),
+	extract(year from data_pedido)
+from
+	pedido
+
+select   nome, substring(nome from 1 for 5), substring(nome, 2) from cliente 
+
+select nome, upper(nome), lower(nome) from cliente;
+
+select cpf, coalesce(cpf, 'Nenhuma informação adiquirida') from cliente
+
+select 
+	case sigla
+		when 'PR' then 'Paraná'
+		when 'SC' then 'Santa Catarina'
+	else 'Outros'
+	end as uf 
+from
+	uf
+
+-- exercício
+
+-- 1.
+select
+	nome,
+	coalesce (extract(month from data_nascimento)::text, 'Não informado')
+from
+	cliente
+
+-- 2.
+select
+	cliente.nome,
+	case extract(month from data_nascimento) 
+		when 1 then 'Janeiro'
+		when 2 then 'Fevereiro'
+		when 3 then 'Março'
+		when 4 then 'Abril'
+		when 5 then 'Maio'
+		when 6 then 'Junho'
+		when 7 then 'Julho'
+		when 8 then 'Agosto'
+		when 9 then 'Setembro'
+		when 10 then 'Outubro'
+		when 11 then 'Novembro'
+		when 12 then 'Dezembro'
+	else 'Data não informada'
+	end as mes_de_nascimento
+from 
+	cliente
+	
+-- 3.
+select
+	nome,
+	coalesce (extract(year from data_nascimento)::text, 'Informação não encontrada')
+from
+	cliente
+
+-- 4.
+select
+	substring(nome from 5 for 10)
+from
+	municipio
+
+-- 5.
+select
+	upper(nome)
+from
+	municipio
+
+-- 6.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
