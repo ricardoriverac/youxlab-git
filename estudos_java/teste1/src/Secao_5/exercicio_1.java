@@ -4,13 +4,16 @@ import java.util.Scanner;
 
 public class exercicio_1 {
     public static void main(String[] args) {
-
+        int number;
         Scanner sc = new Scanner(System.in);
+        System.out.println("Choose any integer number:");
+        number = sc.nextInt();
 
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-        int c = a + b;
-
-        System.out.printf("A soma entre o número %s e o número %d é %d", a, b,c);
+        if (number<0) {
+            System.out.printf("The number %d is negative!",number);
+        }
+        else {
+            System.out.printf("The number %d is not negative",number);
+        }
     }
 }

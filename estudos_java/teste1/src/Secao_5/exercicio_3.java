@@ -1,19 +1,18 @@
 package Secao_5;
-
 import java.util.Scanner;
 
 public class exercicio_3 {
     public static void main(String[] args) {
-
+        int a, b;
         Scanner sc = new Scanner(System.in);
-
-        int a, b, c, d, diferenca;
         a = sc.nextInt();
         b = sc.nextInt();
-        c = sc.nextInt();
-        d = sc.nextInt();
-        diferenca = ((a*b)-(c*d));
 
-        System.out.printf("A diferença entre %d vezes %d e %d vezes %d é de %d", a, b, c, d, diferenca);
+        if (a%b==0 || b%a==0) {
+            System.out.println("These numbers are multiples");
+        }
+        else {
+            System.out.println("These numbers aren't multiples");
+        }
     }
 }

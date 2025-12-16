@@ -47,12 +47,39 @@ public class Main {
 *
 *  Locale define se a variável vai ser com "." ou ","
 *
+* Código do Scanner:
+*  Scanner sc = new Scanner(System.in)
 *  Next você tem que diferenciar se é Int, Float, Double
 *  charAt exibe o caracter que
 *  nextLine para frase
 *
-* Código do Scanner:
-*  Scanner sc = new Scanner(System.in)
+*  Sintaxe do switch-case:
+*
+*  switch ( expressão ) {
+*   case valor1:
+*       comando1
+*       comando2
+*       break;
+*   case valor2:
+*       comando3
+*       comando4
+*       break;
+*   default:
+*       comando5
+*       comando6
+*       break;
+*  }
+*
+*  Expressão condicional ternária:
+*
+* Sintaxe:
+*  ( condição ) ? valor se verdadeiro : valor se falso
+* Exemplos:
+*  price = ( 2 > 4 ) ? 50 : 80 → 80
+*  name = ( 10 != 3 ) ? "Maria" : "Alex" → "Maria"
+*
+*
+*
 * */
 
 

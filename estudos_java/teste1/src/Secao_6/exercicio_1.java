@@ -1,19 +1,15 @@
 package Secao_6;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class exercicio_1 {
     public static void main(String[] args) {
-        int number;
+        Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
-        System.out.println("Choose any integer number:");
-        number = sc.nextInt();
-
-        if (number<0) {
-            System.out.printf("The number %d is negative!",number);
-        }
-        else {
-            System.out.printf("The number %d is not negative",number);
-        }
+        int number = sc.nextInt();
+        String condition;
+        condition = ( number > 6) ? "não é criança" : "é criança";
+        System.out.printf("Você %s",condition);
     }
 }
