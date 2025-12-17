@@ -1,3 +1,5 @@
+package exerciciosGerais.exercicios_1_a_6.src;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {

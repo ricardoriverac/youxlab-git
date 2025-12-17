@@ -1,3 +1,5 @@
+package exerciciosGerais.exercicios_1_a_6.src;
+
 import java.util.Locale;
 import java.util.Scanner;
 

@@ -1,3 +1,5 @@
+package exerciciosGerais.exercicios_1_a_6.src;
+
 import java.util.Scanner;
 import static java.lang.Math.pow;
 public class exercicio6 {
