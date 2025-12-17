@@ -20,7 +20,7 @@ public class desafioPOO {
         Status statusPedido = null;
 
         while (menu != 5) {
-            System.out.println("Caro usuário, escolha uma das opções de nosso menu: ");
+            System.out.println("\nCaro usuário, escolha uma das opções de nosso menu: ");
             System.out.println("1- Cadastrar novo cliente\n"
                     + "2-Realizar pedido\n"
                     + "3- Buscar pedido por ID\n"
@@ -96,7 +96,7 @@ public class desafioPOO {
                     break;
 
                 case 4:
-                    System.out.print("\nCaro usuário, seu pedido de status EEM_ANDAMENTO é composto por:" + pedidosGerais.stream().filter(s -> s.getStatus() == EM_ANDAMENTO).toList());
+                    System.out.print("\nCaro usuário, seu pedido de status EM_ANDAMENTO é composto por:" + pedidosGerais.stream().filter(s -> s.getStatus() == EM_ANDAMENTO).toList());
                 case 5:
                     System.out.println("Encerrando...");
                     break;
