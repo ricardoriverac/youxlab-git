@@ -1,0 +1,65 @@
+package secao_10.Aula_96.Exerciciofixa;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class exercicio09vet {
+    static void main() {
+        Locale.setDefault(Locale.US);
+        Scanner sc = new Scanner(System.in);
+
+        int numero, qtdhomens, qtdmulheres;
+        double menoraltura;
+        double maioraltura;
+        double alturafemMedia;
+        double alturafemtotal;
+
+        System.out.print("Quantas pessoas serao digitadas? ");
+        numero = sc.nextInt();
+
+        double[] alturas = new double[numero];
+        char[] generos = new char[numero];
+
+        for (int i=0; i<numero; i++) {
+            System.out.printf("Altura da %da pessoa: ", i + 1);
+            alturas[i] = sc.nextDouble();
+            System.out.printf("Genero da %da pessoa: ", i + 1);
+            generos[i] = sc.next().charAt(0);
+        }
+
+        menoraltura = alturas[0];
+        maioraltura = alturas[0];
+
+        for (int i=1; i<numero; i++) {
+            if (alturas[i] > maioraltura) {
+                maioraltura = alturas[i];
+            }
+            if (alturas[i] < menoraltura) {
+                menoraltura = alturas[i];
+            }
+        }
+
+        qtdhomens = 0;
+        qtdmulheres = 0;
+        alturafemtotal = 0;
+        for (int i=0; i<numero; i++) {
+            if (generos[i]=='M') {
+                qtdhomens++;
+            }
+            else {
+                qtdmulheres++;
+                alturafemtotal = alturafemtotal + alturas[i];
+            }
+        }
+
+        alturafemMedia = alturafemtotal / qtdmulheres;
+
+        System.out.printf("Menor altura = %.2f\n", menoraltura);
+        System.out.printf("Maior altura = %.2f\n", maioraltura);
+        System.out.printf("Media das alturas das mulheres = %.2f\n", alturafemMedia);
+        System.out.printf("Numero de homens = %d\n", qtdhomens);
+
+        sc.close();
+
+    }
+}
