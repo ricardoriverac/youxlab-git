@@ -1,4 +1,4 @@
-package secao_10.Aula_96.Exerciciofixa.DesafioVetores.EntidadeVET;
+package secao_10.aula96.Exerciciofixa.DesafioVetores.EntidadeVET;
 
 public class Estudante {
 

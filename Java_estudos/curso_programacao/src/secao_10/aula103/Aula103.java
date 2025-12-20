@@ -1,4 +1,4 @@
-package secao_10.Aula103;
+package secao_10.aula103;
 
 public class Aula103 {
     static void main() {

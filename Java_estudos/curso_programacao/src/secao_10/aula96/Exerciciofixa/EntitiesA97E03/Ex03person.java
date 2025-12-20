@@ -1,4 +1,4 @@
-package secao_10.Aula_96.Exerciciofixa.EntitiesA97E03;
+package secao_10.aula96.Exerciciofixa.EntitiesA97E03;
 
 public class Ex03person {
     private String name;

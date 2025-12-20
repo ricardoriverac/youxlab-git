@@ -1,6 +1,6 @@
-package secao_10.Aula_96.A96Principal;
+package secao_10.aula96.A96Principal;
 
-import secao_10.Aula_96.Entities.A96entities;
+import secao_10.aula96.Entities.A96entities;
 
 import java.util.Locale;
 import java.util.Scanner;

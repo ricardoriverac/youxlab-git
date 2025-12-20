@@ -1,4 +1,4 @@
-package secao_10.Aula_96.Entities;
+package secao_10.aula96.Entities;
 
 public class A96entities {
     private String name;

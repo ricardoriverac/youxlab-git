@@ -1,4 +1,4 @@
-package secao_10.Aula_96.Exerciciofixa.EntitiesA97;
+package secao_10.aula96.Exerciciofixa.EntitiesA97;
 
 public class Person {
     private String name;

@@ -1,8 +1,7 @@
-package secao_10.Aula_96.Exerciciofixa.DesafioVetores.CodigoPrincipal;
+package secao_10.aula96.Exerciciofixa.DesafioVetores.CodigoPrincipal;
 
-import secao_10.Aula_96.Exerciciofixa.DesafioVetores.EntidadeVET.Estudante;
+import secao_10.aula96.Exerciciofixa.DesafioVetores.EntidadeVET.Estudante;
 
-import java.util.Locale;
 import java.util.Scanner;
 
 public class PrincipalCOD {

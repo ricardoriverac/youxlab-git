@@ -1,6 +1,6 @@
-package secao_10.Aula_96.Exerciciofixa;
+package secao_10.aula96.Exerciciofixa;
 
-import secao_10.Aula_96.Exerciciofixa.EntitiesA97.Person;
+import secao_10.aula96.Exerciciofixa.EntitiesA97.Person;
 
 import java.util.Locale;
 import java.util.Scanner;
