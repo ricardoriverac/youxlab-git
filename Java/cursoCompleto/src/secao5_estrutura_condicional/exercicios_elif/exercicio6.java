@@ -1,4 +1,4 @@
-package exercicios_elif;
+package secao5_estrutura_condicional.exercicios_elif;
 
 import java.util.Locale;
 import java.util.Scanner;
