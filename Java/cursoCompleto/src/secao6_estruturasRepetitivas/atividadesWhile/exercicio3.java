@@ -26,7 +26,7 @@ public class exercicio3 {
             entrada = sc.nextInt();
 
         }
-        System.out.printf("< NÚMERO DE CLIENTES POR PRODUTO >\nAlcool: ", alcool, "\nGasolina: ", gasolina, "\nDiesel: ", diesel);
-        System.out.println("<FIM DO PROGRAMA>");
+        System.out.printf("< NÚMERO DE CLIENTES POR PRODUTO >\nAlcool: " + alcool + "\nGasolina: " + gasolina + "\nDiesel: " + diesel);
+        System.out.println("\n<FIM DO PROGRAMA>");
     }
 }
