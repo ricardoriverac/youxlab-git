@@ -1,4 +1,4 @@
-package dataHora.aula117;
+package dataHora;
 
 import java.time.Duration;
 import java.time.Instant;
