@@ -1,0 +1,20 @@
+  body {
+    background-color: #000000ea;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nome{
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .titulo{
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
