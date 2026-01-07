@@ -23,4 +23,10 @@ public class ContasSalvas extends Conta{
     public void atualizarSaldo(){
         saldo += saldo * jurosTaxa;
     }
+
+    @Override
+    public void saque(Double quantia) {
+        super.saque(quantia);
+        saldo-= quantia;
+    }
 }
