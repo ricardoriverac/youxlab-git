@@ -2,7 +2,10 @@ package application.entities;
 
 public class Produto {
     private String nome;
-    private Double preco;
+    protected Double preco;
+
+    public Produto() {
+    }
 
     public Produto(String nome, Double preco){
         this.nome = nome;
@@ -23,5 +26,9 @@ public class Produto {
 
     public void setPreco(Double preco) {
         this.preco = preco;
+    }
+
+    public String etiquetaPreco(){
+        return getNome() + "$ " + getPreco();
     }
 }
