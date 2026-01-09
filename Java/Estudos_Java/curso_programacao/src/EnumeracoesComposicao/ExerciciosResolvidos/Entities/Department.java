@@ -1,7 +1,6 @@
 package EnumeracoesComposicao.ExerciciosResolvidos.Entities;
 
 public class Department {
-
     private  String name;
 
     public Department() {

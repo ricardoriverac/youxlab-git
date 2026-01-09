@@ -42,6 +42,7 @@ public class ProgramPrincipal {
             int hours = sc.nextInt();
             HourContract contract = new HourContract(contractDate, valuePerHour, hours);
             worker.addContract(contract);
+
         }
 
         System.out.println();

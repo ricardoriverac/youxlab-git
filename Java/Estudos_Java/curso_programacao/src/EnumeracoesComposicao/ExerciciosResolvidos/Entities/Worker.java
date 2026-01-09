@@ -25,7 +25,6 @@ public class Worker {
         this.department = department;
     }
 
-
     public String getName() {
         return name;
     }
