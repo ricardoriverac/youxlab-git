@@ -2,7 +2,7 @@ package Aula_30_Saida_de_dados_em_java;
 
 import java.util.Locale;
 
-public class Main {
+public class Aula {
     public static void main(String[] args) {
 
         //Aparição no terminal
