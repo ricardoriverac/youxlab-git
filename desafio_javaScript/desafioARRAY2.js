@@ -97,7 +97,6 @@ produtos.forEach(produto => {
     }else if (produto.categoria === 'Energia') {
         valoresEnergia += produto.estoque
         energia.push(produto.nome)
-
     }
 })
 
