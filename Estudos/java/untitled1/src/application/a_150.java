@@ -20,5 +20,7 @@ public class a_150 {
             System.out.print("Erro de input");
         }
         System.out.print("Fim do programa! ");
+
+        sc.close();
     }
 }
