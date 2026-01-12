@@ -45,9 +45,8 @@ public class desafioPOO2 {
             case 2:
                 System.out.print("Caro usuário, por favor informe o status de seu pedido: ");
                 String statusVerificado = sc.next();
-                System.out.print("\nCaro usuário, seu pedido é: " + pedidos.stream().filter(p -> p.getStatus() == statusVerificado).toList());)
+
 
             }
         }
     }
-}
