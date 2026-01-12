@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetão</title>
+    <link rel="stylesheet" href="./css/projetao.css">
+</head>
+<body>
+    <header id="title">
+        <h3>Tabela pessoas</h3>
+    </header>
+    <div id="input">
+        <div class="dados" id="nome">
+            <label>Nome:</label>
+            <input class="mainInput" id="inputNome" type="text" placeholder="Digite seu nome">
+        </div>
+        <div class="dados" id="numero">
+            <label>Telefone:</label>
+            <input class="mainInput" id="inputTelefone" type="text" placeholder="Digite o número de telefone">
+        </div>
+        <div class="dados" id="cpf">
+            <label>CPF:</label>
+            <input class="mainInput" id="inputCpf" type="text" placeholder="Digite seu CPF">
+        </div>
+        <div class="dados" id="email">
+            <label>E-mail:</label>
+            <input class="mainInput" id="inputEmail" type="email" placeholder="Digite seu e-mail">
+        </div>
+        <div id="btn_inserir">
+            <button type="submit">inserir</button>
+        </div>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Número de Telefone</th>
+                <th>CPF</th>
+                <th>Email</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="body">
+            
+        </tbody>
+    </table>
+    <script src="projetao.js"></script>
+</body>
+</html>
