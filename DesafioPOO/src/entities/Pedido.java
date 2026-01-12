@@ -22,18 +22,6 @@ public class Pedido {
         this.status = status;
     }
 
-
-    public String toString() {
-        return "\nCliente: \n"
-                + cliente
-                + "\nEndereço de entrega: "
-                + enderecoEntrega
-                + "\nProdutos: "
-                + qntProdutos
-                + "\nStatus inicial: "
-                + status;
-    }
-
     public int getQntProdutos() {
         return qntProdutos;
     }
@@ -80,6 +68,17 @@ public class Pedido {
 
     public void setProduto(Produto produto) {
         this.produto = produto;
+    }
+
+    public String toString() {
+        return "\nCliente: \n"
+                + cliente
+                + "\nEndereço de entrega: "
+                + enderecoEntrega
+                + "\nProdutos: "
+                + qntProdutos
+                + "\nStatus inicial: "
+                + status;
     }
 
 }

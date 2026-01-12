@@ -118,6 +118,7 @@ public class ProgramaPrincipal {
                     }
                 }
             }
+
             else {
                 System.out.println("NÚMERO INVÁLIDO!");
             }

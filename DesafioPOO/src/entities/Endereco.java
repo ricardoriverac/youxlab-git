@@ -29,5 +29,4 @@ public class Endereco {
                 + "\nEstado: "
                 + estado;
     }
-
 }
