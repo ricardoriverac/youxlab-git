@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a43b457e-3572-4a1b-9e8f-9a396a3e7823" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/application/POO/desafioPOO2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/application/POO/desafioPOO2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled1/src/application/POO/desafioPOO2.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled1/src/application/POO/desafioPOO2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +59,7 @@
     "Application.a_145.executor": "Run",
     "Application.a_151.executor": "Run",
     "Application.a_152.executor": "Run",
+    "Application.a_157.executor": "Run",
     "Application.a_177.executor": "Run",
     "Application.a_18.executor": "Run",
     "Application.a_24.executor": "Run",
@@ -121,6 +124,7 @@
     "Application.a_99_desafioPensionato.executor": "Run",
     "Application.desafioCultural.executor": "Run",
     "Application.desafioPOO.executor": "Run",
+    "Application.desafioPOO2.executor": "Run",
     "Application.ex_a24.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
