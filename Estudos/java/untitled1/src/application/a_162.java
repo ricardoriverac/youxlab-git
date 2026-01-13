@@ -7,12 +7,8 @@ import java.io.IOException;
 public class a_162 {
     public static void main(String[] args) {
         String caminho = "/home/youx/in.txt";
-        BufferedReader br = null;
-        FileReader fr = null;
+        try (BufferedReader br = new BufferedReader(new FileReader(caminho))){
 
-        try{
-            fr = new FileReader(caminho);
-            br = new BufferedReader(fr);
 
             String line = br.readLine();
 
@@ -23,16 +19,6 @@ public class a_162 {
         }
         catch (IOException e){
             System.out.print("Erro: " + e.getMessage());
-        }
-        finally {
-            try {
-                if(br != null)
-                    br.close();
-                if(fr != null)
-                    fr.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
     }
 }
