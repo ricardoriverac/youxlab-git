@@ -1,13 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.CSS">
+    <link rel="stylesheet" href="css/crud.css">
     <title>site</title>
 </head>
+
 <body>
     <h1 class="titulo">Tabela de pessoas</h1>
-    <p class="nome">Nome :</p>
+    <div class="container">
+        <label>Nome :</label>
+        <input class="informacoes" id="input-nome" type="nome" placeholder="Digite um nome">
+        <label>Telefone: </label>
+        <input class="informacoes" id="input-telefone" type="number" placeholder="Digite o numero de telefone">
+        <label>CPF: </label>
+        <input class="informacoes" id="input-cpf" type="cpf" placeholder="Digite o numero de CPF">
+        <label>Email: </label>
+        <input class="informacoes" id="input-email" type="email" placeholder="Digite um email">
+        <button id="botaoInserir" class="inserir">Inserir</button>
+    </div>
+
+    <table>
+        <thead id="Tabela">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Número de Telefone</th>
+                    <th>CPF</th>
+                    <th>Email</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+        </thead>
+        <tbody id="tabelaCorpo"></tbody>
+    </table>
+
+
 </body>
+<script src="crud.js">
+
+</script>
+
 </html>
