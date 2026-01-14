@@ -7,9 +7,9 @@ public class ServicoAluguel {
     private ImpostoBrasilServico impostoServico;
 
 
-    public ServicoAluguel(Double pricePerDay, Double pricePerHour, ImpostoBrasilServico impostoServico) {
-        this.pricePerDay = pricePerDay;
-        this.pricePerHour = pricePerHour;
+    public ServicoAluguel(Double precoPorDia, Double precoPorHora, ImpostoBrasilServico impostoServico) {
+        this.precoPorDia = precoPorDia;
+        this.precoPorHora = precoPorHora;
         this.impostoServico = impostoServico;
     }
 
@@ -24,11 +24,11 @@ public class ServicoAluguel {
             pagamentoBasico = precoPorHora * Math.ceil(horas);
         }
         else {
-            pagamentoBasico = precoPorDia * Math.ceil(horas)
+            pagamentoBasico = precoPorDia * Math.ceil(horas);
         }
 
-        double imposto = impostoServico.tax(pagamentoBasico);
+        double imposto = impostoServico.imposto(pagamentoBasico);
 
-        aluguelCarro.setFatura(new Fatura(pagamentoBasico, imposto);
+        aluguelCarro.setFatura(new Fatura(pagamentoBasico, imposto));
     }
 }
