@@ -1,7 +1,8 @@
 package application.entities;
 
-public class ImpostoBrasilServico {
-    public Double tax(Double quantidade){
+public class ImpostoBrasilServico implements ServicoImposto{
+    @Override
+    public Double imposto(double quantidade){
         if(quantidade <= 100.0){
             return quantidade * 0.2;
         }
