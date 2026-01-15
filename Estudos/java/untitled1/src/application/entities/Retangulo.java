@@ -3,6 +3,14 @@ package application.entities;
 public class Retangulo {
     public double largura, altura;
 
+    public Retangulo() {
+    }
+
+    public Retangulo(double largura, double altura) {
+        this.largura = largura;
+        this.altura = altura;
+    }
+
     public double area(){
         return largura * altura;
     }
