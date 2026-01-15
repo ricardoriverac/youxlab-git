@@ -33,7 +33,7 @@ public class ProgramPrincipal {
             System.out.print("Check-out date (DD/MM/YYYY): ");
             checkOut = sdf.parse(sc.next());
 
-            reservation.updateDates(checkIn, checkOut);
+            reservation.updateDatesBoa(checkIn, checkOut);
             System.out.println("Reservation: " + reservation);
         }
         catch (ParseException e){

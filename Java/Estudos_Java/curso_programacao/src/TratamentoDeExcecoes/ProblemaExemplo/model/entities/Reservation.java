@@ -44,7 +44,8 @@ public class Reservation {
         return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
     }
 
-    public void updateDates(Date checkIn, Date checkOut) {
+    // METODO SOLUCAO BOA
+    public void updateDatesBoa(Date checkIn, Date checkOut) {
 
         Date now = new Date();
         if (checkIn.before(now) || checkOut.before(now)){
@@ -54,6 +55,28 @@ public class Reservation {
             throw new DomainException("Check-out date must be after check-in date");
         }
 
+        this.checkIn = checkIn;
+        this.checkOut = checkOut;
+    }
+
+    // METODO SOLUCAO RUIM
+    public String updateDatesRuim(Date checkIn, Date checkOut) {
+
+        Date now = new Date();
+        if (checkIn.before(now) || checkOut.before(now)) {
+            return "Reservation dates for update must be future dates";
+        }
+        if (!checkOut.after(checkIn)) {
+            return "Check-out date must be after check-in date";
+        }
+
+        this.checkIn = checkIn;
+        this.checkOut = checkOut;
+        return null;
+    }
+
+    // METODO SOLUCAO MUITO RUIM
+    public void updateDatesMuitoRuim(Date checkIn, Date checkOut) {
         this.checkIn = checkIn;
         this.checkOut = checkOut;
     }

@@ -36,7 +36,7 @@ public class ProgramPrincipal {
             checkOut = sdf.parse(sc.next());
 
             Date now = new Date();
-            String error = reservation.updateDates(checkIn, checkOut);
+            String error = reservation.updateDatesRuim(checkIn, checkOut);
             if (error != null) {
                 System.out.println("Error in reservation: " + error);
             }
