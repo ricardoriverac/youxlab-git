@@ -18,7 +18,7 @@ function inserir() {
         <td>${email}</td>
         <td>
         <button id = "editarBotao" class="Editar" onclick=editar(this)>Editar</button>
-        <button onclick=excluir(this)>Remover</button>
+        <button class="remove" onclick=excluir(this)>Remover</button>
         </td>
     `;
 
@@ -50,8 +50,6 @@ function editar(botao){
     const novaLinha = botao.closest('tr')
 
     if(novaLinha){
-
-        console.log("oi");
 
         const dados = novaLinha.querySelectorAll("td");
         

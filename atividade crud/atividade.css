@@ -40,7 +40,8 @@ th{
     color: white;
 }
 
-.Editar{
+.Editar,
+.remove{
     background-color: #4caf50;
     border-radius: 5px;
 }
