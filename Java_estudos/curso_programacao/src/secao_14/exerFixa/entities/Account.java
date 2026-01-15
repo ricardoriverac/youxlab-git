@@ -1,5 +1,7 @@
 package secao_14.exerFixa.entities;
 
+import secao_14.exerFixa.exeptions.BusinessException;
+
 public class Account {
     private Integer number;
     private String holder;
