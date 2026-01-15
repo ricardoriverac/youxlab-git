@@ -19,8 +19,7 @@ create table cliente(
 
 	-- primary key
 	constraint pk_cln_idcliente primary key (idcliente)
-	
-)
++)
 
 -- Inserção de Valores --
 
@@ -999,7 +998,7 @@ select
 from
 	pedido_produto 
 left outer join
-	pedido on pedido_produto.idpedido = pdd.idpedido
+	pedido on pedido_produto.idpedido = pedido.idpedido
 group by
 	data_pedido
 
@@ -1089,20 +1088,376 @@ from
 	municipio
 
 -- 6.
+select
+	nome,
+	case genero
+		when 'M' then 'Masculino'
+		when 'F' then 'Feminino'
+	else 'Não informado'
+	end as Genero
+from
+	cliente;
+
+-- 7.
+select
+	nome,
+	valor,
+	case
+		when valor >= 500 then 'Acima ou igual a 500'
+	else 'Abaixo de 500'
+	end as faixa
+from
+	produto
+
+-- Selecionar a data do pedido e o valor onde o valor seja maior que a média
+-- dos valores de todos os pedido
+select
+	data_pedido,
+	valor
+from
+	pedido
+where 
+	valor > (select avg(valor) from pedido)
+
+-- Exemplo com count
+select
+	pdd.data_pedido,
+	pdd.valor,
+	(select sum(quantidade) as total from pedido_produto pdp where pdp.idpedido = pdd.idpedido)
+from
+	pedido pdd
+
+-- Exemplo com update
+select * from pedido
+
+update pedido set valor = valor + ((valor * 5 ) / 100)
+where valor > (select avg(valor) from pedido)
+
+-- Exercícios
+
+-- 1.
+select nome from cliente where idbairro = 1 and not left(nome, 1) = 'M';
+
+-- 2.
+select 
+	data_pedido,
+	valor
+from
+	pedido
+where 
+	(select avg(valor) from pedido) > valor
+
+-- 3.
+select 
+	pdd.data_pedido,
+	pdd.valor,
+	cln.nome as nome_cliente,
+	vnd.nome as nome_vendedor,
+	pp.quantidade
+from 
+	pedido pdd
+left outer join
+	cliente cln on cln.idcliente = pdd.idcliente
+left outer join
+	vendedor vnd  on vnd.idvendedor = pdd.idvendedor
+left outer join
+	pedido_produto pp on pp.idpedido = pdd.idpedido
+where
+	not quantidade < 2 
+	
+-- 4.
+select nome from cliente where idmunicipio = 9
+
+-- 5.
+select 
+	cln.nome,
+	cln.idmunicip
+from 
+	cliente cln
+left outer join
+	municipio mnc on mnc.idmunicipio = cln.idmunicipio
+where 
+	cln.idmunicipio = 5 and cln.idmunicipio = 9
+
+--Views
+create view cliente_profissao as
+select
+	cln.nome as clientes,
+	prf.nome as profissao
+from
+	cliente cln
+left outer join 
+	profissao prf on cln.idprofissao = prf.idprofissao
+
+select * from cliente_profissao
+
+-- Exercico
+
+-- 1.
+select * from cliente;
+
+create view informacoes_clientes as
+select 
+	cln.idcliente,
+	cln.nome,
+	prf.nome as profissao,
+	ncn.nome as nacionalidade,
+	cpl.nome as complemento,
+	mnc.nome as municipio,
+	cln.uf,
+	brr.nome as bairro,
+	cln.cpf,
+	cln.rg,
+	cln.data_nascimento,
+	case genero
+		when 'F' then 'Femenino'
+		when 'M' then 'Masculino'
+	else 'Genero não informado'
+	end as genero,
+	cln.numero,
+	cln.logradouro
+from
+	cliente cln
+left outer join
+	profissao prf on prf.idprofissao = cln.idprofissao
+left outer join
+	nacionalidade ncn on ncn.idnacionalidade = cln.idnacionalidade
+left outer join
+	complemento cpl on cpl.idcomplemento = cln.idcomplemento
+left outer join
+	municipio mnc on mnc.idmunicipio = cln.idmunicipio
+left  outer  join
+	bairro brr on brr.idbairro = cln.idbairro
+
+select * from informacoes_clientes
+
+-- 2.
+
+create view  endereco as
+select
+	mnc.nome as municipio,
+	uf.nome as unidade_federativa,
+	uf.sigla
+from
+	municipio mnc
+left outer join
+	uf on uf.iduf = mnc.iduf
+
+-- 3.
+create view pecas as
+select
+	frn.nome as nome_fornecedor,
+	prd.nome as nome_componentes,
+	prd.valor
+from 
+	produto prd
+left outer join
+	fornecedor frn on frn.idfornecedor = prd.idfornecedor
+
+-- 4.
+select * from transportadora
+
+create view informacoes_transportadoras as
+select 
+	trn.nome,
+	logradouro,
+	numero,
+	mnc.nome as nome_unidade_federativa,
+	mnc.iduf as uf
+from 
+	transportadora trn
+left outer join 
+	municipio mnc on mnc.idmunicipio = trn.idmunicipio
+
+-- 5.
+select * from pedido
+
+create view informacoes_pedido as
+select
+	data_pedido,
+	valor,
+	trn.nome as transportadora,
+	cln.nome as cliente,
+	vnd.nome as vendedor
+from
+	pedido pdd
+left outer join 
+	transportadora trn on trn.idtransportadora = pdd.idtransportadora
+left outer join
+	cliente cln on cln.idcliente = pdd.idcliente
+left outer join
+	vendedor vnd on vnd.idvendedor = pdd.idvendedor
+
+-- 6
+select * from produto
+
+create view lista_produto as
+select
+	prd.nome,
+	prd_pdd.quantidade,
+	prd_pdd.valor_unitario,
+	prd.valor
+from
+	produto prd
+left outer join
+	pedido_produto prd_pdd on prd_pdd.idproduto = prd.idproduto
+
+-- Campos autoincremento 
+create table exemplo(
+	idexemplo serial not null,
+	nome varchar (50) not null,
+
+	constraint pk_exemplo_idexemplo primary key (idexemplo)
+);
+
+insert into exemplo (nome) values ('Exemplo 1');
+insert into exemplo (nome) values ('Exemplo 2');
+insert into exemplo (nome) values ('Exemplo 3');
+insert into exemplo (nome) values ('Exemplo 4');
+insert into exemplo (nome) values ('Exemplo 5');
+
+select * from exemplo
+
+select max (idbairro) + 1 from bairro
+create sequence bairroxid_seq minvalue 5
+alter table bairro alter idbairro set default nextval('bairroxid_seq')
+alter sequence bairroxid_seq owned by bairro.idbairro
+
+insert into bairro (nome) values ('Teste 1');
+insert into bairro (nome) values ('Teste 2');
+
+select * from bairro
+
+-- Atividade
+
+-- A.
+select max(idcliente) + 1 from cliente
+
+create sequence cliente_id_seq minvalue 18
+
+alter table cliente alter idcliente set default nextval('cliente_id_seq')
+
+alter sequence cliente_id_seq owned by cliente.idcliente
+
+insert into cliente (nome) values ('Teste 1');
+insert into cliente (nome) values ('Teste 2');
+
+select * from cliente
+
+delete from complemento
+where idcomplemento = 3; 
 
 
+-- B.
+create sequence complemento_id_seq minvalue 3
 
+alter table complemento alter idcomplemento set default nextval('complemento_id_seq')
 
+alter sequence complemento_id_seq owned by complemento.idcomplemento
 
+insert into complemento (nome) values ('Teste 1');
+insert into complemento (nome) values ('Teste 2');
 
+select * from complemento
 
+-- C.
+create sequence fornecedor_id_seq minvalue 4 
 
+alter table fornecedor alter idfornecedor set default nextval('fornecedor_id_seq')
 
+alter sequence fornecedor_id_seq owned by fornecedor.idfornecedor
 
+-- D.
+create sequence municipio_id_seq minvalue 10
 
+alter table municipio alter idmunicipio set default nextval('municipio_id_seq')
 
+alter sequence municipio_id_seq owned by municipio.idmunicipio
 
+-- E
+create sequence nacionalidade_id_seq minvalue 5
 
+alter table nacionalidade alter idnacionalidade set default nextval('nacionalidade_id_seq')
 
+alter sequence nacionalidade_id_seq owned by nacionalidade.idnacionalidade
+
+-- F
+create sequence pedido_id_seq minvalue 16
+
+alter table pedido alter idpedido set default nextval('pedido_id_seq')
+
+alter sequence pedido_id_seq owned by pedido.idpedido
+
+-- G
+create sequence produto_id_seq minvalue 8
+
+alter table produto alter idproduto set default nextval('produto_id_seq')
+
+alter sequence produto_id_seq owned by produto.idproduto
+
+-- H
+create sequence profissao_id_seq minvalue 6
+
+alter table profissao alter idprofissao set default nextval('profissao_id_seq')
+
+alter sequence profissao_id_seq owned by profissao.idprofissao
+
+-- I
+
+create sequence transportadora_id_seq minvalue 3
+
+alter table transportadora alter idtransportadora set default nextval('transportadora_id_seq')
+
+alter sequence transportadora_id_seq owned by transportadora.idtransportadora
+
+-- J
+create sequence uf_id_seq minvalue 7
+
+alter table uf alter iduf set default nextval('uf_id_seq')
+
+alter sequence uf_id_seq owned by uf.iduf
+
+-- K
+select max(idvendedor) + 1 from vendedor
+
+create sequence vendedor_id_seq minvalue 9
+
+alter table vendedor alter idvendedor set default nextval('vendedor_id_seq')
+
+alter sequence vendedor_id_seq owned by vendedor.idvendedor
+
+-- Campos default 
+
+alter table pedido alter column data_pedido set default current_date;
+alter table pedido alter column valor set default 0;
+
+insert into pedido (idcliente, idvendedor) 
+values (1, 1);
+
+insert into pedido (idcliente, idvendedor, data_pedido, valor)
+values (1, 1, '2022-10-10', 234);
+
+select * from pedido
+
+-- Exercicio
+-- 1.
+
+-- A.
+alter table pedido_produto alter column quantidade set default 1;
+
+-- B.
+alter table pedido_produto alter column valor_unitario set default 0;
+
+-- 2.
+alter table produto alter column valor set default 0;
+
+-- Indices
+
+create index idx_cln_nome on cliente (nome);
+
+-- Exercicio
+create index idx_dt_data_pedido on pedido (data_pedido)
+
+create index idx_prd_nome on produto (nome)
 
 
