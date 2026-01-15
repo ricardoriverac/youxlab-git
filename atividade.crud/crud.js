@@ -22,16 +22,18 @@ function inserir() {
         <td>${valorCPF}</td>
         <td>${valorEmail}</td>
         <td>
-        <button id="btn_remover" >Remover</button>
+        <button id="btn_remover" onclick=excluir(this)>Remover</button>
         <button onclick=editar(this)>Editar</button>
         </td>
         `;
     corpotabela.appendChild(novaLinha)
+}
 
-    const remove = document.getElementById("btn_remover");
-    remove.addEventListener("click", (evt) => {
-        novaLinha.remove();
-    })
+function excluir(botao) {
+    const novaLinha = botao.closest('tr')
+    if (novaLinha) {
+        novaLinha.remove()
+    }
 }
 
 botaoInserir.addEventListener("click", function () {
@@ -39,7 +41,7 @@ botaoInserir.addEventListener("click", function () {
     limparcontainer()
 })
 
-function editar (editarBotao) {
+function editar(editarBotao) {
     const editarNome = document.getElementById("input-nome")
     const editarTelefone = document.getElementById("input-telefone")
     const editarCPF = document.getElementById("input-cpf")
