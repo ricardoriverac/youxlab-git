@@ -40,8 +40,8 @@ def extrato():
     if not extratoFinal:
         print("Nenhuma trasação feita!")
     else:
-        print(extratoFinal)
-        print(f"Saldo final: {saldo}")
+        for transacao in extratoFinal:
+            print(transacao)
 
 
 while True:
