@@ -8,7 +8,7 @@ public class Program {
 
     static void main() {
 
-        File file = new File("c:\\temp\\in.txt");
+        File file = new File("//home//youx//Projetos//in.txt");
         Scanner sc = null;
         try {
             sc = new Scanner(file);
