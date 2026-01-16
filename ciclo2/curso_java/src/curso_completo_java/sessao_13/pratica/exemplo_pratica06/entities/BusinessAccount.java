@@ -1,8 +1,6 @@
-package curso_completo_java.sessao_13.pratica.exemplo_pratica06.etntities;
+package curso_completo_java.sessao_13.pratica.exemplo_pratica06.entities;
 
-import curso_completo_java.sessao_13.pratica.exemplo_pratica05.entities.Account;
-
-    public class BusinessAccount extends Account {
+public class BusinessAccount extends Account {
 
         private Double loanLimit;
 
@@ -29,14 +27,14 @@ import curso_completo_java.sessao_13.pratica.exemplo_pratica05.entities.Account;
             }
         }
 
-        @Override
-        public void whithdraw (double amount) {
-            super.withdraw(amount);
-            balance -= 2.0;
+      @Override
+      public void withdraw (double amount) {
+                super.withdraw(amount);
+                balance -= 2.0;
         }
 
     }
 
 
 
-}
+

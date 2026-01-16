@@ -1,6 +1,9 @@
 package curso_completo_java.sessao_13.pratica.exemplo_pratica03.application;
 
+// AULA 138 - Sobreposição, palavra super, anotação
+
 import curso_completo_java.sessao_13.pratica.exemplo_pratica03.entitites.Account;
+import curso_completo_java.sessao_13.pratica.exemplo_pratica03.entitites.BusinessAccount;
 import curso_completo_java.sessao_13.pratica.exemplo_pratica03.entitites.SavingsAccount;
 
 public class program {
@@ -14,5 +17,9 @@ public class program {
         Account acc2 = new SavingsAccount(1002, "Maria", 100.0, 0.01);
         acc2.withdraw(200.0);
         System.out.println(acc2.getBalance());
+
+        Account acc3 = new BusinessAccount(1003, "Bob", 1000.0, 0.01);
+        acc3.withdraw(200.0);
+        System.out.println(acc3.getBalance());
     }
 }

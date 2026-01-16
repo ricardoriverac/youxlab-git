@@ -1,6 +1,6 @@
-package curso_completo_java.sessao_13.pratica.exemplo_pratica06.etntities;
+package curso_completo_java.sessao_13.pratica.exemplo_pratica06.entities;
 
-public class Account {
+public  class Account {
 
         private Integer number;
         private String holder;
@@ -42,6 +42,7 @@ public class Account {
         public void deposit(double amount) {
             balance += amount;
         }
-    }
+
+}
 
 

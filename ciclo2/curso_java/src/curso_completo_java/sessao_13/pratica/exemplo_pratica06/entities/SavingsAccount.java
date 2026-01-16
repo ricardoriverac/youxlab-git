@@ -1,8 +1,6 @@
-package curso_completo_java.sessao_13.pratica.exemplo_pratica06.etntities;
+package curso_completo_java.sessao_13.pratica.exemplo_pratica06.entities;
 
-import curso_completo_java.sessao_13.pratica.exemplo_pratica05.entities.Account;
-
-    public class SavingsAccount extends Account {
+public class SavingsAccount extends Account {
 
         private Double interestRate;
 
@@ -37,4 +35,4 @@ import curso_completo_java.sessao_13.pratica.exemplo_pratica05.entities.Account;
 
 
 
-}
+
