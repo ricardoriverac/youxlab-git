@@ -5,6 +5,7 @@ import application.entities.Impressora;
 import application.entities.Scanner;
 
 
+/*
 public class a_180_pt1 {
     public static void main(String[] args) {
         Impressora i = new Impressora("1080");
@@ -17,3 +18,4 @@ public class a_180_pt1 {
 
     }
 }
+*/
