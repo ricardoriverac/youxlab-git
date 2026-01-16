@@ -1,9 +1,5 @@
 package application;
 
-import application.entities.Dispositivo;
-import application.entities.Impressora;
-import application.entities.Scanner;
-
 
 /*
 public class a_180_pt1 {

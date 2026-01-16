@@ -2,7 +2,7 @@ package application;
 
 import application.entities.*;
 
-public class a_180_pt2 {
+public class a_181_pt2 {
     public static void main(String[] args) {
        ImpressoraConcreto p = new ImpressoraConcreto("1080");
        p.processDoc("Minha carta");
