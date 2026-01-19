@@ -18,17 +18,17 @@ public class program {
         try (BufferedWriter br = new BufferedWriter(new FileWriter("/home/youx/exercicio.csv/out/summary.csv", true))) {
 
 
-            System.out.print("Caro usuário, quantos produtos serão cadastrados? ");
+            System.out.print("Quantos produtos serão cadastrados?:  ");
             int quantidadeProdutos = sc.nextInt();
 
             for (int i = 0; i < quantidadeProdutos; i++) {
-                System.out.print("Caro usuário, qual o nome do produto a ser cadastrado? ");
+                System.out.print("Qual o nome do produto a ser cadastrado?: ");
                 String nomeProduto = sc.next();
 
-                System.out.printf("Caro usuário, qual o preço unitário do(a) %s", nomeProduto);
+                System.out.printf("Qual o preço unitário do(a) %s", nomeProduto);
                 Double precoUni = sc.nextDouble();
 
-                System.out.print("Caro usuário, quantas unidades em estoque tem? ");
+                System.out.print("Quantas unidades em estoque tem?: ");
                 Integer quantidade = sc.nextInt();
 
                 Produto produto = new Produto(nomeProduto, precoUni, quantidade);
