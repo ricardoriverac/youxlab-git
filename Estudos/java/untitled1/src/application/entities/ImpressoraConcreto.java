@@ -11,7 +11,7 @@ public class ImpressoraConcreto extends Dispositivo implements Impressora {
     }
 
     @Override
-    public void print(String doc){
+    public void imprimir(String doc){
         System.out.println("Imprimindo: " + doc);
     }
 }

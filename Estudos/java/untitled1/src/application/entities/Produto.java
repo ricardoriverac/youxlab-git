@@ -1,6 +1,6 @@
 package application.entities;
 
-public class Produto {
+public class Produto implements Comparable<Produto>{
     private String nome;
     protected Double preco;
 
@@ -29,6 +29,11 @@ public class Produto {
     }
 
     public String etiquetaPreco(){
-        return getNome() + "$ " + getPreco();
+        return nome + "$ " + preco;
+    }
+
+    @Override
+    public int compareTo(Produto o) {
+        return preco.compareTo(o.getPreco());
     }
 }

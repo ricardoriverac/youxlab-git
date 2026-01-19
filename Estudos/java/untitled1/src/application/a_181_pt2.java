@@ -6,7 +6,7 @@ public class a_181_pt2 {
     public static void main(String[] args) {
        ImpressoraConcreto p = new ImpressoraConcreto("1080");
        p.processDoc("Minha carta");
-       p.print("Minha carta");
+       p.imprimir("Minha carta");
         System.out.println();
 
         ScannerConcreto s = new ScannerConcreto("2003");
