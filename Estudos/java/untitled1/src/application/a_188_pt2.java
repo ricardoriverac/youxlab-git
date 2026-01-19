@@ -10,3 +10,6 @@ public class a_188_pt2 {
 //    }
 //}
 //isso dara erro de compilação
+
+
+}
