@@ -20,7 +20,7 @@ public class exercicio_7 {
             System.out.println("Eixo Y");
         } else if (y == 0) {
             System.out.println("Eixo X");
-        }else {
+        } else {
             System.out.println("Origem");
         }
     }

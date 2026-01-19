@@ -8,7 +8,7 @@ public class exercicio_8 {
         Scanner sc = new Scanner(System.in);
         double salary, tax;
         salary = sc.nextDouble();
-        if (salary<2000) {
+        if (salary<=2000) {
             System.out.println("You are exempt from taxes");
         } else if (salary<3000) {
             salary -= 2000;

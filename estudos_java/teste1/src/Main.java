@@ -78,8 +78,14 @@ public class Main {
 *  price = ( 2 > 4 ) ? 50 : 80 → 80
 *  name = ( 10 != 3 ) ? "Maria" : "Alex" → "Maria"
 *
-*
-*
+* do-while:
+* Sintaxe:
+* do {
+* comando 1
+* comando 2
+* } while (condição)
+* Ele realiza o while pelo menos uma vez.
+* Obs: Muito pouco utilizado
 * */
 
 
