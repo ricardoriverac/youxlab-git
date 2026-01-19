@@ -1461,3 +1461,5 @@ create index idx_dt_data_pedido on pedido (data_pedido)
 create index idx_prd_nome on produto (nome)
 
 
+
+
