@@ -2,7 +2,6 @@ package secao_16.aula_177.model.services;
 
 public class PaypalService implements OnlinePaymentService{
 
-
     private static final double FEE_PERCENTAGE = 0.02;
     private static final double MONTHLY_INTEREST = 0.01;
 
