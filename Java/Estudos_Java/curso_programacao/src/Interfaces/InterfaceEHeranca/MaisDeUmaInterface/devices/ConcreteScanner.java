@@ -14,4 +14,5 @@ public class ConcreteScanner extends Device implements Scanner {
     public String scan() {
         return "Scanned content";
     }
+
 }

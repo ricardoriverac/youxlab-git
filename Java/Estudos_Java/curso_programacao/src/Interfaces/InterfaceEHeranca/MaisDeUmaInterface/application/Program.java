@@ -11,10 +11,12 @@ public class Program {
         p.processDoc("My Letter");
         p.print("My Letter");
 
+
         System.out.println();
         ConcreteScanner s = new ConcreteScanner("2003");
         s.processDoc("My Email");
         System.out.println("Scan result: " + s.scan());
+
 
         System.out.println();
         ComboDevice c = new ComboDevice("2081");

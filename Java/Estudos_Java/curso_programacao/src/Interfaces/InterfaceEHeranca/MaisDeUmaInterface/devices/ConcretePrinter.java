@@ -15,4 +15,5 @@ public class ConcretePrinter extends Device implements Printer {
     public void print(String doc) {
         System.out.println("Printing: " + doc);
     }
+
 }

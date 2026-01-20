@@ -16,6 +16,7 @@ public class ComboDevice extends Device implements Scanner, Printer {
         return "Combo scan result";
     }
 
+
     @Override
     public void processDoc(String doc) {
         System.out.println("Combo processing: " + doc);
