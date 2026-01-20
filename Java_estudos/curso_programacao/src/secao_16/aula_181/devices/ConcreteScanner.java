@@ -8,7 +8,6 @@ public class ConcreteScanner extends Device implements Scanner {
 
     @Override
     public void print(String doc) {
-
     }
 
     @Override
