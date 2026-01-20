@@ -299,16 +299,181 @@ where
 -- Consultas com agrupamento + join
 
 -- 38.
+select * from livro
+
 select
 	edt.nome,
-	count(idlivro)
+	count(lvr.nome)
 from
-	livro liv
+	livro lvr
 left outer join
-	editora edt on edt.ideditora = liv.ideditora
-group by edt.nome
+	editora edt on edt.ideditora = lvr.ideditora
+group by
+	edt.nome
 
 -- 39.
+select * from categoria
+
+select 
+	ctg.nome,
+	count(ctg.idcategoria)
+from
+	livro lvr
+left outer join
+	categoria ctg on ctg.idcategoria = lvr.idcategoria
+group by
+	ctg.nome
+	
+-- 40.
+select * from livro
+
+select
+	tr.nome,
+	count(idlivro)
+from
+	livro_autor lvr_tr
+left outer join
+	autor tr on tr.idautor = lvr_tr.idautor
+group by
+	tr.nome
+
+-- 41.
+select * from emprestimo_livro
+
+select
+	aln.nome,
+	count(idemprestimo)
+from
+	emprestimo emp
+left outer join
+	aluno aln on aln.idaluno = emp.idaluno
+group by
+	aln.nome
+
+-- 42
+select * from emprestimo
+
+select
+	aln.nome,
+	sum(valor)
+from
+	emprestimo epr
+left outer join
+	aluno aln on aln.idaluno = epr.idaluno
+group by
+	aln.nome
+
+-- 43.
+select * from emprestimo
+
+select
+	aln.nome,
+	sum(valor)
+from
+	emprestimo epr
+left outer join
+	aluno aln on aln.idaluno = epr.idaluno
+where
+	valor > 7
+group by
+	aln.nome
+
+--  Consultas comandos diversos
+
+-- 44.
+select * from aluno order by idaluno desc;
+
+-- 45. 
+select
+	*
+from
+	emprestimo
+where
+	extract(month from data_emprestimo) = 4
+
+-- 46.
+select
+	idemprestimo,
+	idaluno,
+	data_emprestimo,
+	data_devolucao,
+	valor,
+	case devolucao
+		when 'S' then 'Devolução completa'
+		when 'N' then 'Em atraso'
+	else 'Não informado'
+	end as devolucao
+from
+	emprestimo
+
+-- 47
+select
+	substring(nome from 5 for 10)
+from
+	autor
+
+-- 48
+select
+	valor,
+	case extract(month from data_emprestimo)
+		when 1 then 'Janeiro'
+		when 2 then 'Fevereiro'
+		when 3 then 'Março'
+		when 4 then 'Abril'
+		when 5 then 'Maio'
+		when 6 then 'Junho'
+		when 7 then 'Julho'
+		when 8 then 'Agosto'
+		when 9 then 'Setembro'
+		when 10 then 'Outubro'
+		when 11 then 'Novembro'
+		when 12 then 'Dezembro'
+	else
+		'Não informado'
+	end as mes
+from
+	emprestimo
+
+
+-- Subconsultas
+
+-- 49.
+select * from emprestimo
+
+select
+	data_emprestimo,
+	valor
+from
+	emprestimo	
+where
+	valor > (select avg(valor) from emprestimo) 
+
+-- 50.
+select
+	eml.idemprestimo,
+	data_emprestimo,
+	valor
+from
+	emprestimo_livro eml
+left outer join
+	emprestimo emp on emp.idemprestimo = eml.idemprestimo
+group by
+	eml.idemprestimo,
+	data_emprestimo,
+	valor
+having
+	count(idlivro) > 1
+
+-- 51.
+select
+	data_emprestimo,
+	valor
+from
+	emprestimo emp
+where
+	valor < (select sum(valor) from emprestimo)	
+
+
 
 
 
