@@ -1,5 +1,7 @@
 package application.entities;
 
+import java.util.Objects;
+
 public class Produto implements Comparable<Produto>{
     private String nome;
     protected Double preco;
@@ -36,4 +38,18 @@ public class Produto implements Comparable<Produto>{
     public int compareTo(Produto o) {
         return preco.compareTo(o.getPreco());
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Produto produto = (Produto) o;
+        return Objects.equals(nome, produto.nome) && Objects.equals(preco, produto.preco);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nome, preco);
+    }
 }
+
+
