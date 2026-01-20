@@ -7,6 +7,6 @@ public class Exercicio_08 {
 
         Scanner sc = new Scanner(System.in);
 
-        //NÃO ENTENDI ESSE EXERCICIO | EXERCICIO NÃO TERMINADO
+        //EXERCICIO NÃO TERMINADO
     }
 }
