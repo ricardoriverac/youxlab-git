@@ -1,7 +1,7 @@
-package Generics.GenericsDelimitados.application;
+package GenericsSetMap.GenericsDelimitados.application;
 
-import Generics.GenericsDelimitados.entities.Product;
-import Generics.GenericsDelimitados.services.CalculationService;
+import GenericsSetMap.GenericsDelimitados.entities.Product;
+import GenericsSetMap.GenericsDelimitados.services.CalculationService;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

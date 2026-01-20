@@ -1,4 +1,4 @@
-package Generics.GenericsDelimitados.entities;
+package GenericsSetMap.GenericsDelimitados.entities;
 
 public class Product implements Comparable<Product>  {
 

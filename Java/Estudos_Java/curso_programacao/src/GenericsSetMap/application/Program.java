@@ -1,6 +1,6 @@
-package Generics.application;
+package GenericsSetMap.application;
 
-import Generics.services.PrintService;
+import GenericsSetMap.services.PrintService;
 
 import java.util.Scanner;
 
