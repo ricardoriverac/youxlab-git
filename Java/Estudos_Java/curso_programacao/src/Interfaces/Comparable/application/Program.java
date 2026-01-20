@@ -14,6 +14,7 @@ public class Program {
 
         List<Employee> list = new ArrayList<>();
         String path = "/home/youx/Projetos/in.txt";
+
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
             String employeeCSV = br.readLine();
             while (employeeCSV != null) {
@@ -28,5 +29,6 @@ public class Program {
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
         }
+
     }
 }
