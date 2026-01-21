@@ -52,4 +52,5 @@ public class Product implements Comparable<Product> {
                 ", price=" + price +
                 ']';
     }
+
 }

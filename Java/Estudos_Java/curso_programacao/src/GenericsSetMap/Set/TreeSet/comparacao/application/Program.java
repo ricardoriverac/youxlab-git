@@ -6,6 +6,7 @@ import GenericsSetMap.Set.TreeSet.comparacao.entities.Product;
 
 public class Program {
     public static void main(String[] args) {
+
         Set<Product> set = new TreeSet<>();
 
         set.add(new Product("TV", 900.0));
@@ -15,5 +16,6 @@ public class Program {
         for (Product p : set) {
             System.out.println(p);
         }
+
     }
 }
