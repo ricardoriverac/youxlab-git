@@ -1,359 +1,1012 @@
---Aula63:Avaliação prática – Banco de Dados
---1. Crie um banco de dados chamado BIBLIOTECA.
-create database biblioteca;
-
---2. Crie uma tabela chamada EDITORA, de acordo com os dados abaixo:
-create table editora (
-  ideditora serial not null,
+--Aula8: Tabela de clientes
+create table cliente(
+  idcliente integer not null,
   nome varchar(50) not null,
-  
-  constraint pk_edt_ideditora primary key (ideditora),
-  constraint un_edt_nome unique (nome)
+  cpf char(11),
+  rg varchar(15),
+  data_nascimento date,
+  genero char(1),
+  profissao varchar(30),
+  nacionalidade varchar(30),
+  logradouro varchar(30),
+  numero varchar(10),
+  complemento varchar(30),
+  bairro varchar(30),
+  municipio varchar(30),
+  uf varchar(30),
+  observacoes text,
+
+  constraint pk_cln_idcliente primary key (idcliente)
+)
+
+--Aula9:Inserção de dados
+insert into cliente (idcliente, nome, cpf, rg, data_nascimento, genero, profissao, nacionalidade, logradouro, numero, complemento, bairro, municipio, uf)
+values (1, 'Manoel', '88828383821', '32323', '10-10-2001', 'M', 'Estudante', 'Brasileira', 'Rua Joaquim Nabuco', '23', 'Casa', 'Cidade Nova', 'Porto Uniao', 'SC');
+
+insert into cliente (idcliente, nome, cpf, rg, data_nascimento, genero, profissao, nacionalidade, logradouro, numero, complemento, bairro, municipio, uf)
+values (2, 'Geraldo', '12343299291', '56565', '04-01-1987', 'M', 'Engenheiro', 'Brasileira', 'Rua das Limas', '200', 'Ap.', 'Centro', 'P.Uniao', 'Sc');
+
+insert into cliente (idcliente, nome, cpf, rg, data_nascimento, genero, profissao, nacionalidade, logradouro, numero, complemento, bairro, municipio, uf)
+values (3, 'Carlos', '87732323227', '55463', '01-10-1967', 'M', 'Pedreiro', 'Brasileira', 'Rua das Laranjeiras', '300', 'Apart.', 'Cto.', 'Canoinhas', 'SC');
+
+insert into cliente (idcliente, nome, cpf, rg, data_nascimento, genero, profissao, nacionalidade, logradouro, numero, complemento, bairro, municipio, uf)
+values (4, 'Adriana', '12321222122', '98777', '10-09-1989', 'F', 'Jornalista', 'Brasileira', 'Rua das Limas', '240', 'Casa', 'Sao Pedro', 'Porto Vitoria', 'PR');
+
+insert into cliente (idcliente, nome, cpf, rg, data_nascimento, genero, profissao, nacionalidade, logradouro, numero, complemento, bairro, municipio, uf)
+values (5, 'Amanda', '99982838828', '28382', '04-03-1991', 'F', 'Jorn.', 'Italiana', 'Av.Central', '100', null, 'Sao Pedro', 'General Carneiro', 'PR');
+
+insert into cliente (idcliente, nome, cpf, rg, data_nascimento, genero, profissao, nacionalidade, logradouro, numero, complemento, bairro, municipio, uf)
+values (6, 'Angelo', '99982828181', '12323', '01-01-2000', 'M', 'Professor', 'Brasileiro', 'Av.Beira Mar', '300', null, 'Ctr.', 'Sao Paulo', 'SP');
+
+insert into cliente (idcliente, nome, cpf, rg, data_nascimento, genero, profissao, nacionalidade, logradouro, numero, complemento, bairro, municipio, uf)
+values (7, 'Anderson', null, null, null, 'M', 'Prof.', 'Italiano', 'Av.Brasil', '100', 'Apartamento', 'Santa Rosa', 'Rio de Janeiro', 'SP');
+
+insert into cliente (idcliente, nome, cpf, rg, data_nascimento, genero, profissao, nacionalidade, logradouro, numero, complemento, bairro, municipio, uf)
+values (8, 'Camila', '9998282828', null, '10-10-2001', 'F', 'Professora', 'Norte americana', 'Rua Central', '4333', null, 'Centro', 'Uberlancia', 'MG');
+
+insert into cliente (idcliente, nome, cpf, rg, data_nascimento, genero, profissao, nacionalidade, logradouro, numero, complemento, bairro, municipio, uf)
+values (9, 'Cristiano', null, null, null, 'M', 'Estudante', 'Alema', 'Rua do Centro', '877','Casa', 'Centro', 'Porto Alegre', 'RS');
+
+insert into cliente (idcliente, nome, cpf, rg, data_nascimento, genero, profissao, nacionalidade, logradouro, numero, complemento, bairro, municipio, uf)
+values (10, 'Fabricio', '8828282828', '32323', null, 'M', 'Estudante', 'Brasileiro', null, null, null, null, 'PU', 'SC');
+
+insert into cliente (idcliente, nome, cpf, rg, data_nascimento, genero, profissao, nacionalidade, logradouro, numero, complemento, bairro, municipio, uf)
+values (11, 'Fernanda', null, null, null, 'M', null, 'Brasileira', null, null, null, null, 'Porto Uniao', 'SC');
+
+insert into cliente (idcliente, nome, cpf, rg, data_nascimento, genero, profissao, nacionalidade, logradouro, numero, complemento, bairro, municipio, uf)
+values (12, 'Gilmar', '88881818181', '888', '10-02-2000', 'M', 'Estud.', null, 'Rua das Laranjeiras', '200', null, 'C.nova', 'Canoinhas', 'SC');
+
+insert into cliente (idcliente, nome, cpf, rg, data_nascimento, genero, profissao, nacionalidade, logradouro, numero, complemento, bairro, municipio, uf)
+values (13, 'Diego', '1010191919', '111939', null, 'M', 'Professor', 'Alemao', 'Rua Central', '455', 'Casa', 'Ciadade N.', 'Sao Paulo', 'SP');
+
+insert into cliente (idcliente, nome, cpf, rg, data_nascimento, genero, profissao, nacionalidade, logradouro, numero, complemento, bairro, municipio, uf)
+values (14, 'Jeferson', null, null, '01-07-1983', 'M', null, 'Brasileiro', null, null, null, null, 'Uniao da Vitoria', 'PR');
+
+insert into cliente (idcliente, nome, cpf, rg, data_nascimento, genero, profissao, nacionalidade, logradouro, numero, complemento, bairro, municipio, uf)
+values (15, 'Jessica', null, null, null, 'F', 'Estudante', null, null, null, null, null, 'Uniao da Vitoria', 'PR');
+
+
+--Aula12: Consulta Simples1
+select * from cliente;
+
+select nome, data_nascimento as "Data de nascimeto" from cliente;
+
+select 'CPF: ' || cpf || 'RG: ' || rg as "CPF e RG" from cliente;
+
+select * from cliente limit 3;
+
+--Aula13: Consulta Simples2
+select nome, data_nascimento from cliente where data_nascimento > '2000-01-01';
+
+select nome from cliente where nome like 'C%';
+
+select nome from cliente where nome like '%c%';
+
+select nome, data_nascimento from cliente where data_nascimento between '1990-01-01' and '1998-01-01';
+
+select nome, rg from cliente where rg is null;
+
+select nome from cliente order by nome asc;
+
+select nome from cliente order by nome desc;
+
+--Aula14:1.O nome, o gênero e a profissão de todos os clientes, ordenado pelo nome em ordem decrescente
+select nome,genero, profissao from cliente order by nome desc;
+
+--2. Os clientes que tenham a letra “R” no nome
+select nome from cliente where nome like '%r%';
+
+--3. Os clientes que o nome inicia com a letra “C”
+select nome from cliente where nome like 'C%';
+
+--4. Os clientes que o nome termina com a letra “A”
+select nome from cliente where nome like '%a'
+
+--5. Os clientes que moram no bairro “Centro”
+select nome,bairro from cliente where bairro like '%Centro%';
+
+--6. Os clientes que moram em complementos que iniciam com a letra “A”
+select nome, complemento from cliente where complemento like 'A%';
+
+--7. Somente os clientes do sexo feminino
+select nome, genero from cliente where genero like '%F%';
+
+--8. Os clientes que não informaram o CPF
+select nome, cpf from cliente where cpf is null;
+
+--9. O nome e a profissão dos clientes, ordenado em ordem crescente pelo nome da profissão
+select nome, profissao from cliente order by profissao asc;
+
+--10. Os clientes de nacionalidade “Brasileira”
+select nome, nacionalidade from cliente where nacionalidade like '%Brasileira%';
+
+--11. Os clientes que informaram o número da residência
+select nome, numero from cliente where numero is not null;
+
+--12. Os clientes que moram em Santa Catarina
+select nome, uf from cliente where uf like '%SC%';
+
+--13. Os clientes que nasceram entre 01/01/2000 e 01/01/2002
+select nome, data_nascimento from cliente where data_nascimento between '01-01-2000' and '01-01-2002';
+
+--14. O nome do cliente e o logradouro, número, complemento, bairro, município e UF concatenado de todos 
+--os clientes
+select 'NOME: ' || nome || ' LOGRADOURO:  ' || logradouro || ' NUMERO: ' || numero || ' COMPLEMENTO: ' || complemento|| ' BAIRRO: ' || bairro || ' MUNICIPIO: ' || municipio || ' UF: ' || uf as "NOME, LOGRADOURO, NUMERO, COMPLEMENTO, BAIRRO, MUNICIPIO, UF" from cliente;
+
+--Aula17:Comandos update e delete
+select * from cliente;
+update cliente set nome = 'Teste' where idcliente = 1;
+update cliente set nome = 'Adriano', genero = 'M', numero = '241' where idcliente = 4;
+insert into cliente (idcliente, nome) values (16, 'João')
+delete from cliente where idcliente = 16;
+
+--Aula18: EXERCICIO
+--1. Insira os dados abaixo na tabela de clientes
+insert into cliente (idcliente, nome, cpf, rg, data_nascimento, genero, profissao, nacionalidade, logradouro, numero, complemento, bairro, municipio, uf)
+values (16, 'Maicon', '12349596421', '1234', '10-10-1965', 'F', 'Empresario', null, null, null, null, null, 'Florianopolis', 'PR');
+
+insert into cliente (idcliente, nome, cpf, rg, data_nascimento, genero, profissao, nacionalidade, logradouro, numero, complemento, bairro, municipio, uf)
+values (17, 'Getúlio', null, '4631', null, 'F', 'Estudante', 'Brasileira', 'Rua Central', '343', 'Apartamento','Centro', 'Curitiba', 'SC');
+
+insert into cliente (idcliente, nome, cpf, rg, data_nascimento, genero, profissao, nacionalidade, logradouro, numero, complemento, bairro, municipio, uf)
+values (18, 'Sandra', null,null, null, 'M', 'Professor', 'Italiana', null, '12', 'Bloco A', null, null, null);
+
+--2. Altere os dados do cliente Maicon
+--a. O CPF para 45390569432
+select * from cliente;
+update cliente set cpf = '45390569432' where idcliente = 16;
+--b. O gênero para M
+update cliente set genero = 'M' where idcliente = 16;
+--c. A nacionalidade para Brasileira
+update cliente set nacionalidade = 'Brasileira' where idcliente = 16;
+--d. O UF para SC
+update cliente set uf = 'SC' where idcliente = 16;
+
+--3. Altere os dados do cliente Getúlio
+--a. A data de nascimento para 01/04/1978
+select * from cliente;
+update cliente set data_nascimento = '01-04-1978' where idcliente = 17;
+--b. O gênero para M
+update cliente set genero = 'M' where idcliente = 17;
+
+--4. Altere os dados da cliente Sandra
+--a. O gênero para F
+select * from cliente;
+update cliente set genero = 'F' where idcliente = 18;
+--b. A profissão para Professora
+update cliente set profissao = 'Professora' where idcliente = 18;
+--c. O número para 123
+update cliente set numero = '123' where idcliente = 18;
+
+--5. Apague o cliente Maicon
+delete from cliente where idcliente = 16;
+
+--6. Apague a cliente Sandra
+delete from cliente where idcliente = 18;
+
+--Aula20: Criação de mais Tabelas
+create table profissao (
+   idprofissao integer not null,
+   nome varchar (30) not null,
+
+   constraint pk_prf_idprofissao primary key (idprofissao),
+   constraint un_prf_nome unique (nome)
 );
-select  * from editora
 
---3. Insira os dados abaixo na tabela EDITORA.
-insert into editora (nome) values ('Bookman');
-insert into editora (nome) values ('Edgard Blusher');
-insert into editora (nome) values ('Nova Terra');
-insert into editora (nome) values ('Brasport');
+insert into profissao (idprofissao, nome) values (1, 'Estudante');
+insert into profissao (idprofissao, nome) values (2, 'Engenheiro');
+insert into profissao (idprofissao, nome) values (3, 'Pedreiro');
+insert into profissao (idprofissao, nome) values (4, 'Jornalista');
+insert into profissao (idprofissao, nome) values (5, 'Professor');
 
---4.Crie uma tabela chamada CATEGORIA, de acordo com os dados abaixo:
-create table categoria (
-   idcategoria serial not null,
-   nome varchar(50) not null,
+select * from profissao;
 
-  constraint pk_ctg_idcategoria primary key (idcategoria),
-  constraint un_ctg_nome unique (nome)
+create table nacionalidade (
+  idnacionalidade integer not null,
+  nome varchar (30) not null,
+
+  constraint pk_ncn_idnacionalidade primary key (idnacionalidade),
+  constraint un_ncn_nome unique (nome)
 );
 
---5.Insira os dados abaixo na tabela CATEGORIA.
-insert into categoria (nome) values ('Banco de Dados');
-insert into categoria (nome) values ('HTML');
-insert into categoria (nome) values ('Java');
-insert into categoria (nome) values ('PHP');
-select * from categoria
+select nacionalidade from cliente;
 
---6.Crie uma tabela chamada AUTOR, de acordo com os dados abaixo:
-create table autor(
-   idautor serial not null ,
-   nome varchar(50) not null,
+insert into nacionalidade (idnacionalidade, nome) values (1, 'Brasileira');
+insert into nacionalidade (idnacionalidade, nome) values (2, 'Italiana');
+insert into nacionalidade (idnacionalidade, nome) values (3, 'Norte-Americana');
+insert into nacionalidade (idnacionalidade, nome) values (4, 'Alemã');
 
-  constraint pk_atr_idautor primary key (idautor)
+select * from nacionalidade;
+
+create table complemento (
+   idcomplemento integer not null,
+   nome varchar (30) not null,
+
+   constraint pk_cpl_idcomplemento primary key (idcomplemento),
+   constraint un_cpl_nome unique (nome)
 );
 
---7.Insira os dados abaixo na tabela AUTOR.
-insert into autor (nome) values ('Waldemar Setzer');
-insert into autor (nome) values (' Flávio Soares');
-insert into autor (nome) values ('John Watson');
-insert into autor (nome) values ('Rui Rossi dos Santos');
-insert into autor (nome) values ('Antonio Pereira de Resende');
-insert into autor (nome) values ('Claudiney Calixto Lima');
-insert into autor (nome) values ('Evandro Carlos Teruel');
-insert into autor (nome) values ('Ian Graham');
-insert into autor (nome) values ('Fabrício Xavier');
-insert into autor (nome) values ('Pablo Dalloglio');
+insert into complemento (idcomplemento, nome) values (1, 'Casa');
+insert into complemento (idcomplemento, nome) values (2, 'Apartamento');
 
+select * from complemento;
 
-select * from autor
+create table bairro (
+  idbairro integer not null,
+  nome varchar (30) not null,
 
---8.Crie uma tabela chamada LIVRO, de acordo com os dados abaixo:
-create table livro (
-  idlivro serial not null,
-  ideditora integer not null,
-  idcategoria integer not null,
-  nome varchar(100) not null,
-
-  constraint pk_lvr_idlivro primary key (idlivro),
-  constraint fk_lvr_ideditora foreign key (ideditora) references editora(ideditora),
-  constraint fk_lvr_idcategoria foreign key (idcategoria) references categoria (idcategoria),
-  constraint un_lvr_nome unique (nome)
+  constraint pk_brr_idbairro  primary key (idbairro),
+  constraint un_brr_nome unique (nome)
 );
 
---9.Insira os dados abaixo na tabela LIVRO.
-select * from editora
-select * from categoria
-insert into livro (ideditora, idcategoria, nome) values (2,1,'Banco de Dados – 1 Edição');
-insert into livro (ideditora, idcategoria, nome) values (1, 1, 'Oracle DataBase 11G Administração');
-insert into livro (ideditora, idcategoria, nome) values (4, 3, 'Programação de Computadores em Java');
-insert into livro (ideditora, idcategoria, nome) values (3, 3, 'Programação Orientada a Aspectos em Java');
-insert into livro (ideditora, idcategoria, nome) values (3, 2, 'HTML5 – Guia Prático');
-insert into livro (ideditora, idcategoria, nome) values (4, 2, 'XHTML: Guia de Referência para Desenvolvimento na Web');
-insert into livro (ideditora, idcategoria, nome) values (1, 4, 'PHP para Desenvolvimento Profissional');
-insert into livro (ideditora, idcategoria, nome) values (2, 4, 'PHP com Programação Orientada a Objetos');
-select * from livro
+insert into bairro (idbairro, nome) values (1, 'Cidade Nova');
+insert into bairro (idbairro, nome) values (2, 'Centro');
+insert into bairro (idbairro, nome) values (3, 'São Pedro');
+insert into bairro (idbairro, nome) values (4, 'Santa Rosa');
 
---10.Crie uma tabela chamada LIVRO_AUTOR, de acordo com os dados abaixo:
-create table livro_autor (
-  idlivro integer not null,
-  idautor integer not null,
+select * from bairro
 
-  constraint fk_lva_idlivro foreign key (idlivro) references livro (idlivro),
-  constraint fk_lva_idautor foreign key (idautor) references autor (idautor),
-  constraint pk_lva_idlivro_autor primary key (idlivro, idautor)
+--Aula21: Chaves EStrangeiras1
+select * from cliente;
+alter table cliente rename column profissao to idprofissao;
+alter table cliente alter column idprofissao type integer; 
+--Estudante --> 1,9,10,12,15,17
+--Engenheiro --> 2
+--Pedreiro --> 3
+--Jornalista --> 4,5
+--Professor --> 6,7,8,13
+--Null --> 11,14
+alter table cliente drop idprofissao;
+alter table cliente add idprofissao integer;
+alter table cliente add constraint fk_cln_idprofissao foreign key (idprofissao) references profissao (idprofissao);
+
+update cliente set idprofissao = 1 where idcliente in (1, 9, 10, 12, 15, 17);
+update cliente set idprofissao = 2 where idcliente = 2;
+update cliente set idprofissao = 3 where idcliente = 3;
+update cliente set idprofissao = 4 where idcliente in (4, 5);
+update cliente set idprofissao = 5 where idcliente in (6, 7,8, 13);
+
+select * from profissao;
+delete from profissao where idprofissao = 10;
+insert into profissao (idprofissao, nome) values (10, 'Teste');
+
+--Aula22: Chaves Estrangeiras2
+select * from cliente;
+alter table cliente drop nacionalidade;
+alter table cliente add idnacionalidade integer;
+alter table cliente add constraint fk_cln_idnacionalidade foreign key (idnacionalidade) references nacionalidade (idnacionalidade);
+
+select * from nacionalidade;
+
+update cliente set idnacionalidade = 1 where idcliente in (1, 2, 3, 4, 6, 10, 11, 14);
+update cliente set idnacionalidade = 2 where idcliente in (5, 7);
+update cliente set idnacionalidade = 3 where idcliente = 8;
+update cliente set idnacionalidade = 4 where idcliente in (9, 13);
+
+select * from cliente;
+alter table cliente drop complemento;
+alter table cliente add idcomplemento integer;
+alter table cliente add constraint fk_cln_idcomplemento foreign key (idcomplemento) references complemento (idcomplemento);
+
+select * from complemento
+
+update cliente set idcomplemento = 1 where idcliente in (1,4,9,13);
+update cliente set idcomplemento = 2 where idcliente in (2,3,7);
+
+select * from cliente
+
+alter table cliente drop bairro;
+alter table cliente add idbairro integer;
+alter table cliente add constraint fk_cln_idbairro foreign key (idbairro) references bairro (idbairro);
+
+select * from bairro
+
+update cliente set idbairro = 1 where idcliente in (1,12,13);
+update cliente set idbairro = 2 where idcliente in (2,3,6,8,9);
+update cliente set idbairro = 3 where idcliente in (4,5);
+update cliente set idbairro = 4 where idcliente = 7;
+
+create table uf (
+  iduf integer not null,
+  nome varchar (30) not null,
+  sigla char (2)  not null,
+
+  constraint pk_ufd_idunidade_federacao primary key (iduf),
+  constraint un_ufd_nome unique (nome),
+  constraint un_ufd_sigla sigla unique (sigla)
+);
+insert into uf (iduf, nome, sigla) values (1, 'Santa Catarina', 'SC');
+insert into uf (iduf, nome, sigla) values (2, 'Paraná', 'PR');
+insert into uf (iduf, nome, sigla) values (3, 'São Paulo', 'SP');
+insert into uf (iduf, nome, sigla) values (4, 'Minas Gerais', 'MG');
+insert into uf (iduf, nome, sigla) values (5, 'Rio Grande do Sul', 'RS');
+insert into uf (iduf, nome, sigla) values (6, 'Rio de Janeiro', 'RJ');
+select * from uf
+
+create table municipio (
+   idmunicipio integer not null,
+   nome varchar (30) not null,
+   iduf integer not null,
+   
+   constraint pk_mnc_idmunicipio primary key (idmunicipio),
+   constraint un_mnc_nome unique (nome),
+   constraint fk_mnc_iduf foreign key (iduf) references uf (iduf) 
 );
 
---11.Insira os dados abaixo na tabela LIVRO_AUTOR.
-select * from livro
-select * from autor
-insert into livro_autor (idlivro, idautor) values (1,1);
-insert into livro_autor (idlivro, idautor) values (1,2);
-insert into livro_autor (idlivro, idautor) values (2,3);
-insert into livro_autor (idlivro, idautor) values (3,4);
-insert into livro_autor (idlivro, idautor) values (4,5);
-insert into livro_autor (idlivro, idautor) values (4,6);
-insert into livro_autor (idlivro, idautor) values (5,7);
-insert into livro_autor (idlivro, idautor) values (6,8);
-insert into livro_autor (idlivro, idautor) values (7,9);
-insert into livro_autor (idlivro, idautor) values (8,10);
+insert into municipio (idmunicipio, nome, iduf) values (1, 'Porto União', 1);
+insert into municipio (idmunicipio, nome, iduf) values (2, 'Canoinhas', 1);
+insert into municipio (idmunicipio, nome, iduf) values (3, 'Porto Vitótia', 2);
+insert into municipio (idmunicipio, nome, iduf) values (4, 'General Carneiro', 2);
+insert into municipio (idmunicipio, nome, iduf) values (5, 'São Paulo', 3);
+insert into municipio (idmunicipio, nome, iduf) values (6, 'Rio de Janeiro', 6);
+insert into municipio (idmunicipio, nome, iduf) values (7, 'Uberlândia', 4);
+insert into municipio (idmunicipio, nome, iduf) values (8, 'Porto Alegre', 5);
+insert into municipio (idmunicipio, nome, iduf) values (9, 'União da Vitória', 2);
 
-select * from livro_autor
+select * from municipio
+alter table cliente drop municipio;
+alter table cliente drop uf;
+alter table cliente add idmunicipio integer;
+alter table cliente add constraint fk_cliente_idmunicipio foreign key (idmunicipio) references municipio (idmunicipio);
 
---12.Crie uma tabela chamada ALUNO, de acordo com os dados abaixo:
-create table aluno (
-  idaluno serial not null,
-  nome varchar(50) not null,
+update cliente set idmunicipio = 1 where idcliente in (1,2,10,11);
+update cliente set idmunicipio = 2 where idcliente in (3,12);
+update cliente set idmunicipio = 3 where idcliente = 4;
+update cliente set idmunicipio = 4 where idcliente in (5);
+update cliente set idmunicipio = 5 where idcliente in (6,13);
+update cliente set idmunicipio = 6 where idcliente in (7);
+update cliente set idmunicipio = 7 where idcliente in (8);
+update cliente set idmunicipio = 8 where idcliente in (9);
+update cliente set idmunicipio = 9 where idcliente in (14,15);
 
-  constraint pk_aln_idaluno primary key (idaluno)
+--Aula24: EXERCÌCIO
+create table fornecedor (
+  idFornecedor integer not null,
+  nome varchar (50) not null,
+
+  constraint pk_fnr_idFornecedor primary key (idFornecedor),
+  constraint un_fnr_nome unique (nome)
 );
 
---13.Insira os dados abaixo na tabela ALUNO.
-insert into aluno (nome) values ('Mario');
-insert into aluno (nome) values ('João');
-insert into aluno (nome) values ('Paulo');
-insert into aluno (nome) values ('Pedro');
-insert into aluno (nome) values ('Maria');
-select * from aluno
+select * from fornecedor
+insert into fornecedor (idFornecedor, nome) values (1, 'Cap.Computadores');
+insert into fornecedor (idFornecedor, nome) values (2, 'AA.Computadores');
+insert into fornecedor (idFornecedor, nome) values (3,'BB.Máquinas');
 
---14.Crie uma tabela chamada EMPRESTIMO, de acordo com os dados abaixo:
-create table emprestimo (
-  idemprestimo serial not null,
-  idaluno integer not null,
-  data_emprestimo date not null,
-  data_devolucao date not null default current_date,
+create table vendedor (
+   idVendedor integer not null,
+   nome varchar (50) not null,
+
+   constraint pk_vdd_idVendedor primary key (idVendedor),
+   constraint un_vdd_nome unique (nome)
+);
+select * from vendedor
+insert into vendedor (idVendedor, nome) values (1, 'André');
+insert into vendedor (idVendedor, nome) values (2, 'Alisson');
+insert into vendedor (idVendedor, nome) values (3, 'José');
+insert into vendedor (idVendedor, nome) values (4, 'Ailton');
+insert into vendedor (idVendedor, nome) values (5, 'Maria');
+insert into vendedor (idVendedor, nome) values (6, 'Suelem');
+insert into vendedor (idVendedor, nome) values (7, 'Aline');
+insert into vendedor (idVendedor, nome) values (8, 'Silvana');
+
+create table transportadora (
+   idTransportadora integer not null,
+   idmunicipio integer,
+   nome varchar (50) not null,
+   logradouro varchar (50),
+   numero varchar (10),
+
+   constraint pk_tptd_idTransportadora primary key (idTransportadora),
+   constraint fk_tptd_idMunicipio foreign key (idmunicipio) references municipio (idmunicipio),
+   constraint un_tptd_nome unique (nome)
+);
+
+insert into transportadora (idTransportadora, idmunicipio, nome, logradouro, numero) values (1, 9, 'BS.Transportes', 'Rua das Limas', '01');
+insert into transportadora (idTransportadora, idmunicipio, nome, logradouro, numero) values (2, 5, 'União Transportes', null, null);
+select * from transportadora
+ 
+create table produto (
+   idProduto integer not null,
+   idFornecedor integer not null,
+   nome varchar (50) not null,
+   valor float not null,
+
+   constraint pk_pdt_idProduto primary key (idProduto),
+   constraint fk_pdt_idFornecedor foreign key (idFornecedor) references fornecedor (idFornecedor)
+);
+select * from produto
+insert into produto (idProduto, idFornecedor, nome, valor) values (1, 1, 'Microcomputador', 800);
+insert into produto (idProduto, idFornecedor, nome, valor) values (2, 1, 'Monitor', 500);
+insert into produto (idProduto, idFornecedor, nome, valor) values (3, 2, 'Placa mãe', 200);
+insert into produto (idProduto, idFornecedor, nome, valor) values (4, 2, 'HD', 150);
+insert into produto (idProduto, idFornecedor, nome, valor) values (5, 2, 'Placa de vídeo', 200);
+insert into produto (idProduto, idFornecedor, nome, valor) values (6, 3, 'Memória RAM', 100);
+insert into produto (idProduto, idFornecedor, nome, valor) values (7, 1, 'Gabinete', 35);
+
+--Aula27:Tabela de pedidos1
+create table pedido (
+  idpedido integer not null,
+  idcliente integer not null,
+  idTransportadora integer,
+  idVendedor integer not null,
+  data_pedido date not null,
   valor float not null,
-  devolvido char(1) not null,
-
-  constraint pk_emp_idemprestimo primary key (idemprestimo),
-  constraint fk_emp_idaluno foreign key (idaluno) references aluno(idaluno)
-);
-
---15.Insira os dados abaixo na tabela EMPRESTIMO.
-select * from aluno
-insert into emprestimo (idaluno, data_emprestimo, data_devolucao, valor, devolvido) values (1,'02/05/2012','12/05/2012', 10.00, 'S');
-insert into emprestimo (idaluno, data_emprestimo, data_devolucao, valor, devolvido) values (1,'23/04/2012','03/05/2012', 5.00, 'N');
-insert into emprestimo (idaluno, data_emprestimo, data_devolucao, valor, devolvido) values (2,'10/05/2012','20/05/2012', 12.00, 'N');
-insert into emprestimo (idaluno, data_emprestimo, data_devolucao, valor, devolvido) values (3,'10/05/2012','20/05/2012', 8.00, 'S');
-insert into emprestimo (idaluno, data_emprestimo, data_devolucao, valor, devolvido) values (4,'05/05/2012','15/05/2012', 15.00, 'N');
-insert into emprestimo (idaluno, data_emprestimo, data_devolucao, valor, devolvido) values (4,'07/05/2012','17/05/2012', 20.00, 'S');
-insert into emprestimo (idaluno, data_emprestimo, data_devolucao, valor, devolvido) values (4,'08/05/2012','18/05/2012', 5.00, 'S');
-select * from emprestimo
-
---16.Crie uma tabela chamada EMPRESTIMO_LIVRO, de acordo com os dados abaixo:
-create table emprestimo_livro (
-   idemprestimo integer not null,
-   idlivro integer not null,
-
-   constraint fk_epl_idemprestimo foreign key (idemprestimo) references emprestimo (idemprestimo),
-   constraint fk_epl_idlivro foreign key (idlivro) references livro (idlivro),
-    constraint pk_epl_idemprestimo_livro primary key (idemprestimo, idlivro)
-);
-
---17.Insira os dados abaixo na tabela EMPRESTIMO_LIVRO.
-select * from emprestimo
-select * from aluno
-select * from livro
-insert into emprestimo_livro (idemprestimo, idlivro) values (1,1);
-insert into emprestimo_livro (idemprestimo, idlivro) values (2,4);
-insert into emprestimo_livro (idemprestimo, idlivro) values (2,3);
-insert into emprestimo_livro (idemprestimo, idlivro) values (3,2);
-insert into emprestimo_livro (idemprestimo, idlivro) values (3,7);
-insert into emprestimo_livro (idemprestimo, idlivro) values (4,5);
-insert into emprestimo_livro (idemprestimo, idlivro) values (5,4);
-insert into emprestimo_livro (idemprestimo, idlivro) values (6,6);
-insert into emprestimo_livro (idemprestimo, idlivro) values (6,1);
-insert into emprestimo_livro (idemprestimo, idlivro) values (7,8);
-select * from emprestimo_livro
-
---18.Crie os seguintes índices:
-create index idx_emt_emprestimo on emprestimo (data_emprestimo);
-create index idx_emp_emprestimo on emprestimo (data_devolucao);
-
---CONSULTAS SIMPLES
-
---19.O nome dos autores em ordem alfabética.
-select * from autor
-select nome from autor order by nome asc;
-
---20.O nome dos alunos que começam com a letra P.
-select nome from aluno where nome like 'P%';
-
---21.O nome dos livros da categoria Banco de Dados ou Java.
-select nome from livro where nome like '%Banco de Dados%'
-select nome from livro where nome like '%Java%'
-
---22.O nome dos livros da editora Bookman.
-select * from editora
-select nome from livro where ideditora = 1;
-
---23.Os empréstimos realizados entre 05/05/2012 e 10/05/2012.
-select * from emprestimo
-select data_emprestimo from emprestimo where data_emprestimo between '05-05-2012' and '10-05-2012';
-
---24.Os empréstimos que não foram feitos entre 05/05/2012 e 10/05/2012
-select data_emprestimo from emprestimo where data_emprestimo not between '05-05-2012' and '10-05-2010';
-
---25.Os empréstimos que os livros já foram devolvidos.
-select idaluno, data_emprestimo, data_devolucao valor, devolvido from emprestimo where devolvido like 'S%';
-
---CONSULTAS COM AGRUPAMENTO SIMPLES
-
---26.A quantidade de livros.
-select * from livro
-select count(livro) from livro
-
---27.O somatório do valor dos empréstimos.
-select sum(valor) from emprestimo
-
---28.A média do valor dos empréstimos.
-select avg(valor) from emprestimo
-
---29.O maior valor dos empréstimos.
-select max(valor) from emprestimo
-
---30.O menor valor dos empréstimos.
-select min(valor) from emprestimo
-
---31.O somatório do valor do empréstimo que estão entre 05/05/2012 e 10/05/2012.
-select sum(valor) from emprestimo where data_emprestimo between '05-05-2012' and '10-05-2012';
-
---32.A quantidade de empréstimos que estão entre 01/05/2012 e 05/05/2012.
-select * from emprestimo
-select count(data_emprestimo) from emprestimo where data_emprestimo between '01-05-2012' and '05-05-2012'
-
---CONSULTAS COM JOIN
-
---33.O nome do livro, a categoria e a editora (LIVRO) – fazer uma view
-select * from livro
-create view dados_livro as
-select 
-  lvr.nome as livro,
-  ctg.nome as categoria,
-  edt.nome as editora
-from livro as lvr
-left join
-  categoria as ctg on lvr.idcategoria = ctg.idcategoria
-left join 
-   editora as edt on lvr.ideditora = edt.ideditora
-
---34.O nome do livro e o nome do autor (LIVRO_AUTOR) – fazer uma view.
-select * from livro_autor
-create view livr_autor as
-select 
-  lvr.nome as livro,
-  atr.nome as autor
-from livro_autor as lvat
-left join 
-  livro as lvr on lvat.idlivro = lvat.idlivro
-left join 
-  autor as atr on lvat.idautor = lvat.idautor
-
---35.O nome dos livros do autor Ian Graham (LIVRO_AUTOR).
-select * from autor --8
-select 
-  lvr.nome as livro
-from livro_autor lvat
-left join
-  livro lvr on lvat.idlivro = lvr.idlivro
-where lvat.idautor = 8
-
---36.O nome do aluno, a data do empréstimo e a data de devolução (EMPRESTIMO).
-select * from emprestimo
-select 
-  aln.nome as aluno,
-  emp.data_emprestimo,
-  emp.data_devolucao
-from emprestimo as emp
-left join
-  aluno as aln on emp.idaluno = aln.idaluno
-
---37.O nome de todos os livros que foram emprestados (EMPRESTIMO_LIVRO).
-select * from emprestimo_livro
-select lvr.nome as nome 
-from emprestimo_livro as epl
-left join 
- livro as lvr on epl.idlivro = lvr.idlivro
-
---CONSULTAS COM AGRUPAMENTO + JOIN
-
---38.O nome da editora e a quantidade de livros de cada editora (LIVRO).
-select * from livro
-select 
-  edt.nome,
-  (select count(idlivro) from livro lvr where edt.ideditora = lvr.ideditora) as total
-from editora edt
-
---39.O nome da categoria e a quantidade de livros de cada categoria (LIVRO).
-select * from categoria
-select 
-   ctg.nome,
-   (select count(idlivro) from livro lvr where ctg.idcategoria = lvr.idcategoria) as total
-from categoria ctg 
-
---40.O nome do autor e a quantidade de livros de cada autor (LIVRO_AUTOR).
-select
-  atr.nome,
-  (select count(idlivro) from livro_autor lvat where atr.idautor = lvat.idautor) as total
-from autor atr
-
---41.O nome do aluno e a quantidade de empréstimo de cada aluno (EMPRESTIMO_LIVRO).
-select 
-  aln.nome as aluno,
-  (count(idemprestimo) ) as total
-from
-  emprestimo emp
-left join
-  aluno aln on emp.idaluno = aln.idaluno
-group by
- aln.nome
   
---42.O nome do aluno e o somatório do valor total dos empréstimos de cada aluno (EMPRESTIMO).
-select * from emprestimo
+   constraint pk_pdd_idpedido primary key (idpedido),
+   constraint fk_pdd_idcliente foreign key (idcliente) references cliente (idcliente),
+   constraint fk_pdd_idTransportadora foreign key (idTransportadora) references transportadora (idTransportadora),
+   constraint fk_pdd_idVendedor foreign key (idVendedor) references vendedor (idVendedor)
+  );
+update cliente set nome = 'Manoel' where idcliente = 1
+
+insert into pedido (idpedido, data_pedido, valor, idcliente, idTransportadora, idVendedor)
+values (1,'2008-04-01', 1300, 1, 1, 1);
+insert into pedido (idpedido, data_pedido, valor, idcliente, idTransportadora, idVendedor) 
+values (2,'2008-04-01', 500, 1, 1, 1);
+insert into pedido (idpedido, data_pedido, valor, idcliente, idTransportadora, idVendedor)
+values (3,'2008-04-02', 300, 11, 2, 5);
+insert into pedido (idpedido, data_pedido, valor, idcliente, idTransportadora, idVendedor) values (4,'2008-04-05', 1000, 8, 1, 7);
+insert into pedido (idpedido, data_pedido, valor, idcliente, idTransportadora, idVendedor) values (5,'2008-04-06', 200, 9, 2, 6);
+insert into pedido (idpedido, data_pedido, valor, idcliente, idTransportadora, idVendedor) values (6,'2008-04-06', 1985, 10, 1, 6);
+insert into pedido (idpedido, data_pedido, valor, idcliente, idTransportadora, idVendedor) values (7,'2008-04-06', 800, 3, 1, 7);
+insert into pedido (idpedido, data_pedido, valor, idcliente, idTransportadora, idVendedor) values (8,'2008-04-05', 175, 3, null, 5);
+insert into pedido (idpedido, data_pedido, valor, idcliente, idTransportadora, idVendedor) values (9,'2008-04-07', 1300, 12, null, 8);
+insert into pedido (idpedido, data_pedido, valor, idcliente, idTransportadora, idVendedor) values (10,'2008-04-10', 200, 6, 1, 8);
+insert into pedido (idpedido, data_pedido, valor, idcliente, idTransportadora, idVendedor) values (11,'2008-04-15', 300, 15, 2, 1);
+insert into pedido (idpedido, data_pedido, valor, idcliente, idTransportadora, idVendedor) values (12,'2008-04-20', 300, 15, 2, 5);
+insert into pedido (idpedido, data_pedido, valor, idcliente, idTransportadora, idVendedor) values (13,'2008-04-20', 350, 9, 1, 7);
+insert into pedido (idpedido, data_pedido, valor, idcliente, idTransportadora, idVendedor) values (14,'2008-04-23', 300, 2, 1, 5);
+insert into pedido (idpedido, data_pedido, valor, idcliente, idTransportadora, idVendedor) values (15,'2008-04-25', 200, 11, null, 5);
+
+--Aula28: Tabela de pedidos2
+select * from pedido
+create table pedido_produto (
+  idpedido integer not null,
+  idproduto integer not null,
+  quantidade integer not null,
+  valor_unitario float  not null,
+
+  constraint pk_pdp_idpedidoproduto primary key (idpedido, idproduto),
+  constraint fk_pdp_idpedido foreign key (idpedido) references pedido (idpedido),
+  constraint fk_pdp_idproduto foreign key (idproduto) references produto (idproduto)
+);
+
+select * from produto
+select * from pedido_produto
+
+insert into pedido_produto (idpedido, idproduto, quantidade, valor_unitario) values (1, 1, 1, 800);
+insert into pedido_produto (idpedido, idproduto, quantidade, valor_unitario) values (1, 2, 1, 500);
+insert into pedido_produto (idpedido, idproduto, quantidade, valor_unitario) values (2, 2, 1, 500);
+insert into pedido_produto (idpedido, idproduto, quantidade, valor_unitario) values (3, 4, 2, 150);
+insert into pedido_produto (idpedido, idproduto, quantidade, valor_unitario) values (4, 1, 1, 800);
+insert into pedido_produto (idpedido, idproduto, quantidade, valor_unitario) values (4, 3, 1, 200);
+insert into pedido_produto (idpedido, idproduto, quantidade, valor_unitario) values (5, 3, 1, 200);
+insert into pedido_produto (idpedido, idproduto, quantidade, valor_unitario) values (6, 1, 2, 800);
+insert into pedido_produto (idpedido, idproduto, quantidade, valor_unitario) values (6, 7, 1, 35);
+insert into pedido_produto (idpedido, idproduto, quantidade, valor_unitario) values (6, 5, 1, 200);
+insert into pedido_produto (idpedido, idproduto, quantidade, valor_unitario) values (6, 4, 1, 150);
+insert into pedido_produto (idpedido, idproduto, quantidade, valor_unitario) values (7, 1, 1, 800);
+insert into pedido_produto (idpedido, idproduto, quantidade, valor_unitario) values (8, 7, 5, 35);
+insert into pedido_produto (idpedido, idproduto, quantidade, valor_unitario) values (9, 1, 1, 800);
+insert into pedido_produto (idpedido, idproduto, quantidade, valor_unitario) values (9, 2, 1, 500);
+insert into pedido_produto (idpedido, idproduto, quantidade, valor_unitario) values (10, 5, 1, 200);
+insert into pedido_produto (idpedido, idproduto, quantidade, valor_unitario) values (11, 5, 1, 200);
+insert into pedido_produto (idpedido, idproduto, quantidade, valor_unitario) values (11, 6, 1, 100);
+insert into pedido_produto (idpedido, idproduto, quantidade, valor_unitario) values (12, 2, 1, 500);
+insert into pedido_produto (idpedido, idproduto, quantidade, valor_unitario) values (13, 3, 1, 200);
+insert into pedido_produto (idpedido, idproduto, quantidade, valor_unitario) values (13, 4, 1, 150);
+insert into pedido_produto (idpedido, idproduto, quantidade, valor_unitario) values (14, 6, 3, 100);
+insert into pedido_produto (idpedido, idproduto, quantidade, valor_unitario) values (15, 3, 1, 200)
+);
+
+--Aula29:Exercícios – consultas simples
+--1. Somente o nome de todos os vendedores em ordem alfabética.
+select nome from vendedor order by nome asc;
+
+--2. Os produtos que o preço seja maior que R$200,00, em ordem crescente pelo preço.
+select * from produto
+select nome, valor from produto where valor > '200' order by valor asc;
+
+--3. O nome do produto, o preço e o preço reajustado em 10%, ordenado pelo nome do produto.
+--1.1 está calculando os 10% 1.1 representa 100 + 10 que é os 10%
+select nome, valor, valor * 1.1 as valor_reajustado from produto order by nome;
+
+--4. Os municípios do Rio Grande do Sul.
+select * from municipio
+select nome,idmunicipio from municipio where iduf = '5';
+
+--5. Os pedidos feitos entre 10/04/2008 e 25/04/2008 ordenado pelo valor.
+select * from pedido
+select idpedido, data_pedido, valor from pedido where data_pedido between '10-04-2008' and '25-04-2008' order by valor asc;
+
+--6. Os pedidos que o valor esteja entre R$1.000,00 e R$1.500,00.
+select * from pedido
+select idpedido, valor from pedido where valor between '1000' and '1500';
+
+--7. Os pedidos que o valor não esteja entre R$100,00 e R$500,00.
+select idpedido, valor from pedido where valor > '500';
+
+--8. Os pedidos do vendedor André ordenado pelo valor em ordem decrescente.
+select * from pedido where idvendedor = 1 order by valor desc; 
+
+--9. Os pedidos do cliente Manoel ordenado pelo valor em ordem crescente.
+select * from pedido
+select * from pedido where idcliente = 1 order by valor asc;
+
+--10. Os pedidos da cliente Jéssica que foram feitos pelo vendedor André.
+select * from pedido where idcliente = 15 and idvendedor = 1;
+
+--11. Os pedidos que foram transportados pela transportadora União Transportes.
+select * from pedido where idtransportadora = 2;
+
+--12. Os pedidos feitos pela vendedora Maria ou pela vendedora Aline.
+select * from vendedor
+select * from pedido where idvendedor = 5;
+select * from pedido where idvendedor = 7;
+
+--13. Os clientes que moram em União da Vitória ou Porto União.
+select * from municipio
+select * from cliente where idmunicipio = 9;
+select * from cliente where idmunicipio = 1;
+
+--14. Os clientes que não moram em União da Vitória e nem em Porto União.
+select * from cliente
+select * from cliente where not idmunicipio in (9,1);
+
+--15. Os clientes que não informaram o logradouro.
+select nome, logradouro from cliente where logradouro is null;
+
+--16. Os clientes que moram em avenidas.
+select nome, logradouro from cliente where logradouro like 'Av%';
+
+--17. Os vendedores que o nome começa com a letra S.
+select * from vendedor
+select nome from vendedor where nome like 'S%';
+
+--18. Os vendedores que o nome termina com a letra A.
+select nome from vendedor where nome like '%a';
+
+--19. Os vendedores que o nome não começa com a letra A.
+select nome from vendedor where nome not like 'A%';
+
+--20. Os municípios que começam com a letra P e são de Santa Catarina.
+select * from uf
+select * from municipio
+select * from municipio where (nome like 'P%') and (iduf = 1);
+
+--21. As transportadoras que informaram o endereço.
+select * from transportadora
+select nome, idmunicipio, logradouro, numero from transportadora where logradouro is not null;
+
+--22. Os itens do pedido 01.
+select * from pedido_produto where idpedido = 1;
+
+--23. Os itens do pedido 06 ou do pedido 10.
+select * from pedido_produto where idpedido = 6 or idpedido = 10;
+
+--Aula32:Funções Agregadas
+select avg(valor) from pedido
+
+select count(idmunicipio) from municipio
+
+select count(*) from municipio
+
+select * from transportadora
+select count(logradouro) from transportadora
+select count(idtransportadora) from transportadora
+
+select * from municipio
+select count(idmunicipio) from municipio where iduf = 2;
+
+select max(valor) from pedido
+select min(valor), max(valor) from pedido
+select sum(valor) from pedido
+select idcliente, sum(valor) from pedido group by idcliente
+select idcliente, sum(valor) from pedido group by idcliente having sum(valor) > 500
+
+--Aula33:Exercícios – funções agregadas
+--1. A média dos valores de vendas dos vendedores que venderam mais que R$ 200,00.
+select idvendedor, avg(valor) from pedido group by idvendedor having sum(valor) > 200;
+
+--2. Os vendedores que venderam mais que R$ 1500,00.
+select idvendedor, sum(valor) from pedido group by idvendedor having sum(valor) > 1500;
+
+--3. O somatório das vendas de cada vendedor.
+select idvendedor, sum(valor) from pedido group by idvendedor;
+
+--4. A quantidade de municípios.
+select count(idmunicipio) from municipio
+
+--5. A quantidade de municípios que são do Paraná ou de Santa Catarina.
+select * from uf
+select * from municipio
+select count(idmunicipio) from municipio where iduf = 2 or iduf = 1;
+
+--6. A quantidade de municípios por estado.
+select iduf, count(idmunicipio) from municipio group by iduf;
+
+--7. A quantidade de clientes que informaram o logradouro.
+select * from cliente
+select count(logradouro) from cliente
+
+--8. A quantidade de clientes por município.
+select idmunicipio, count(idcliente) from cliente group by idmunicipio;
+
+--9. A quantidade de fornecedores.
+select * from fornecedor
+select count(idfornecedor) from fornecedor
+
+--10. A quantidade de produtos por fornecedor
+select * from produto
+select idfornecedor, count(idproduto) from produto group by idfornecedor;
+
+--11. A média de preços dos produtos do fornecedor Cap. Computadores.
+select avg(valor) from produto where idfornecedor =1;
+
+--12. O somatório dos preços de todos os produtos.
+select * from produto
+select sum(valor) from produto
+
+--13. O nome do produto e o preço somente do produto mais caro.
+select nome,valor from produto order by valor desc limit 1;
+
+--14. O nome do produto e o preço somente do produto mais barato.
+select nome, valor from produto order by valor asc limit 1;
+
+--15. A média de preço de todos os produtos.
+select * from produto
+select avg(valor) from produto
+
+--16. A quantidade de transportadoras.
+select count(idtransportadora) from transportadora
+
+--17. A média do valor de todos os pedidos.
+select avg(valor) from pedido
+
+--18. O somatório do valor do pedido agrupado por cliente.
+select idcliente, sum(valor) from pedido group by idcliente;
+
+--19. O somatório do valor do pedido agrupado por vendedor.
+select idvendedor , sum(valor) from pedido group by idvendedor;
+
+--20. O somatório do valor do pedido agrupado por transportadora.
+select idtransportadora, sum(valor) from pedido group by idtransportadora;
+
+--21. O somatório do valor do pedido agrupado pela data.
+select data_pedido, sum(valor) from pedido group by data_pedido;
+
+--22. O somatório do valor do pedido agrupado por cliente, vendedor e transportadora.
+select cliente, idvendedor, idtransportadora, sum(valor) from pedido group by cliente, idvendedor, idtransportadora
+
+--23. O somatório do valor do pedido que esteja entre 01/04/2008 e 10/12/2009 e que seja maior que R$ 200,00.
+select  sum(valor)
+from pedido 
+where (data_pedido between '01-04-2008' and '10-12-2009') and valor > 200; 
+
+--24. A média do valor do pedido do vendedor André.
+select * from pedido
+select avg(valor) from pedido where idvendedor = 1;
+
+--25. A média do valor do pedido da cliente Jéssica.
+select avg(valor) from pedido where idcliente = 15;
+
+--26. A quantidade de pedidos transportados pela transportadora BS. Transportes.
+select * from vendedor
+select count(idpedido) from pedido where idtransportadora = 1;
+
+--27. A quantidade de pedidos agrupados por vendedor.
+select idvendedor, count(idpedido) from pedido group by idvendedor;
+
+--28. A quantidade de pedidos agrupados por cliente.
+select * from pedido
+select idcliente, count(idpedido) from pedido group by idcliente;
+
+--29. A quantidade de pedidos entre 15/04/2008 e 25/04/2008.
+select count(idpedido) from pedido where data_pedido between '15-04-2008' and '25-04-2008';
+
+--30. A quantidade de pedidos que o valor seja maior que R$ 1.000,00.
+select * from pedido
+select count(idpedido) from pedido where valor > 1000;
+
+--31. A quantidade de microcomputadores 1vendida.
+select * from produto
+select sum(idproduto) from pedido_produto where idproduto = 1;
+
+--32. A quantidade de produtos vendida agrupado por produto.
+select idproduto, sum(quantidade) from pedido_produto group by idproduto;
+
+--33. O somatório do valor dos produtos dos pedidos, agrupado por pedido.
+select * from pedido
+select idpedido, sum(valor_unitario) from pedido_produto group by idpedido;
+
+--34. A quantidade de produtos agrupados por pedido.
+select idpedido, sum(quantidade) from pedido_produto group by idpedido;
+
+--35. O somatório dos valores unitários de todos os produtos.
+select sum(valor_unitario) from pedido_produto;
+
+--36. A média dos produtos do pedido 6.
+select * from pedido
+select avg(valor_unitario) from pedido_produto where idpedido = 6;
+
+--37. O valor do maior produto do pedido.
+select * from produto
+select max(valor_unitario) from pedido_produto;
+
+--38. O valor do menor produto do pedido.
+select min(quantidade) from pedido_produto;
+
+--39. O somatório da quantidade de produtos por pedido.
+select sum(quantidade) from pedido_produto;
+
+--40. O somatório da quantidade de todos os produtos do pedido.
+select sum(valor_unitario) from pedido_produto;
+
+--Auala38:Relacionamneto com joins
+select * from cliente
 select 
-  aln.nome,
-  (select sum(valor) from emprestimo emp where aln.idaluno = emp.idaluno)
-from aluno aln
+     cln.nome as cliente, 
+     prf.nome as profissao
+from 
+     cliente as cln
+left outer join
+     profissao as prf on cln.idprofissao = prf.idprofissao
 
---43.O nome do aluno e o somatório do valor total dos empréstimos de cada aluno somente daqueles que o somatório for maior do que 7,00 (EMPRESTIMO).
-select * from emprestimo
+	 
+
+select 
+     cln.nome as cliente, 
+     prf.nome as profissao
+from 
+     cliente as cln
+inner join
+     profissao as prf on cln.idprofissao = prf.idprofissao
+
+
+select 
+     cln.nome as cliente, 
+     prf.nome as profissao
+from 
+     cliente as cln
+right join
+     profissao as prf on cln.idprofissao = prf.idprofissao
+
+--Aula39:Exercícios – joins
+--1. O nome do cliente, a profissão, a nacionalidade, o logradouro, o número, 
+--o complemento, o bairro, o município e a unidade de federação.
 select
- aln.nome,
- (select sum(valor) from emprestimo emp where aln.idaluno = emp.idaluno and valor > 7)
-from aluno aln
+    cln.nome as cliente, 
+	prf.nome as profissao, 
+	ncn.nome as nacionalidade, 
+	cln.logradouro, 
+	cln.numero, 
+	cpl.nome as complemento, 
+	brr.nome as bairro, 
+	mnc.nome as municipio,
+	 uf.sigla as sigla_estado
+from 
+    cliente as cln 
+left outer join
+   profissao as prf on cln.idprofissao = prf.idprofissao
+left outer join
+   nacionalidade as ncn on cln.idnacionalidade = ncn.idnacionalidade
+left outer join   
+   complemento as cpl on cln.idcomplemento = cpl.idcomplemento
+left outer join   
+   bairro as brr on cln.idbairro = brr.idbairro
+left outer join
+   municipio as mnc on cln.idmunicipio = mnc.idmunicipio
+left join
+  uf on mnc.iduf = uf.iduf
 
---CONSULTAS COMANDOS DIVERSOS
---44.O nome de todos os alunos em ordem decrescente e em letra maiúscula.
-select upper(nome) from aluno order by nome desc;
+--2. O nome do produto, o valor e o nome do fornecedor.
+select * from fornecedor
+select 
+    prt.nome as produto,
+	pdt.valor,
+	fnr.nome as fornecedor
+from
+    produto as pdt
+left outer join
+     produto as prt on pdt.idproduto = prt.idproduto
+left outer join
+     fornecedor as fnr on pdt.idfornecedor = fnr.idfornecedor
+	 
+--3. O nome da transportadora e o município.
+select * from transportadora
+select 
+    trp.nome as transportadora,
+	mnc.nome as municipio
+from
+    transportadora as tptd
+left outer join 
+    transportadora as trp on tptd.idtransportadora = trp.idtransportadora
+left outer join 
+    municipio as mnc on tptd.idmunicipio = mnc.idmunicipio
 
---45.Os empréstimos que foram feitos no mês 04 de 2012.
-select * from emprestimo 
-select extract(month from data_emprestimo) = 04 and extract(year from data_emprestimo) = 2012
-from emprestimo
+--4. A data do pedido, o valor, o nome do cliente, o nome da transportadora e o nome do vendedor.
+select * from pedido
+select
+   pdd.data_pedido, 
+   pdd.valor, 
+   cln.nome as cliente, 
+   trp.nome as transportadora, 
+   vdd.nome as vendedor 
+from 
+   pedido as pdd
+left outer join
+   cliente as cln on pdd.idcliente = cln.idcliente
+left outer join
+   transportadora as trp on pdd.idtransportadora = trp.idtransportadora
+left outer join
+   vendedor as vdd on pdd.idvendedor = vdd.idvendedor
 
---46.Todos os campos do empréstimo. Caso já tenha sido devolvido, mostrar a mensagem “Devolução completa”, senão “Em atraso”.
-select idemprestimo, idaluno, data_emprestimo, data_devolucao, valor, devolvido,
- case devolvido
-   when 'S' then 'Devolução completa'
-   else 'Em atraso'
-   end as devolvido
-from emprestimo
+ --5. O nome do produto, a quantidade e o valor unitário dos produtos do pedido.
+select * from pedido_produto
+select 
+    pdt.nome as produto, 
+	pdp.quantidade, 
+	pdp.valor_unitario
+from 
+    pedido_produto as pdp
+left outer join
+   produto as pdt on pdp.idproduto = pdt.idproduto
 
---47.Somente o caractere 5 até o caractere 10 do nome dos autores.
-select substring(nome from 5 for 10) from autor
+--6. O nome dos clientes e a data do pedido dos clientes que fizeram algum pedido (ordenado pelo nome do cliente).
+select * from pedido
+select 
+   cln.nome as cliente,
+   pdd.data_pedido
+from
+   pedido as pdd
+left outer join
+   cliente as cln on pdd.idcliente = cln.idcliente
+inner join
+    data_pedido a
+order by
+   cliente
 
---48.O valor do empréstimo e somente o mês da data de empréstimo. Escreva “Janeiro”, “Fevereiro”, etc
-select valor,
-case extract(month from data_emprestimo)
+--7. O nome dos clientes e a data do pedido de todos os clientes, independente se tenham feito pedido (ordenado pelo nome do cliente).
+select * from pedido
+select
+   cln.nome as cliente,
+   pdd.data_pedido
+from 
+   pedido as pdd
+left outer join
+   cliente as cln on pdd.idcliente = cln.idcliente
+order by cliente
+
+--8. O nome da cidade e a quantidade de clientes que moram naquela cidade.
+select * from cliente
+select
+   mnc.nome as municipio,
+count(idcliente)
+from 
+  cliente as cln
+left outer join 
+   municipio as mnc on cln.idmunicipio = mnc.idmunicipio
+group by municipio
+
+--9. O nome do fornecedor e a quantidade de produtos de cada fornecedor.
+select * from produto
+select 
+   fnr.nome as fornecedor,
+count(idproduto)
+from 
+   produto as pdt
+left outer join
+   fornecedor as fnr on pdt.idfornecedor = fnr.idfornecedor
+group by fornecedor
+
+--10.O nome do cliente e o somatório do valor do pedido (agrupado por cliente).
+select * from pedido
+select 
+  cln.nome as cliente,
+sum(valor)
+from pedido as pdd
+left outer join
+  cliente as cln on pdd.idcliente = cln.idcliente
+group by cliente
+
+--11.O nome do vendedor e o somatório do valor do pedido (agrupado por vendedor).
+select * from vendedor
+select
+   vdd.nome as vendedor,
+sum(valor)
+from 
+   pedido as pdd
+left outer join
+   vendedor as vdd on pdd.idvendedor = vdd.idvendedor
+group by vendedor   
+
+--12.O nome da transportadora e o somatório do valor do pedido (agrupado por transportadora).
+select * from pedido
+select 
+  trp.nome as transportadora,
+sum(valor)
+from 
+  pedido as pdd
+left outer join
+  transportadora as trp on pdd.idtransportadora = trp.idtransportadora
+group by transportadora
+
+--13.O nome do cliente e a quantidade de pedidos de cada um (agrupado por cliente).
+select * from pedido
+select 
+  cln.nome as cliente,
+count(idpedido)
+from
+  pedido as pdd
+left outer join
+  cliente as cln on pdd.idcliente = cln.idcliente
+group by cliente
+
+--14.O nome do produto e a quantidade vendida (agrupado por produto).
+select * from pedido_produto
+select 
+   prd.nome as produto,
+count(quantidade)
+from
+  pedido_produto as pdd_produto
+left outer join
+  produto as prd on pdd_produto.idproduto = prd.idproduto
+group by produto
+
+--15.A data do pedido e o somatório do valor dos produtos do pedido (agrupado pela data do pedido).
+select * from pedido
+select   
+   data_pedido,
+sum(valor)
+from pedido
+group by data_pedido
+
+--16.A data do pedido e a quantidade de produtos do pedido (agrupado pela data do pedido).
+select * from pedido
+select 
+   pdd.data_pedido
+count(idpedido)
+from
+   pedido as pdd
+group by 
+  pdd.data_pedido
+
+--Aula43:Comandos Adicionais
+select * from pedido
+select 
+  data_pedido,
+  extract(day from data_pedido),
+  extract(month from data_pedido),
+  extract(year from data_pedido)
+from pedido
+
+select nome, substring(nome from 1 for 5), substring(nome, 2) from cliente
+
+select nome, upper(nome) from cliente
+
+select nome, cpf, coalesce(cpf, 'Não informado') from cliente  
+
+select 
+  case sigla
+      when 'PR' then 'Paraná'
+	  when 'SC' then 'Santa Catarina'
+  else 'Outros'
+  end as uf
+from 
+   uf
+
+--Aula44:Exercícios – comandos adicionais
+--1. O nome do cliente e somente o mês de nascimento. Caso a data de nascimento não esteja 
+--preenchida mostrar a mensagem “Não informado”.
+select * from cliente
+select nome,
+coalesce(extract(month from data_nascimento),0)
+from cliente
+
+--2. O nome do cliente e somente o nome do mês de nascimento (Janeiro, Fevereiro etc).Caso a data de nascimento não esteja preenchida mostrar a mensagem “Não informado”. 
+select nome, 
+case extract(month from data_nascimento)
   when '1' then 'Janeiro'
   when '2' then 'Fevereiro'
   when '3' then 'Março'
@@ -367,23 +1020,378 @@ case extract(month from data_emprestimo)
   when '11' then 'Novembro'
   when '12' then 'Dezembro'
   else 'Não informado'
-  end as data_emprestimo
-from emprestimo
+  end as cliente
+from cliente 
 
---SUBCONSULTAS
+--3. O nome do cliente e somente o ano de nascimento. Caso a data de nascimento não esteja preenchida mostrar a mensagem “Não informado”.
+select nome, coalesce(extract(year from data_nascimento),0) --o número 0 significa que não foi informado
+from cliente
 
---49.A data do empréstimo e o valor dos empréstimos que o valor seja maior que a média de todos os empréstimos.
-select data_emprestimo,valor from emprestimo
-where valor >
-(select avg(valor) from emprestimo)
+--4. O caractere 5 até o caractere 10 de todos os municípios.
+select substring(nome from 5 for 10) from municipio
 
---50.A data do empréstimo e o valor dos empréstimos que possuem mais de um livro.
-select * from emprestimo
-select data_emprestimo, valor from emprestimo where (idaluno > 1)
+--5. O nome de todos os municípios em letras maiúsculas.
+select upper(nome) from municipio
 
---51.A data do empréstimo e o valor dos empréstimos que o valor seja menor que a soma de todos os empréstimos.
+--6. O nome do cliente e o gênero. Caso seja M mostrar “Masculino”, senão mostrar “Feminino”.
+select * from cliente
+select nome,
+  case genero
+     when 'M' then 'Masculino'
+	 when 'F' then 'Feminino'
+	 else 'Não informado'
+	 end as genero
+from cliente
+
+--7. O nome do produto e o valor. Caso o valor seja maior do que R$ 500,00 mostrar a mensagem “Acima de 500”, 
+--caso contrário, mostrar a mensagem “Abaixo de 500”.
+select * from produto
+select nome,
+  case valor
+    when > 500 then 'Acima de 500'
+    else 'Abaixo de 500'
+  end as valor
+from produto
+
+--Aula46:Subconsultas
+--Selecionar a data do pedido e o valor onde o valor seja maior que a média dos valores de todos os pedidos
 select 
-  data_emprestimo,
+  data_pedido,
   valor
-from emprestimo
-where valor < (select sum(valor) from emprestimo)
+from pedido
+where valor > (select avg(valor) from pedido
+
+--Exemplo com count
+select 
+  pdd.data_pedido,
+  pdd.valor,
+  (select sum(quantidade) from pedido_produto pdp where pdp.idpedido = pdd.idpedido) as total
+from pedido pdd
+
+--Exemplo com update
+update pedido set valor = valor + ((valor * 5) /100) 
+where valor > (select avg(valor) from pedido)
+
+--Auala47:Exercícios - subconsultas
+--1. O nome dos clientes que moram na mesma cidade do Manoel. Não deve ser mostrado o Manoel.
+select * from cliente
+select nome from cliente 
+select idmunicipio fro
+
+--2. A data e o valor dos pedidos que o valor do pedido seja menor que a média de todos os pedidos.
+select data_pedido,valor from pedido
+where valor < 
+(select avg(valor) from pedido)
+
+--3. A data,o valor, o cliente e o vendedor dos pedidos que possuem 2 ou mais produtos.
+select * from pedido
+select data_pedido, valor, idcliente,idvendedor from pedido where idvendedor >= 2;
+
+--4. O nome dos clientes que moram na mesma cidade da transportadora BSTransportes.
+select * from cliente
+select nome from cliente where logradouro = 'Rua das Limas';
+
+--5. O nome do cliente e o município dos clientes que estão localizados no mesmo município de qualquer uma das transportadoras.
+select * from municipio
+select nome from cliente
+where
+idmunicipio in (select idmunicipio from transportadora)
+
+--6. Atualizar o valor do pedido em 5% para os pedidos que o somatório do valor total dos produtos 
+--daquele pedido seja maior que a média do valor total de todos os produtos de todos os pedidos.
+update pedido set valor = valor + ((valor * 5) /100) 
+where (select sum(pdp.valor_unitario) from pedido_produto pdp where pdp.idpedido = pedido.idpedido) > (select avg(valor_unitario) from pedido_produto)
+
+select 
+ pdd.idpedido
+ (select sum(valor_unitario) from pedido_produto pdp where pdp.idpedido = pdd.idpedido)
+from pedido pdd
+select avg(valor_unitario) from pedido_produto
+
+--7. O nome do cliente e a quantidade de pedidos feitos pelo cliente.
+select 
+  cln.nome,
+  (select count(idpedido) from pedido pdd where pdd.idcliente = cln.idcliente) as total
+from
+  cliente cln
+
+--8. Para revisar, refaça o exercício anterior (número 07) utilizando group by e mostrando somente os clientes que fizeram pelo menos um pedido.
+select  
+  cln.nome as cliente, 
+count(idpedido)
+from pedido pdd
+left outer join
+ cliente cln on pdd.idcliente = cln.idcliente
+group by cliente
+
+--Aula50:Views
+drop view cliente_profissao; --serve para apagar view e tabelas
+
+create view cliente_profissao as
+select
+  cln.nome as cliente,
+  cln.cpf,
+  prf.nome as profissao
+from cliente cln
+left outer join
+  profissao prf on cln.idprofissao = prf.idprofissao
+  
+select cliente from cliente_profissao where profissao = 'Professor'
+select * from cliente_profissao
+
+--Aula51:Exercícios views
+--1.revisar O nome, a profissão, a nacionalidade, o complemento, o município, a unidade de federação, o bairro, o CPF,
+--o RG, a data de nascimento, o gênero (mostrar “Masculino” ou “Feminino”), o logradouro, o número e as 
+--observações dos clientes.
+select * from uf
+create view cliente_dados as
+select 
+ cln.nome as nome,
+ prf.nome as profissao,
+ ncn.nome as nacionalidade,
+ cpl.nome as complemento,
+ mnc.nome as municipio,
+ brr.nome as bairro,
+ cln.cpf,
+ cln.rg,
+ cln.data_nascimento,
+ cln.logradouro,
+ cln.numero,
+ cln.observacoes,
+ uf.sigla,
+ case genero
+   when 'M' then 'Masculino'
+   when 'F' then 'Feminino'
+   else 'Não informado'
+   end as genero
+from cliente cln
+left outer join
+  profissao prf on cln.idprofissao = prf.idprofissao
+left outer join
+  nacionalidade ncn on cln.idnacionalidade = ncn.idnacionalidade
+left outer join 
+  complemento cpl on cln.idcomplemento = cpl.idcomplemento
+left outer join
+  municipio mnc on cln.idmunicipio = mnc.idmunicipio
+left outer join
+  bairro brr on cln.idbairro = brr.idbairro
+left join
+  uf on mnc.iduf = uf.iduf
+  
+--2. O nome do município e o nome e a sigla da unidade da federação.
+select * from municipio
+create view municipio_uf as
+select 
+ mnc.nome as municipio,
+ uf.nome as estado,
+ uf.sigla as sigla_estado
+from municipio mnc
+left join
+  uf on mnc.iduf = uf.iduf
+  
+--3. O nome do produto, o valor e o nome do fornecedor dos produtos.
+select * from produto
+create view produto_fornecedor as
+select 
+  prt.nome as nome_produto,
+  pdt.valor,
+  fnr.nome as fornecedor
+from produto pdt
+left join
+  produto prt on pdt.idproduto = prt.idproduto
+left join 
+  fornecedor fnr on pdt.idfornecedor = fnr.idfornecedor
+
+--4. O nome da transportadora, o logradouro, o número, o nome da unidade de federação e 
+--a sigla da unidade de federação das transportadoras.
+select * from municipio
+create view transportadora_uf as
+select 
+   trp.nome as transportadora,
+   tptd.logradouro,
+   mnc.nome as municipio,
+   uf.sigla
+from 
+   transportadora tptd
+left join 
+   transportadora trp on tptd.idtransportadora = trp.idtransportadora
+left join 
+   municipio mnc on tptd.idmunicipio = mnc.idmunicipio
+left join 
+    uf on mnc.iduf = uf.iduf
+
+--5. A data do pedido, o valor, o nome da transportadora, o nome do cliente e o nome do vendedor dos pedidos.
+select * from pedido
+create view dados_pedido as
+select 
+   pdd.data_pedido,
+   pdd.valor,
+   trp.nome as transportadora,
+   cln.nome as cliente,
+   vdd.nome as vendedor
+from pedido pdd
+left join
+  transportadora trp on pdd.idtransportadora = trp.idtransportadora
+left join 
+  cliente cln on pdd.idcliente = cln.idcliente
+left join
+  vendedor vdd on pdd.idvendedor = vdd.idvendedor
+
+--6. O nome do produto, a quantidade, o valor unitário e o valor total dos produtos do pedido.
+select * from pedido_produto
+create view produto_pedido as
+select 
+   prt.nome as produto, 
+   pdp.quantidade, 
+   pdp.valor_unitario
+from 
+    pedido_produto pdp
+left outer join
+   produto prt on pdp.idproduto = prt.idproduto
+
+--Aula54:Autoincremento
+
+--Campos autoincremento
+create table exemplo (
+   idexemplo serial not null,
+   nome varchar (50) not null,
+
+   constraint pk_exemplo_idexemplo primary key (idexemplo)
+);
+
+insert into exemplo (nome) values ('Exemplo 1');
+insert into exemplo (nome) values ('Exemplo 2');
+insert into exemplo (nome) values ('Exemplo 3');
+insert into exemplo (nome) values ('Exemplo 4');
+insert into exemplo (nome) values ('Exemplo 5');
+select * from exemplo
+
+select max(idbairro) + 1 from bairro
+create sequence bairro_id_seq minvalue 5
+alter table bairro alter idbairro set default nextval('bairro_id_seq')
+alter sequence bairro_id_seq owned by bairro.idbairro
+insert into bairro (nome) values ('Teste 1');
+insert into bairro (nome) values ('Teste 2');
+select * from bairro
+
+--Aula55:Exercícios sequences – auto incremento
+--1. Criar sequências para todas as outras tabelas da base de dados
+--a. Cliente
+select * from cliente
+select max(idcliente) + 1 from cliente
+create sequence cliente_id_seq minvalue 18
+alter table cliente alter idcliente set default nextval('cliente_id_seq')
+alter sequence cliente_id_seq owned by cliente.idcliente
+
+--b. Complemento
+select * from complemento
+select max(idcomplemento) + 1 from complemento
+create sequence complemento_id_seq minvalue 3
+alter table complemento alter idcomplemento set default nextval('complemento_id_seq')
+alter sequence complemento_id_seq owned by complemento.idcomplemento
+
+--c. Fornecedor
+select * from fornecedor
+select max(idfornecedor) + 1 from fornecedor
+create sequence fornecedor_id_seq minvalue 4
+alter table fornecedor alter idfornecedor set default nextval('fornecedor_id_seq')
+alter sequence fornecedor_id_seq owned by fornecedor.idfornecedor
+
+--d. Município
+select max(idmunicipio) + 1 from municipio
+create sequence municipio_id_seq minvalue 10
+alter table municipio alter idmunicipio set default nextval('municipio_id_seq')
+alter sequence municipio_id_seq owned by municipio.idmunicipio
+
+--e. Nacionalidade
+select max(idnacionalidade) + 1 from nacionalidade
+create sequence nacionalidade_id_seq minvalue 5
+alter table nacionalidade alter idnacionalidade set default nextval('nacionalidade_id_seq')
+alter sequence nacionalidade_id_seq owned by nacionalidade.idnacionalidade
+
+--f. Pedido
+select max(idpedido) + 1 from pedido
+create sequence pedido_id_seq minvalue 16
+alter table pedido alter idpedido set default nextval('pedido_id_seq')
+alter sequence pedido_id_seq owned by pedido.idpedido
+
+--g. Pedido produto (verificar se é necessário)
+select * from pedido_produto
+insert into pedido_produto (nome) values ('Teste 1');
+select max(idpedidoproduto) + 1 from pedido_produto
+
+--h. Profissão
+select max(idprofissao) + 1 from profissao
+create sequence profissao_id_seq minvalue 6
+alter table profissao alter idprofissao set default nextval('profissao_id_seq')
+alter sequence profissao_id_seq owned by profissao.idprofissao
+
+--i. Transportadora
+select max(idtransportadora) + 1 from transportadora
+create sequence transportadora_id_seq minvalue 3
+alter table transportadora alter idtransportadora set default nextval('transportadora_id_seq')
+alter sequence transportadora_id_seq owned by transportadora.idtransportadora
+
+--j. UF
+select max(iduf) + 1 from uf
+create sequence uf_id_seq minvalue 7
+alter table uf alter iduf set default nextval('uf_id_seq')
+alter sequence uf_id_seq owned by uf.iduf
+
+--k. Vendedor
+select max(idvendedor) + 1 from vendedor
+create sequence vendedor_id_seq minvalue 9
+alter table vendedor alter idvendedor set default nextval('vendedor_id_seq')
+alter sequence vendedor_id_seq owned by vendedor.idvendedor
+
+--Aula57:Campos Default
+alter table pedido alter column data_pedido set default current_date;
+alter table pedido alter column valor set default 0;
+
+--Aula58:Exercicio
+--1. Adicione valores default na tabela de produtos do pedido
+select * from pedido_produto
+alter table pedido_produto alter column quantidade set default 1;
+
+--b. Valor unitário com o valor 0
+alter table pedido_produto alter column valor_unitario set default 0;
+
+--2. Adicione valor default na tabela de produtos
+alter table produto alter column valor set default 0;
+
+--Aula60:Indices
+create index idx_cln_nome on cliente (nome);
+
+--Aula61:Exercicio
+--1. Adicione índices nas seguintes tabelas e campos
+--a. Pedido – data do pedido
+create index idx_pdd_data_pedido on pedido (data_pedido);
+
+--b. Produto – nome
+create index idx_prd_nome on produto (nome);
+
+--Seção 3
+--Aula72:Funções
+select valor, concat(' R$ ', round(cast(valor as numeric), 2)) from pedido
+
+create function formatar_moeda(valor float) returns varchar(20) language plpgsql as
+$$
+begin
+  return concat(' R$ ', round(cast(valor as numeric), 2));
+end;
+$$;
+
+select valor, formatar_moeda(valor) from pedido
+
+create function get_nome_by_id(idc integer) returns varchar(50) language plpgsql as
+$$
+declare r varchar(50);
+begin
+  select nome into r from cliente where idcliente = idc;
+  return r;
+end;
+$$;
+--
+
+
+
