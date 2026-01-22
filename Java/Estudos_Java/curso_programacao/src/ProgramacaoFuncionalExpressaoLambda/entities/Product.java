@@ -1,6 +1,4 @@
-package ProgramacaoFuncional.entities;
-
-import java.util.Locale;
+package ProgramacaoFuncionalExpressaoLambda.entities;
 
 public class Product {
 

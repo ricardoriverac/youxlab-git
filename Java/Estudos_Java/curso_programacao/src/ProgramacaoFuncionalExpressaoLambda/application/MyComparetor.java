@@ -1,6 +1,6 @@
-package ProgramacaoFuncional.application;
+package ProgramacaoFuncionalExpressaoLambda.application;
 
-import ProgramacaoFuncional.entities.Product;
+import ProgramacaoFuncionalExpressaoLambda.entities.Product;
 
 import java.util.Comparator;
 
