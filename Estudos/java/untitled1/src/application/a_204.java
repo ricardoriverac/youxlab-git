@@ -18,5 +18,6 @@ public class a_204 {
 
         list.forEach(p -> p.setPreco(p.getPreco() * factor));
         list.forEach(System.out::println);
+        
     }
 }

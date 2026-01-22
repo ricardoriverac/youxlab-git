@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a43b457e-3572-4a1b-9e8f-9a396a3e7823" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/application/a_204.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/application/a_204.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled1/src/application/a_204.java" beforeDir="false" afterPath="$PROJECT_DIR$/untitled1/src/application/a_204.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +94,8 @@
     "Application.a_201_teoria2.executor": "Run",
     "Application.a_201_teoria3.executor": "Run",
     "Application.a_201_teoria4.executor": "Run",
+    "Application.a_204.executor": "Run",
+    "Application.a_205.executor": "Run",
     "Application.a_24.executor": "Run",
     "Application.a_25.executor": "Run",
     "Application.a_26.executor": "Run",
