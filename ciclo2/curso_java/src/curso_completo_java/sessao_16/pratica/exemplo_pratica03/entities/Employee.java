@@ -1,6 +1,6 @@
 package curso_completo_java.sessao_16.pratica.exemplo_pratica03.entities;
 
-public class Employee {
+public class Employee implements Comparable<Employee>{
 
     private String name;
     private Double salary;
@@ -26,8 +26,9 @@ public class Employee {
         this.name = name;
     }
 
+
     @Override
-    public int compaeT(Employee ){
+    public int compareTo(Employee employee) {
         return 0;
     }
 }

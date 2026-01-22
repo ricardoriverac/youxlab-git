@@ -17,7 +17,6 @@ public class program {
         String path = "C:\\temp\\in.txt";
 
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
-
             String employeeCsv = br.readLine();
             while (employeeCsv != null) {
                 String[] fields = employeeCsv.split(",");
@@ -25,8 +24,8 @@ public class program {
                 employeeCsv = br.readLine();
             }
             Collections.sort(list);
-            for (String s : list) {
-                System.out.println(s);
+            for (Employee emp : list) {
+                System.out.println(emp.getName() + "," + emp.getSalary());
             }
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
