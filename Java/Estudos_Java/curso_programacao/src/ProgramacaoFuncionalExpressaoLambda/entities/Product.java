@@ -26,7 +26,6 @@ public class Product {
         this.price = price;
     }
 
-
     public static boolean staticProductPredicate(Product p){
         return p.getPrice() >= 100.0;
     }
