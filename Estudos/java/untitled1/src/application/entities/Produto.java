@@ -50,6 +50,14 @@ public class Produto implements Comparable<Produto>{
     public int hashCode() {
         return Objects.hash(nome, preco);
     }
+
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "nome='" + nome + '\'' +
+                ", preco=" + preco +
+                '}';
+    }
 }
 
 
