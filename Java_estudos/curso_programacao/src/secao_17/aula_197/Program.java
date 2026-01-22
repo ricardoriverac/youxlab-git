@@ -12,16 +12,16 @@ public class Program {
         Map<String, Integer> votos = new HashMap<>();
 
         System.out.print("Enter file full path: ");
-        String path = sc.nextLine();
+        String arquivo = sc.nextLine();
 
-        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(arquivo))) {
 
             String line = br.readLine();
             while (line != null) {
 
-                String[] fields = line.split(",");
-                String name = fields[0];
-                int count = Integer.parseInt(fields[1]);
+                String[] campo = line.split(",");
+                String name = campo[0];
+                int count = Integer.parseInt(campo[1]);
 
                 if (votos.containsKey(name)) {
                     int votesSoFar = votos.get(name);
