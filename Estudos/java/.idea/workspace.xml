@@ -18,6 +18,7 @@
         <option value="package-info" />
         <option value="Enum" />
         <option value="Interface" />
+        <option value="Kotlin Class" />
         <option value="Class" />
       </list>
     </option>
