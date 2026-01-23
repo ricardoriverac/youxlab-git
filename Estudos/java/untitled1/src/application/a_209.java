@@ -29,7 +29,7 @@ public class a_209 {
 
             System.out.println("Preço médio: " + String.format("%.2f", avg));
 
-            Comparator<String> comp = (s1, s2) -> s1.toUpperCase().compareTo(s2.toUpperCase()));
+            Comparator<String> comp = (s1, s2) -> s1.toUpperCase().compareTo(s2.toUpperCase());
             List<String> nomes = new ArrayList<>();
             for (Produto p : list) {
                 if (p.getPreco() < avg) {
