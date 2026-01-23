@@ -6,6 +6,7 @@ import application.entities.ServicoProduto;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.stream.Collectors;
 
 public class a_206 {
     public static void main(String[] args) {
@@ -20,5 +21,6 @@ public class a_206 {
         ServicoProduto sp = new ServicoProduto();
         double soma = sp.filteredSum(produtos, p -> p.getNome().charAt(0) == 'T');
         System.out.println("Soma: " + String.format("%.2f", soma));
+
     }
 }
