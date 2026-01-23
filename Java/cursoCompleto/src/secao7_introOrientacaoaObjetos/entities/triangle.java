@@ -15,3 +15,4 @@ public class triangle {
         return Math.sqrt( p * ( p - a ) * ( p - b ) * ( p - c ) );
     }// corpo do método
 }
+//Cria-se uma variável composta, chamada Triangle
