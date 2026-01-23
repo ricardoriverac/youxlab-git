@@ -1,4 +1,4 @@
-package curso_completo_java.sessao_18.pratica.pratica_exemplo05.entities;
+package curso_completo_java.sessao_18.pratica.exemplo_pratica06.entities;
 
 public class Product {
 
@@ -27,14 +27,13 @@ public class Product {
         this.price = price;
     }
 
-    public static void staticPriceUpdate(curso_completo_java.sessao_18.pratica.exemplo_pratica04.entities.Product p){
-        p.setPrice(p.getPrice() * 1.1);
+    public static String staticUpperCaseName (curso_completo_java.sessao_18.pratica.exemplo_pratica05.entities.Product p) {
+        return p.getName().toUpperCase();
     }
 
-    public void nonStaticPriceUpdate() {
-        price = price * 1.1;
+    public String nonStaticUpperCaseName() {
+        return name.toUpperCase();
     }
-
 
     @Override
     public String toString() {

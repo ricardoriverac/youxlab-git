@@ -1,5 +1,7 @@
 package curso_completo_java.sessao_18.pratica.exemplo_pratica04.application;
 
+// AULA 204 - Consumer
+
 import curso_completo_java.sessao_18.pratica.exemplo_pratica04.entities.Product;
 import curso_completo_java.sessao_18.pratica.exemplo_pratica04.util.PriceUpdate;
 

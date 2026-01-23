@@ -1,6 +1,6 @@
-package curso_completo_java.sessao_18.pratica.pratica_exemplo05.util;
+package curso_completo_java.sessao_18.pratica.exemplo_pratica05.util;
 
-import curso_completo_java.sessao_18.pratica.pratica_exemplo05.entities.Product;
+import curso_completo_java.sessao_18.pratica.exemplo_pratica05.entities.Product;
 
 import java.util.function.Function;
 
