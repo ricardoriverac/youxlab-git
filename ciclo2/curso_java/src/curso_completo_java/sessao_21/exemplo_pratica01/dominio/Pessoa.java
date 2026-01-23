@@ -1,6 +1,5 @@
-package curso_completo_java.sessao_21.pratica.exemplo_pratica01.dominio;
+package curso_completo_java.sessao_21.exemplo_pratica01.dominio;
 
-import javax.annotation.processing.Generated;
 import java.io.Serializable;
 
 //@Entity

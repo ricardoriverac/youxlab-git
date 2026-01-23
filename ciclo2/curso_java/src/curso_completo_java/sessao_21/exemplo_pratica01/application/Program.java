@@ -1,8 +1,8 @@
-package curso_completo_java.sessao_21.pratica.exemplo_pratica01.application;
+package curso_completo_java.sessao_21.exemplo_pratica01.application;
 
 // AULA - 267 - Nivelamento JPA / Hibernate - PARTE 1
 
-import curso_completo_java.sessao_21.pratica.exemplo_pratica01.dominio.Pessoa;
+import curso_completo_java.sessao_21.exemplo_pratica01.dominio.Pessoa;
 
 public class Program {
 
