@@ -21,7 +21,7 @@ public class aula35 {
 
         System.out.println(x + " elevado a " + y + " = " + A);
         System.out.println(x + " elevado ao quadrado = " + B);
-        System.out.println(x + " 5 elevado ao quadrado = " + C);
+        System.out.println("5 elevado ao quadrado = " + C);
 
         A = Math.abs(y);
         B = Math.abs(z);
