@@ -1,0 +1,4 @@
+package com.example.course.services;
+
+public class UserService {
+}
