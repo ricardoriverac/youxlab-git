@@ -1,6 +1,7 @@
-package com.example.cursoSpringPedro;
+package com.example.cursoSpringPedro.config;
 
 import com.example.cursoSpringPedro.entities.Users;
+import com.example.cursoSpringPedro.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;

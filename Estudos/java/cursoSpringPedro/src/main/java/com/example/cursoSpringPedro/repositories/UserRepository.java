@@ -1,4 +1,4 @@
-package com.example.cursoSpringPedro;
+package com.example.cursoSpringPedro.repositories;
 
 import com.example.cursoSpringPedro.entities.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
