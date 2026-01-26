@@ -1,6 +1,8 @@
 package com.example.course.services;
 
+import com.example.course.entities.Product;
 import com.example.course.entities.User;
+import com.example.course.repositories.ProductRepository;
 import com.example.course.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,14 +14,14 @@ import java.util.Optional;
 public class ProductService {
 
     @Autowired
-    private UserRepository repository;
+    private ProductRepository repository;
 
-    public List<User> findAll(){
+    public List<Product> findAll(){
         return repository.findAll();
     }
 
-    public User findById(Long id){
-       Optional<User> obj = repository.findById(id);
+    public Product findById(Long id){
+       Optional<Product> obj = repository.findById(id);
        return obj.get();
     }
 }

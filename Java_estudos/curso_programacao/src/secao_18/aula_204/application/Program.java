@@ -1,7 +1,7 @@
-package secao_18.aula_204.Teoria.application;
+package secao_18.aula_204.application;
 
-import secao_18.aula_204.Teoria.entities.Product;
-import secao_18.aula_204.Teoria.util.PriceUpdate;
+import secao_18.aula_204.entities.Product;
+import secao_18.aula_204.util.PriceUpdate;
 
 import java.util.ArrayList;
 import java.util.List;

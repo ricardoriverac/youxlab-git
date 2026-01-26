@@ -1,4 +1,4 @@
-package secao_18.aula_204.Teoria.entities;
+package secao_18.aula_204.entities;
 
     public class Product {
 

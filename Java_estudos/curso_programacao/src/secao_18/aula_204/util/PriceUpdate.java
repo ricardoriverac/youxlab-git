@@ -1,6 +1,6 @@
-package secao_18.aula_204.Teoria.util;
+package secao_18.aula_204.util;
 
-import secao_18.aula_204.Teoria.entities.Product;
+import secao_18.aula_204.entities.Product;
 
 import java.util.function.Consumer;
 
