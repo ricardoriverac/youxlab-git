@@ -1,0 +1,26 @@
+.formControl {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+
+.formControl label {
+  margin-bottom: 0.6em;
+  font-weight: bold;
+}
+
+.formControl input {
+  padding: 0.7em;
+  border-radius: 0;
+  border: none;
+}
+
+.formControl input::-webkit-outer-spin-button,
+.formControl input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.formControl input::placeholder {
+  color: #7b7b7b;
+}
