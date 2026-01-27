@@ -18,7 +18,7 @@ public class aula44_exercicio4 {
         else {
                 duracao = (24 - hora_inicial) + hora_final;
             }
-        System.out.println("O jogo durou " + duracao);
+        System.out.println("O jogo durou " + duracao + " horas");
 
         }
     }
