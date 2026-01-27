@@ -6,18 +6,19 @@ import java.util.Scanner;
 
 public class exercicio6 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+
         Locale.setDefault(Locale.US);
+        Scanner sc = new Scanner(System.in);
 
         double A, B, C, trian, tra,qua, circ, retan;
         A = sc.nextDouble();
-        C = sc.nextDouble();
         B = sc.nextDouble();
-        trian = A * C / 2.0;
-        circ = Math.PI * Math.pow(3.14159, 2);
-        tra = A + B * C;
-        qua = C * C;
-        retan = A * C;
+        C = sc.nextDouble();
+        trian = (A * C) / 2.0;
+        circ = Math.PI * Math.pow(C, 2);
+        tra = ((A + B) * C )/2;
+        qua = B * B;
+        retan = A * B;
 
         System.out.printf("Triangulo: %.3f\n", trian);
         System.out.printf("Circulo: %.3f\n", circ);
