@@ -1,6 +1,8 @@
 package com.educandoweb.maxvenda.resources;
 
+import com.educandoweb.maxvenda.entities.Order;
 import com.educandoweb.maxvenda.entities.User;
+import com.educandoweb.maxvenda.services.OrderService;
 import com.educandoweb.maxvenda.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,24 +13,25 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+
 @RestController
-@RequestMapping(value = "/users")
-public class UserResource {
+@RequestMapping(value = "/orders")
+    public class OrderResource {
 
-    @Autowired
-    private UserService service;
+        @Autowired
+        private OrderService service;
 
+        @GetMapping
+        public ResponseEntity<List<Order>> findAll() {
+            List<Order> list = service.findAll();
+            return ResponseEntity.ok().body(list);
+        }
 
-    @GetMapping
-    public ResponseEntity<List<User>> findAll() {
-        List<User> list = service.findAll();
-        return ResponseEntity.ok().body(list);
+        @GetMapping(value = "/{id}")
+        public ResponseEntity<Order> findById(@PathVariable Long id) {
+            Order obj = service.findById(id);
+            return ResponseEntity.ok().body(obj);
+        }
     }
 
-    @GetMapping(value = "/{id}")
-    public ResponseEntity<User> finById(@PathVariable long id) {
-        User obj = service.finById(id);
-        return ResponseEntity.ok().body(obj);
-    }
 
-}

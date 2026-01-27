@@ -2,23 +2,28 @@ package com.educandoweb.maxvenda.services;
 
 import com.educandoweb.maxvenda.entities.Order;
 import com.educandoweb.maxvenda.entities.User;
-import com.educandoweb.maxvenda.repositories.UserRepository;
+import com.educandoweb.maxvenda.repositories.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-public class OrderSErvice {
 
-    @Autowired
-    private UserRepository repository;
+    @Service
+    public class OrderService {
 
-    public List<User> findAll() {
-        return repository.findAll();
+        @Autowired
+        private OrderRepository repository;
+
+        public List<Order> findAll() {
+            return repository.findAll();
+        }
+
+        public Order findById(Long id) {
+            Optional<Order> obj = repository.findById(id);
+            return obj.get();
+        }
     }
 
-    public Order finById(Long id) {
-        Optional<Order> obj = repository.findById(id);
-        return obj.get();
-    }
-}
+

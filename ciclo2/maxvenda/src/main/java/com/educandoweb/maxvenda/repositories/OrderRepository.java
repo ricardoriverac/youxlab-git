@@ -1,7 +1,7 @@
 package com.educandoweb.maxvenda.repositories;
 
-import com.educandoweb.maxvenda.entities.User;
+import com.educandoweb.maxvenda.entities.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface OrderRepository extends JpaRepository<Order, Long> {
 }

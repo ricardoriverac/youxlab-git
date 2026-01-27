@@ -1,33 +1,30 @@
 package com.educandoweb.maxvenda.services;
 
+import com.educandoweb.maxvenda.entities.Product;
 import com.educandoweb.maxvenda.entities.User;
+import com.educandoweb.maxvenda.repositories.ProductRepository;
 import com.educandoweb.maxvenda.repositories.UserRepository;
-import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 import java.util.Optional;
 
 
-    @Service
-    public class UserService {
+@Service
+public class ProductService {
 
-        @Autowired
-        private UserRepository repository;
+    @Autowired
+    private ProductRepository repository;
 
-        public List<User> findAll() {
-            return repository.findAll();
-        }
+    public List<Product> findAll() {
+        return repository.findAll();
+    }
 
-        public User findById(Long id) {
-            Optional<User> obj = repository.findById(id);
-            return obj.get();
-        }
+    public Product findById(Long id) {
+        Optional<Product> obj = repository.findById(id);
+        return obj.get();
+    }
 
 
 }
