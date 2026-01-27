@@ -1,4 +1,4 @@
-package Aula_72;
+package Aula_75.Object_e_toString.Aula_72;
 
 public class ClasseTriangulo {
 

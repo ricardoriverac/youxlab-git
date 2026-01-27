@@ -1,4 +1,4 @@
-package Aula_72;
+package Aula_75.Object_e_toString.Aula_72;
 
 import java.util.Locale;
 import java.util.Scanner;
