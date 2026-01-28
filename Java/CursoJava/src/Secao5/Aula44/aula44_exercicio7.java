@@ -31,6 +31,5 @@ public class aula44_exercicio7 {
 
             sc.close();
         }
-
     }
 }
