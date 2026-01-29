@@ -35,23 +35,24 @@ function inserirPessoa() {
     novaLinha.remove();
   });
 
-  const nomeInput = document.getElementById("f_nome");
-  const telefoneInput = document.getElementById("f_numero");
-  const cpfInput = document.getElementById("f_cpf");
-  const emailInput = document.getElementById("f_email");
+  const InputNome = document.getElementById("f_nome");
+  const InputTelefone = document.getElementById("f_numero");
+  const InputCpf = document.getElementById("f_cpf");
+  const InputEmail = document.getElementById("f_email");
 
-  const editar = novaLinha.querySelector(".btn_editar");
-  editar.addEventListener("click", (evt) => {
+  const botaoEditar = novaLinha.querySelector(".btn_editar");
+  botaoEditar.addEventListener("click", (evt) => {
     const dados = novaLinha.querySelectorAll("td");
 
-    nomeInput.value = dados[0].textContent;
-    telefoneInput.value = dados[1].textContent;
-    cpfInput.value = dados[2].textContent;
-    emailInput.value = dados[3].textContent;
+    InputNome.value = dados[0].textContent;
+    InputTelefone.value = dados[1].textContent;
+    InputCpf.value = dados[2].textContent;
+    InputEmail.value = dados[3].textContent;
 
     novaLinha.remove();
   });
 }
+
 
 const btn_inserir = document.getElementById("btn_inserir");
 btn_inserir.addEventListener("click", () => {

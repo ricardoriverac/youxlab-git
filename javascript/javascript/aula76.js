@@ -11,7 +11,7 @@ btn_promessa.addEventListener("click",(evt)=>{
         // })
         // .catch((retorno)=>{
         //     numero.innerHTML=retorno
-        //     numero.classList.add("erro")
+        //     numero.classList.add("erro") 
         //     numero.classList.remove("ok")    
         // })    
 })

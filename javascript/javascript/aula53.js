@@ -27,3 +27,4 @@ btn_soma.addEventListener("click",op[0])
 btn_subtracao.addEventListener("click",op[1])
 btn_multiplicacao.addEventListener("click",op[2])
 btn_divisao.addEventListener("click",op[3])
+
