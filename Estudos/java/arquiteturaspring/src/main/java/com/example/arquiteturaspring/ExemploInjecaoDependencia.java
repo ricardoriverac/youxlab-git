@@ -8,6 +8,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import javax.sql.DataSource;
 import java.sql.Connection;
 
+
 public class ExemploInjecaoDependencia {
     public static void main(String[] args) throws Exception{
 
