@@ -1,4 +1,4 @@
-package Aula_68.Funcoes_sintaxe;
+package Aula_80.Membros_Estaticos;
 
 import java.util.Scanner;
 
@@ -9,10 +9,7 @@ public class Aula_01 {
         System.out.print("Digite um número: ");
         int valor = sc.nextInt();
         System.out.println( par_impar(valor));
-
     }
-
-    //par_impar
 
     public static int par_impar(int x) {
 
@@ -25,4 +22,3 @@ public class Aula_01 {
         return x;
     }
 }
-
