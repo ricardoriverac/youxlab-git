@@ -23,7 +23,7 @@ function NewProject() {
       .then((data) => {
         console.log(data);
         navigatorTo("/projects", {
-          message: "Projeto criado com sucesso!",
+          state: { message: "Projeto foi criado com sucesso" },
         });
       })
       .catch((err) => console.log(err));
