@@ -2,8 +2,11 @@ package Secao_10.Testes.application;
 
 import Secao_10.Testes.entities.Product;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Program {
     public static void main(String[] args) {
@@ -11,25 +14,42 @@ public class Program {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        int n = sc.nextInt();
-        Product[] vect = new Product[n];
+        List<String> list = new ArrayList<>();
 
-        for (int i=0; i<vect.length; i++) {
-            sc.next();
-            String name = sc.nextLine();
-            double price = sc.nextDouble();
-            vect[i] = new Product(name, price);
+        list.add("Maria");
+        list.add("Alex");
+        list.add("Bob");
+        list.add("Anna");
+        list.add(2, "Marco");
+
+        System.out.println("-------------------------------");
+        System.out.println(list.size());
+
+        System.out.println("-------------------------------");
+        for (String x : list) {
+            System.out.println(x);
+        }
+        System.out.println("-------------------------------");
+
+        list.removeIf(x -> x.charAt(0) == 'M');
+
+        for (String x : list) {
+            System.out.println(x);
         }
 
+        System.out.println("-------------------------------");
+        System.out.println("Index of Bob: " + list.indexOf("Bob"));
+        System.out.println("Index of Marcos: " + list.indexOf("Marcos"));
+        System.out.println("-------------------------------");
 
-
-        double sum = 0.0;
-        for (int i=0; i<n; i++) {
-            sum += vect[i].getPrice();
+        List<String> result = list.stream().filter(x -> x.charAt(0) == 'A').collect(Collectors.toList());
+        for (String x : result) {
+            System.out.println(x);
         }
-        double avg = sum / vect.length;
+        System.out.println("-------------------------------");
 
-        System.out.printf("AVERAGE PRICE = %.2f", avg);
+        String name = list.stream().filter(x -> x.charAt(0) == 'A').findFirst().orElse(null);
+        System.out.println(name);
 
         sc.close();
     }

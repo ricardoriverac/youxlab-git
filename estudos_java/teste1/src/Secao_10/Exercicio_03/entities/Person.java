@@ -10,6 +10,7 @@ public class Person {
     public String name;
     public int age;
     public double height;
+    public boolean underage;
 
     // Construtor
     // Método usado para construir objetos usando algunas valores
@@ -20,12 +21,10 @@ public class Person {
         this.name = name;
         this.age = age;
         this.height = height;
+        if (age<16) {
+            underage = true;
+        }
     }
 
     // Método são comportamentos da classe/objeto
-
-    public double Average (double soma, int quantidade) {
-        double media = soma/quantidade;
-        return media;
-    }
 }
