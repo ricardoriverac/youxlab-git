@@ -9,7 +9,7 @@ public class Main {
         // Objetos
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
-        Conta cnt = new Conta();
+        Conta cnt = new Conta(0.00, 7801);
 
         //Variavel
         double valorDouble;
@@ -59,9 +59,17 @@ public class Main {
                 + ", saldo: "
                 + cnt.getSaldo());
 
+        //Saque do valor
         System.out.println(" ");
         System.out.print("Digite o valor de saque: ");
         double valor2 = sc.nextDouble();
+        cnt.saque(valor2);
+        System.out.println("Conta: "
+                + cnt.getNumero()
+                + ", Titular: "
+                + cnt.getTitular()
+                + ", saldo: "
+                + cnt.getSaldo());
 
 
 

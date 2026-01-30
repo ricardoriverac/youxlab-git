@@ -2,17 +2,21 @@ package Aula_89.Exercicio_Fixacao;
 
 public class Conta {
 
-    private final int numero = 2010;
+    private final int numero;
     private String titular;
-    private double saldo = 0;
+    private double saldo;
+
+    //Construtor
+
+
+    public Conta(double saldo, int numero) {
+        this.saldo = saldo;
+        this.numero = numero;
+    }
 
     //Saldo
     public double getSaldo() {
         return saldo;
-    }
-
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
     }
 
     //Titular
