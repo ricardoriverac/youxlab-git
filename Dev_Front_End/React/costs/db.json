@@ -1,17 +1,5 @@
 {
-  "projects": [
-    {
-      "id": "e105",
-      "name": "awertghj",
-      "budget": "76543212345",
-      "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
-      },
-      "cost": 0,
-      "services": []
-    }
-  ],
+  "projects": [],
   "categories": [
     {
       "id": "1",
