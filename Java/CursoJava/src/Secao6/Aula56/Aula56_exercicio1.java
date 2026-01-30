@@ -1,8 +1,8 @@
-package Secao6.Aula55;
+package Secao6.Aula56;
 
 import java.util.Scanner;
 
-public class Aula55_exercicio1 {
+public class Aula56_exercicio1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
