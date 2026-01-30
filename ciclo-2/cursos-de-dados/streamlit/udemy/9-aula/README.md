@@ -1,1 +1,1 @@
-Conteúdo do StreamLit: Expander, Divider, Form e Text_Input
+Conteúdo do Streamlit: Expander, Divider, Form e Text_Input

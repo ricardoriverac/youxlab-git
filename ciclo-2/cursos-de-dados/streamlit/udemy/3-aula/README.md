@@ -1,1 +1,1 @@
-Conteúdo do StreamLit: DataFrame e Tabelas
+Conteúdo do Streamlit: DataFrame e Tabelas

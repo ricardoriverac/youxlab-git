@@ -1,1 +1,1 @@
-Conteúdo do StreamLit: Slider e Deploy
+Conteúdo do Streamlit: Slider e Deploy

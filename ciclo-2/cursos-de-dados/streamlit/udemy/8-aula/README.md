@@ -1,1 +1,1 @@
-Conteúdo do StreamLit: MultiPage
+Conteúdo do Streamlit: MultiPage

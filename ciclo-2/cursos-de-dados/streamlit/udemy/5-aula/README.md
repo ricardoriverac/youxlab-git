@@ -1,1 +1,1 @@
-Conteúdo do StreamLit: Selectbox, Multiselect e FileUploader
+Conteúdo do Streamlit: Selectbox, Multiselect e FileUploader

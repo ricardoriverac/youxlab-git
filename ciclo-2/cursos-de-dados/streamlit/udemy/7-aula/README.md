@@ -1,1 +1,1 @@
-Conteúdo do StreamLit: Progress e Spinner
+Conteúdo do Streamlit: Progress e Spinner

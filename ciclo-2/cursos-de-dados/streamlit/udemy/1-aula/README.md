@@ -1,1 +1,1 @@
-Conteúdo do StreamLit: Textos
+Conteúdo do Streamlit: Textos

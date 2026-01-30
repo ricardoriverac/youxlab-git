@@ -1,1 +1,1 @@
-Conteúdo do StreamLit: Mídia
+Conteúdo do Streamlit: Mídia

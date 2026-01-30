@@ -1,1 +1,1 @@
-Conteúdo do StreamLit: Checkbox, Radio e Botões
+Conteúdo do Streamlit: Checkbox, Radio e Botões
