@@ -1,0 +1,63 @@
+body {
+  padding: 50px;
+  padding-bottom: 500px;
+  background-color: #666;
+}
+h1 {
+  color: #222;
+  text-shadow:
+    1px 1px 0 #444,
+    2px 2px 0 #444,
+    3px 3px 0 #444;
+}
+p {
+  background-color: #555;
+  padding: 10px;
+  border: 3px;
+  border-style: inset;
+  border-color: #888;
+}
+#ps:hover {
+  color: #00f;
+  transform: scale(2.8);
+}
+#xb:hover {
+  color: #0f0;
+  transform: scale(2.8);
+}
+#st:hover {
+  color: #000074;
+  transform: scale(2.8);
+}
+.ps,
+.xb,
+.st{
+  padding: 3%;
+}
+li {
+  list-style: none;
+  background-color: #555;
+  border-radius: 3px;
+  border: 1px solid #500000;
+}
+button {
+  font-size: large;
+  padding: 8px;
+  color: #889;
+  background-color: #444;
+  border: 4px outset #333;
+  border-radius: 15px;
+  cursor: pointer;
+}
+input {
+  font-size: large;
+  padding: 6px;
+  margin-bottom: 5px;
+  color: #889;
+  background-color: #444;
+  border: 4px;
+  border-color: #333;
+  border-style: inset;
+  border-radius: 15px;
+  cursor: pointer;
+}

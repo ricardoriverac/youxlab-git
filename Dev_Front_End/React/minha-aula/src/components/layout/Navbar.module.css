@@ -1,0 +1,20 @@
+.list {
+  display: flex;
+  list-style: none;
+}
+
+.item {
+  margin-right: 1em;
+  border: 3px;
+  border-style: outset;
+  border-color: #888;
+}
+
+.link {
+  font-size: larger;
+  color: #740000;
+}
+
+.link:active{
+    color: #d10000;
+}

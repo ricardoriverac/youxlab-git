@@ -1,0 +1,14 @@
+.gameList{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gameList li {
+    margin: 0 0em;
+}
+
+.gameList svg {
+    font-size: 1.5em;
+    cursor: pointer;
+}

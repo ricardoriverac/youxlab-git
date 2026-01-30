@@ -1,0 +1,67 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  background-color: #806740b9;
+}
+#titulo {
+  text-align: center;
+}
+.quadrado {
+  background-color: #cb9b53 !important;
+  height: 90px;
+  width: 90px;
+  display: flex;
+  border: 2px solid #511;
+  cursor: pointer;
+}
+#linha1 {
+  align-items: center;
+  margin-top: 200px;
+  margin-left: 497px;
+  display: flex;
+}
+#linha2 {
+  margin-left: 497px;
+  align-items: center;
+  display: flex;
+}
+#linha3 {
+  margin-left: 497px;
+  align-items: center;
+  display: flex;
+}
+.selecionavel:hover {
+  background-color: #946d32 !important;
+  border: 2px solid rgb(147, 7, 7);
+}
+#jogadores {
+}
+#jogadorX {
+  background-color: #fff;
+  margin: 20px;
+  margin-left: 427px;
+}
+#jogadorO {
+  background-color: #fff;
+  margin: 20px;
+}
+#btnJogar {
+  background-color: #131c2c;
+  color: #fff;
+  border-radius: 10px;
+  height: 40px;
+  width: 70px;
+  margin-left: 594px;
+}
+#btnNJogar {
+  background-color: #131c2c;
+  color: #fff;
+  border-radius: 10px;
+  height: 40px;
+  width: 70px;
+  margin-left: 594px;
+}
+.naoSelecionavel {
+  background-color: #aaa;
+  border: 2px solid #fff;
+}

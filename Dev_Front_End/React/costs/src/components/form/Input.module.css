@@ -21,6 +21,13 @@
   margin: 0;
 }
 
+.formControl input:-webkit-autofill,
+.formControl input:-webkit-autofill:hover,
+.formControl input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset;
+  -webkit-text-fill-color: #000000;
+}
+
 .formControl input::placeholder {
   color: #7b7b7b;
 }

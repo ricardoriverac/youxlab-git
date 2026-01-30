@@ -1,0 +1,30 @@
+/* geral */
+* {
+    color: #aaa
+}
+
+body {
+    background-image: url("../img/fundo-preto-de-grade-digital-abstrata_53876-97647.jpg");
+    background-size: cover;
+}
+
+/* título e descrição */
+header {
+    text-align: center;
+}
+
+/* cardscapa,nome e genero */
+
+
+/* sinopse */
+
+
+/* form indique um filme */
+
+
+/* suporte mobile */
+@media (max-width:450px) {
+
+
+
+}

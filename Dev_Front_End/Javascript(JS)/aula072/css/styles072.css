@@ -1,0 +1,83 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  box-sizing: border-box;
+  font-size: large;
+}
+.calc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #eee;
+  border: 3px solid #bbb;
+  width: 230px;
+  border-radius: 10px;
+}
+
+/* TITULO */
+#div_nome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#div_teclas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  flex-wrap: wrap;
+  border: 1px solid #f00;
+}
+.tecla {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #aaa;
+  border: 3px solid #888;
+  border-radius: 10px;
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  margin: 2px;
+}
+.op,
+.res {
+  background-color: #907456 !important;
+  border-color: #4a1300 !important;
+}
+.ON {
+  background-color: #c12626 !important;
+  border-color: #ff4000 !important;
+}
+.tecla:hover {
+  border-color: #4a1300 !important;
+}
+.op:hover {
+  border-color: #888 !important;
+}
+.ON:hover{
+  color: #fff;
+  background-color: #ff4000 !important;
+  border-color: #c12626 !important;
+}
+
+/* DISPLAY */
+
+#div_display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #f00;
+  width: 220px;
+}
+#display {
+  width: 220px;
+  background-color: #8a8;
+  text-align: right;
+  padding: 5px;
+  font-family: monospace;
+  font-size: larger;
+}
