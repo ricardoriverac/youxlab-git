@@ -5,10 +5,12 @@ public class Pessoa {
     private String nome;
     private int idade;
 
+    // Retorna o valor
     public String getName() {
         return nome;
     }
 
+    // Modifica o valor
     public void setName(String name) {
         this.nome = name;
     }
@@ -21,8 +23,6 @@ public class Pessoa {
         if (idade < 0) {
             System.out.println("Idade inválida!");
         }
-        else {
-            this.idade = idade;
-        }
+        else this.idade = idade;
     }
 }

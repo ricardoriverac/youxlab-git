@@ -7,8 +7,10 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
         Pessoa pss = new Pessoa();
+
         int valor;
         valor = sc.nextInt();
+
         pss.setIdade(valor);
         System.out.println("Digite a sua idade: " + pss.getIdade());
     }
