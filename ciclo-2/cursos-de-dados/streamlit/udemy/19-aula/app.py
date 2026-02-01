@@ -1,11 +1,16 @@
 import streamlit as st
-import pandas as pd
+import plotly.express as px
 
+df = px.data.gapminder().query("country == 'Canada'")
 
-df = pd.read_csv("dados_validos.csv")
+st.title('Gráficos com o Plotly')
 
-st.set_page_config(page_title="Dashboard de HR", page_icon=":bar_chart:", layout="wide")
+fig1 = px.line(df, x='year', y='gdpPercap', title='PIB por Pessoa por Ano no Canadá', color_discrete_sequence=['red'], markers=True)
+fig1.update_layout(xaxis_title='Ano', yaxis_title='PIB', font_color='red', font_family='Arial', title_font_family='Times New Roman', title_font_size=20)
+st.plotly_chart(fig1)
 
-st.title("Paineis de recursos Humanos")
+df2 = px.data.gapminder()
 
-idade = 
+fig2 = px.line(df2, x='year', y='gdpPercap',title="PIB por Pessoa por Ano no Mundo", facet_col='continent', line_group='country', color='country')
+
+st.plotly_chart(fig2)
