@@ -22,7 +22,7 @@ class LivroRepositoryTest {
     AutorRepository autorRepository;
 
     @Test
-    void salvarTest(){
+    void salvarTest() {
         Livro livro = new Livro();
         livro.setIsbn("90887-84874");
         livro.setPreco(BigDecimal.valueOf(100));
@@ -30,7 +30,7 @@ class LivroRepositoryTest {
         livro.setTitulo("Outro Livro");
         livro.setData_publicacao(LocalDate.of(1980, 1, 2));
 
-         Autor autor = autorRepository.findById(UUID.fromString("a339b8e0-c5b2-4102-9d73-b60dcc7482e2")).orElse(null);
+        Autor autor = autorRepository.findById(UUID.fromString("a339b8e0-c5b2-4102-9d73-b60dcc7482e2")).orElse(null);
 
         livro.setAutor(new Autor());
 
@@ -38,7 +38,7 @@ class LivroRepositoryTest {
     }
 
     @Test
-    void salvarAutorELivroTest(){
+    void salvarAutorELivroTest() {
         Livro livro = new Livro();
         livro.setIsbn("90887-84874");
         livro.setPreco(BigDecimal.valueOf(100));
@@ -60,7 +60,7 @@ class LivroRepositoryTest {
     }
 
     @Test
-    void salvarCascadeTest(){
+    void salvarCascadeTest() {
         Livro livro = new Livro();
         livro.setIsbn("90887-84874");
         livro.setPreco(BigDecimal.valueOf(100));
@@ -78,4 +78,29 @@ class LivroRepositoryTest {
         repository.save(livro);
     }
 
+    @Test
+    void atualizarAutorDoLivro()
+    {
+        var livroParaAtualizar = repository.findById(UUID.fromString("5d81c614-b452-4cff-8ced-1052d87f2809")).orElse(null);
+
+        UUID idAutor = UUID.fromString("4fab456f-61d9-4039-94bd-8e402aab97dc");
+        Autor joão = autorRepository.findById(idAutor).orElse(null);
+
+        livroParaAtualizar.setAutor(joão);
+
+        repository.save(livroParaAtualizar);
+
+    }
+
+    @Test
+    void deletar(){
+        UUID id = UUID.fromString("4fab456f-61d9-4039-94bd-8e402aab97dc");
+        repository.deleteById(id);
+    }
+
+    @Test
+    void deletarCascade(){
+        UUID id = UUID.fromString("0358a37b-c921-4932-af62-55d41c35470f");
+        repository.deleteById(id);
+    }
 }
