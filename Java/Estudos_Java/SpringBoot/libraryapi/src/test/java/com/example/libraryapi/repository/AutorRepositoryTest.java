@@ -97,7 +97,7 @@ public class AutorRepositoryTest {
         livro2.setIsbn("99999-84874");
         livro2.setPreco(BigDecimal.valueOf(650));
         livro2.setGenero(GeneroLivro.MISTERIO);
-        livro2.setTitulo("O roubo da casa assombrada 2");
+        livro2.setTitulo("O roubo da casa assombrada");
         livro2.setDataPublicacao(LocalDate.of(2000, 1, 2));
         livro2.setAutor(autor);
 
