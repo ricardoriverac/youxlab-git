@@ -1,6 +1,41 @@
 {
   "projects": [
-    
+    {
+      "id": "eef9",
+      "name": "projeto",
+      "budget": "6587454",
+      "cost": 0,
+      "services": []
+    },
+    {
+      "id": "4b33",
+      "name": "teste445",
+      "budget": "58545645",
+      "cost": 0,
+      "services": []
+    },
+    {
+      "id": "f4d9",
+      "name": "projeto123",
+      "budget": "90000",
+      "category": {
+        "id": "3",
+        "name": "Design"
+      },
+      "cost": 0,
+      "services": []
+    },
+    {
+      "id": "f85c",
+      "name": "projeto",
+      "budget": "30000",
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      },
+      "cost": 0,
+      "services": []
+    }
   ],
   "categories": [
     {
