@@ -23,6 +23,6 @@ public class aula61_exercicio4 {
             }
         }
 
-
+       sc.close();
     }
 }
