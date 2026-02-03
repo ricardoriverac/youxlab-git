@@ -1,7 +1,0 @@
-package Vetores.Exercicio_Fixacao;
-
-public class Main {
-    public static void main(String[] args) {
-
-    }
-}

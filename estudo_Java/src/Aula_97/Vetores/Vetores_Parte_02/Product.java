@@ -1,4 +1,4 @@
-package Vetores.Vetores_Parte_02;
+package Aula_97.Vetores.Vetores_Parte_02;
 
 public class Product {
 
