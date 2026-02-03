@@ -30,7 +30,7 @@ class LivroRepositoryTest {
         livro.setPreco(BigDecimal.valueOf(100));
         livro.setGenero(GeneroLivro.FICCAO);
         livro.setTitulo("Outro Livro");
-        livro.setData_publicacao(LocalDate.of(1980, 1, 2));
+        livro.setDataPublicacao(LocalDate.of(1980, 1, 2));
 
         Autor autor = autorRepository.findById(UUID.fromString("a339b8e0-c5b2-4102-9d73-b60dcc7482e2")).orElse(null);
 
@@ -46,7 +46,7 @@ class LivroRepositoryTest {
         livro.setPreco(BigDecimal.valueOf(100));
         livro.setGenero(GeneroLivro.FICCAO);
         livro.setTitulo("Terceiro Livro");
-        livro.setData_publicacao(LocalDate.of(1980, 1, 2));
+        livro.setDataPublicacao(LocalDate.of(1980, 1, 2));
 
         Autor autor = new Autor();
         autor.setNome("José");
@@ -68,7 +68,7 @@ class LivroRepositoryTest {
         livro.setPreco(BigDecimal.valueOf(100));
         livro.setGenero(GeneroLivro.FICCAO);
         livro.setTitulo("Outro Livro");
-        livro.setData_publicacao(LocalDate.of(1980, 1, 2));
+        livro.setDataPublicacao(LocalDate.of(1980, 1, 2));
 
         Autor autor = new Autor();
         autor.setNome("João");
@@ -138,4 +138,38 @@ class LivroRepositoryTest {
         lista.forEach(System.out::println);
 
     }
+
+    @Test
+    void listarLivrosComQueryJPQL(){
+        var resultado = repository.listarTodosOrdenadoPorTituloAndPreco();
+        resultado.forEach(System.out::println);
+    }
+
+    @Test
+    void listarAutoresDosLivros(){
+        var resultado = repository.listarAutoresDosLivros();
+        resultado.forEach(System.out::println);
+    }
+
+    @Test
+    void listarTitulosNaoRepetidosDosLivros(){
+        var resultado = repository.listarNomesDIferentesLivros();
+        resultado.forEach(System.out::println);
+    }
+
+    @Test
+    void listarGenerosDeLivrosAutoresBrasileiros(){
+        var resultado = repository.listarGenerosAutoresBrasileiros();
+        resultado.forEach(System.out::println);
+    }
+
+    @Test
+    void listarPorGeneroQueryParamTest(){
+            var resultado = repository.findByGenero(GeneroLivro.MISTERIO, "preco");
+            resultado.forEach(System.out::println);
+    }
+
+
+
+
 }
