@@ -3,6 +3,7 @@ package com.example.libraryapi.repository;
 import com.example.libraryapi.model.Autor;
 import com.example.libraryapi.model.GeneroLivro;
 import com.example.libraryapi.model.Livro;
+import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -107,7 +108,19 @@ public class AutorRepositoryTest {
         repository.save(autor);
 
         //livroRepository.saveAll(autor.getLivros());
+    }
 
+    @Test
+    void listarLivrosAutor(){
+        var id = UUID.fromString("39754f90-5a3e-4c20-85d1-ee6e7f7fd90a");
+        var autor = repository.findById(id).get();
+
+        // buscar os livros do autor
+        List<Livro> livroLista = livroRepository.findByAutor(autor);
+        autor.setLivros(livroLista);
+
+
+        autor.getLivros().forEach(System.out::println);
     }
 
 }
