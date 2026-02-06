@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.UUID;
 
 @Service
 public class TransacaoService {
@@ -19,6 +20,18 @@ public class TransacaoService {
 
     @Autowired
     private LivroRepository livroRepository;
+
+    @Transactional
+    public void salvarLivroComFoto(){
+
+    }
+
+    @Transactional
+    public void atualizacaoSemAtualizar(){
+        var livro = livroRepository.findById(UUID.fromString("bfccbc0b-4e39-43a4-8d95-586f33c2021d")).orElse(null);
+        livro.setDataPublicacao(LocalDate.of(2024, 6, 1));
+    }
+
 
     @Transactional
     public void executar(){
@@ -39,10 +52,14 @@ public class TransacaoService {
         livro.setIsbn("90887-8474");
         livro.setPreco(BigDecimal.valueOf(100));
         livro.setGenero(GeneroLivro.FICCAO);
-        livro.setTitulo(GeneroLivro.FICCAO);
+        livro.setTitulo("Teste livro do francisco");
         livro.setDataPublicacao(LocalDate.of(1980, 1, 2));
 
         livro.setAutor(autor);
+
+
+        
     }
+
 
 }
