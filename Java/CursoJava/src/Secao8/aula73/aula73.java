@@ -1,11 +1,11 @@
-package Secao8.aula71;
+package Secao8.aula73;
 
 import Secao8.aula72.entities.Triangle;
 
 import java.util.Locale;
 import java.util.Scanner;
 
-public class aula71 {
+public class aula73 {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
@@ -38,3 +38,5 @@ public class aula71 {
         sc.close();
     }
 }
+
+
