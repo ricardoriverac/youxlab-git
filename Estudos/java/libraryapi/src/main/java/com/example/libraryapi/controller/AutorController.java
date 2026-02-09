@@ -1,9 +1,9 @@
 package com.example.libraryapi.controller;
 
+import com.example.libraryapi.controller.dto.AutorDTO;
+import com.example.libraryapi.controller.dto.ErroResposta;
 import com.example.libraryapi.model.Autor;
 import com.example.libraryapi.service.AutorService;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -30,7 +30,9 @@ public class AutorController {
         service.salvar(autorEntidade);
 
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(autorEntidade.getId()).toUri();
-        return ResponseEntity.created(location).build();
+
+
+//        return ResponseEntity.created(location).build();
     }
 
     @GetMapping("{id}")

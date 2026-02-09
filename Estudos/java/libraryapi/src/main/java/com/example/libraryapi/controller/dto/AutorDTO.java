@@ -1,4 +1,4 @@
-package com.example.libraryapi.controller;
+package com.example.libraryapi.controller.dto;
 
 
 import com.example.libraryapi.model.Autor;
