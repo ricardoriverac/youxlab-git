@@ -11,6 +11,7 @@ public class TransacoesTest {
     @Autowired
     TransacaoService transacaoService;
 
+
     @Test
     @Transactional
     void transacaoSimples(){
