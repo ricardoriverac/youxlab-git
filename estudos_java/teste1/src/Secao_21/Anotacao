@@ -1,0 +1,14 @@
+---- CLASSES PRINCIPAIS DE UMA JPA ----
+
+EntityManager -> Objeto que encapsula uma conexão com a base de dados
+E serve para efetuar operação de acesso a dados(inserir, deletar, etc) em entidades (clientes, produtos, pedidos, etc) por ele monitoradas em um mesmo contexto de persistência.
+
+Escopo: tipicamente mantem-se uma instância única de EntityManager para cada thread do sistema
+
+EntityManagerFactory -> Objeto usado para instanciar objetos EntityManager
+Tipicamente mantem-se uma instância única de EntityManagerFactory para toda aplicação
+
+O que é o maven?
+O Apache Maven é uma ferramenta essencial de automação de build e gerenciamento de dependências para projetos Java.
+Ele organiza a estrutura do projeto, facilita a compilação, testes e empacotamento (.jar/.war) utilizando um arquivo XML central, o pom.xml.
+O Maven baixa automaticamente bibliotecas de um repositório central e as gerencia localmente .
