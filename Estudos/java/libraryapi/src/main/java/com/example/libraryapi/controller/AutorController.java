@@ -2,6 +2,7 @@ package com.example.libraryapi.controller;
 
 import com.example.libraryapi.controller.dto.AutorDTO;
 import com.example.libraryapi.controller.dto.ErroResposta;
+import com.example.libraryapi.exceptions.RegistroDuplicadoException;
 import com.example.libraryapi.model.Autor;
 import com.example.libraryapi.service.AutorService;
 import org.springframework.http.ResponseEntity;
@@ -26,14 +27,22 @@ public class AutorController {
 
     @PostMapping
     public ResponseEntity<Void> salvar(@RequestBody AutorDTO autor) {
-        Autor autorEntidade = autor.mapearParaAutor();
-        service.salvar(autorEntidade);
-
-        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(autorEntidade.getId()).toUri();
+        try {
 
 
-//        return ResponseEntity.created(location).build();
+            Autor autorEntidade = autor.mapearParaAutor();
+            service.salvar(autorEntidade);
+
+            URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(autorEntidade.getId()).toUri();
+
+
+            return ResponseEntity.created(location).build();
+
+        } catch (RegistroDuplicadoException e) {
+            throw;
+        }
     }
+
 
     @GetMapping("{id}")
     public ResponseEntity<AutorDTO> obterDetalhes(@PathVariable("id") String id) {
