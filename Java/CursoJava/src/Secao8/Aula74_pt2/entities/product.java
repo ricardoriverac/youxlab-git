@@ -1,4 +1,4 @@
-package Secao8.aula74.entities;
+package Secao8.Aula74_pt2.entities;
 
 public class product {
 
@@ -6,7 +6,7 @@ public class product {
     public double price;
     public int quantity;
 
-    public double totalValueInStock() {
+    public double totalValuesInStock() {
         return price * quantity;
     }
     public void addProducts(int quantity) {
@@ -15,5 +15,5 @@ public class product {
     public void removeProducts(int quantity) {
         this.quantity -= quantity;
     }
-}
 
+}

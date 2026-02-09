@@ -1,4 +1,4 @@
-package Secao8.aula74.application;
+package Secao8.Aula74_pt1.application;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -8,9 +8,12 @@ public class program {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        Product product = new Product();
 
 
-        sc.close();
+
+
+
+
+    sc.close();
     }
 }
