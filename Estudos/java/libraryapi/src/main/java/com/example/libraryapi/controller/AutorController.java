@@ -26,7 +26,7 @@ public class AutorController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> salvar(@RequestBody AutorDTO autor) {
+    public ResponseEntity<Object> salvar(@RequestBody AutorDTO autor) {
         try {
 
 
@@ -39,7 +39,8 @@ public class AutorController {
             return ResponseEntity.created(location).build();
 
         } catch (RegistroDuplicadoException e) {
-            throw;
+            var erroDTO = ErroResposta.conflito(e.getMessage());
+            return ResponseEntity.status(erroDTO.status()).body(erroDTO);
         }
     }
 

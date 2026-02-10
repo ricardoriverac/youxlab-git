@@ -21,7 +21,7 @@ public class AutorService {
     }
 
     public Autor salvar(Autor autor){
-        validator.validar(autor)
+        validator.validar(autor);
         return repository.save(autor);
     }
 

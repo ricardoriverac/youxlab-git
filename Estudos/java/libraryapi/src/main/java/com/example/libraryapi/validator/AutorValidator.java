@@ -17,7 +17,7 @@ public class AutorValidator {
 
     public void validar(Autor autor){
         if(existeAutorCadastrado(autor)){
-            throw new RegistroDuplicadoException("Autor já cadastrado!")
+            throw new RegistroDuplicadoException("Autor já cadastrado!");
         }
     }
 
