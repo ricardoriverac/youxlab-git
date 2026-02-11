@@ -15,23 +15,12 @@
       "services": []
     },
     {
-      "id": "f4d9",
-      "name": "projeto123",
-      "budget": "90000",
+      "id": "e555",
+      "name": "Instituto Youx",
+      "budget": "300000",
       "category": {
-        "id": "3",
-        "name": "Design"
-      },
-      "cost": 0,
-      "services": []
-    },
-    {
-      "id": "f85c",
-      "name": "projeto",
-      "budget": "30000",
-      "category": {
-        "id": "1",
-        "name": "Infra"
+        "id": "2",
+        "name": "Desenvolvimento"
       },
       "cost": 0,
       "services": []
