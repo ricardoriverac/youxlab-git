@@ -26,11 +26,13 @@ class AutorRepositoryTest {
 
         var autorSalvo = repository.save(autor);
         System.out.println("Autor Salvo: " + autorSalvo);
+
+
     }
 
     @Test
     public void atualizarTest() {
-        var id = UUID.fromString("2449f4e4-eela-4a71-8aa3-e9d46306fe8a");
+        var id = UUID.fromString("0d3dbd7c-d544-4a5e-9d78-13fc986c6bb6");
 
         Optional<Autor> possivelAutor = repository.findById(id);
 
@@ -56,15 +58,16 @@ class AutorRepositoryTest {
     public void countTest(){
         System.out.println("Contagem de autores: " + repository.count());
     }
+
     @Test
     public void deletePorIdTest(){
-        var id = UUID.fromString ("2449f484-eela-4a71-8aa3-69646386fe8a");
+        var id = UUID.fromString ("669b3dee-f321-423f-8ada-9d95015d379d");
         repository.deleteById(id);
     }
 
     @Test
     public void deleteTest() {
-        var id = UUID.fromString("abc082bf-1d23-4767-b3d9-9f322856ca6a");
+        var id = UUID.fromString("d20e7020-7d29-441e-a226-5737375e8844");
         var maria = repository.findById(id).get();
         repository.deleteById(id);
         repository.delete(maria);
