@@ -16,7 +16,7 @@ public record AutorDTO(UUID id, @NotBlank(message = "campo obrigatório") @Size(
         autor.setNome(this.nome);
         autor.setDataNascimento(this.dataNascimento);
         autor.setNacionalidade(this.nacionalidade);
-        //return autor;
+        return autor;
 
     }
 }
