@@ -98,7 +98,7 @@ public class AutorController {
 
         var autor = autorOptional.get();
         autor.setNome(dto.nome());
-        autor.setNacionalidade(dto.Nacionalidade());
+        autor.setNacionalidade(dto.nacionalidade());
         autor.setDataNascimento(dto.dataNascimento());
 
         service.atualizar(autor);
