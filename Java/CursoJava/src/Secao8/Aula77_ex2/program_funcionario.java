@@ -24,8 +24,6 @@ public class program_funcionario {
 
         System.out.println("Update data: "+ Funcionario);
 
-
-
         sc.close();
     }
 
