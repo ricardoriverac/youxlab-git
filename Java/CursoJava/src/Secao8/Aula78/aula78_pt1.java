@@ -1,9 +1,13 @@
 package Secao8.Aula78;
 
+import Secao8.Aula78.util.calculator;
+
 import java.util.Locale;
 import java.util.Scanner;
 
-public class aula78_ex1 {
+// TODO EXEMPLO QUE ESTA SENDO PRATICADO NA AULA 78 ESTAVA SENDO APLICADO NESSE PROGRAMA//
+
+public class aula78_pt1 {
     public static final double PI = 3.14159;
 
     public static void main(String[] args) {
@@ -13,19 +17,15 @@ public class aula78_ex1 {
         System.out.print("Enter radius: ");
         double radius = sc.nextDouble();
 
-        double c = circumference(radius);
+        double c = calculator.circumference(radius);
 
-        double v = volume(radius);
+        double v = calculator.volume(radius);
 
         System.out.printf("Circumference: %.2f\n", c);
         System.out.printf("Volume: %.2f\n", v);
-        System.out.printf("PI value: %.2f\n", PI);
+        System.out.printf("PI value: %.2f\n", calculator.PI);
         sc.close();
     }
-    public static double circumference(double radius) {
-        return 2.0 * PI * radius;
+
     }
-    public static double volume(double radius) {
-        return 4.0 * PI * radius * radius * radius / 3.0;
-    }
-}
+
