@@ -8,10 +8,12 @@ public class retangle {
         return width * height;
     }
     public double totalPerimeter() {
+
         return 2 * (width + height);
     }
     public double totalDiagonal() {
-         return Math.sqrt(Math.pow(width, 2) + Math.pow(height, 2));
+
+        return Math.sqrt(Math.pow(width, 2) + Math.pow(height, 2));
     }
 
     public String toString() {
