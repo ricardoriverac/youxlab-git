@@ -1,6 +1,7 @@
 package com.TesteLucas.testeCurso.entities;
 
 
+import com.TesteLucas.testeCurso.entities.enums.OrderStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -22,14 +23,17 @@ public class Order  implements Serializable {
     @ManyToOne
     @JoinColumn(name = "client_id")
     private User client;
+    private Integer orderStatus;
+
     public Order(){
 
     }
 
-    public Order(Long id, Instant moment, User client){
+    public Order(Long id, Instant moment, User client, OrderStatus orderStatus){
         this.id = id;
         this.moment = moment;
         this.client = client;
+        setOrderStatus(orderStatus);
     }
 
     public Long getId() {
@@ -48,6 +52,30 @@ public class Order  implements Serializable {
         this.moment = moment;
     }
 
+
+
+    public static long getSerialVersionId() {
+        return serialVersionId;
+    }
+
+    public OrderStatus getOrderStatus() throws IllegalAccessException {
+        return OrderStatus.valueOf(orderStatus);
+    }
+
+    public void setOrderStatus(OrderStatus orderStatus) {
+        if (orderStatus != null) {
+            this.orderStatus = orderStatus.getCode();
+
+        }
+    }
+
+    public User getClient() {
+        return client;
+    }
+
+    public void setClient(User client) {
+        this.client = client;
+    }
     @Override
     public int hashCode() {
         return super.hashCode();
@@ -58,15 +86,4 @@ public class Order  implements Serializable {
         return super.equals(obj);
     }
 
-    public static long getSerialVersionId() {
-        return serialVersionId;
-    }
-
-    public User getClient() {
-        return client;
-    }
-
-    public void setClient(User client) {
-        this.client = client;
-    }
 }
