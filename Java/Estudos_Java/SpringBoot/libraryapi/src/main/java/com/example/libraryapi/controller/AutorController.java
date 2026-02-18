@@ -1,6 +1,7 @@
 package com.example.libraryapi.controller;
 
 import com.example.libraryapi.controller.dto.AutorDTO;
+import com.example.libraryapi.controller.dto.ErroResposta;
 import com.example.libraryapi.model.Autor;
 import com.example.libraryapi.service.AutorService;
 import org.springframework.http.ResponseEntity;
@@ -33,8 +34,7 @@ public class AutorController {
         // http://localhost:8080/autores/7d9a00e9-3ac7-49be-a3e4-3a15419ce8a5
         URI location = ServletUriComponentsBuilder
                 .fromCurrentRequest()
-                .path("/" +
-                        "{id}")
+                .path("{id}")
                 .buildAndExpand(autorEntidade.getId())
                 .toUri();
 
