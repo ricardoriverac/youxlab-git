@@ -8,6 +8,8 @@ import com.example.libraryapi.validator.AutorValidator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,6 +24,9 @@ public class AutorService {
     private final AutorValidator validator;
     private final LivroRepository livroRepository;
 
+    public Page<Autor> listar(Pageable pageable){
+        return repository.findAll(pageable);
+    }
 
 
     public Autor salvar(Autor autor){

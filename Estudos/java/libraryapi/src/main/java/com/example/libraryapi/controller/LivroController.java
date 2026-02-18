@@ -3,14 +3,14 @@ package com.example.libraryapi.controller;
 import com.example.libraryapi.controller.dto.CadastroLivroDTO;
 import com.example.libraryapi.controller.dto.ErroResposta;
 import com.example.libraryapi.exceptions.RegistroDuplicadoException;
+import com.example.libraryapi.model.Livro;
 import com.example.libraryapi.service.LivroService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("livros")
@@ -27,5 +27,9 @@ public class LivroController {
             var erroDTO = ErroResposta.conflito(e.getMessage());
             return ResponseEntity.status(erroDTO.status()).body(erroDTO);
         }
+    }
+    @GetMapping
+    public Page<Livro> listar(@RequestParam int page, @RequestParam int size){
+        return service.listar(page, size);
     }
 }
