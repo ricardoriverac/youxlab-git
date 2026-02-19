@@ -27,6 +27,9 @@ public class Order  implements Serializable {
     @JoinColumn(name = "client_id")
     private User client;
 
+    @OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
+    private Payment payment;
+
     @OneToMany(mappedBy = "id.order")
     private Set<OrderItem> items = new HashSet<>();
 
@@ -60,7 +63,17 @@ public class Order  implements Serializable {
         this.moment = moment;
     }
 
+    public Payment getPayment() {
+        return payment;
+    }
 
+    public void setPayment(Payment payment) {
+        this.payment = payment;
+    }
+
+    public void setItems(Set<OrderItem> items) {
+        this.items = items;
+    }
 
     public static long getSerialVersionId() {
         return serialVersionId;
@@ -88,7 +101,13 @@ public class Order  implements Serializable {
     public Set<OrderItem> getItems() {
         return items;
     }
-
+    public Double getTotal(){
+        double sum = 0.0;
+        for (OrderItem x : items){
+            sum+= x.getSubTotal();
+        }
+        return sum;
+    }
 
     @Override
     public boolean equals(Object o) {

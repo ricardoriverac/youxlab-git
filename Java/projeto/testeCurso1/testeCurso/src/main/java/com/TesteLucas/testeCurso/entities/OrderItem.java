@@ -55,6 +55,10 @@ public class OrderItem implements Serializable {
         this.price = price;
     }
 
+    public Double getSubTotal(){
+        return price*quantity;
+    }
+
     public Integer getQuantity() {
         return quantity;
     }
@@ -62,6 +66,8 @@ public class OrderItem implements Serializable {
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
+
+
 
     @Override
     public boolean equals(Object o) {
