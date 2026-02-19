@@ -35,10 +35,19 @@ public class Aula_01 {
 
         System.out.println(d05);
         System.out.println(d06);
+        System.out.println(d07);
 
         //Data e Hora formatado
         LocalDateTime d08 = LocalDateTime.parse("04/01/2009 22:34", fmt1);
         System.out.println(d08);
+
+        //Istancia ano, mes e dia separadamente
+        LocalDate d09 = LocalDate.of(2022, 7, 20);
+        System.out.println(d09);
+
+        //Istancia Ano, mes e dia separadamente
+        LocalDateTime d10 = LocalDateTime.of(2022, 7, 20, 1, 30);
+        System.out.println(d10);
 
     }
 }
