@@ -7,6 +7,7 @@ import org.hibernate.service.JavaServiceLoadable;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name = "tb_user")
@@ -31,6 +32,7 @@ public class User implements Serializable {
 
     }
     public User(Long id, String name, String email, String phone, String password) {
+        super();
         this.id = id;
         this.name = name;
         this.email = email;
@@ -79,12 +81,14 @@ public class User implements Serializable {
     }
 
     @Override
-    public int hashCode() {
-        return super.hashCode();
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(id, user.id);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
+    public int hashCode() {
+        return Objects.hashCode(id);
     }
 }
