@@ -9,7 +9,7 @@ public class ClientController {
 
 //        @PostMapping
 //        @ResponseStatus(HttpStatus.CREATED)
-//        @PreAuthorize("hasRole('GERENTE')");
+//         @PreAuthorize("hasRole('GERENTE')");
 //        public void salvar (@RequestBody Client client){
 //            service.salvar (client);
 //        }
