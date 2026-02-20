@@ -16,40 +16,70 @@ import java.util.UUID;
 
 public interface LivroRepository extends JpaRepository<Livro, UUID> {
 
+    // Query method
+    // select * from livro where id_autor = id
     List<Livro> findByAutor(Autor autor);
 
+    // select * from livro where titulo = titulo
     List<Livro> findByTitulo(String titulo);
 
+    // select * from livro where isbn = isbn
     List<Livro> findByIsbn(String isbn);
 
+    // select * from livro where titulo = ? and preco = ?
     List<Livro> findByTituloAndPreco(String titulo, BigDecimal preco);
 
-    List<Livro> findByTituloOrIsbn(String titulo, String isbn);
+    // select * from livro where titulo = ? or isbn = ?
+    List<Livro> findByTituloOrIsbnOrderByTitulo(String titulo, String isbn);
 
-    List<Livro> findByTituloOrIsbnOrderby(String titulo, String isbn);
-
+    // select * from livro where data_publicacao between ? and ?
     List<Livro> findByDataPublicacaoBetween(LocalDate inicio, LocalDate fim);
 
-    @Query("select l from Livro as l order by l.titulo, l.preco ")
-    List<Livro> listarTodosOrdenadosPorTituloAndPreco();
+    // JPQL -> referencia as entidades e as propriedades da entidade
+    // select l.* from Livro as l order by l.titulo
+    @Query(" select l from Livro as l order by l.titulo, l.preco ")
+    List<Livro> listarTodosOrdenadoPorTituloAndPreco();
 
-    @Query("select a from Livro l join l.autor")
-    List<Autor> listarAutoresDosLivros();
+    //select a.*
+    //from livro l
+    //join autor as a on a.id = l.id_autor
+    @Query(" select a from Livro l join l.autor a ")
+    List<Autor> listarAutoresDosLivro();
 
-    @Query("select l from Livro l where l.genero  =:nomeDoParametro")
-    List<Livro> findByGenero(@Param("nomeDoParametro")GeneroLivro generoLivro);
+    // select distinct l.* from Livro l
+    @Query(" select distinct l.titulo from Livro l ")
+    List<String> listarNomesDiferentesLivros();
 
+
+    @Query("""
+        select l.genero
+        from Livro l 
+        join l.autor a
+        where a.nacionalidade = 'Brasileira'
+        order by l.genero  
+      """)
+    List<String> listarGenerosAutoresBrasileiros();
+
+
+
+    // named parameters -> parametros nomeados
+    @Query(" select l from Livro l where l.genero = :genero order by  :paramOrdenacao")
+    List<Livro> findByGenero(
+            @Param("genero") GeneroLivro generoLivro,
+            @Param("paramOrdenacao") String nomePropriedade
+    );
+
+    // positional parameters
+    @Query(" select l from Livro l where l.genero = ?1 order by ?2 ")
+    List<Livro> findByGeneroPositionalParammeters(GeneroLivro generoLivro, String nomePropriedade);
 
     @Modifying
     @Transactional
-    @Query("delete from Livro where genero = ?1 ")
-    void deleteByGenero(GeneroLivro generoLivro);
-
-
+    @Query(" delete from Livro where genero = ?1 ")
+    void deleteByGenero(GeneroLivro genero);
 
     @Modifying
     @Transactional
-    @Query("update Livro set dataPublicacao = ?1 ")
-    void uppdateDataPublicacao(LocalDate novaData);
-
+    @Query(" update Livro set dataPublicacao = ?1 ")
+    void updateDataPublicacao(LocalDate novaData);
 }

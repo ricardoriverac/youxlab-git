@@ -34,8 +34,8 @@ public class TransacoesTest {
 
         Autor autor = new Autor();
         autor.setNome("Joao");
-        autor.setNascionalidade("Brasileira");
-        autor.setData_nascimento(LocalDate.of(1951, 1, 31));
+        autor.setNacionalidade("Brasileira");
+        autor.setDataNascimento(LocalDate.of(1951, 1, 31));
 
         livro.setAutor(autorRepository.save(autor));
 

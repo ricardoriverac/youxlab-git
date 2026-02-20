@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.UUID;
 
 @SpringBootTest
@@ -21,20 +22,38 @@ class LivroRepositoryTest {
     @Autowired
     AutorRepository autorRepository;
 
-
     @Test
     void salvarTest(){
+        Livro livro = new Livro();
+        livro.setIsbn("90887-84874");
+        livro.setPreco(BigDecimal.valueOf(100));
+        livro.setGenero(GeneroLivro.CIENCIA);
+        livro.setTitulo("Ciencias");
+        livro.setDataPublicacao(LocalDate.of(1980, 1, 2));
 
+        Autor autor = autorRepository
+                .findById(UUID.fromString("0b5803fe-f44e-4bd7-b37a-fa0d06a7d43c"))
+                .orElse(null);
+
+        //livro.setAutor(autor);
+        repository.save(livro);
+    }
+
+    @Test
+    void salvarAutorELivroTest(){
         Livro livro = new Livro();
         livro.setIsbn("90887-84874");
         livro.setPreco(BigDecimal.valueOf(100));
         livro.setGenero(GeneroLivro.FICCAO);
-        livro.setTitulo("UFO");
-        livro.setDataPublicacao(LocalDate.of(1980, 1,2));
+        livro.setTitulo("Terceiro Livro");
+        livro.setDataPublicacao(LocalDate.of(1980, 1, 2));
 
-        Autor autor = autorRepository
-                .findById(UUID.fromString("6da6480f-a656-42b2-89fe-fd88c41be534"))
-                .orElse(null);
+        Autor autor = new Autor();
+        autor.setNome("José");
+        autor.setNacionalidade("Brasileira");
+        autor.setDataNascimento(LocalDate.of(1951, 1, 31));
+
+        autorRepository.save(autor);
 
         livro.setAutor(autor);
         repository.save(livro);
@@ -42,64 +61,99 @@ class LivroRepositoryTest {
 
     @Test
     void salvarCascadeTest(){
-
         Livro livro = new Livro();
         livro.setIsbn("90887-84874");
         livro.setPreco(BigDecimal.valueOf(100));
         livro.setGenero(GeneroLivro.FICCAO);
-        livro.setTitulo("UFO");
-        livro.setDataPublicacao(LocalDate.of(1980, 1,2));
+        livro.setTitulo("Outro Livro");
+        livro.setDataPublicacao(LocalDate.of(1980, 1, 2));
 
         Autor autor = new Autor();
-        autor.setNome("Joao");
-        autor.setNascionalidade("Brasileira");
-        autor.setData_nascimento(LocalDate.of(1951, 1, 31));
+        autor.setNome("João");
+        autor.setNacionalidade("Brasileira");
+        autor.setDataNascimento(LocalDate.of(1951, 1, 31));
 
-        livro.setAutor(autorRepository.save(autor));
+        livro.setAutor(autor);
         repository.save(livro);
     }
 
     @Test
-    void salvarAutorLivroTest(){
-        UUID id = UUID.fromString("c91d8f02-6b73-41ff-ac64-6b7ac84eebcc");
-        Livro livroParaAtualizar = repository.findById(id).orElse(null);
+    void atualizarAutorDoLivro(){
+        UUID id = UUID.fromString("c8cc05b8-2edd-4404-bf83-547715834276");
+        var livroParaAtualizar = repository.findById(id).orElse(null);
 
-        UUID idautor= UUID.fromString("6da6480f-a656-42b2-89fe-fd88c41be534");
-        Autor autor = autorRepository.findById(idautor).orElse(null);
+        UUID idAutor = UUID.fromString("0b5803fe-f44e-4bd7-b37a-fa0d06a7d43c");
+        Autor maria = autorRepository.findById(idAutor).orElse(null);
 
-        livroParaAtualizar.setAutor(autor);
+        livroParaAtualizar.setAutor(maria);
+
         repository.save(livroParaAtualizar);
-
     }
 
     @Test
-    void deletar(){
-        UUID id = UUID.fromString("0c54d8c0-b714-439c-96a9-fad537b74ad1");
-        repository.deleteById(id);
-
-
-
-    }
-
-
-    @Test
-    @Transactional
-    void buscarLivroTest(){
-        UUID id = UUID.fromString("5f679192-b79e-40db-a839-08788ec0c6f2");
-        Livro livro = repository.findById(id).orElse(null);
-        System.out.println("Livro: ");
-        System.out.println(livro.getTitulo());
-        System.out.println("Autor: ");
-        System.out.println(livro.getAutor().getNome());
+    void pesquisaPorTituloTest(){
+        List<Livro> lista = repository.findByTitulo("O roubo da casa assombrada");
+        lista.forEach(System.out::println);
     }
 
     @Test
-    void deletePorGenero(){
+    void pesquisaPorISBNest(){
+        List<Livro> lista = repository.findByIsbn("20847-84874");
+        lista.forEach(System.out::println);
+    }
+
+    @Test
+    void pesquisaPorTituloEPrecoTest(){
+        var preco = BigDecimal.valueOf(204.00);
+
+        var tituloPesquisa = "O roubo da casa assombrada";
+        List<Livro> lista = repository.findByTituloAndPreco(tituloPesquisa, preco);
+        lista.forEach(System.out::println);
+    }
+
+    @Test
+    void listarLivrosComQueryJPQL(){
+        var resultado = repository.listarTodosOrdenadoPorTituloAndPreco();
+        resultado.forEach(System.out::println);
+    }
+
+    @Test
+    void listarAutoresDosLivros(){
+        var resultado = repository.listarAutoresDosLivro();
+        resultado.forEach(System.out::println);
+    }
+
+    @Test
+    void listarTitulosNaoRepetidosDosLivros(){
+        var resultado = repository.listarNomesDiferentesLivros();
+        resultado.forEach(System.out::println);
+    }
+
+    @Test
+    void listarGeneroDeLivrosAutoresBrasileiros(){
+        var resultado = repository.listarGenerosAutoresBrasileiros();
+        resultado.forEach(System.out::println);
+    }
+
+    @Test
+    void listarPorGeneroQueryParamTest(){
+        var resultado = repository.findByGenero(GeneroLivro.MISTERIO, "dataPublicacao");
+        resultado.forEach(System.out::println);
+    }
+
+    @Test
+    void listarPorGeneroPositionalParamTest(){
+        var resultado = repository.findByGeneroPositionalParammeters(GeneroLivro.MISTERIO, "dataPublicacao");
+        resultado.forEach(System.out::println);
+    }
+
+    @Test
+    void deletePorGeneroTest(){
         repository.deleteByGenero(GeneroLivro.CIENCIA);
     }
 
     @Test
-    void updateDataPublicacapTest(){
-        repository.uppdateDataPublicacao(LocalDate.of(2000, 9,2));
+    void updateDataPublicacaoTest(){
+        repository.updateDataPublicacao(LocalDate.of(2000, 1, 1));
     }
 }

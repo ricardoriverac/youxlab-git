@@ -28,8 +28,8 @@ public class AutorRepositoryTest {
     public void salvarTest(){
         Autor autor = new Autor();
         autor.setNome("Maria");
-        autor.setNascionalidade("Brasileira");
-        autor.setData_nascimento(LocalDate.of(1951, 1, 31));
+        autor.setNacionalidade("Brasileira");
+        autor.setDataNascimento(LocalDate.of(1951, 1, 31));
 
         var autorSalvo = repository.save(autor);
         System.out.println("Autor salvo: " + autorSalvo);
@@ -45,7 +45,7 @@ public class AutorRepositoryTest {
            System.out.println("Dados do Autor: ");
            System.out.println(autorEncontrado);
 
-           autorEncontrado.setData_nascimento(LocalDate.of(1960, 1, 30));
+           autorEncontrado.setDataNascimento(LocalDate.of(1960, 1, 30));
 
            repository.save(autorEncontrado);
        }
@@ -81,8 +81,8 @@ public class AutorRepositoryTest {
     void salvarAutorComLivrosTest(){
         Autor autor = new Autor();
         autor.setNome("Antonio");
-        autor.setNascionalidade("Americana");
-        autor.setData_nascimento(LocalDate.of(1970, 2,  13));
+        autor.setNacionalidade("Americana");
+        autor.setDataNascimento(LocalDate.of(1970, 2,  13));
 
         Livro livro = new Livro();
         livro.setIsbn("93989-84874");
