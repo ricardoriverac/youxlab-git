@@ -1,0 +1,11 @@
+* {
+    padding: 2px;
+}
+
+td{
+    background-color: #eee;
+    padding: 1em 9em 1em 1em;
+    border: 1px #01521d;
+    border-style: ridge;
+    font-size: larger;
+}

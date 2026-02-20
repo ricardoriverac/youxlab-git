@@ -1,0 +1,26 @@
+.form {
+  display: flex; 
+  align-items: center;
+  margin-bottom: .5em;
+}
+
+.form input {
+  background-color: #eee;
+  border-radius: 5px;
+  font-size: larger;
+  margin-right: .5em;
+  padding: 0.5em;
+}
+
+.form label {
+  font-size: x-large;
+  font-weight: bold;
+  width: 100px;
+}
+
+.form input::-webkit-inner-spin-button,
+.form input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+

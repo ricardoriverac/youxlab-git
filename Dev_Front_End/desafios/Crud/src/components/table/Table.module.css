@@ -1,0 +1,8 @@
+.btns{
+    display: flex;
+}
+
+button {
+    margin-right: 1em;
+    justify-items: center;
+}
