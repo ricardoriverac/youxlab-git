@@ -4,9 +4,7 @@ import Button from "./Button";
 
 import styles from "./Form.module.css";
 
-function Form(valor) {
-  // console.log("valor :>> ", valor);
-  // FORMULARIO
+function Form({ valor, editando }) {
   const [formData, setFormData] = useState({
     nome: "",
     telefone: "",
@@ -15,24 +13,13 @@ function Form(valor) {
   });
 
   useEffect(() => {
-    console.log('valor:', valor);
-    setFormData((newData) => ({
-      ...newData,
-      nome: valor.nome
-    }))  
-    setFormData((newData) => ({
-      ...newData,
-      telefone: valor.telefone
-    }))  
-    setFormData((newData) => ({
-      ...newData,
-      cpf: valor.cpf
-    }))  
-    setFormData((newData) => ({
-      ...newData,
-      email: valor.email
-    }))  
-  }, [valor])
+    setFormData({
+      nome: valor.nome || "",
+      telefone: valor.telefone || "",
+      cpf: valor.cpf || "",
+      email: valor.email || "",
+    });
+  }, [valor]);
 
   const handleChangeNome = (e) => {
     setFormData((prevData) => ({
@@ -40,18 +27,21 @@ function Form(valor) {
       nome: e.target.value,
     }));
   };
+
   const handleChangeTelefone = (e) => {
     setFormData((prevData) => ({
       ...prevData,
       telefone: e.target.value,
     }));
   };
+
   const handleChangeCpf = (e) => {
     setFormData((prevData) => ({
       ...prevData,
       cpf: e.target.value,
     }));
   };
+
   const handleChangeEmail = (e) => {
     setFormData((prevData) => ({
       ...prevData,
@@ -60,18 +50,41 @@ function Form(valor) {
   };
 
   const handleSubmit = () => {
-    fetch("http://localhost:5000/people", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((resp) => resp.json())
-      .then((data) => {
-        console.log("data", data);
+    if (
+      formData.nome.trim() === "" ||
+      formData.telefone.trim() === "" ||
+      formData.cpf.trim() === "" ||
+      formData.email.trim() === ""
+    ) {
+      alert("Preencha todos os campos");
+      return;
+    }
+    if (editando === false) {
+      fetch("http://localhost:5000/people", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       })
-      .catch((err) => console.log(err));
+        .then((resp) => resp.json())
+        .then((data) => {
+          console.log("data", data);
+        })
+        .catch((err) => console.log(err));
+    } else {
+      fetch(`http://localhost:5000/people/${valor.id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+        .then((response) => response.json())
+        .then((data) => console.log(data))
+        .catch((error) => console.error("Erro:", error));
+    }
+    editando = true;
   };
 
   return (

@@ -7,7 +7,8 @@ import Form from "../form/Form.jsx";
 function Table() {
   // PASSAR DADOS PRA TABLE
   const [dados, setDados] = useState([]);
-  const [eDados, setEDados] = useState([])
+  const [eDados, setEDados] = useState([]);
+  const [editando, setEditando] = useState(false);
 
   useEffect(() => {
     fetch("http://localhost:5000/people", {
@@ -18,7 +19,7 @@ function Table() {
     })
       .then((resp) => resp.json())
       .then((data) => {
-        setDados(...dados, data);
+        setDados(data);
         console.log(dados);
         console.log(data);
       })
@@ -61,8 +62,10 @@ function Table() {
 
   const editor = (e) => {
     // console.log("e :>> ", e);
-    setEDados(e)
+    setEDados(e);
+    setEditando(true);
   };
+
   // const editar = (id) => {
   //   fetch(`http://localhost:5000/people/${id}`, {
   //     method: "PUT",
@@ -79,7 +82,7 @@ function Table() {
 
   return (
     <>
-      <Form valor={eDados} />
+      <Form valor={eDados} editando={editando}/>
       <table>
         <TableHead
           th1="Nome"
