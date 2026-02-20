@@ -3,8 +3,13 @@ package com.TesteLucas.testeCurso.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import org.hibernate.service.JavaServiceLoadable;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.io.Serializable;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -44,6 +49,9 @@ public class User implements Serializable {
         return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -79,6 +87,7 @@ public class User implements Serializable {
     public List<Order> getOrders() {
         return orders;
     }
+
 
     @Override
     public boolean equals(Object o) {
