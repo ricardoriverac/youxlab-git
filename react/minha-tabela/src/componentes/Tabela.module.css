@@ -1,0 +1,38 @@
+
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  color: rgb(240, 240, 240);
+  height: 100px;
+  
+}
+
+table th {
+  border: 2px solid rgb(0, 0, 0);
+  width: 400px;
+  height: 50px;
+  font-size: 20px;
+}
+thead tr {
+  background-color: #4caf50;
+}
+tbody{
+    background-color: white;
+    color: black;
+    border: 2px solid rgb(0, 0, 0);
+    padding: 5%;
+}
+table td{
+    border: 2px solid rgb(0, 0, 0);
+}
+thead{
+    color: white;
+}
+.botao{
+    display: flex;
+    border: none;
+    padding: 5%;
+}
+
+/* NÃO use display:flex no table, tr ou td */
