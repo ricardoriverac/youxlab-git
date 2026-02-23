@@ -14,6 +14,9 @@ function Form() {
     email: "",
   });
 
+  const [editar, setEditar] = useState("");
+  const [isEditar, setIsEditar] = useState(null);
+
   const [dados, setDados] = useState([]);
 
   const handleChangeNome = (e) => {
@@ -27,6 +30,7 @@ function Form() {
       ...prevData,
       telefone: e.target.value,
     }));
+    setEditando;
   };
   const handleChangeCpf = (e) => {
     setFormDados((prevData) => ({
@@ -52,32 +56,81 @@ function Form() {
     })
       .then((resp) => resp.json())
       .then(() => {
-        const novaLista = dados.filter((pessoa) => pessoa.id !== id);  //criei uma lista sem a pessoa com o id que foi passado
+        const novaLista = dados.filter((pessoa) => pessoa.id !== id); //criei uma lista sem a pessoa com o id que foi passado
         setDados(novaLista);
       })
       .catch((err) => console.log(err));
   };
 
-  function inserirPessoa() {
-    fetch("http://localhost:5000/dadosPessoas", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formDados),
-    })
-      .then((resp) => resp.json())
-      .then((novaPessoa) => {
-        setDados([...dados, novaPessoa]);
-      })
-      .catch((err) => console.log(err));
+  function limparFormulario() {
+  setFormDados({
+    nome: "",
+    telefone: "",
+    cpf: "",
+    email: "",
+  });
+}
 
-    setFormDados({
-      nome: "",
-      telefone: "",
-      cpf: "",
-      email: "",
-    });
+  function editarPessoa(pessoa) {
+  setFormDados({
+    nome: pessoa.nome,
+    telefone: pessoa.telefone,
+    cpf: pessoa.cpf,
+    email: pessoa.email,
+  });
+
+  setEditar(pessoa.id);
+  setIsEditar(true);
+}
+
+  function salvarPessoa() {
+    if (
+      formDados.nome === "" ||
+      formDados.telefone === "" ||
+      formDados.cpf === "" ||
+      formDados.email === ""
+    ) {
+      alert("Preencha todas as informações");
+      return;
+    }
+
+    // SE estiver editando
+    if (isEditar) {
+      fetch(`http://localhost:5000/dadosPessoas/${editar}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formDados),
+      })
+        .then((resp) => resp.json())
+        .then((pessoaAtualizada) => {
+          const novaLista = dados.map((pessoa) =>
+            pessoa.id === editar ? pessoaAtualizada : pessoa,
+          );
+
+          setDados(novaLista);
+          setIsEditar(false);
+          setEditar("");
+          limparFormulario();
+        })
+        .catch((err) => console.log(err));
+    } else {
+      // SE for cadastro novo
+      fetch("http://localhost:5000/dadosPessoas", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formDados),
+      })
+        .then((resp) => resp.json())
+        .then((novaPessoa) => {
+          setDados([...dados, novaPessoa]);
+          limparFormulario();
+        })
+        .catch((err) => console.log(err));
+    }
   }
 
   useEffect(() => {
@@ -133,7 +186,7 @@ function Form() {
             value={formDados.email}
           />
         </label>
-        <Btn text="Inserir" funcao={inserirPessoa} />
+        <Btn text={isEditar ? "Salvar" : "Inserir"} funcao={salvarPessoa} />
       </div>
 
       <Tabela
@@ -144,6 +197,7 @@ function Form() {
         th5="AÇÕES"
         dados={dados}
         remover={remove}
+        editar={editarPessoa}
       />
     </>
   );
