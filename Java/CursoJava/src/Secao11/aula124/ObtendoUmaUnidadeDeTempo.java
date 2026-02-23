@@ -5,7 +5,7 @@ import java.time.Instant;
 import java.util.Calendar;
 import java.util.Date;
 
-public class OtendoUmaUnidadeDeTempo {
+public class ObtendoUmaUnidadeDeTempo {
     public static void main(String[] args) {
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
