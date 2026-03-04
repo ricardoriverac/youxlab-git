@@ -1,6 +1,6 @@
-package Secao_13.Aula_137.Heraca.entities;
+package Secao_13.Aula_137.Heranca.entities;
 
-public class BusinessAcountt extends Secao_13.Aula_137.Heraca.entities.Accountt {
+public class BusinessAcountt extends Accountt {
 
     private Double loanLimit;
 
