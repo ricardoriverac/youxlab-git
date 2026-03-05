@@ -1,9 +1,9 @@
-package Secao_13.Aula_137.Sobreposicao.Exercicio.application;
+package Secao_13.Aula_139.Exercicio.Sobreposicao.entities.application;
 
-import Secao_13.Aula_137.Sobreposicao.Exercicio.entities.Boleto;
-import Secao_13.Aula_137.Sobreposicao.Exercicio.entities.CartaoCredito;
-import Secao_13.Aula_137.Sobreposicao.Exercicio.entities.Pagamento;
-import Secao_13.Aula_137.Sobreposicao.Exercicio.entities.Pix;
+import Secao_13.Aula_139.Exercicio.Sobreposicao.entities.Boleto;
+import Secao_13.Aula_139.Exercicio.Sobreposicao.entities.CartaoCredito;
+import Secao_13.Aula_139.Exercicio.Sobreposicao.entities.Pagamento;
+import Secao_13.Aula_139.Exercicio.Sobreposicao.entities.Pix;
 
 public class Main {
     public static void main(String[] args) {

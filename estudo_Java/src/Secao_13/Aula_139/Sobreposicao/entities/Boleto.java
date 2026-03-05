@@ -1,4 +1,4 @@
-package Secao_13.Aula_137.Sobreposicao.Exercicio.entities;
+package Secao_13.Aula_139.Exercicio.Sobreposicao.entities;
 
 public class Boleto extends Pagamento{
 
