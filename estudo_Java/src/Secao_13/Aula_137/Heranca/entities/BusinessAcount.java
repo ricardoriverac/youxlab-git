@@ -1,14 +1,14 @@
 package Secao_13.Aula_137.Heranca.entities;
 
-public class BusinessAcountt extends Accountt {
+public class BusinessAcount extends Account {
 
     private Double loanLimit;
 
-    public BusinessAcountt() {
+    public BusinessAcount() {
         super();
     }
 
-    public BusinessAcountt(Integer number, String holder, Double balance, Double loanLimit) {
+    public BusinessAcount(Integer number, String holder, Double balance, Double loanLimit) {
         super(number, holder, balance);
         this.loanLimit = loanLimit;
     }
