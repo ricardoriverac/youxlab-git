@@ -2,26 +2,27 @@ package Secao_13.Aula_142.Exercicio_Resolvido.entities;
 
 public class OutsourcedEmployee extends Employee{
 
-    private Double additinalCharg;
+    private Double additional;
 
     public OutsourcedEmployee() {
         super();
     }
 
-    public OutsourcedEmployee(Double additinalCharg) {
-        this.additinalCharg = additinalCharg;
-    }
-
-    public OutsourcedEmployee(String name, Integer hours, Double valuePerHour, Double additinalCharg) {
+    public OutsourcedEmployee(String name, Integer hours, Double valuePerHour, Double additional) {
         super(name, hours, valuePerHour);
-        this.additinalCharg = additinalCharg;
+        this.additional = additional;
     }
 
-    public Double getAdditinalCharg() {
-        return additinalCharg;
+    public Double getAdditional() {
+        return additional;
     }
 
-    public void setAdditinalCharg(Double additinalCharg) {
-        this.additinalCharg = additinalCharg;
+    public void setAdditional(Double additional) {
+        this.additional = additional;
+    }
+
+    @Override
+    public double payment() {
+        return hours * valuePerHour ;
     }
 }
