@@ -2,7 +2,7 @@ package Secao_13.Aula_142.Exercicio_Resolvido.entities;
 
 public class OutsourcedEmployee extends Employee{
 
-    private Double additional;
+    private Double additionalCharge;
 
     public OutsourcedEmployee() {
         super();
@@ -10,19 +10,19 @@ public class OutsourcedEmployee extends Employee{
 
     public OutsourcedEmployee(String name, Integer hours, Double valuePerHour, Double additional) {
         super(name, hours, valuePerHour);
-        this.additional = additional;
+        this.additionalCharge = additional;
     }
 
     public Double getAdditional() {
-        return additional;
+        return additionalCharge;
     }
 
     public void setAdditional(Double additional) {
-        this.additional = additional;
+        this.additionalCharge = additional;
     }
 
     @Override
-    public double payment() {
-        return hours * valuePerHour ;
+    public double paymet() {
+        return super.paymet() + additionalCharge * 1.1;
     }
 }
