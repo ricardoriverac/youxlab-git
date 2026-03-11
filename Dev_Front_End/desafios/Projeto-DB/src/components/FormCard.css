@@ -1,0 +1,29 @@
+.formBox {
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 0;
+  border: 5px solid #000;
+  background-color: #bbb;
+  display: flex;
+  flex-wrap: wrap;
+  transition: 0.5s;
+  max-width: 20rem;
+  min-height: 20rem;
+  max-height: 20rem;
+  padding: 5px;
+}
+
+.formBox h1::first-letter {
+  text-transform: uppercase;
+}
+
+.formName {
+  color: #000;
+}
+.formImage {
+  max-width: 18rem;
+  max-height: 13rem;
+}
+.formKi {
+  color: #ffd900;
+}
