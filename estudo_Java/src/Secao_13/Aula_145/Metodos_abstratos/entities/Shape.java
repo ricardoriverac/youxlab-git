@@ -1,6 +1,6 @@
-package Secao_13.Aula_144.Classes_Abstratas.entities;
+package Secao_13.Aula_145.Metodos_abstratos.entities;
 
-import Secao_13.Aula_144.Classes_Abstratas.entities_enum.Color;
+import Secao_13.Aula_145.Metodos_abstratos.entities_enum.Color;
 
 public abstract class Shape {
 
