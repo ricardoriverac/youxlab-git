@@ -13,6 +13,5 @@ public class Aula_31 {
         System.out.print((45 + 5) * 2);
 
 
-
     }
 }
