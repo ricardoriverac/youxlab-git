@@ -9,8 +9,8 @@ public class CodigoTriangulo {
 
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
-        ClasseTriangulo x = new ClasseTriangulo();
-        ClasseTriangulo y = new ClasseTriangulo();
+        Aula_72.ClasseTriangulo x = new Aula_72.ClasseTriangulo();
+        Aula_72.ClasseTriangulo y = new Aula_72.ClasseTriangulo();
 
         System.out.println("Enter the measures of triangle X: ");
         x.a = sc.nextDouble();
