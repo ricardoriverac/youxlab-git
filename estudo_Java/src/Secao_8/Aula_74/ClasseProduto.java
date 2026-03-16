@@ -1,6 +1,4 @@
-package Aula_74;
-
-import java.awt.datatransfer.StringSelection;
+package Secao_8.Aula_74;
 
 public class ClasseProduto {
 

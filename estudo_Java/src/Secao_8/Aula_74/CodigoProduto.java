@@ -1,7 +1,8 @@
-package Aula_74;
+package Secao_8.Aula_74;
 
 import java.util.Locale;
 import java.util.Scanner;
+import Secao_8.Aula_74.ClasseProduto;
 
 public class CodigoProduto {
     public static void main(String[] args) {
