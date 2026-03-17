@@ -1,4 +1,4 @@
-package Secao_14.Aula_154.Execoes_Personalizadas.Solicao_Ruim.model_entities;
+package Secao_14.Aula_154.Execoes_Personalizadas.Solucao_Muito_Ruim.model_entities;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
