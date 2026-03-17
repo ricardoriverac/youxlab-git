@@ -26,7 +26,7 @@ const Characters = ({ endpoint = "page=1&limit=58" }) => {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [endpoint]);
 
   return (
     <>

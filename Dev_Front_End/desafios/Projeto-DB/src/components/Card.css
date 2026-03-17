@@ -15,10 +15,9 @@
   text-transform: uppercase;
 }
 
-.manyBox{
+.manyBox {
   display: flex;
 }
-
 
 .btn {
   padding: 5px 10px;
@@ -27,11 +26,11 @@
   transition: 0.5s;
 }
 .btn:hover {
-  padding: 7px 14px;
   background-color: #000000;
   color: #fff;
   transition: 0.5s;
   border: 2px solid #fff;
+  transform: scale(1.2);
 }
 
 .name {
