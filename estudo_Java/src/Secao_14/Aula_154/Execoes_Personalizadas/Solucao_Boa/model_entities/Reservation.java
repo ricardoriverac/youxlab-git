@@ -1,5 +1,7 @@
 package Secao_14.Aula_154.Execoes_Personalizadas.Solucao_Boa.model_entities;
 
+import Secao_14.Aula_154.Execoes_Personalizadas.Solucao_Boa.model_exceptions.DomainException;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -39,18 +41,17 @@ public class Reservation {
         return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
     }
 
-    public void updateDates(Date chekIn, Date chekOut) {
+    public void updateDates(Date chekIn, Date chekOut) throws DomainException{
         Date now = new Date();
         if (checkIn.before(now) || checkOut.before(now)) {
-            throw new IllegalArgumentException( "Erro in reservation: Reservation dates update must be future dates");
+            throw new DomainException( "Erro in reservation: Reservation dates update must be future dates");
         }
         if (!checkOut.after(checkIn)) {
-            return "Check-out date must be after check-in date";
+            throw new DomainException("Check-out date must be after check-in date");
         }
 
         this.checkIn = chekIn;
         this.checkOut = chekOut;
-        return null;
     }
 
     @Override

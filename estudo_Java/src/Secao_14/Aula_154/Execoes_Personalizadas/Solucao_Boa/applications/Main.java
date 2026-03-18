@@ -1,6 +1,7 @@
 package Secao_14.Aula_154.Execoes_Personalizadas.Solucao_Boa.applications;
 
 import Secao_14.Aula_154.Execoes_Personalizadas.Solucao_Boa.model_entities.Reservation;
+import Secao_14.Aula_154.Execoes_Personalizadas.Solucao_Boa.model_exceptions.DomainException;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -36,6 +37,9 @@ public class Main {
         }
         catch (ParseException e) {
             System.out.println("Invalid date format");
+        }
+        catch (DomainException e) {
+            System.out.println("Error in reservation: " + e.getMessage());
         }
     }
 }
