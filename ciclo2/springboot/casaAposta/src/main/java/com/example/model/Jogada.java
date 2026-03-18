@@ -1,7 +1,10 @@
 package com.example.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import com.example.enuns.TipoCelula;
+import jakarta.persistence.*;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "jogadas")
@@ -12,39 +15,84 @@ public class Jogada {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "aposta_id", nullable = false)
-    private Aposta aposta;
+    @JoinColumn(name = "jogo_id", nullable = false)
+    private Jogo jogo;
 
-    @Column(name = "posicao_x")
-    private Integer posicaoX;
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
-    @Column(name = "posicao_y")
-    private Integer posicaoY;
+    @Column(name = "linha")
+    private Integer linha;
 
-    @Column(name = "tipo")
-    private String tipo; // DIAMANTE ou BOMBA
+    @Column(name = "coluna")
+    private Integer coluna;
 
-    @Column(name = "data_hora")
-    private LocalDateTime dataHora = LocalDateTime.now();
+    @Enumerated(EnumType.STRING)
+    @Column(name = "tipo_celula")
+    private TipoCelula tipoCelula;
 
-    public Jogada() {}
+    @Column(name = "valor_antes")
+    private BigDecimal valorAntes;
 
-    // Getters e Setters
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    @Column(name = "valor_depois")
+    private BigDecimal valorDepois;
 
-    public Aposta getAposta() { return aposta; }
-    public void setAposta(Aposta aposta) { this.aposta = aposta; }
+    @Column(name = "diamantes_ate_agora")
+    private Integer diamantesAteAgora;
 
-    public Integer getPosicaoX() { return posicaoX; }
-    public void setPosicaoX(Integer posicaoX) { this.posicaoX = posicaoX; }
+    @Column(name = "numero_jogada")
+    private Integer numeroJogada;
 
-    public Integer getPosicaoY() { return posicaoY; }
-    public void setPosicaoY(Integer posicaoY) { this.posicaoY = posicaoY; }
+    @Column(name = "data_jogo")
+    private LocalDateTime dataJogo;
 
-    public String getTipo() { return tipo; }
-    public void setTipo(String tipo) { this.tipo = tipo; }
+    public Jogada() {
+    }
 
-    public LocalDateTime getDataHora() { return dataHora; }
-    public void setDataHora(LocalDateTime dataHora) { this.dataHora = dataHora; }
+    public Jogada(Jogo jogo, User user, Integer linha, Integer coluna,
+                  TipoCelula tipoCelula, BigDecimal valorAntes, BigDecimal valorDepois,
+                  Integer diamantesAteAgora, Integer numeroJogo) {
+        this.jogo = jogo;
+        this.user = user;
+        this.linha = linha;
+        this.coluna = coluna;
+        this.tipoCelula = tipoCelula;
+        this.valorAntes = valorAntes;
+        this.valorDepois = valorDepois;
+        this.diamantesAteAgora = diamantesAteAgora;
+        this.numeroJogada = numeroJogo;
+        this.dataJogo = LocalDateTime.now();
+    }
+
+    public Jogada(Jogo jogo, User user, Integer linha, Integer coluna, TipoCelula tipoCelula) {
+        this.jogo = jogo;
+        this.user = user;
+        this.linha = linha;
+        this.coluna = coluna;
+        this.tipoCelula = tipoCelula;
+        this.valorAntes = jogo.getValorAcumulado();
+        this.valorDepois = jogo.getValorAcumulado();
+        this.diamantesAteAgora = jogo.getDiamantesEncontrados();
+        this.numeroJogada = jogo.getJogadasRealizadas();
+        this.dataJogo = LocalDateTime.now();
+    }
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }
+

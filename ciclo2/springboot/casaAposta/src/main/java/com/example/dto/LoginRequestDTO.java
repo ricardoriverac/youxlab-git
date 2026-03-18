@@ -1,18 +1,25 @@
 package com.example.dto;
 
-public class LoginRequestDTO {
+import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 
-    @NotBlank(message = "Email é obrigatório")
-    @Email(message = "Email inválido")
-    private String email;
+@Valid
+public record LoginRequestDTO(
 
-    @NotBlank(message = "Senha é obrigatória")
-    private String senha;
+        @NotBlank(message = "Email é obrigatório")
+        @Email(message = "Email inválido")
+        @JsonProperty("email")
+                String email,
 
-    // Getters e Setters
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
+        @NotBlank(message = "Senha é obrigatória")
+        @Pattern(
+                regexp = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]).{8,}$",
+                message = "Senha deve conter pelo menos uma letra maiúscula, um número e um caractere especial"
+        )        @JsonProperty("senha")
+        String senha
 
-    public String getSenha() { return senha; }
-    public void setSenha(String senha) { this.senha = senha; }
+) {
 }

@@ -1,38 +1,43 @@
 package com.example.dto;
 
-public class UserRequestDTO {
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.validation.constraints.*;
 
-    @NotBlank(message = "Nome é obrigatório")
-    private String nome;
+import java.time.LocalDate;
 
-    @NotBlank(message = "Email é obrigatório")
-    @Email(message = "Email inválido")
-    private String email;
+public record UserRequestDTO(
 
-    @NotNull(message = "Data de nascimento é obrigatória")
-    private LocalDate dataNascimento;
+        @NotBlank(message = "Nome é obrigatório")
+        @Size(min = 3, max = 100, message = "Nome deve ter entre 3 e 100 caracteres")
+                String nome,
 
-    @NotBlank(message = "Senha é obrigatória")
-    @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$",
-            message = "Senha deve ter 8+ caracteres, maiúscula, número e caractere especial")
-    private String senha;
+        @NotBlank(message = "Email é obrigatório")
+        @Email(message = "Email inválido")
+        String email,
 
-    @NotBlank(message = "Confirmação de senha é obrigatória")
-    private String confirmacaoSenha;
+        @NotNull(message = "Data de nascimento é obrigatória")
+        @Past(message = "Data de nascimento deve ser no passado")
+        @JsonFormat(pattern = "yyyy/MM/dd")
+        LocalDate dataNascimento,
 
-    // Getters e Setters
-    public String getNome() { return nome; }
-    public void setNome(String nome) { this.nome = nome; }
+        @NotBlank(message = "Senha é obrigatória")
+        @Size(min = 8, message = "Senha deve ter no mínimo 8 caracteres, sendo ela uma letra maiúscula e um número obrigatórios!")
+        @Pattern(
+                regexp = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]).{8,}$",
+                message = "Senha deve conter pelo menos uma letra maiúscula, um número e um caractere especial"
+        )
+        String senha,
 
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
+        @NotBlank(message = " Aconfirmação de senha é obrigatória")
+        @JsonProperty("confirmacaoSenha")
+        String confirmacaoSenha
 
-    public LocalDate getDataNascimento() { return dataNascimento; }
-    public void setDataNascimento(LocalDate dataNascimento) { this.dataNascimento = dataNascimento; }
+) {
 
-    public String getSenha() { return senha; }
-    public void setSenha(String senha) { this.senha = senha; }
 
-    public String getConfirmacaoSenha() { return confirmacaoSenha; }
-    public void setConfirmacaoSenha(String confirmacaoSenha) { this.confirmacaoSenha = confirmacaoSenha; }
+    public boolean senhasConferem() {
+        return senha != null && senha.equals(confirmacaoSenha);
+    }
+
 }

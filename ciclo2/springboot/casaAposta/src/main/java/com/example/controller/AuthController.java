@@ -1,80 +1,98 @@
 package com.example.controller;
 
 
+import com.example.dto.LoginRequestDTO;
+import com.example.dto.LoginResponseDTO;
+import com.example.dto.ResetSenhaRequestDTO;
+import com.example.dto.UserRequestDTO;
+import com.example.model.ResetSenhaToken;
+import com.example.model.User;
+import com.example.repository.ResetSenhaTokenRepository;
+import com.example.repository.UserRepository;
+import com.example.service.AuthService;
+import com.example.service.EmailService;
+import com.example.service.ResetSenhaService;
+import com.example.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins = "*")
 public class AuthController {
+
+
+
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private EmailService emailService;
+
+
+    @Autowired
+    private ResetSenhaTokenRepository resetSenhaTokenRepository;
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private ResetSenhaService resetSenhaService;
 
     @Autowired
     private AuthService authService;
 
-    // CADASTRO DE USUÁRIO
-    @PostMapping("/cadastro")
-    public ResponseEntity<Map<String, Object>> cadastrar(@Valid @RequestBody UsuarioRequestDTO request) {
-        UsuarioResponseDTO response = authService.cadastrar(request);
 
-        Map<String, Object> resposta = new HashMap<>();
-        resposta.put("mensagem", "Usuário cadastrado com sucesso! Verifique seu email para confirmar o cadastro.");
-        resposta.put("usuario", response);
+        @PostMapping("/login")
+        public ResponseEntity login(@RequestBody LoginRequestDTO dados) {
+            try {
+                LoginResponseDTO response = authService.autenticar(dados);
+                return ResponseEntity.ok(response);
+            } catch (Exception e) {
+                return ResponseEntity.badRequest().body(e.getMessage());
+            }
+        }
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(resposta);
-    }
 
-    // CONFIRMAR EMAIL
-    @GetMapping("/confirmar-email")
-    public ResponseEntity<Map<String, String>> confirmarEmail(@RequestParam("token") String token) {
-        authService.confirmarEmail(token);
+        @GetMapping("/confirmar-email")
+        public ResponseEntity confirmarEmail(@RequestParam String token) {
+            try {
+                userService.confirmarEmail(token);
+                return ResponseEntity.ok("Email confirmado, você já pode fazer login.");
+            } catch (Exception e) {
+                return ResponseEntity.badRequest().body("Erro ao confirmar email: " + e.getMessage());
+            }
+        }
 
-        Map<String, String> resposta = new HashMap<>();
-        resposta.put("mensagem", "Email confirmado com sucesso! Agora você pode fazer login.");
+        @PostMapping("/esqueci-senha") //ok
+        public ResponseEntity esqueciSenha(@RequestBody ResetSenhaRequestDTO dados) {
+            try {
+                User user = userRepository.findByEmail(dados.email()).orElse(null);
 
-        return ResponseEntity.ok(resposta);
-    }
+                if (user != null) {
+                    ResetSenhaToken token = new ResetSenhaToken(user);
 
-    // LOGIN
-    @PostMapping("/login")
-    public ResponseEntity<LoginResponseDTO> login(@Valid @RequestBody LoginRequestDTO request) {
-        LoginResponseDTO response = authService.login(request);
-        return ResponseEntity.ok(response);
-    }
+                    resetSenhaTokenRepository.save(token);
 
-    // ESQUECI SENHA
-    @PostMapping("/esqueci-senha")
-    public ResponseEntity<Map<String, String>> esqueciSenha(@RequestBody Map<String, String> request) {
-        String email = request.get("email");
-        authService.esqueciSenha(email);
+                    emailService.enviarEmailResetSenha(user.getEmail(), token.getToken());
+                }
 
-        Map<String, String> resposta = new HashMap<>();
-        resposta.put("mensagem", "Se o email existir, você receberá um link para redefinir sua senha.");
+                return ResponseEntity.ok("Se o email existir, você receberá um link para resetar sua senha.");
 
-        return ResponseEntity.ok(resposta);
-    }
+            } catch (Exception e) {
+                return ResponseEntity.badRequest().body("Erro ao processar solicitação: " + e.getMessage());
+            }
+        }
 
-    // REDEFINIR SENHA
-    @PostMapping("/redefinir-senha")
-    public ResponseEntity<Map<String, String>> redefinirSenha(@RequestBody Map<String, String> request) {
-        String token = request.get("token");
-        String novaSenha = request.get("novaSenha");
-        String confirmacaoSenha = request.get("confirmacaoSenha");
 
-        authService.redefinirSenha(token, novaSenha, confirmacaoSenha);
+        @PostMapping("/resetar-senha") //ok
+        public ResponseEntity resetarSenha(@RequestBody ResetSenhaRequestDTO dados) {
+            try {
+                resetSenhaService.resetarSenha(dados.token(), dados.novaSenha());            return ResponseEntity.ok("Senha alterada com sucesso!");
+            } catch (Exception e) {
+                return ResponseEntity.badRequest().body("Erro ao resetar senha: " + e.getMessage());
+            }
+        }
 
-        Map<String, String> resposta = new HashMap<>();
-        resposta.put("mensagem", "Senha redefinida com sucesso! Agora você pode fazer login com sua nova senha.");
-
-        return ResponseEntity.ok(resposta);
-    }
-
-    // VERIFICAR TOKEN (para o front-end validar se token é válido)
-    @GetMapping("/verificar-token")
-    public ResponseEntity<Map<String, Object>> verificarToken() {
-        // Se chegou aqui é porque o token é válido (filtro JWT já validou)
-        Map<String, Object> resposta = new HashMap<>();
-        resposta.put("valido", true);
-        resposta.put("mensagem", "Token válido");
-
-        return ResponseEntity.ok(resposta);
-    }
 }
+

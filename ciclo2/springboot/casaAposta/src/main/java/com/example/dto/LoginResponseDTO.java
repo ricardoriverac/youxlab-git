@@ -1,35 +1,44 @@
 package com.example.dto;
 
-public class LoginResponseDTO {
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-    private String token;
-    private String tipo = "Bearer";
-    private String email;
-    private String perfil;
-    private String nome;
+public record LoginResponseDTO(
 
-    public LoginResponseDTO(String token, String email, String perfil, String nome) {
-        this.token = token;
-        this.email = email;
-        this.perfil = perfil;
-        this.nome = nome;
+        @JsonProperty("token")
+                String token,
+
+        @JsonProperty("userId")
+        Long userId,
+
+        @JsonProperty("nome")
+        String nome,
+
+        @JsonProperty("email")
+        String email,
+
+        @JsonProperty("role")
+        String role,
+
+        @JsonProperty("status")
+        String status,
+
+        @JsonProperty("emailConfirmado")
+        Boolean emailConfirmado
+
+) {
+    public LoginResponseDTO(String token, Long userId, String nome, String role) {
+        this(token, userId, nome, null, role, null, null);
     }
 
-    // Getters e Setters
-    public String getToken() { return token; }
-    public void setToken(String token) { this.token = token; }
-
-    public String getTipo() { return tipo; }
-    public void setTipo(String tipo) { this.tipo = tipo; }
-
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
-
-    public String getPerfil() { return perfil; }
-    public void setPerfil(String perfil) { this.perfil = perfil; }
-
-    public String getNome() { return nome; }
-    public void setNome(String nome) { this.nome = nome; }
-
+    public LoginResponseDTO(String token, Long userId, String nome, String email,
+                            String role, String status, Boolean emailConfirmado) {
+        this.token = token;
+        this.userId = userId;
+        this.nome = nome;
+        this.email = email;
+        this.role = role;
+        this.status = status;
+        this.emailConfirmado = emailConfirmado;
+    }
 
 }

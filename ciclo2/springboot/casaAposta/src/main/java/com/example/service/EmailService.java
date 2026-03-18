@@ -1,38 +1,22 @@
 package com.example.service;
 
+import com.example.model.User;
 import org.springframework.stereotype.Service;
 
 @Service
 public class EmailService {
 
-    @Autowired
-    private JavaMailSender mailSender;
-
-    public void enviarEmailConfirmacao(String destinatario, String token) {
-        SimpleMailMessage message = new SimpleMailMessage();
-        message.setTo(destinatario);
-        message.setSubject("Confirme seu cadastro - Casa de Aposta");
-        message.setText("Olá!\n\n" +
-                "Para confirmar seu cadastro, clique no link:\n" +
-                "http://localhost:8080/auth/confirmar-email?token=" + token + "\n\n" +
-                "Link válido por 24 horas.\n\n" +
-                "Casa de Aposta");
-
-        mailSender.send(message);
-        System.out.println("Email enviado para: " + destinatario);
+    public void enviarEmailConfirmacao(User user) {
+        System.out.println("Email de confirmação");
+        System.out.println("Para: " + user.getEmail());
+        System.out.println("Link: http://localhost:3000/confirmar-email?token=" + user.getTokenConfirmacao());
     }
 
-    public void enviarEmailRecuperacao(String destinatario, String token) {
-        SimpleMailMessage message = new SimpleMailMessage();
-        message.setTo(destinatario);
-        message.setSubject("Recuperação de senha - Casa de Aposta");
-        message.setText("Olá!\n\n" +
-                "Para redefinir sua senha, clique no link:\n" +
-                "http://localhost:8080/auth/redefinir-senha?token=" + token + "\n\n" +
-                "Link válido por 1 hora.\n\n" +
-                "Casa de Aposta");
-
-        mailSender.send(message);
-        System.out.println("Email de recuperação enviado para: " + destinatario);
+    public void enviarEmailResetSenha(String destinatario, String token) {
+        System.out.println(" Email de reset de senha ");
+        System.out.println("Para: " + destinatario);
+        System.out.println("Link: http://localhost:3000/resetar-senha?token=" + token);
     }
-}
+
+    }
+
