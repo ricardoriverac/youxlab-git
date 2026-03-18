@@ -6,17 +6,17 @@ import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Persona from "./routes/Persona.jsx";
+
 // import Villains from "./routes/Villains.jsx";
 
 const router = createBrowserRouter([
   {
+    path: "/",
     element: <App />,
-    children: [
-      {
-        path: "/",
-        element: <Persona/>,
-      },
-    ],
+  },
+  {
+    path: "/persona",
+    element: <Persona />,
   },
 ]);
 

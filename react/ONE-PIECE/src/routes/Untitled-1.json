@@ -1,0 +1,19 @@
+{
+  "id": 2,
+  "name": "Roronoa Zoro",
+  "size": "181cm",
+  "age": "21 ans",
+  "bounty": "320.000.000",
+  "crew": {
+    "id": 1,
+    "name": "The Chapeau de Paille crew",
+    "description": null,
+    "status": "assets",
+    "number": "10",
+    "roman_name": "Mugiwara no Ichimi",
+    "total_prime": "3.161.000.100",
+    "is_yonko": true
+  },
+  "job": "Right-hand man",
+  "status": "living"
+}

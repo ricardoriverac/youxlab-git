@@ -1,0 +1,12 @@
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.persona{
+    border-radius: 10px;
+    border-color: #fff;
+    color: #fff;
+    height: 50px;
+    cursor: pointer;    
+}
