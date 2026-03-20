@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 public record ProductRegisterDTO(
         @NotBlank(message = "é obrigatório o produto ter um nome")
         @Schema(name = "nome")
-        @JsonProperty("name")
+        @JsonProperty("nome")
         String name,
         @Schema(name = "descricao")
         @JsonProperty("descricao")
