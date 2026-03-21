@@ -1,7 +1,7 @@
-package Secao_14.Aula_154.Exercicio_Fixacao.applications;
+package Secao_14.Aula_154.Execoes_Personalizadas.Exercicio_Fixacao_1.applications;
 
-import Secao_14.Aula_154.Exercicio_Fixacao.entities.ContaBancaria;
-import Secao_14.Aula_154.Exercicio_Fixacao.model_exception.SaldoInsuficienteException;
+import Secao_14.Aula_154.Execoes_Personalizadas.Exercicio_Fixacao_1.entities.ContaBancaria;
+import Secao_14.Aula_154.Execoes_Personalizadas.Exercicio_Fixacao_1.model_exception.SaldoInsuficienteException;
 
 import java.util.Scanner;
 

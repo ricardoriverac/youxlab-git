@@ -1,6 +1,6 @@
-package Secao_14.Aula_154.Exercicio_Fixacao.entities;
+package Secao_14.Aula_154.Execoes_Personalizadas.Exercicio_Fixacao_1.entities;
 
-import Secao_14.Aula_154.Exercicio_Fixacao.model_exception.SaldoInsuficienteException;
+import Secao_14.Aula_154.Execoes_Personalizadas.Exercicio_Fixacao_1.model_exception.SaldoInsuficienteException;
 
 public class ContaBancaria {
 
