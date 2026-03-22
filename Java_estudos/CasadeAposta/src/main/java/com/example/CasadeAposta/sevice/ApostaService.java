@@ -2,7 +2,6 @@ package com.example.CasadeAposta.sevice;
 
 import com.example.CasadeAposta.dtos.ApostaDTO;
 import com.example.CasadeAposta.dtos.CriarApostaDTO;
-import com.example.CasadeAposta.dtos.JogarDTO;
 import com.example.CasadeAposta.model.Aposta;
 import com.example.CasadeAposta.model.Quadrado;
 import com.example.CasadeAposta.model.User;
@@ -36,11 +35,17 @@ public class ApostaService {
         User userLogado = getUsuarioLogado();
 
         if (apostaRepository.findByUsuarioAndStatus(userLogado, ApostaStatus.EM_ANDAMENTO).isPresent()) {
-            throw new RuntimeException("Não é permitido criar uma aposta com outra em andamento!");
+            throw new ResponseStatusException(
+                    HttpStatus.BAD_REQUEST,
+                    "Não é permitido criar uma aposta com outra em andamento!"
+            );
         }
 
-        if(data.valor_apostado() == null){
-            throw new RuntimeException("Valor da aposta é obrigatório");
+        if (data.valor_apostado() == null) {
+            throw new ResponseStatusException(
+                    HttpStatus.BAD_REQUEST,
+                    "Valor da aposta é obrigatório"
+            );
         }
 
         Aposta aposta = new Aposta();
@@ -63,7 +68,8 @@ public class ApostaService {
                 aposta.getValorApostado(),
                 aposta.getValorAtual(),
                 aposta.getDiamantesEncontrados(),
-                aposta.getStatus()
+                aposta.getStatus(),
+                aposta.getValorAtual()
         );
     }
 
@@ -144,7 +150,8 @@ public class ApostaService {
                     aposta.getValorApostado(),
                     aposta.getValorAtual(),
                     aposta.getDiamantesEncontrados(),
-                    aposta.getStatus()
+                    aposta.getStatus(),
+                    aposta.getValorAtual()
             );
         }
 
@@ -165,7 +172,8 @@ public class ApostaService {
                 aposta.getValorApostado(),
                 aposta.getValorAtual(),
                 aposta.getDiamantesEncontrados(),
-                aposta.getStatus()
+                aposta.getStatus(),
+                aposta.getValorAtual()
         );
     }
 

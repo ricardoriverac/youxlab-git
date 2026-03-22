@@ -7,5 +7,6 @@ public record ApostaDTO(
         BigDecimal valorApostado,
         BigDecimal valorAtual,
         int diamantesEncontrados,
-        ApostaStatus status
+        ApostaStatus status,
+        BigDecimal valorGanhos
 ) {}

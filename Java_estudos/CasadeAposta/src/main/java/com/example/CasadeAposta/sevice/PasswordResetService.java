@@ -1,9 +1,7 @@
 package com.example.CasadeAposta.sevice;
 
 
-import com.example.CasadeAposta.model.PasswordResetToken;
 import com.example.CasadeAposta.model.User;
-import com.example.CasadeAposta.repositories.ResetTokenRepository;
 import com.example.CasadeAposta.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -17,24 +15,21 @@ import java.util.UUID;
 public class PasswordResetService {
 
     private final UserRepository userRepository;
-    private final ResetTokenRepository tokenRepository;
     private final EmailService emailService;
     private final PasswordEncoder passwordEncoder;
 
-    public void solicitarReset(String email){
+
+    public void solicitarReset(String email) {
 
         User user = userRepository.findByEmail(email)
-                .orElseThrow();
+                .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
 
         String token = UUID.randomUUID().toString();
 
-        PasswordResetToken resetToken = new PasswordResetToken();
+        user.setResetToken(token);
+        user.setTokenExpiracao(LocalDateTime.now().plusMinutes(30));
 
-        resetToken.setToken(token);
-        resetToken.setUsuario(user);
-        resetToken.setDataExpiracao(LocalDateTime.now().plusMinutes(30));
-
-        tokenRepository.save(resetToken);
+        userRepository.save(user);
 
         String link = "http://localhost:8080/auth/reset-password/confirm?token=" + token;
 
@@ -45,27 +40,20 @@ public class PasswordResetService {
         );
     }
 
-    public void resetarSenha(String token, String novaSenha){
+    public void resetarSenha(String token, String novaSenha) {
 
-        PasswordResetToken resetToken = tokenRepository.findByToken(token)
-                .orElseThrow();
+        User user = userRepository.findByResetToken(token)
+                .orElseThrow(() -> new RuntimeException("Token inválido"));
 
-        if(resetToken.isUsado()){
-            throw new RuntimeException("Token já utilizado");
-        }
-
-        if(resetToken.getDataExpiracao().isBefore(LocalDateTime.now())){
+        if (user.getTokenExpiracao().isBefore(LocalDateTime.now())) {
             throw new RuntimeException("Token expirado");
         }
 
-        User user = resetToken.getUsuario();
-
         user.setSenha(passwordEncoder.encode(novaSenha));
 
+        user.setResetToken(null);
+        user.setTokenExpiracao(null);
+
         userRepository.save(user);
-
-        resetToken.setUsado(true);
-
-        tokenRepository.save(resetToken);
     }
 }
