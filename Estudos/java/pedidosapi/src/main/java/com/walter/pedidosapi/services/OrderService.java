@@ -79,17 +79,19 @@ public class OrderService {
     }
 
     @Transactional(readOnly = true)
-    public Map<String, Object> getAll(int page, int size) {
+    public PageResponseDTO<Order> getAll(int page, int size) {
+        size = Math.max(size, 1);
         size = Math.min(size, 50);
         Page<Order> pageResult = orderRepository.findAll(PageRequest.of(page, size));
-        Map<String, Object> response = new HashMap<>();
-        response.put("data", pageResult.getContent());
-        response.put("totalPages", pageResult.getTotalPages());
-        response.put("totalItems", pageResult.getTotalElements());
-        response.put("currentPage", pageResult.getNumber());
-        response.put("hasNext", pageResult.hasNext());
 
-        return response;
+        return new PageResponseDTO<>(
+                pageResult.getContent(),
+                pageResult.getNumber(),
+                pageResult.getTotalPages(),
+                pageResult.getTotalElements(),
+                pageResult.hasNext(),
+                pageResult.hasPrevious()
+        );
 
     }
 

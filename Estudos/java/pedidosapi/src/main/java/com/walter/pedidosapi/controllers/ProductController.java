@@ -1,9 +1,11 @@
 package com.walter.pedidosapi.controllers;
 
 
+import com.walter.pedidosapi.dtos.PageResponseDTO;
 import com.walter.pedidosapi.dtos.ProductRegisterDTO;
 import com.walter.pedidosapi.dtos.ProductResponseDTO;
 import com.walter.pedidosapi.dtos.UpdateProductDTO;
+import com.walter.pedidosapi.models.Product;
 import com.walter.pedidosapi.services.ProductService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -51,7 +53,7 @@ public class ProductController {
             @ApiResponse(responseCode = "401", description = "Não autenticado", content = @Content),
             @ApiResponse(responseCode = "500", description = "Erro inesperado no servidor", content = @Content)
     })
-        public ResponseEntity<Map<String, Object>> getAll(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "20") int size){
+        public ResponseEntity<PageResponseDTO<Product>> getAll(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "20") int size){
             return ResponseEntity.ok(productService.getAll(page , size));
         }
 

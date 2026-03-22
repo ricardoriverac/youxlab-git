@@ -1,5 +1,6 @@
 package com.walter.pedidosapi.services;
 
+import com.walter.pedidosapi.dtos.PageResponseDTO;
 import com.walter.pedidosapi.dtos.ProductRegisterDTO;
 import com.walter.pedidosapi.dtos.ProductResponseDTO;
 import com.walter.pedidosapi.dtos.UpdateProductDTO;
@@ -53,18 +54,19 @@ public class ProductService {
     }
 
     @Transactional(readOnly = true)
-    public Map<String, Object> getAll(int page, int size){
+    public PageResponseDTO<Product> getAll(int page, int size){
+        size = Math.max(size, 1);
         size = Math.min(size, 50);
 
         Page<Product> pageResult = productRepository.findAll(PageRequest.of(page, size));
-        Map<String, Object> response = new HashMap<>();
-        response.put("data", pageResult.getContent());
-        response.put("totalPages", pageResult.getTotalPages());
-        response.put("totalItems", pageResult.getTotalElements());
-        response.put("currentPage", pageResult.getNumber());
-        response.put("hasNext", pageResult.hasNext());
-
-        return response;
+        return new PageResponseDTO<>(
+                pageResult.getContent(),
+                pageResult.getNumber(),
+                pageResult.getTotalPages(),
+                pageResult.getTotalElements(),
+                pageResult.hasNext(),
+                pageResult.hasPrevious()
+        );
     }
 
 
