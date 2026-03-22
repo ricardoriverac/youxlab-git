@@ -7,6 +7,9 @@ import com.walter.pedidosapi.models.Product;
 import com.walter.pedidosapi.models.User;
 import com.walter.pedidosapi.repositories.OrderRepository;
 import com.walter.pedidosapi.repositories.ProductRepository;
+import org.hibernate.type.descriptor.java.ObjectJavaType;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -15,9 +18,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Service
 public class OrderService {
@@ -78,19 +79,18 @@ public class OrderService {
     }
 
     @Transactional(readOnly = true)
-    public List<OrderResponseDTO> getAll() {
-        List<Order> orders = orderRepository.findAll();
-        return orders.stream().map(order -> {
-            List<OrderItemResponseDTO> items = order.getItem().stream().map(item -> new OrderItemResponseDTO(item.getId(), item.getQuantity(), item.getUnitPrice(), item.getProduct().getId())).toList();
-            return new OrderResponseDTO(
-                    order.getId(),
-                    order.getOrderDate(),
-                    order.getTotalValue(),
-                    items,
-                    order.getUser().getId()
-            );
+    public Map<String, Object> getAll(int page, int size) {
+        size = Math.min(size, 50);
+        Page<Order> pageResult = orderRepository.findAll(PageRequest.of(page, size));
+        Map<String, Object> response = new HashMap<>();
+        response.put("data", pageResult.getContent());
+        response.put("totalPages", pageResult.getTotalPages());
+        response.put("totalItems", pageResult.getTotalElements());
+        response.put("currentPage", pageResult.getNumber());
+        response.put("hasNext", pageResult.hasNext());
 
-        }).toList();
+        return response;
+
     }
 
     @Transactional(readOnly = true)
@@ -108,13 +108,17 @@ public class OrderService {
         OrderResponseDTO response = new OrderResponseDTO(order.getId(), order.getOrderDate(), order.getTotalValue(), itemResponse, order.getUser().getId());
         return response;
     }
-}
 
-//    @Transactional(readOnly = true)
-//    public List<OrderResponseDTO> getOrdersMe(){
-//        User auth = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//        return orderRepository.findByUser(auth)
-//                .stream()
-//                .map(order ->{List<OrderItemResponseDTO> items = order.getItem().stream().map() new OrderItemResponseDTO())
-//    }
-//}
+
+    @Transactional(readOnly = true)
+    public List<OrderResponseDTO> getOrdersMe() {
+        User auth = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return orderRepository.findByUser(auth)
+                .stream()
+                .map(order -> new OrderResponseDTO(
+                        order.getId(),
+                        order.getOrderDate(),
+                        order.getTotalValue(),
+                        order.getItem().stream().map(item -> new OrderItemResponseDTO(item.getId(), item.getQuantity(), item.getUnitPrice(), item.getProduct().getId())).toList(), order.getUser().getId())).toList();
+    }
+}

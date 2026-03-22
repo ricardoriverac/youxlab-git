@@ -4,14 +4,21 @@ import com.walter.pedidosapi.dtos.ProductRegisterDTO;
 import com.walter.pedidosapi.dtos.ProductResponseDTO;
 import com.walter.pedidosapi.dtos.UpdateProductDTO;
 import com.walter.pedidosapi.models.Product;
+import com.walter.pedidosapi.models.User;
 import com.walter.pedidosapi.repositories.ProductRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.awt.print.Pageable;
 import java.math.BigDecimal;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 @Service
@@ -46,13 +53,20 @@ public class ProductService {
     }
 
     @Transactional(readOnly = true)
-    public List<ProductResponseDTO> getAll(){
-        List<ProductResponseDTO> response = productRepository.findAll()
-                .stream()
-                .map(product -> new ProductResponseDTO(product.getId(), product.getName(), product.getDescription(), product.getPrice(), product.getStockQuantity()))
-                .toList();
+    public Map<String, Object> getAll(int page, int size){
+        size = Math.min(size, 50);
+
+        Page<Product> pageResult = productRepository.findAll(PageRequest.of(page, size));
+        Map<String, Object> response = new HashMap<>();
+        response.put("data", pageResult.getContent());
+        response.put("totalPages", pageResult.getTotalPages());
+        response.put("totalItems", pageResult.getTotalElements());
+        response.put("currentPage", pageResult.getNumber());
+        response.put("hasNext", pageResult.hasNext());
+
         return response;
     }
+
 
     @Transactional(readOnly = true)
     public ProductResponseDTO getById(UUID id){
@@ -60,6 +74,7 @@ public class ProductService {
         ProductResponseDTO response = new ProductResponseDTO(product.getId(), product.getName(), product.getDescription(), product.getPrice(), product.getStockQuantity());
         return response;
     }
+
 
     @Transactional
     public ProductResponseDTO updateProduct(UUID id, UpdateProductDTO data){

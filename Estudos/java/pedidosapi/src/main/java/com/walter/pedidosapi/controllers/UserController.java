@@ -17,6 +17,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 @RestController
@@ -69,8 +70,8 @@ public class UserController {
             @ApiResponse(responseCode = "403", description = "Não permitido", content = @Content),
             @ApiResponse(responseCode = "500", description = "Erro inesperado no servidor", content = @Content)
     })
-    public ResponseEntity<List<UserResponseDTO>> getAll(){
-        return ResponseEntity.ok(userService.getAll());
+    public ResponseEntity<Map<String, Object>> getAll(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "20") int size){
+        return ResponseEntity.ok(userService.getAll(page, size));
     }
 
     @GetMapping("/{id}")
@@ -79,6 +80,7 @@ public class UserController {
             @ApiResponse(responseCode = "200", description = "Usuário encontrado"),
             @ApiResponse(responseCode = "404", description = "Usuário não encontrado", content = @Content),
             @ApiResponse(responseCode = "403", description = "Não Permitido", content = @Content),
+            @ApiResponse(responseCode = "401", description = "Não autenticado", content = @Content),
             @ApiResponse(responseCode = "500", description = "Erro inesperado no servidor", content = @Content)
     })
     public ResponseEntity<UserResponseDTO> getById(@PathVariable UUID id){
@@ -102,8 +104,9 @@ public class UserController {
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "Dados atualizados"),
             @ApiResponse(responseCode = "403", description = "Não permitido", content = @Content),
+            @ApiResponse(responseCode = "401", description = "Não autenticado", content = @Content),
             @ApiResponse(responseCode = "404", description = "Usuário não encontrado", content = @Content),
-            @ApiResponse(responseCode = "500", description = "Erro inesperado no servidor")
+            @ApiResponse(responseCode = "500", description = "Erro inesperado no servidor", content = @Content)
     })
     public ResponseEntity<UserResponseDTO> updateUser(@PathVariable UUID id, @RequestBody @Valid UpdateUserDTO data){
         return ResponseEntity.ok(userService.updateUser(id, data));
@@ -126,7 +129,8 @@ public class UserController {
     @ApiResponses({
             @ApiResponse(responseCode = "204", description = "Usuário deletado com sucesso"),
             @ApiResponse(responseCode = "404", description = "Usuário não encontrado", content = @Content),
-            @ApiResponse(responseCode = "403", description = "Não permitido", content = @Content)
+            @ApiResponse(responseCode = "403", description = "Não permitido", content = @Content),
+            @ApiResponse(responseCode = "401", description = "Não autenticado", content = @Content)
     })
     public ResponseEntity<Void> deleteUser(@PathVariable UUID id){
         userService.deleteUser(id);

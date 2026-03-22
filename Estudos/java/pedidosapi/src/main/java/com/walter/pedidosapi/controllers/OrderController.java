@@ -14,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 @RestController
@@ -44,10 +45,11 @@ public class OrderController {
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "Pedidos buscados"),
             @ApiResponse(responseCode = "403", description = "Não permitido", content = @Content),
+            @ApiResponse(responseCode = "401", description = "Não autenticado", content = @Content),
             @ApiResponse(responseCode = "500", description = "Erro inesperado no servidor", content = @Content)
     })
-    public ResponseEntity<List<OrderResponseDTO>> getAll(){
-        return ResponseEntity.ok(orderService.getAll());
+    public ResponseEntity <Map<String, Object>> getAll(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "20") int size){
+        return ResponseEntity.ok(orderService.getAll(page, size));
     }
 
     @GetMapping("/{id}")
@@ -55,10 +57,22 @@ public class OrderController {
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "Pedido encontrado"),
             @ApiResponse(responseCode = "403", description = "Não permitido", content = @Content),
+            @ApiResponse(responseCode = "401", description = "Não autenticado", content = @Content),
             @ApiResponse(responseCode = "404", description = "Pedido não encontrado", content = @Content),
             @ApiResponse(responseCode = "500", description = "Erro inesperado no servidor", content = @Content)
     })
     public ResponseEntity<OrderResponseDTO> getById(@PathVariable UUID id){
         return ResponseEntity.ok(orderService.getById(id));
+    }
+
+    @GetMapping("/me")
+    @Operation(summary = "Buscar meus pedidos", description = "Buscar meus pedidos")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "Pedido encontrado"),
+            @ApiResponse(responseCode = "401", description = "Não autenticado", content = @Content),
+            @ApiResponse(responseCode = "500", description = "Erro inesperado no servidor", content = @Content)
+    })
+    public ResponseEntity<List<OrderResponseDTO>> getOrdersMe(){
+        return ResponseEntity.ok(orderService.getOrdersMe());
     }
 }

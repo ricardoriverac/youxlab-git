@@ -18,6 +18,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 @RestController
@@ -43,21 +44,23 @@ public class ProductController {
     }
 
     @GetMapping()
-    @Operation(summary = "Buscar todos", description = "Buscar todos os produtos")
+    @Operation(summary = "Buscar todos", description = "Buscar todos os produtos por página")
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "Produtos buscados"),
             @ApiResponse(responseCode = "403", description = "Não permitido", content = @Content),
+            @ApiResponse(responseCode = "401", description = "Não autenticado", content = @Content),
             @ApiResponse(responseCode = "500", description = "Erro inesperado no servidor", content = @Content)
     })
-    public ResponseEntity<List<ProductResponseDTO>> getAll(){
-        return ResponseEntity.ok(productService.getAll());
-    }
+        public ResponseEntity<Map<String, Object>> getAll(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "20") int size){
+            return ResponseEntity.ok(productService.getAll(page , size));
+        }
 
     @GetMapping("/{id}")
     @Operation(summary = "Buscar por id", description = "Buscar um produto por id")
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "Produto encontrado"),
             @ApiResponse(responseCode = "403", description = "Não permitido", content = @Content),
+            @ApiResponse(responseCode = "401", description = "Não autenticado", content = @Content),
             @ApiResponse(responseCode = "404", description = "Produto não encontrado", content = @Content),
             @ApiResponse(responseCode = "500", description = "Erro inesperado no servidor", content = @Content)
     })
@@ -70,6 +73,7 @@ public class ProductController {
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "Dados atualizados"),
             @ApiResponse(responseCode = "403", description = "Não permitido", content = @Content),
+            @ApiResponse(responseCode = "401", description = "Não autenticado", content = @Content),
             @ApiResponse(responseCode = "404", description = "Produto não encontrado", content = @Content),
             @ApiResponse(responseCode = "500", description = "Erro inesperado no servidor", content = @Content)
     })
@@ -82,6 +86,7 @@ public class ProductController {
     @ApiResponses({
             @ApiResponse(responseCode = "204", description = "Produto deletado com sucesso"),
             @ApiResponse(responseCode = "403", description = "Não permitido", content = @Content),
+            @ApiResponse(responseCode = "401", description = "Não autenticado", content = @Content),
             @ApiResponse(responseCode = "404", description = "Produto não encontrado", content = @Content)
     })
     public ResponseEntity<Void> deleteProduct(@PathVariable UUID id){

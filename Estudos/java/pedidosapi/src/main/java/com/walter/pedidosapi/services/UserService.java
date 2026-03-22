@@ -2,10 +2,13 @@ package com.walter.pedidosapi.services;
 
 import com.walter.pedidosapi.dtos.*;
 import com.walter.pedidosapi.models.PasswordResetToken;
+import com.walter.pedidosapi.models.Product;
 import com.walter.pedidosapi.models.User;
 import com.walter.pedidosapi.models.UserRole;
 import com.walter.pedidosapi.repositories.PasswordResetTokenRepository;
 import com.walter.pedidosapi.repositories.UserRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,9 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 
 @Service
 public class UserService {
@@ -56,13 +57,18 @@ public class UserService {
     }
 
     @Transactional(readOnly = true)
-    public List<UserResponseDTO> getAll(){
-       return userRepository.findAll()
-                .stream()
-                .map(user -> new UserResponseDTO(user.getId(), user.getName(), user.getEmail(), user.getRole().toString(), user.getCreatedAt()))
-                .toList();
+    public Map<String, Object> getAll(int page, int size){
+        size = Math.min(size, 50);
 
+        Page<User> pageResult = userRepository.findAll(PageRequest.of(page, size));
+        Map<String , Object> response = new HashMap<>();
+        response.put("data", pageResult.getContent());
+        response.put("totalPages", pageResult.getTotalPages());
+        response.put("totalItems", pageResult.getTotalElements());
+        response.put("currentPage", pageResult.getNumber());
+        response.put("hasNext", pageResult.hasNext());
 
+        return response;
     }
 
     @Transactional(readOnly = true)

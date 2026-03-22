@@ -11,10 +11,20 @@ import java.util.UUID;
 
 @Schema(name = "OrderResponse")
 public record OrderResponseDTO(
-        @Schema(name = "id") @JsonProperty("id")UUID id,
-        @Schema(name = "dataPedido") @JsonProperty("dataPedido")LocalDateTime orderDate,
-        @Schema(name = "valorTotal") @JsonProperty("valorTotal") BigDecimal totalValue,
-        @Schema(name = "itens") @JsonProperty("itens")List<OrderItemResponseDTO> items,
-        @Schema(name = "idUsuario") @JsonProperty("idUsuario")UUID userId
+        @Schema(name = "id")
+        @JsonProperty("id")
+        UUID id,
+        @Schema(name = "dataPedido")
+        @JsonProperty("dataPedido")
+        LocalDateTime orderDate,
+        @Schema(name = "valorTotal")
+        @JsonProperty("valorTotal")
+        BigDecimal totalValue,
+        @Schema(name = "itens")
+        @JsonProperty("itens")
+        List<OrderItemResponseDTO> items,
+        @Schema(name = "idUsuario")
+        @JsonProperty("idUsuario")
+        UUID userId
 ) {
 }
