@@ -51,7 +51,7 @@ public class OrderController {
             @ApiResponse(responseCode = "401", description = "Não autenticado", content = @Content),
             @ApiResponse(responseCode = "500", description = "Erro inesperado no servidor", content = @Content)
     })
-    public ResponseEntity<PageResponseDTO<Order>> getAll(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "20") int size){
+    public ResponseEntity<PageResponseDTO<OrderResponseDTO>> getAll(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "20") int size){
         return ResponseEntity.ok(orderService.getAll(page, size));
     }
 

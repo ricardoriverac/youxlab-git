@@ -57,13 +57,22 @@ public class UserService {
     }
 
     @Transactional(readOnly = true)
-    public PageResponseDTO<User> getAll(int page, int size){
+    public PageResponseDTO<UserResponseDTO> getAll(int page, int size){
         size = Math.max(size, 1);
         size = Math.min(size, 50);
 
         Page<User> pageResult = userRepository.findAll(PageRequest.of(page, size));
         return new PageResponseDTO<>(
-                pageResult.getContent(),
+                pageResult.getContent()
+                        .stream()
+                        .map(u -> new UserResponseDTO(
+                                u.getId(),
+                                u.getName(),
+                                u.getEmail(),
+                                u.getRole().name(),
+                                u.getCreatedAt()
+                                ))
+                                .toList(),
                 pageResult.getNumber(),
                 pageResult.getTotalPages(),
                 pageResult.getTotalElements(),

@@ -70,7 +70,7 @@ public class UserController {
             @ApiResponse(responseCode = "403", description = "Não permitido", content = @Content),
             @ApiResponse(responseCode = "500", description = "Erro inesperado no servidor", content = @Content)
     })
-    public ResponseEntity<PageResponseDTO<User>> getAll(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "20") int size){
+    public ResponseEntity<PageResponseDTO<UserResponseDTO>> getAll(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "20") int size){
         return ResponseEntity.ok(userService.getAll(page, size));
     }
 

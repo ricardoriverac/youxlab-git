@@ -54,13 +54,22 @@ public class ProductService {
     }
 
     @Transactional(readOnly = true)
-    public PageResponseDTO<Product> getAll(int page, int size){
+    public PageResponseDTO<ProductResponseDTO> getAll(int page, int size){
         size = Math.max(size, 1);
         size = Math.min(size, 50);
 
         Page<Product> pageResult = productRepository.findAll(PageRequest.of(page, size));
         return new PageResponseDTO<>(
-                pageResult.getContent(),
+                pageResult.getContent()
+                                .stream()
+                                        .map(p -> new ProductResponseDTO(
+                                                p.getId(),
+                                                p.getName(),
+                                                p.getDescription(),
+                                                p.getPrice(),
+                                                p.getStockQuantity()
+                                        ))
+                                            .toList(),
                 pageResult.getNumber(),
                 pageResult.getTotalPages(),
                 pageResult.getTotalElements(),

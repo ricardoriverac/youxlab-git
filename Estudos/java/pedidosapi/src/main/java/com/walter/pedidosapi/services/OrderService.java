@@ -79,13 +79,29 @@ public class OrderService {
     }
 
     @Transactional(readOnly = true)
-    public PageResponseDTO<Order> getAll(int page, int size) {
+    public PageResponseDTO<OrderResponseDTO> getAll(int page, int size) {
         size = Math.max(size, 1);
         size = Math.min(size, 50);
         Page<Order> pageResult = orderRepository.findAll(PageRequest.of(page, size));
 
         return new PageResponseDTO<>(
-                pageResult.getContent(),
+                pageResult.getContent()
+                        .stream()
+                        .map(o -> new OrderResponseDTO(
+                                o.getId(),
+                                o.getOrderDate(),
+                                o.getTotalValue(),
+                                o.getItem().stream()
+                                                .map(i -> new OrderItemResponseDTO(
+                                                        i.getId(),
+                                                        i.getQuantity(),
+                                                        i.getUnitPrice(),
+                                                        i.getProduct().getId()
+                                                ))
+                                                        .toList(),
+                                o.getUser().getId()
+                                ))
+                                .toList(),
                 pageResult.getNumber(),
                 pageResult.getTotalPages(),
                 pageResult.getTotalElements(),
