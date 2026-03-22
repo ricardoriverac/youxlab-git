@@ -36,7 +36,7 @@ public class OrderController {
             @ApiResponse(responseCode = "201", description = "Pedido criado com sucesso"),
             @ApiResponse(responseCode = "401", description = "Não autenticado", content = @Content),
             @ApiResponse(responseCode = "404", description = "Produto não encontrado", content = @Content),
-            @ApiResponse(responseCode = "409", description = "Quantidade maior que o estoque", content = @Content)
+            @ApiResponse(responseCode = "409", description = "Quantidade maior que o estoque ou concorrência ao realizar pedido", content = @Content)
     })
     public ResponseEntity<OrderResponseDTO> registerOrder(@RequestBody @Valid OrderRegisterDTO data){
         OrderResponseDTO response = orderService.createOrder(data);

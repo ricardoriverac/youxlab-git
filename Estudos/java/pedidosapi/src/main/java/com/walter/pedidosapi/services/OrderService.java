@@ -11,6 +11,7 @@ import org.hibernate.type.descriptor.java.ObjectJavaType;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
+import org.springframework.orm.ObjectOptimisticLockingFailureException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -61,7 +62,13 @@ public class OrderService {
         order.setTotalValue(totalValue);
 
 
-        Order savedOrder = orderRepository.save(order);
+        Order savedOrder;
+
+        try{
+            savedOrder = orderRepository.save(order);
+        }catch (ObjectOptimisticLockingFailureException e){
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Estoque foi atualizado por outro pedido");
+        }
 
         List<OrderItemResponseDTO> itemResponse = savedOrder.getItem()
                 .stream()

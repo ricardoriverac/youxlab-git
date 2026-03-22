@@ -1,0 +1,1 @@
+alter table products add column version BIGINT not null default 0;

@@ -31,4 +31,7 @@ public class Product {
 
     @Column(nullable = false, name = "stock_quantity")
     private Integer stockQuantity;
+
+    @Version
+    private Long version;
 }
