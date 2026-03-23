@@ -25,9 +25,6 @@ public class UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @Autowired
-    private TokenService tokenService;
-
 
     public User criarUser(UserRequestDTO dados) {
         if (userRepository.existsByEmail(dados.email())) {
@@ -83,10 +80,6 @@ public class UserService {
                 .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
     }
 
-    public User buscarPorEmail(String email) {
-        return userRepository.findByEmail(email)
-                .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
-    }
 
     public List<User> listarTodos() {
         return userRepository.findAll();
@@ -111,24 +104,27 @@ public class UserService {
 
 
     public User atualizarUser(Long id, UserUpdateDTO dados) {
+        System.out.println("entoru");
         User user = buscarPorId(id);
+        System.out.println("instanciou um usuário do banco");
 
         if (dados.nome() != null && !dados.nome().isEmpty()) {
             user.setNome(dados.nome());
         }
-
+        System.out.println("passou pelo nome");
         if (dados.email() != null && !dados.email().isEmpty()) {
-            Optional<User> emailExistente = userRepository.findByEmail(dados.email());
-            if (emailExistente.isPresent() && !emailExistente.get().getId().equals(id)) {
-                throw new RuntimeException("Email já está em uso por outro usuário");
-            }
+            userRepository.findByEmail(dados.email()).ifPresent(emailExistente -> {
+                if (!emailExistente.getId().equals(id)) {
+                    throw new RuntimeException("Email já está em uso por outro usuário");
+                }
+            });
             user.setEmail(dados.email());
         }
-
+        System.out.println("passou pelo email");
         if (dados.dataNascimento() != null) {
             user.setDataNascimento(dados.dataNascimento());
         }
-
+        System.out.println("passou pela data");
         return userRepository.save(user);
     }
 

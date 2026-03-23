@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.util.Base64;
 
+import static java.time.LocalTime.now;
 import static javax.crypto.Cipher.SECRET_KEY;
 
 @Service
@@ -29,6 +30,7 @@ public class TokenService {
                     .withSubject(user.getEmail())
                     .withClaim("id", user.getId())
                     .withClaim("role", user.getRole().toString())
+                    .withExpiresAt(gerarDataExpiracao())
                     .sign(algorithm);
 
         } catch (JWTCreationException exception) {
@@ -42,13 +44,13 @@ public class TokenService {
             Algorithm algorithm = Algorithm.HMAC256(SECRET_KEY);
 
             return JWT.require(algorithm)
-                    .withIssuer("casa-aposta")
+                    .withIssuer("casaDeAposta")
                     .build()
                     .verify(token)
                     .getSubject();
 
         } catch (JWTVerificationException exception) {
-            return null; // Token inválido ou expirado
+            return null;
         }
     }
 
@@ -57,9 +59,7 @@ public class TokenService {
         return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-03:00"));
     }
 
-    public String gerarToken(String email) {
-        return Base64.getEncoder().encodeToString(email.getBytes());
-    }
+
 
 
 

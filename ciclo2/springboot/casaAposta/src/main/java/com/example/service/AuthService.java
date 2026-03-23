@@ -36,7 +36,7 @@ public class AuthService {
                 throw new RuntimeException("Email não confirmado. Verifique sua caixa de entrada.");
             }
 
-            if (user.getStatus().toString().equals("BLOQUEADO")) {
+            if (user.getStatus().toString().equals("Bloqueado")) {
                 throw new RuntimeException("Usuário bloqueado. Entre em contato com o suporte.");
             }
 

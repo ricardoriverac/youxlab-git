@@ -49,7 +49,7 @@ public class User implements UserDetails {
 
         @Enumerated(EnumType.STRING)
         @Column(nullable = false)
-        private StatusUser status = StatusUser.ATIVO; // ATIVO, BLOQUEADO, PENDENTE
+        private StatusUser status = StatusUser.ATIVO;
 
         public User() {}
 

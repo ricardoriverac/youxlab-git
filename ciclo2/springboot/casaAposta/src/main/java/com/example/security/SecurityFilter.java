@@ -30,7 +30,7 @@ public class SecurityFilter extends OncePerRequestFilter {
                                     HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
 
-        var token = recuperarToken(request);
+        String token = recuperarToken(request);
 
         if (token != null) {
             var email = tokenService.validarToken(token);

@@ -19,26 +19,11 @@ public class UserController {
         @Autowired
         private UserService userService;
 
-        @Autowired
-        private EmailService emailService;
 
-
-        @PostMapping("/cadastro")
-        public ResponseEntity<String> cadastrar(@RequestBody @Valid UserRequestDTO dados) {
-            if (!dados.senhasConferem()) {
-                return ResponseEntity.badRequest().body("As senhas não conferem");
-            }
-
-            User user = userService.criarUser(dados);
-            emailService.enviarEmailConfirmacao(user);
-
-            return ResponseEntity.ok("Usuário cadastrado com sucesso! Verifique seu email para confirmar o cadastro.");
-        }
-
-        @PutMapping("/atulizar/{id}")
-        public ResponseEntity atualizar(@PathVariable Long id, @RequestBody UserUpdateDTO dados) {
+    @PutMapping("/atualizar/{id}")
+        public ResponseEntity atualizarUser(@PathVariable Long id, @RequestBody UserUpdateDTO dados) {
             try {
-                User  user =  userService.atualizarUser(id, dados);
+                User user = userService.atualizarUser(id, dados);
                 UserResponseDTO response = new UserResponseDTO(
                         user.getId(),
                         user.getNome(),
