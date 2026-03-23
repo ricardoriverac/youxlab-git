@@ -7,9 +7,9 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) {
 
-        String path = "/home/youx/youxlab-git/estudo_Java/src/Secao_15/Aula_163/FileReader_e_BufferedReader/file/in.txt";
+        String path = "src/Secao_15/Aula_163/FileReader_e_BufferedReader/file/in.txt";
         FileReader fr = null;
-        BufferedReader br = null;
+        BufferedReader br = nullgit;
 
         try {
             fr = new FileReader(path);
