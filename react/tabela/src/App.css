@@ -1,0 +1,35 @@
+.back {
+  font-family: "Roboto";
+  height: 100vh;
+  flex-direction: column;
+  padding-top: 60px;
+}
+
+.back input {
+  border: 2px solid white;
+  margin: 8px 0;
+  margin-top: 10px;
+  width: 45%;
+  padding: 0.5rem;
+  border-radius: 15px;
+}
+
+.back h1 {
+  font-family: "Blinker";
+  margin-bottom: 20px;
+}
+.btn {
+  background-color: white;
+  color: black;
+  width: 150px;
+  height: 30px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.containerForm {
+  display: flex;
+  flex-direction: column;
+  padding-left: 90px; /* distância da esquerda */
+  gap: 10px;
+  width: 40%;
+}
