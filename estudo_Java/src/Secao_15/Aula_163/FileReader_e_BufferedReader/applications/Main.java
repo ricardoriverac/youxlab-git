@@ -9,7 +9,7 @@ public class Main {
 
         String path = "src/Secao_15/Aula_163/FileReader_e_BufferedReader/file/in.txt";
         FileReader fr = null;
-        BufferedReader br = nullgit;
+        BufferedReader br = null;
 
         try {
             fr = new FileReader(path);
