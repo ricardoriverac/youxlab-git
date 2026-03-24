@@ -2,10 +2,12 @@ package com.example.controller;
 
 import com.example.dto.DashboardAdminDTO;
 import com.example.dto.DashboardUserDTO;
+import com.example.model.User;
 import com.example.service.DashboardService;
 import com.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -39,16 +41,13 @@ public class DashboardController {
             }
         }
 
-        @GetMapping("/user/{userId}")
-        public ResponseEntity dashboardUser(@PathVariable Long userId) {
+        @GetMapping("/meu-dashboard")
+        public ResponseEntity meuDashboard(@AuthenticationPrincipal User userLogado) {
             try {
-                var user = userService.buscarPorId(userId);
-
-                DashboardUserDTO dashboard = dashboardService.obterDadosUser(userId);
-
+                DashboardUserDTO dashboard = dashboardService.obterDadosUser(userLogado.getId());
                 return ResponseEntity.ok(dashboard);
             } catch (Exception e) {
-                return ResponseEntity.badRequest().body("Erro ao carregar dashboard do usuário: " + e.getMessage());
+                return ResponseEntity.badRequest().body("Erro ao carregar dashboard: " + e.getMessage());
             }
         }
 

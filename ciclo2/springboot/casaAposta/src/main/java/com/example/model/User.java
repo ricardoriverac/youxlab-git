@@ -42,6 +42,10 @@ public class User implements UserDetails {
         @Column(name = "token_confirmacao")
         private String tokenConfirmacao;
 
+        @Column(name = "ultimo_login")
+        private LocalDateTime ultimoLogin;
+
+
 
     @Enumerated(EnumType.STRING)
         @Column(nullable = false)
@@ -105,6 +109,14 @@ public class User implements UserDetails {
     @Override
     public boolean isEnabled() {
         return false;
+    }
+
+    public LocalDateTime getDataCadastro() {
+        return dataCadastro;
+    }
+
+    public LocalDateTime getUltimoLogin() {
+        return ultimoLogin;
     }
 
     @Column(name = "data_cadastro")

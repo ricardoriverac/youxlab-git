@@ -18,5 +18,8 @@ public interface JogadaRepository extends JpaRepository<Jogada, Long> {
         @Query("SELECT COUNT(j) > 0 FROM Jogada j WHERE j.jogo.id = :jogoId AND j.linha = :linha AND j.coluna = :coluna")
         boolean existsByJogoIdAndPosicao(@Param("jogoId") Long jogoId, @Param("linha") Integer linha, @Param("coluna") Integer coluna);
 
+
+
+
 }
 

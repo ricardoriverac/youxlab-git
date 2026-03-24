@@ -4,6 +4,7 @@ import com.example.dto.DashboardAdminDTO;
 import com.example.dto.DashboardUserDTO;
 import com.example.enuns.TipoCelula;
 import com.example.model.Jogo;
+import com.example.model.User;
 import com.example.repository.JogadaRepository;
 import com.example.repository.JogoRepository;
 import com.example.repository.UserRepository;
@@ -67,10 +68,21 @@ public class DashboardService {
     public DashboardUserDTO obterDadosUser (Long userId){
         DashboardUserDTO dashboard = new DashboardUserDTO();
 
+        // DADOS DO USUÁRIO
+        User user = userService.buscarPorId(userId);
+        dashboard.setId(user.getId());
+        dashboard.setNome(user.getNome());
+        dashboard.setEmail(user.getEmail());
+        dashboard.setDataNascimento(user.getDataNascimento());
+        dashboard.setRole(user.getRole());
+        dashboard.setStatus(user.getStatus());
+        dashboard.setEmailConfirmado(user.getEmailConfirmado());
+        dashboard.setSenha(user.getSenha());
+        dashboard.setDataCadastro(user.getDataCadastro());
+        dashboard.setUltimoLogin(user.getUltimoLogin());
 
         BigDecimal totalGanho = jogoRepository.somarValorGanhoPorUser(userId);
         dashboard.setTotalGanho(totalGanho != null ? totalGanho : BigDecimal.ZERO);
-
 
         Double mediaAposta = jogoRepository.calcularMediaApostaPorUser(userId);
         dashboard.setMediaAposta(mediaAposta != null ?
@@ -82,6 +94,8 @@ public class DashboardService {
 
         Long totalBombas = jogadaRepository.countByUserIdAndTipoCelula(userId, TipoCelula.BOMBA);
         dashboard.setTotalBombasEncontradas(totalBombas != null ? totalBombas : 0L);
+
+        dashboard.setSaldo(dashboard.getTotalGanho());
 
         return dashboard;
     }
