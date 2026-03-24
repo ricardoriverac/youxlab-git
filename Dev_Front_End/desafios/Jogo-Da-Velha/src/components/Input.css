@@ -1,0 +1,27 @@
+.cadastro {
+  font-size: larger;
+  font-weight: bolder;
+  padding: 5px;
+  height: 2rem;
+  width: 18rem;
+  border-radius: 15px;
+  background: black;
+  color: white;
+  border: none;
+  border: outset #000;
+  outline: none;
+}
+.cadastro::placeholder {
+  color: #888;
+}
+.cadastro:hover {
+  border: inset #000;
+}
+.cadastro:focus {
+  border: outset #fff;
+}
+
+.label {
+  font-size: large;
+  font-weight: bolder;
+}
