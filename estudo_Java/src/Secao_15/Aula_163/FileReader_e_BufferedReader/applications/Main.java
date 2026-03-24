@@ -27,7 +27,6 @@ public class Main {
         }
         finally {
             try {
-
                 if (br != null) {
                     br.close();
                 }
