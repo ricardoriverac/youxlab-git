@@ -3,18 +3,17 @@ const funcionarios = [
     {nome: 'Maria', salario:2200, anosTrabalhados: 3},
     {nome: 'Everton', salario: 3000, anosTrabalhados: 5}
 ]
-funcionarios.map(f =>{
+funcionarios.map((funcionario) =>{
     let newSalary = 0;
-    if(f.anosTrabalhados > 5){
-        newSalary = f.salario * 1.20
+    if(funcionario.anosTrabalhados > 5){
+        newSalary = funcionario.salario * 1.20
     }else{
-        newSalary = f.salario * 1.10
+        newSalary = funcionario.salario * 1.10
     }
 
     console.log(
-        "Funcionário " + f.nome + ": salario antigo = " + f.salario + ", salario novo = " + newSalary
+        "Funcionário " + funcionario.nome + ": salario antigo = " + funcionario.salario.toFixed(2) + ", salario novo = " + newSalary.toFixed(2)
     )
     
  })
- 
    
