@@ -1,0 +1,11 @@
+const vetorLogica = []
+const vetorAluno = []
+
+vetorLogica.push(201222234, 20122002, 20122345, 20122022, 20122035, 20122070, 20122456, 20122123, 20122321,20122789,20122987,20122923,20122124,20122001, 20122567)
+vetorAluno.push(20122678, 201222234,20122453,20122345,201222456,20122098,20122890,20122123,20122789,20122001)
+
+for(let i in vetorLogica){
+    if(vetorAluno.includes(vetorLogica[i])){
+        console.log(vetorLogica[i])
+    }
+}
