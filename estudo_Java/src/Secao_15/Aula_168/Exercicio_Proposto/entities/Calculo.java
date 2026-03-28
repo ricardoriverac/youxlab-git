@@ -3,14 +3,14 @@ package Secao_15.Aula_168.Exercicio_Proposto.entities;
 public class Calculo {
 
     private String nomeProduto;
-    private Double precoTotal;
+    private Double preco;
     private Integer quantidade;
 
     public Calculo() {}
 
     public Calculo(String nomeProduto, Double precoTotal, Integer quantidade) {
         this.nomeProduto = nomeProduto;
-        this.precoTotal = precoTotal;
+        this.preco = precoTotal;
         this.quantidade = quantidade;
     }
 
@@ -23,7 +23,7 @@ public class Calculo {
     }
 
     public Double getPrecoTotal() {
-        return precoTotal;
+        return preco;
     }
 
     public Integer getQuantidade() {
@@ -35,6 +35,6 @@ public class Calculo {
     }
 
     public Double precoTotal() {
-        return precoTotal * quantidade;
+        return preco * quantidade;
     }
 }

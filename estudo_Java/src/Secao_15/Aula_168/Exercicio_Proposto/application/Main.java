@@ -13,7 +13,7 @@ public class Main {
         System.out.print("Digite o caminho do arquivo: ");
         String strPath = sc.nextLine();
 
-        File path = new File(sc.nextLine());
+        File path = new File(strPath);
 
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
             String line = br.readLine();
@@ -33,7 +33,7 @@ public class Main {
 
                 try (BufferedWriter bw = new BufferedWriter(new FileWriter(localeFile + "/out/summary.csv", true))) {
 
-                    bw.write(cl.getNomeProduto() + ", " + cl.precoTotal());
+                    bw.write(cl.getNomeProduto() + "," + cl.precoTotal());
                     bw.newLine();
 
                     line = br.readLine();
