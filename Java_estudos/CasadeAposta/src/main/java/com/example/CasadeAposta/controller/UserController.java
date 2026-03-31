@@ -26,7 +26,7 @@ public class UserController {
 
     @PostMapping("/buscar")
     @PreAuthorize("hasRole('ADMIN')")
-    public User buscar(@RequestBody UserIdDTO user){
+    public User buscar(@PathVariable UserIdDTO user){
         return userService.buscarPorId(user.id());
     }
 

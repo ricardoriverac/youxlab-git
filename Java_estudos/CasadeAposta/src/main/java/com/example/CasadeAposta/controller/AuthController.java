@@ -1,7 +1,6 @@
 package com.example.CasadeAposta.controller;
 
 import com.example.CasadeAposta.dtos.AuthDTO;
-import com.example.CasadeAposta.dtos.UserDTO;
 import com.example.CasadeAposta.sevice.AuthService;
 import com.example.CasadeAposta.sevice.PasswordResetService;
 
@@ -19,9 +18,6 @@ public class AuthController {
     private final AuthService authService;
     private final PasswordResetService passwordResetService;
 
-
-
-
     @PostMapping("/login")
     public Map<String,String> login(@RequestBody AuthDTO dto){
 
@@ -30,7 +26,6 @@ public class AuthController {
         return Map.of("token", token);
     }
 
-
     @PostMapping("/reset-password")
     public String solicitarReset(@RequestParam String email){
 
@@ -38,7 +33,6 @@ public class AuthController {
 
         return "Email de reset enviado";
     }
-
 
     @PostMapping("/reset-password/confirm")
     public String resetarSenha(@RequestParam String token,

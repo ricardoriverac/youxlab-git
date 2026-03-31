@@ -1,6 +1,8 @@
 package com.example.siteprojeto.controller;
 
-import com.example.siteprojeto.dto.UserDTO;
+import com.example.siteprojeto.dto.LoginDTO;
+import com.example.siteprojeto.dto.LoginResponseDTO;
+import com.example.siteprojeto.dto.RegisterDTO;
 import com.example.siteprojeto.model.User;
 import com.example.siteprojeto.repository.UserRepository;
 import com.example.siteprojeto.service.TokenService;
@@ -17,7 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("auth")
-public class Authcontroller {
+public class AuthController {
+
     @Autowired
     private AuthenticationManager authenticationManager;
     @Autowired
@@ -26,8 +29,8 @@ public class Authcontroller {
     private TokenService tokenService;
 
     @PostMapping("/login")
-    public ResponseEntity login(@RequestBody @Valid UserDTO data){
-        var usernamePassword = new UsernamePasswordAuthenticationToken(data.e, data.password());
+    public ResponseEntity login(@RequestBody @Valid LoginDTO data){
+        var usernamePassword = new UsernamePasswordAuthenticationToken(data.email(),data.password());
         var auth = this.authenticationManager.authenticate(usernamePassword);
 
         var token = tokenService.generateToken((User) auth.getPrincipal());
@@ -37,10 +40,10 @@ public class Authcontroller {
 
     @PostMapping("/register")
     public ResponseEntity register(@RequestBody @Valid RegisterDTO data){
-        if(this.repository.findByLogin(data.login()) != null) return ResponseEntity.badRequest().build();
+        if(this.repository.findByLogin(data.email()) != null) return ResponseEntity.badRequest().build();
 
         String encryptedPassword = new BCryptPasswordEncoder().encode(data.password());
-        User newUser = new User(data.login(), encryptedPassword, data.role());
+        User newUser = new User(data.email(), encryptedPassword, data.name());
 
         this.repository.save(newUser);
 

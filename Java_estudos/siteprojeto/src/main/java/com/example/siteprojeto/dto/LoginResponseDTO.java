@@ -1,4 +1,3 @@
 package com.example.siteprojeto.dto;
 
-public class LoginResponseDTO {
-}
+public record LoginResponseDTO(String token) {}

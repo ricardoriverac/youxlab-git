@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+body {
+    background: linear-gradient(180deg, #ffb6c1, #ff69b4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-page {
+    width: 350px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Imagem grande da Moranguinho */
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+/* Container de login */
+.login-container {
+    padding: 30px 20px;
+}
+
+.login-container h1 {
+    color: #ff2f7d;
+    margin-bottom: 10px;
+}
+
+.login-container p {
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* Inputs animados */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-bottom: 2px solid #ff85c1;
+    outline: none;
+    font-size: 16px;
+    background: transp
+}

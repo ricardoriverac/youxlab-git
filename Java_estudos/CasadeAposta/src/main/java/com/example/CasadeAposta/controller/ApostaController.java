@@ -38,7 +38,7 @@ public class ApostaController {
 
 
     @PostMapping("/encerrar")
-    public Aposta encerrar() {
+    public ApostaDTO encerrar() {
         return apostaService.encerrar();
     }
 }

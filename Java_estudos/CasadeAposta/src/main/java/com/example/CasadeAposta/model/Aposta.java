@@ -6,6 +6,7 @@ import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -29,7 +30,6 @@ public class Aposta {
 
         private LocalDateTime dataCriacao = LocalDateTime.now();
 
-
         private LocalDateTime dataEncerramento;
 
         @ManyToOne
@@ -38,7 +38,11 @@ public class Aposta {
 
         private int diamantesEncontrados;
 
+        private int bombasEncontradas;
 
         private BigDecimal valorAtual;
+
+        @ElementCollection
+        private List<Integer> posicoesBombas;
 
     }

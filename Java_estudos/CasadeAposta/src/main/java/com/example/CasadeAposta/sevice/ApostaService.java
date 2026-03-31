@@ -17,6 +17,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDateTime;
 import java.util.*;
 
@@ -28,7 +29,6 @@ public class ApostaService {
     private final AuthService authService;
 
     private final Map<UUID, Quadrado[][]> jogos = new HashMap<>();
-
 
     public ApostaDTO criar(CriarApostaDTO data) {
 
@@ -56,31 +56,24 @@ public class ApostaService {
         aposta.setStatus(ApostaStatus.EM_ANDAMENTO);
         aposta.setValorGanhos(BigDecimal.ZERO);
         aposta.setDiamantesEncontrados(0);
+        aposta.setBombasEncontradas(0);
         aposta.setDataCriacao(LocalDateTime.now());
         aposta.setDataEncerramento(LocalDateTime.now().plusHours(1));
 
         aposta = apostaRepository.save(aposta);
 
-        Quadrado[][] campo = gerarCampoMinado();
-        jogos.put(aposta.getId(), campo);
+        jogos.put(aposta.getId(), gerarCampoMinado());
 
-        return new ApostaDTO(
-                aposta.getValorApostado(),
-                aposta.getValorAtual(),
-                aposta.getDiamantesEncontrados(),
-                aposta.getStatus(),
-                aposta.getValorAtual()
-        );
+        return toDTO(aposta);
     }
 
-
-    private Quadrado[][] gerarCampoMinado(){
+    private Quadrado[][] gerarCampoMinado() {
 
         Random random = new Random();
         Quadrado[][] matriz = new Quadrado[5][5];
 
-        for(int i = 0; i < 5; i++){
-            for(int j = 0; j < 5; j++){
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
 
                 Quadrado quadrado = new Quadrado();
 
@@ -95,12 +88,12 @@ public class ApostaService {
 
         int bombas = 0;
 
-        while(bombas < 5){
+        while (bombas < 5) {
 
             int linha = random.nextInt(5);
             int coluna = random.nextInt(5);
 
-            if(matriz[linha][coluna].getTipo() != TipoQuadrado.BOMBA){
+            if (matriz[linha][coluna].getTipo() != TipoQuadrado.BOMBA) {
 
                 matriz[linha][coluna].setTipo(TipoQuadrado.BOMBA);
                 bombas++;
@@ -110,124 +103,126 @@ public class ApostaService {
         return matriz;
     }
 
+    public ApostaDTO jogar(int linha, int coluna) {
 
-    public ApostaDTO jogar(int linha, int coluna){
+        ApostaContext contexto = getContextoJogo();
+        Aposta aposta = contexto.aposta();
+        Quadrado[][] campo = contexto.campo();
 
-        User userLogado = getUsuarioLogado();
-
-        Aposta aposta = apostaRepository
-                .findByUsuarioAndStatus(userLogado, ApostaStatus.EM_ANDAMENTO)
-                .orElseThrow(() -> new ResponseStatusException(
-                        HttpStatus.NOT_FOUND, "Nenhuma aposta em andamento"
-                ));
-
-        UUID apostaId = aposta.getId();
-        Quadrado[][] campo = jogos.get(apostaId);
-
-        if(campo == null){
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"Jogo não encontrado");
-        }
-
-        if(linha < 0 || linha >= 5 || coluna < 0 || coluna >= 5){
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Posição inválida");
+        if (linha < 0 || linha >= 5 || coluna < 0 || coluna >= 5) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Posição inválida");
         }
 
         Quadrado quadrado = campo[linha][coluna];
 
-        if(quadrado.isRevelado()){
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Quadrado já revelado");
+        if (quadrado.isRevelado()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Quadrado já revelado");
         }
 
         quadrado.setRevelado(true);
 
-        if(quadrado.getTipo() == TipoQuadrado.BOMBA){
-            aposta.setStatus(ApostaStatus.FINALIZADA);
-            aposta.setValorAtual(BigDecimal.ZERO);
-            apostaRepository.save(aposta);
-            jogos.remove(apostaId);
+        if (quadrado.getTipo() == TipoQuadrado.BOMBA) {
 
-            return new ApostaDTO(
-                    aposta.getValorApostado(),
-                    aposta.getValorAtual(),
-                    aposta.getDiamantesEncontrados(),
-                    aposta.getStatus(),
-                    aposta.getValorAtual()
-            );
-        }
+            List<Integer> bombas = new ArrayList<>();
 
-        if(quadrado.getTipo() == TipoQuadrado.DIAMANTE){
+            for (int i = 0; i < campo.length; i++) {
+                for (int j = 0; j < campo[i].length; j++) {
+                    if (campo[i][j].getTipo() == TipoQuadrado.BOMBA) {
+                        campo[i][j].setRevelado(true);
 
-            int novosDiamantes = aposta.getDiamantesEncontrados() + 1;
-            aposta.setDiamantesEncontrados(novosDiamantes);
-
-            BigDecimal multiplicador = BigDecimal.valueOf(1 + (novosDiamantes * 0.33));
-            BigDecimal valorAtual = aposta.getValorApostado().multiply(multiplicador);
-
-            aposta.setValorAtual(valorAtual);
-
-            apostaRepository.save(aposta);
-        }
-
-        return new ApostaDTO(
-                aposta.getValorApostado(),
-                aposta.getValorAtual(),
-                aposta.getDiamantesEncontrados(),
-                aposta.getStatus(),
-                aposta.getValorAtual()
-        );
-    }
-
-    public Aposta encerrar(){
-
-       Aposta aposta = new Aposta();
-
-        UUID apostaId = aposta.getId();
-
-        Quadrado[][] campo = jogos.get(apostaId);
-
-        if(campo == null){
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"Jogo não encontrado");
-        }
-
-        long diamantes = 0;
-
-        for(int i = 0; i < 5; i++){
-            for(int j = 0; j < 5; j++){
-
-                Quadrado q = campo[i][j];
-
-                if(q.isRevelado() && q.getTipo() == TipoQuadrado.DIAMANTE){
-                    diamantes++;
+                        int posicao = i * 5 + j;
+                        bombas.add(posicao);
+                    }
                 }
             }
+
+            aposta.setPosicoesBombas(bombas);
+            aposta.setStatus(ApostaStatus.FINALIZADA);
+            aposta.setValorAtual(BigDecimal.ZERO);
+
+            apostaRepository.save(aposta);
+            jogos.remove(aposta.getId());
+
+            return toDTO(aposta);
         }
 
-        BigDecimal ganho = aposta.getValorApostado()
-                .multiply(BigDecimal.valueOf(1 + (diamantes * 0.33)));
+        int novosDiamantes = aposta.getDiamantesEncontrados() + 1;
+        aposta.setDiamantesEncontrados(novosDiamantes);
 
-        aposta.setValorGanhos(ganho);
+        BigDecimal multiplicador = BigDecimal.valueOf(1 + (novosDiamantes * 0.33));
+
+        BigDecimal valorAtual = aposta.getValorApostado()
+                .multiply(multiplicador)
+                .setScale(2, RoundingMode.HALF_UP);
+
+        aposta.setValorAtual(valorAtual);
+
+        apostaRepository.save(aposta);
+
+        return toDTO(aposta);
+    }
+    public ApostaDTO encerrar() {
+
+        ApostaContext contexto = getContextoJogo();
+        Aposta aposta = contexto.aposta();
+
+        aposta.setValorGanhos(aposta.getValorAtual());
         aposta.setStatus(ApostaStatus.FINALIZADA);
 
-        jogos.remove(apostaId);
+        apostaRepository.save(aposta);
+        jogos.remove(aposta.getId());
 
-        return apostaRepository.save(aposta);
+        return toDTO(aposta);
     }
 
+    private ApostaContext getContextoJogo() {
+        User user = getUsuarioLogado();
+        Aposta aposta = getApostaEmAndamento(user);
+        Quadrado[][] campo = getCampo(aposta.getId());
+        return new ApostaContext(aposta, campo);
+    }
 
-    private User getUsuarioLogado(){
+    private Aposta getApostaEmAndamento(User user) {
+        return apostaRepository
+                .findByUsuarioAndStatus(user, ApostaStatus.EM_ANDAMENTO)
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND, "Nenhuma aposta em andamento"
+                ));
+    }
+
+    private Quadrado[][] getCampo(UUID apostaId) {
+        Quadrado[][] campo = jogos.get(apostaId);
+
+        if (campo == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Jogo não encontrado");
+        }
+
+        return campo;
+    }
+
+    private User getUsuarioLogado() {
 
         String email = SecurityContextHolder
                 .getContext()
                 .getAuthentication()
                 .getName();
 
-        if(email == null){
+        if (email == null) {
             throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Usuário não autenticado");
         }
 
         return authService.buscarPorEmail(email);
     }
 
+    private ApostaDTO toDTO(Aposta aposta) {
+        return new ApostaDTO(
+                aposta.getValorApostado(),
+                aposta.getValorAtual(),
+                aposta.getDiamantesEncontrados(),
+                aposta.getStatus(),
+                aposta.getValorGanhos()
+        );
+    }
 
-
+    private record ApostaContext(Aposta aposta, Quadrado[][] campo) {}
 }
