@@ -1,0 +1,16 @@
+jpa:
+  hibernate:
+    ddl-auto: validate
+  show-sql: false
+
+logging:
+  level:
+    root: WARN
+    org.springframework.security: INFO
+    com.educacaoFinanceira: INFO
+
+  file:
+    name: logs/prod.log
+
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [PROD] [%level] %logger - %msg%n"

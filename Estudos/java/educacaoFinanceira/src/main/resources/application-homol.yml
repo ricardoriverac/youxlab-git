@@ -1,0 +1,26 @@
+spring:
+  config:
+    activate:
+      on-profile: test
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+  h2:
+    console:
+      enabled: true
+
+  logging:
+    lev:
+      root: WARN
+      com.educacaoFinanceria: DEBUG
+
+    file:
+      name: logs/test.log
+
+    pattern:
+      console: "%D{yyyy-MM-dd HH:mm:ss} [TEST] [%level] %logger - %msg%n"
