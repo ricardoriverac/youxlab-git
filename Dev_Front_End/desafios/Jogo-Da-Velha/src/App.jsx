@@ -2,7 +2,6 @@ import { useState } from "react";
 
 import "./App.css";
 import Input from "./components/Input";
-import Botao from "./components/Botao";
 import Jogo from "./components/Jogo";
 
 function App() {
@@ -19,12 +18,26 @@ function App() {
     setAtivo(ativo === "X" ? "O" : "X");
   }
 
+  function handleNewRound() {
+    setBoard(Array(9).fill(null));
+    setAtivo("X");
+  }
+
   return (
     <div className="App">
       <h1>Jogo da Velha</h1>
-      <Input placeholder={"X"} label={"Jogador X"} value={inputX} onChange={(e) => setInputX(e.target.value)}/>
-      <Input placeholder={"O"} label={"Jogador O"} value={inputO} onChange={(e) => setInputO(e.target.value)} />
-      <Botao className={"botao"} text={"Jogar"} />
+      <Input
+        placeholder={"X"}
+        label={"Jogador X"}
+        value={inputX}
+        onChange={(e) => setInputX(e.target.value)}
+      />
+      <Input
+        placeholder={"O"}
+        label={"Jogador O"}
+        value={inputO}
+        onChange={(e) => setInputO(e.target.value)}
+      />
       <Jogo
         onClick={(numero) => {
           handleOnClick(numero);
@@ -33,6 +46,7 @@ function App() {
         board={board}
         jogadorX={inputX}
         jogadorO={inputO}
+        onNewRound={handleNewRound}
       />
     </div>
   );

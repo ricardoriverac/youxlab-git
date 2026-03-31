@@ -1,6 +1,8 @@
+import "./Placar.css"
+
 const Placar = ({ textX, pontosX, textO, pontosO }) => {
   return (
-    <div>
+    <div className="placar">
       <h1>
         {textX}: {pontosX}
       </h1>

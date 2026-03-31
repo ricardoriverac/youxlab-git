@@ -1,5 +1,3 @@
-import React from "react";
-
 const Modal = ({ id="modal", children, onClose = () => {} }) => {
 
     const handleOutsideClick = (e) => {

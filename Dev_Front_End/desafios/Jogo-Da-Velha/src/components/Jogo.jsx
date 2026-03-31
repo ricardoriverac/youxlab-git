@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Jogo.css";
 import Placar from "./Placar";
+import Botao from "./Botao";
+import Box from "@mui/material/Box";
+import Div from "@mui/material/Divider";
+import Button from "@mui/material/Button";
 
-const Jogo = ({ onClick, xbola, board, jogadorX, jogadorO }) => {
+const Jogo = ({ onClick, xbola, board, jogadorX, jogadorO, onNewRound }) => {
   const posicoes = [
     [0, 1, 2],
     [3, 4, 5],
@@ -14,31 +18,47 @@ const Jogo = ({ onClick, xbola, board, jogadorX, jogadorO }) => {
     [2, 4, 6], // diagonal
   ];
 
-  const [vitorias, setVitorias] = useState([[0], [0]]);
+  const [modalVisible, setModalVisible] = useState(false);
 
-  const pontosX = vitorias[0];
-  const pontosO = vitorias[1];
+  const [vitoriasX, setVitoriasX] = useState(0);
+  const [vitoriasO, setVitoriasO] = useState(0);
+
+  const pontosX = vitoriasX;
+  const pontosO = vitoriasO;
 
   const vencedor = posicoes.reduce((ac, [a, b, c]) => {
     if (ac) return ac;
     if (board[a] && board[a] === board[b] && board[a] === board[c]) {
-      if (board[a] === "X") {
-        setVitorias((vitorias[0] = vitorias[0] + 1));
-      } else {
-        setVitorias((vitorias[1] = vitorias[1] + 1));
-      }
       return board[a];
     }
     return null;
   }, null);
 
+  useEffect(() => {
+    if (vencedor) {
+      if (vencedor === "X") {
+        setVitoriasX((prev) => prev + 1);
+      } else {
+        setVitoriasO((prev) => prev + 1);
+      }
+      setModalVisible(true);
+    }
+  }, [vencedor]);
+
   const velha =
     !vencedor && board.every((value) => value !== null && value !== "");
+
   const status = vencedor
     ? `Vencedor: ${vencedor}`
     : velha
       ? "Velha"
       : `Jogador atual:${xbola}`;
+
+  const refresh = () => {
+    setModalVisible(false);
+    onNewRound;
+  };
+
   return (
     <>
       <h1 className="jogador">{status}</h1>
@@ -55,7 +75,7 @@ const Jogo = ({ onClick, xbola, board, jogadorX, jogadorO }) => {
           </button>
         ))}
       </div>
-      <div className="placar">
+      <div>
         <Placar
           textX={jogadorX}
           pontosX={pontosX}
@@ -63,6 +83,69 @@ const Jogo = ({ onClick, xbola, board, jogadorX, jogadorO }) => {
           pontosO={pontosO}
         />
       </div>
+
+      {modalVisible || velha ? (
+        <Box
+          sx={{
+            width: "100%",
+            height: "100%",
+            position: "fixed",
+            top: "0",
+            left: "0",
+            backgroundColor: "#000c",
+            color: "#fff",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Div
+            sx={{
+              backgroundColor: "#000",
+              color: "#eee",
+              width: "20%",
+              height: "10%",
+              borderRadius: "15px",
+              border: "5px solid #eee",
+              padding: "20px",
+              fontFamily: "BLinker",
+              fontSize: "200%",
+              alignItems: "center",
+            }}
+          >
+            {velha
+              ? "Velha!"
+              : vencedor === "X"
+                ? `vencedor: ${jogadorX || "Jogador X"}`
+                : `vencedor: ${jogadorO || "Jogador O"}`}
+          </Div>
+          <Div>
+            <Button
+              variant="text"
+              sx={{
+                height: "60px",
+                width: "90px",
+                fontSize: "larger",
+                color: "#fff",
+                bgcolor: "#000",
+                marginLeft: "100px",
+                p: "0",
+                border: "1px solid #fff",
+                borderRadius: "15px",
+                display: "flex",
+                right: "50px",
+                top: "50px",
+              }}
+              onClick={() => {
+                (refresh(), onNewRound());
+              }}
+            >
+              Ok
+            </Button>
+          </Div>
+        </Box>
+      ) : null}
     </>
   );
 };
