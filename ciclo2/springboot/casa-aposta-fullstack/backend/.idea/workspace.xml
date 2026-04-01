@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="14cf808e-18ca-46a5-93e5-8a479d5e495b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/controller/JogoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/dto/LoginDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/dto/UserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/model/Userr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/security/securityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjeroSecurity/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjeroSecurity/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjeroSecurity/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjeroSecurity/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjeroSecurity/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjeroSecurity/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/ProjeroSecurityApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/controllers/AuthenticationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/controllers/ProductController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/domain/product/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/domain/product/ProductRequestDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/domain/product/ProductResponseDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/domain/user/AuthenticationDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/domain/user/LoginResponseDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/domain/user/RegisterDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/domain/user/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/domain/user/UserRole.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/infra/security/SecurityConfigurations.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/infra/security/SecurityFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/infra/security/TokenService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/repositories/ProductRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/repositories/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/services/AuthorizationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjeroSecurity/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjeroSecurity/src/main/resources/db/migration/V1_create-product-table.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjeroSecurity/src/main/resources/db/migration/V2__create-table-users.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjeroSecurity/src/test/java/com/example/auth/ProjeroSecurity/ProjeroSecurityApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/controller/ApostaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/controller/DashboardController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/controller/adminController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/dto/ApostaRequestDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/dto/JogadaRequestDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/dto/LoginRequestDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/dto/LoginResponseDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/dto/UserRequestDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/dto/UserResponseDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/model/Aposta.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/model/Aposta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/model/Jogada.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/repository/ApostaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/repository/ApostaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/repository/JogadaRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/security/JwtAuthenticationFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/security/JwtUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/security/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/service/DashboardService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/service/EmailService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/service/JogoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../casaAposta/src/main/java/com/example/service/JogoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../casaAposta/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../casaAposta/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../libraryapi/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../libraryapi/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../libraryapi/src/main/java/com/exemple/libraryapi/LibraryapiApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../libraryapi/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../libraryapi/src/test/java/com/exemple/libraryapi/LibraryapiApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../libraryapi/src/test/java/com/exemple/libraryapi/repository/LivroRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../libraryapi/src/test/java/com/exemple/libraryapi/repository/LivroRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../projetoSecurity/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../projetoSecurity/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../securiry/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../securiry/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../securiry/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../securiry/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../securiry/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../securiry/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../securiry/src/main/java/com/projeto/securiry/SecuriryApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../securiry/src/main/java/com/projeto/securiry/controller/TestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../securiry/src/main/java/com/projeto/securiry/entity/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../securiry/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../securiry/src/main/resources/db/migration/V1__create_table_user.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../securiry/src/test/java/com/projeto/securiry/SecuriryApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sistemaVendas/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sistemaVendas/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sistemaVendas/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sistemaVendas/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sistemaVendas/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sistemaVendas/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sistemaVendas/src/main/java/com/projeto/sistemaVendas/SistemaVendasApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sistemaVendas/src/main/java/com/projeto/sistemaVendas/controller/PrincipalController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sistemaVendas/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sistemaVendas/src/main/resources/templates/administrativo/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sistemaVendas/src/test/java/com/projeto/sistemaVendas/SistemaVendasApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="3Aa2SRcLdemp6NAFrqgqcVlyHeK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "daniellaflor",
+    "last_opened_file_path": "/home/youx/youxlab-git/ciclo2/springboot/casa-aposta-fullstack/backend"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="14cf808e-18ca-46a5-93e5-8a479d5e495b" name="Changes" comment="" />
+      <created>1772816359306</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1772816359306</updated>
+    </task>
+    <servers />
+  </component>
+</project>

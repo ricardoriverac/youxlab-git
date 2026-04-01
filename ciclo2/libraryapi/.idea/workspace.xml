@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d214867f-2abf-4476-8ff7-f470a2d5b3bb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../ciclo1/HTML_E_CSS/HTML_E_CSS_projetos/Prjeto html e css/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ciclo1/HTML_E_CSS/HTML_E_CSS_projetos/Prjeto html e css/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/ProjeroSecurity/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/ProjeroSecurity/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/ProjeroSecurity/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/ProjeroSecurity/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/ProjeroSecurity/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/ProjeroSecurity/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/ProjeroSecurityApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/controllers/AuthenticationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/controllers/ProductController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/domain/product/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/domain/product/ProductRequestDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/domain/product/ProductResponseDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/domain/user/AuthenticationDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/domain/user/LoginResponseDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/domain/user/RegisterDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/domain/user/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/domain/user/UserRole.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/infra/security/SecurityConfigurations.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/infra/security/SecurityFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/infra/security/TokenService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/repositories/ProductRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/repositories/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/ProjeroSecurity/src/main/java/com/example/auth/ProjeroSecurity/services/AuthorizationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/ProjeroSecurity/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/ProjeroSecurity/src/main/resources/db/migration/V1_create-product-table.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/ProjeroSecurity/src/main/resources/db/migration/V2__create-table-users.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/ProjeroSecurity/src/test/java/com/example/auth/ProjeroSecurity/ProjeroSecurityApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/ProjetoSecurity/src/main/java/com/example/auth/infra/security/SecurityConfigurations.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot/ProjetoSecurity/src/main/java/com/example/auth/infra/security/SecurityConfigurations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/libraryapi/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot/libraryapi/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/libraryapi/src/main/java/com/exemple/libraryapi/LibraryapiApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/libraryapi/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/libraryapi/src/test/java/com/exemple/libraryapi/LibraryapiApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/libraryapi/src/test/java/com/exemple/libraryapi/repository/LivroRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot/libraryapi/src/test/java/com/exemple/libraryapi/repository/LivroRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/projetoSecurity/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/projetoSecurity/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/securiry/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/securiry/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/securiry/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/securiry/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/securiry/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/securiry/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/securiry/src/main/java/com/projeto/securiry/SecuriryApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/securiry/src/main/java/com/projeto/securiry/controller/TestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/securiry/src/main/java/com/projeto/securiry/entity/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/securiry/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/securiry/src/main/resources/db/migration/V1__create_table_user.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/securiry/src/test/java/com/projeto/securiry/SecuriryApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/sistemaVendas/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/sistemaVendas/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/sistemaVendas/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/sistemaVendas/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/sistemaVendas/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/sistemaVendas/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/sistemaVendas/src/main/java/com/projeto/sistemaVendas/SistemaVendasApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/sistemaVendas/src/main/java/com/projeto/sistemaVendas/controller/PrincipalController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/sistemaVendas/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/sistemaVendas/src/main/resources/templates/administrativo/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/sistemaVendas/src/test/java/com/projeto/sistemaVendas/SistemaVendasApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="39851eh6gbMeoWL9Z5mAIDQOHS5" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;daniellaflor&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/youx/youxlab-git/ciclo2/libraryapi&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d214867f-2abf-4476-8ff7-f470a2d5b3bb" name="Changes" comment="" />
+      <created>1770064643747</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1770064643747</updated>
+    </task>
+    <servers />
+  </component>
+</project>

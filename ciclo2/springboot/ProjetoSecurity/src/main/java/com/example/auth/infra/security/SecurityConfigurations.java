@@ -32,7 +32,7 @@ public class SecurityConfigurations {
                         .requestMatchers(HttpMethod.POST, "/auth/register").permitAll()
                         .requestMatchers(HttpMethod.POST, "/product").hasRole("ADMIN")
                         .anyRequest().authenticated()
-                )
+                )    
                 .addFilterBefore((Filter) securityFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
