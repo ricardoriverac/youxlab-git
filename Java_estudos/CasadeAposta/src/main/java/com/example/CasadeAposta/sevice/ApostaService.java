@@ -57,6 +57,7 @@ public class ApostaService {
         aposta.setValorGanhos(BigDecimal.ZERO);
         aposta.setDiamantesEncontrados(0);
         aposta.setBombasEncontradas(0);
+        aposta.setPosicoesDiamantes(new ArrayList<>());
         aposta.setDataCriacao(LocalDateTime.now());
         aposta.setDataEncerramento(LocalDateTime.now().plusHours(1));
 
@@ -69,34 +70,34 @@ public class ApostaService {
 
     private Quadrado[][] gerarCampoMinado() {
 
-        Random random = new Random();
         Quadrado[][] matriz = new Quadrado[5][5];
+
+        List<Integer> posicoes = new ArrayList<>();
+        for (int i = 0; i < 25; i++) {
+            posicoes.add(i);
+        }
+
+        Collections.shuffle(posicoes);
+
+        Set<Integer> bombas = new HashSet<>(posicoes.subList(0, 5));
 
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
 
-                Quadrado quadrado = new Quadrado();
+                int pos = i * 5 + j;
 
+                Quadrado quadrado = new Quadrado();
                 quadrado.setLinha(i);
                 quadrado.setColuna(j);
                 quadrado.setRevelado(false);
-                quadrado.setTipo(TipoQuadrado.DIAMANTE);
+
+                if (bombas.contains(pos)) {
+                    quadrado.setTipo(TipoQuadrado.BOMBA);
+                } else {
+                    quadrado.setTipo(TipoQuadrado.DIAMANTE);
+                }
 
                 matriz[i][j] = quadrado;
-            }
-        }
-
-        int bombas = 0;
-
-        while (bombas < 5) {
-
-            int linha = random.nextInt(5);
-            int coluna = random.nextInt(5);
-
-            if (matriz[linha][coluna].getTipo() != TipoQuadrado.BOMBA) {
-
-                matriz[linha][coluna].setTipo(TipoQuadrado.BOMBA);
-                bombas++;
             }
         }
 
@@ -129,7 +130,6 @@ public class ApostaService {
                 for (int j = 0; j < campo[i].length; j++) {
                     if (campo[i][j].getTipo() == TipoQuadrado.BOMBA) {
                         campo[i][j].setRevelado(true);
-
                         int posicao = i * 5 + j;
                         bombas.add(posicao);
                     }
@@ -149,6 +149,14 @@ public class ApostaService {
         int novosDiamantes = aposta.getDiamantesEncontrados() + 1;
         aposta.setDiamantesEncontrados(novosDiamantes);
 
+        int posicao = linha * 5 + coluna;
+        List<Integer> diamantes = aposta.getPosicoesDiamantes();
+        if (diamantes == null) {
+            diamantes = new ArrayList<>();
+        }
+        diamantes.add(posicao);
+        aposta.setPosicoesDiamantes(diamantes);
+
         BigDecimal multiplicador = BigDecimal.valueOf(1 + (novosDiamantes * 0.33));
 
         BigDecimal valorAtual = aposta.getValorApostado()
@@ -161,6 +169,7 @@ public class ApostaService {
 
         return toDTO(aposta);
     }
+
     public ApostaDTO encerrar() {
 
         ApostaContext contexto = getContextoJogo();

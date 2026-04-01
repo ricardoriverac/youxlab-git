@@ -6,6 +6,7 @@ import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -45,4 +46,7 @@ public class Aposta {
         @ElementCollection
         private List<Integer> posicoesBombas;
 
-    }
+        @ElementCollection
+        public List<Integer> PosicoesDiamantes;
+
+}
