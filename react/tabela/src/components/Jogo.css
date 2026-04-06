@@ -1,0 +1,44 @@
+.central {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* espaço entre os dois */
+  margin-bottom: 20px; /* afastar dos quadrados */
+}
+.vez {
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: black;
+}
+.placar {
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: black; 
+}
+.vez p,
+.placar p {
+  color: black;
+  background-color: transparent; /* 👈 remove azul */
+}
+.zerar {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: black;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+  text-decoration: none;
+  color: white !important;
+}
+
+.zerar:hover {
+  background-color: #333;
+  
+}

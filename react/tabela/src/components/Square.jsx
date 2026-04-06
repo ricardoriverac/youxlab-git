@@ -1,6 +1,6 @@
 import "./Square.css";
 
-function Square({ numero, clicar, board, index }) {
+function Square({ numero, clicar, board }) {
 
   return (
     <div className="coluna">
