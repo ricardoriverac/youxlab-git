@@ -22,4 +22,7 @@ public class Class {
     private String name;
 
 
+    @ManyToOne
+    @JoinColumn(nullable = false, name = "user_id")
+    private User user;
 }
