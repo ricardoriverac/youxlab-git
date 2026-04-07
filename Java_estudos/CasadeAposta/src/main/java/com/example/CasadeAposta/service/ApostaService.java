@@ -1,6 +1,5 @@
 package com.example.CasadeAposta.service;
 
-
 import com.example.CasadeAposta.dtos.ApostaDTO;
 import com.example.CasadeAposta.dtos.CriarApostaDTO;
 import com.example.CasadeAposta.model.Aposta;
@@ -11,10 +10,12 @@ import com.example.CasadeAposta.model.enums.TipoQuadrado;
 import com.example.CasadeAposta.repositories.ApostaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDateTime;
 import java.util.*;
 
