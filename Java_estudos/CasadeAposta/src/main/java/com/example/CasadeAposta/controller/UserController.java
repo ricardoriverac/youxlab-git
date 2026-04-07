@@ -4,7 +4,7 @@ import com.example.CasadeAposta.dtos.AuthDTO;
 import com.example.CasadeAposta.dtos.UserDTO;
 import com.example.CasadeAposta.dtos.UserIdDTO;
 import com.example.CasadeAposta.model.User;
-import com.example.CasadeAposta.sevice.UserService;
+import com.example.CasadeAposta.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;

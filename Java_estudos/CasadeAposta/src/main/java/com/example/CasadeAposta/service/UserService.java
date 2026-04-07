@@ -1,9 +1,8 @@
-package com.example.CasadeAposta.sevice;
+package com.example.CasadeAposta.service;
 
 import com.example.CasadeAposta.dtos.AuthDTO;
 import com.example.CasadeAposta.dtos.UserDTO;
 import com.example.CasadeAposta.model.User;
-import com.example.CasadeAposta.model.enums.Papel;
 import com.example.CasadeAposta.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

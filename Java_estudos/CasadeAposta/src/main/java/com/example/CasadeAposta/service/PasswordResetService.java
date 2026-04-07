@@ -1,5 +1,4 @@
-package com.example.CasadeAposta.sevice;
-
+package com.example.CasadeAposta.service;
 
 import com.example.CasadeAposta.model.User;
 import com.example.CasadeAposta.repositories.UserRepository;

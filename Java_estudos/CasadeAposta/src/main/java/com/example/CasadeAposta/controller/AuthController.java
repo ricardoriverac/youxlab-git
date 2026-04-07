@@ -1,9 +1,9 @@
 package com.example.CasadeAposta.controller;
 
 import com.example.CasadeAposta.dtos.AuthDTO;
-import com.example.CasadeAposta.sevice.AuthService;
-import com.example.CasadeAposta.sevice.PasswordResetService;
 
+import com.example.CasadeAposta.service.AuthService;
+import com.example.CasadeAposta.service.PasswordResetService;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.web.bind.annotation.*;

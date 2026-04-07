@@ -1,4 +1,4 @@
-package com.example.CasadeAposta.sevice;
+package com.example.CasadeAposta.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.mail.SimpleMailMessage;

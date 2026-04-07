@@ -1,4 +1,4 @@
-package com.example.CasadeAposta.sevice;
+package com.example.CasadeAposta.service;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;

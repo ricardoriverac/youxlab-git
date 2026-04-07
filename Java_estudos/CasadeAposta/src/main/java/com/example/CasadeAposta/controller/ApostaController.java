@@ -1,19 +1,16 @@
 package com.example.CasadeAposta.controller;
 
+
 import com.example.CasadeAposta.dtos.ApostaDTO;
 import com.example.CasadeAposta.dtos.CriarApostaDTO;
 import com.example.CasadeAposta.dtos.JogarDTO;
-import com.example.CasadeAposta.model.Aposta;
-import com.example.CasadeAposta.model.Quadrado;
-import com.example.CasadeAposta.sevice.ApostaService;
-
+import com.example.CasadeAposta.service.ApostaService;
 import lombok.RequiredArgsConstructor;
-
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.Map;
-import java.util.UUID;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/apostas")

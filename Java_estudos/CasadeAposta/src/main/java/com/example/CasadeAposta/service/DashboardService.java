@@ -1,4 +1,4 @@
-package com.example.CasadeAposta.sevice;
+package com.example.CasadeAposta.service;
 
 import com.example.CasadeAposta.dtos.DashbAdminDTO;
 import com.example.CasadeAposta.dtos.DashbUserDTO;

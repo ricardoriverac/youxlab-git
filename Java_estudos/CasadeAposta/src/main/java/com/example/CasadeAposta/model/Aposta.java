@@ -17,36 +17,36 @@ import java.util.UUID;
 @AllArgsConstructor
 public class Aposta {
 
-        @Id
-        @GeneratedValue
-        private UUID id;
+    @Id
+    @GeneratedValue
+    private UUID id;
 
-        private BigDecimal valorApostado;
+    private BigDecimal valorApostado;
 
-        @Column(name = "valor_ganhos")
-        private BigDecimal valorGanhos;
+    @Column(name = "valor_ganhos")
+    private BigDecimal valorGanhos;
 
-        @Enumerated(EnumType.STRING)
-        private ApostaStatus status;
+    @Enumerated(EnumType.STRING)
+    private ApostaStatus status;
 
-        private LocalDateTime dataCriacao = LocalDateTime.now();
+    private LocalDateTime dataCriacao = LocalDateTime.now();
 
-        private LocalDateTime dataEncerramento;
+    private LocalDateTime dataEncerramento;
 
-        @ManyToOne
-        @JoinColumn(name = "usuario_id")
-        private User usuario;
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private User usuario;
 
-        private int diamantesEncontrados;
+    private int diamantesEncontrados;
 
-        private int bombasEncontradas;
+    private int bombasEncontradas;
 
-        private BigDecimal valorAtual;
+    private BigDecimal valorAtual;
 
-        @ElementCollection
-        private List<Integer> posicoesBombas;
+    @ElementCollection
+    private List<Integer> posicoesBombas;
 
-        @ElementCollection
-        public List<Integer> PosicoesDiamantes;
+    @ElementCollection
+    public List<Integer> PosicoesDiamantes;
 
 }

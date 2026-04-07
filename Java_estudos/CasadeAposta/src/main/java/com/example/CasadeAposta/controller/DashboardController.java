@@ -3,7 +3,7 @@ package com.example.CasadeAposta.controller;
 import com.example.CasadeAposta.dtos.DashbAdminDTO;
 import com.example.CasadeAposta.dtos.DashbUserDTO;
 import com.example.CasadeAposta.model.User;
-import com.example.CasadeAposta.sevice.DashboardService;
+import com.example.CasadeAposta.service.DashboardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -26,3 +26,4 @@ public class DashboardController {
         return dashboardService.getDashboardUsuario(userDetails);
     }
 }
+
