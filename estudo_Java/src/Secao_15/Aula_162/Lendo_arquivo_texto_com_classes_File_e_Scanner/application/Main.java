@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        File file = new File("/home/youx/youxlab-git/estudo_Java/src/Secao_15/Aula_162/Lendo_arquivo_texto_com_classes_File_e_Scanner/arquivo/in.txt");
+        File file = new File("/home/youx/youxlab-git/estudo_Java/src/Secao_15/Aula_162/Lendo_arquivo_texto_com_classes_File_e_Scanner/file/in.txt");
         Scanner sc = null;
 
         try {
