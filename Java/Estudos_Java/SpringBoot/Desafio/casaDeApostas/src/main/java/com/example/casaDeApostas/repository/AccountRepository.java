@@ -9,4 +9,6 @@ public interface AccountRepository extends JpaRepository<Account, UUID> {
 
     boolean existsByCpf(Long cpf);
 
+    Account findByCpf(Long cpf);
+
 }

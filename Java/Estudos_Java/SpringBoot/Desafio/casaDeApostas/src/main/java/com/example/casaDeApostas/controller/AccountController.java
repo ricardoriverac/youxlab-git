@@ -1,8 +1,8 @@
 package com.example.casaDeApostas.controller;
 
 import com.example.casaDeApostas.dto.AccountDTO;
+import com.example.casaDeApostas.dto.DepositoDTO;
 import com.example.casaDeApostas.model.conta.Account;
-import com.example.casaDeApostas.model.users.User;
 import com.example.casaDeApostas.service.AccountService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -18,9 +18,21 @@ public class AccountController {
     private final AccountService accountService;
 
     @PostMapping("/create-account")
-    public ResponseEntity createAccount(@RequestBody @Valid AccountDTO conta) {
+    public ResponseEntity createAccount(@RequestBody @Valid AccountDTO conta)  {
 
-        return ResponseEntity.ok().body(accountService.createAccount(conta));
+        String account = accountService.createAccount(conta);
+
+        return ResponseEntity.ok().body(account);
     }
+
+    @PostMapping("/depositar")
+    public ResponseEntity deposito(
+            @RequestBody DepositoDTO dto){
+        accountService.depositar(dto.cpf(), dto.valor());
+
+        return ResponseEntity.ok().body("Deposito feito!");
+    }
+
+
 
 }

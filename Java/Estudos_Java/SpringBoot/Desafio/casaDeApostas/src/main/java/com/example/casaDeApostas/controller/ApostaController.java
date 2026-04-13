@@ -19,8 +19,6 @@ public class ApostaController {
 
     private final EsquecerSenhaService senhaService;
 
-    private final TokenService tokenService;
-
     private final ApostaService apostaService;
 
     @PutMapping("/reset-password")

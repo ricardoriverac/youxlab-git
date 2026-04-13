@@ -22,63 +22,45 @@ import java.util.List;
 @Service
 public class TokenService {
 
-    @Value("${api.security.token.secret}")
+    @Value("${api.security.token.secret:my-default-secret-key}")
     private String secret;
 
-    @Autowired
-    private UserRepository userRepository;
+    private static final String ISSUER = "casaDeApostas-api";
 
-    public String generateTokenUser(User user){
+    public String generateTokenUser(User user) {
         try {
             Algorithm algorithm = Algorithm.HMAC256(secret);
-            String token = JWT.create()
-                    .withIssuer("casa-apostas-api")
-                    .withClaim("name", user.getName())
+            return JWT.create()
+                    .withIssuer(ISSUER)
                     .withSubject(user.getEmail())
                     .withClaim("role", user.getRole().name())
+                    .withClaim("id", String.valueOf(user.getId()))
                     .withExpiresAt(genExpirationDate())
                     .sign(algorithm);
-            return token;
-
-
         } catch (JWTCreationException exception) {
             throw new RuntimeException("Error while generating token", exception);
         }
     }
 
 
-    public String validateToken(String token){
+    public String validateToken(String token) {
+        if (token == null || token.isBlank()) {
+            return null;
+        }
         try {
+
             Algorithm algorithm = Algorithm.HMAC256(secret);
             return JWT.require(algorithm)
-                    .withIssuer("casa-apostas-api")
+                    .withIssuer(ISSUER)
                     .build()
                     .verify(token)
                     .getSubject();
-        } catch (JWTVerificationException exception){
-            return "";
+        } catch (JWTVerificationException exception) {
+            return null;
         }
     }
 
-    private Instant genExpirationDate(){
-        return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-03:00"));
-    }
-
-    public Authentication getAuthentication(String token){
-
-        String email = validateToken(token);
-        if (email.isEmpty()){
-            return null;
-        }
-
-        User user = userRepository.findByEmail(email);
-        if (user == null){
-            return null;
-        }
-
-        return new UsernamePasswordAuthenticationToken(
-                user, null,
-                user.getAuthorities()
-        );
+    private Instant genExpirationDate() {
+        return LocalDateTime.now().plusHours(1).toInstant(ZoneOffset.of("-03:00"));
     }
 }

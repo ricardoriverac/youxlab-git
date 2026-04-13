@@ -38,6 +38,12 @@ public class SecurityConfiguration {
                         .requestMatchers(HttpMethod.POST, "/usuario/admins/register-admins").permitAll()
 
                         .requestMatchers(HttpMethod.POST, "/account/create-account").hasAnyRole("USER", "ADMIN")
+                        .requestMatchers(HttpMethod.POST, "/account/depositar").hasAnyRole("USER", "ADMIN")
+
+
+                        .requestMatchers(HttpMethod.POST, "/jogos/jogar").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/jogos/encerrar").hasAnyRole("USER", "ADMIN")
+                        .requestMatchers(HttpMethod.POST, "/jogos/criar-jogo").hasAnyRole("USER", "ADMIN")
 
                         .anyRequest().authenticated()
                 )
