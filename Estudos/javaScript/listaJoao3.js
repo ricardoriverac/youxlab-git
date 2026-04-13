@@ -1,5 +1,5 @@
 const vetor1 = [10,20,30,40,50,60,70]
-const vetor2 = [0,6,3,-1]
+const vetor2 = [0,6,3,1,-1]
 
  var multiplicacao
 for(let i = 0; i<vetor2.length && vetor2[i] >=0; i++){
