@@ -1,4 +1,7 @@
 package com.treino.TreinandoSpring.repository;
 
-public interface ItemRepository {
+import com.treino.TreinandoSpring.entity.Item;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ItemRepository extends JpaRepository<Item, Long> {
 }
