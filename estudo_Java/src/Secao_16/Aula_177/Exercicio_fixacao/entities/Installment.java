@@ -2,12 +2,12 @@ package Secao_16.Aula_177.Exercicio_fixacao.entities;
 
 import java.time.LocalDate;
 
-public class installment {
+public class Installment {
 
     private LocalDate date;
     private Double amount;
 
-    public installment(LocalDate date, Double amount) {
+    public Installment(LocalDate date, Double amount) {
         this.date = date;
         this.amount = amount;
     }

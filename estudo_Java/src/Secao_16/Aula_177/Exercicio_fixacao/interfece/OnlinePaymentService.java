@@ -1,4 +1,4 @@
-package Secao_16.Aula_177.Exercicio_fixacao.service;
+package Secao_16.Aula_177.Exercicio_fixacao.interfece;
 
 public interface OnlinePaymentService {
 
