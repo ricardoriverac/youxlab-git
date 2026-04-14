@@ -1,0 +1,30 @@
+package Secao_16.Aula_177.Exercicio_fixacao.entities;
+
+import java.time.LocalDate;
+
+public class installment {
+
+    private LocalDate date;
+    private Double amount;
+
+    public installment(LocalDate date, Double amount) {
+        this.date = date;
+        this.amount = amount;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public Double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Double amount) {
+        this.amount = amount;
+    }
+}
