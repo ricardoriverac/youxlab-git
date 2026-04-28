@@ -2,17 +2,23 @@ package com.example.casaDeApostas.service;
 
 import com.example.casaDeApostas.dto.LoginDTO;
 import com.example.casaDeApostas.dto.UserDTO;
+import com.example.casaDeApostas.model.jogo.Jogo;
 import com.example.casaDeApostas.model.users.User;
+import com.example.casaDeApostas.repository.JogoRepository;
 import com.example.casaDeApostas.repository.UserRepository;
 import com.example.casaDeApostas.security.SecurityConfiguration;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @AllArgsConstructor
 public class UserService {
 
     private final UserRepository userRepository;
+
+    private final JogoRepository jogoRepository;
 
     private final SecurityConfiguration configuration;
 
@@ -41,4 +47,21 @@ public class UserService {
     }
 
     // Metodo dashborad usuario
+
+//    public UserDashboardDTO getUserDashboard() {
+//        User userLogado = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//        List<Jogo> bets = jogoRepository.findByUser(userLogado);
+//        int total = bets.size();
+//        int wins = 0;
+//        int lost = 0;
+//
+//        for (Bet bet : bets) {
+//            if (bet.getStatus() == BetStatus.WON) {
+//                wins += 1;
+//            } else if (bet.getStatus() == BetStatus.LOST) {
+//                lost += 1;
+//            }
+//        }
+//        return new UserDashboardDTO(total, wins, lost);
+//    }
 }

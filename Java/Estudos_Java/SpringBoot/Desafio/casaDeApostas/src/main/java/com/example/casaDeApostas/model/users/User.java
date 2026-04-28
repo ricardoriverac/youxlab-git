@@ -1,6 +1,7 @@
 package com.example.casaDeApostas.model.users;
 
 import com.example.casaDeApostas.model.enums.Roles;
+import com.example.casaDeApostas.model.jogo.Jogo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -12,9 +13,11 @@ import org.jspecify.annotations.Nullable;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
@@ -93,6 +96,11 @@ public class User implements UserDetails {
         return List.of(
                 new SimpleGrantedAuthority("ROLE_" + role)
         );
+    }
+
+    public void setResetarSenha(String senha) {
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        this.senha = encoder.encode(senha) ;
     }
 
     @JsonIgnore

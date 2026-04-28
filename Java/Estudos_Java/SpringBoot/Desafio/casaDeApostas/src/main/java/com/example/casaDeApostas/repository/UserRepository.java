@@ -15,6 +15,4 @@ public interface UserRepository extends JpaRepository<User, UUID> {
     User findByEmail(String email);
 
     User findByCpf(Long cpf);
-    User findByRole(Roles role);
-
 }

@@ -20,17 +20,14 @@ public class Positions {
     private UUID id;
 
     @NotNull
-    private int linha;
-
-    @NotNull
-    private int coluna;
+    private Integer posicao;
 
     @NotNull
     @Enumerated(EnumType.STRING)
     private TipoCampo tipo;
 
     public Positions(int linha, TipoCampo tipo) {
-        this.linha = linha;
+        this.posicao = linha;
         this.tipo = tipo;
     }
 }

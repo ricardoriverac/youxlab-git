@@ -1,8 +1,10 @@
 package com.example.casaDeApostas.controller;
 
 import ch.qos.logback.core.joran.conditional.IfAction;
+import com.example.casaDeApostas.dto.BloquearDTO;
 import com.example.casaDeApostas.dto.UserDTO;
 import com.example.casaDeApostas.model.users.User;
+import com.example.casaDeApostas.repository.UserRepository;
 import com.example.casaDeApostas.service.AdminService;
 import com.example.casaDeApostas.service.UserService;
 
@@ -22,9 +24,11 @@ import java.util.List;
 @AllArgsConstructor
 public class UserController {
 
-    private final UserService userService;
+    private final UserRepository userRepository;
 
-    private final AdminService adminService;
+    private UserService userService;
+
+    private AdminService adminService;
 
     @PostMapping("user/register-users")
     public ResponseEntity register(@RequestBody @Valid UserDTO user){
@@ -72,12 +76,30 @@ public class UserController {
         return ResponseEntity.ok().body(user);
     }
 
-    @PutMapping("admins/all-users/bloquear")
-    public ResponseEntity blouquar(@RequestBody boolean bloquear) throws Exception{
+    @PostMapping("admins/users/bloquear")
+    public ResponseEntity bloquear(@RequestBody BloquearDTO dto){
 
-        //bloquear
+        try {
+            String resposta = adminService.blockUser(dto.cpf());
+            return ResponseEntity.ok().body(resposta);
 
-        return ResponseEntity.ok().body("Usuario bloqueado.");
+        }
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Ocorreu um problema nessa operação.");
+        }
+    }
+
+    @PostMapping("admins/users/desbloquear")
+    public ResponseEntity desbloquear(@RequestBody BloquearDTO dto){
+
+        try {
+            String resposta = adminService.unlockUser(dto.cpf());
+            return ResponseEntity.ok().body(resposta);
+
+        }
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Ocorreu um problema nessa operação.");
+        }
     }
 
 

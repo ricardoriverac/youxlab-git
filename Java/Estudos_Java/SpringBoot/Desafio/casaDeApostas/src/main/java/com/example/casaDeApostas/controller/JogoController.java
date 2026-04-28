@@ -3,6 +3,7 @@ package com.example.casaDeApostas.controller;
 import com.example.casaDeApostas.dto.ApostaDTO;
 import com.example.casaDeApostas.dto.CriarJogoDTO;
 
+import com.example.casaDeApostas.dto.EncerrarDTO;
 import com.example.casaDeApostas.dto.JogoResponseDTO;
 import com.example.casaDeApostas.model.enums.TipoJogo;
 import com.example.casaDeApostas.model.jogo.Jogo;
@@ -14,7 +15,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
+import java.util.UUID;
 
 
 @RestController
@@ -65,13 +69,15 @@ public class JogoController {
 
         return ResponseEntity.status(HttpStatus.CONFLICT).body("Jogo não existe.");
     }
-//
-//    @PostMapping("/encerrar")
-//    public ResponseEntity encerrar(@RequestBody EncerrarDTO dto) {
-//
-//        Jogo jogo = new Jogo();
-//
-//        return ResponseEntity.ok().body(jogo.encerrar(dto));
-//    }
+
+    @PutMapping("/encerrar")
+    public ResponseEntity encerrarJogo(@RequestBody EncerrarDTO dto){
+
+        if (!jogoRepository.existsById(dto.idJogo())){
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Jogo não existe.");
+        }
+        ResponseEntity<String> resposta = jogoService.encerrarJogo(dto.idJogo());
+        return resposta;
+    }
 
 }

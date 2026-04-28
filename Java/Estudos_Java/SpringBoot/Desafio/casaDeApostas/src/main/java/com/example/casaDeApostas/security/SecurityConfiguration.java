@@ -32,7 +32,8 @@ public class SecurityConfiguration {
 
                         .requestMatchers(HttpMethod.POST, "/usuario/user/register-users").permitAll()
 
-                        .requestMatchers(HttpMethod.GET, "/usuario/admins/all-users/bloquear").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.POST, "/usuario/admins/users/bloquear").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.POST, "/usuario/admins/users/desbloquear").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.GET, "/usuario/admins/all-users").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.GET, "/usuario/admins/cpf/{cpf}").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.POST, "/usuario/admins/register-admins").permitAll()
@@ -41,9 +42,12 @@ public class SecurityConfiguration {
                         .requestMatchers(HttpMethod.POST, "/account/depositar").hasAnyRole("USER", "ADMIN")
 
 
-                        .requestMatchers(HttpMethod.POST, "/jogos/jogar").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/jogos/encerrar").hasAnyRole("USER", "ADMIN")
+                        .requestMatchers(HttpMethod.POST, "/jogos/jogar").hasAnyRole("USER", "ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/jogos/encerrar").hasAnyRole("USER", "ADMIN")
                         .requestMatchers(HttpMethod.POST, "/jogos/criar-jogo").hasAnyRole("USER", "ADMIN")
+
+                        .requestMatchers(HttpMethod.GET, "/dashboard/dashboard-admin").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET, "/dashboard/dashboard-user/{idUser}").hasRole("USER")
 
                         .anyRequest().authenticated()
                 )

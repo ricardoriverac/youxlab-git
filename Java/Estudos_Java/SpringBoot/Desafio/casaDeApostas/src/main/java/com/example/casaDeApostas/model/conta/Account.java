@@ -29,6 +29,7 @@ public class Account {
     @NotNull
     private Double valorAtual;
 
+    public Account() {}
 
     public Account(Long cpf, Double valorAtual) {
         this.cpf = cpf;

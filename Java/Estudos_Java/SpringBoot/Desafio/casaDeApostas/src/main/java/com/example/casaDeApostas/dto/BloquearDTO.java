@@ -1,4 +1,4 @@
 package com.example.casaDeApostas.dto;
 
-public class BloquearDTO {
+public record BloquearDTO(Long cpf) {
 }

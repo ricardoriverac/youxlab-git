@@ -3,31 +3,24 @@ package com.example.casaDeApostas.service;
 import com.example.casaDeApostas.model.users.User;
 import com.example.casaDeApostas.repository.UserRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PutMapping;
+
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 @AllArgsConstructor
 public class EsquecerSenhaService {
 
-    private final UserRepository repository;
+    private final UserRepository userRepository;
 
-    public String resetarSenha(User usuarioNovaSenha){
+    public String resetarSenha(UUID idUsuario, String usuarioNovaSenha){
 
-        try {
-            String senha = usuarioNovaSenha.getSenha();
+        Optional<User> user = userRepository.findById(idUsuario);
 
-            usuarioNovaSenha = new User(senha);
-
-            repository.save(usuarioNovaSenha);
-
-        }
-        catch (NullPointerException e){
-            throw new RuntimeException("Campo vazio.");
-        }
-
-        return "Senha Atualizada!";
+        user.get().setResetarSenha(usuarioNovaSenha);
+        userRepository.save(user.get());
+        return "Senha Atualizada.";
 
     }
 

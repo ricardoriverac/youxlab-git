@@ -5,8 +5,10 @@ import com.example.casaDeApostas.model.enums.TipoCampo;
 import com.example.casaDeApostas.model.users.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.boot.webmvc.autoconfigure.WebMvcProperties;
 
 import java.util.*;
 
@@ -54,8 +56,11 @@ public class Jogo {
     @Transient
     private Integer coluna;
 
-    @Transient
     @JsonIgnore
+    private Double valorGanho;
+
+    @JsonIgnore
+    @Transient
     private Integer quantidadeBombas = 10;
 
 
@@ -69,9 +74,12 @@ public class Jogo {
         this.tipoJogo = TipoJogo.EM_ANDAMENTO;
     }
 
+    public Jogo(String mensagem) {
+    }
+
     public TipoCampo[] gerarCampoMinado() {
 
-        matriz = new TipoCampo[20];
+        matriz = new TipoCampo[25];
         Random random = new Random();
 
         for (int i = 0; i < matriz.length; i++) {
@@ -80,7 +88,7 @@ public class Jogo {
 
 
         for (int i = 0; i < quantidadeBombas; i++){
-            matriz[random.nextInt(20)] = TipoCampo.BOMBA;
+            matriz[random.nextInt(25)] = TipoCampo.BOMBA;
         }
 
         return matriz;
@@ -97,5 +105,15 @@ public class Jogo {
     public void adicionarDiamantesEncontrados(int aumentarDiamantes){
         this.quantidadeDiamantesEncontrados += aumentarDiamantes;
     }
+
+    public Double calcularGanho(Jogo jogo) {
+
+        double valorGanho = jogo.getValorApostado() * (1 + (jogo.getQuantidadeDiamantesEncontrados() * 0.33));
+
+        jogo.setValorGanho(valorGanho);
+        return valorGanho;
+
+    }
+
 
 }

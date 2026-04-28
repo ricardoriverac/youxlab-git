@@ -1,40 +1,48 @@
 package com.example.casaDeApostas.controller;
 
-import com.auth0.jwt.JWT;
-import com.auth0.jwt.JWTCreator;
 import com.example.casaDeApostas.dto.LoginDTO;
-import com.example.casaDeApostas.model.enums.Roles;
+import com.example.casaDeApostas.dto.ResetPasswordDTO;
 import com.example.casaDeApostas.model.users.User;
+import com.example.casaDeApostas.repository.UserRepository;
 import com.example.casaDeApostas.service.*;
-import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/casa-apostas")
 @AllArgsConstructor
-public class ApostaController {
+public class CasaApostaController {
 
-    private final EsquecerSenhaService senhaService;
+    private EsquecerSenhaService senhaService;
 
-    private final ApostaService apostaService;
+    private ApostaService apostaService;
 
-    @PutMapping("/reset-password")
-    public ResponseEntity resetarSenha(@RequestBody @Valid User user){
+    @PostMapping("/reset-password")
+    public ResponseEntity resetPassword(@RequestBody ResetPasswordDTO resetar){
 
-        senhaService.resetarSenha(user);
-
-        return ResponseEntity.ok().body("Senha nova registrada.");
+        try {
+            String resposta = senhaService.resetarSenha(resetar.idUsuario(), resetar.senha());
+            return ResponseEntity.status(HttpStatus.OK).body(resposta);
+        }
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Usuário não encontrado.");
+        }
     }
 
     @PostMapping("/login")
-    public ResponseEntity login(@RequestBody @Valid LoginDTO login){
+    public ResponseEntity login(@RequestBody LoginDTO login){
 
-        String token = apostaService.login(login);
-
-        return ResponseEntity.ok().body(token);
+        try {
+            String token = apostaService.login(login);
+            return ResponseEntity.ok().body(token);
+        }
+        catch (Exception e){
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Ocorreu um problema nessa operação.");
+        }
 
     }
 

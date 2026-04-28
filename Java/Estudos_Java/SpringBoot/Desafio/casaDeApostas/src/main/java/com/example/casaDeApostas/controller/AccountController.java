@@ -6,6 +6,7 @@ import com.example.casaDeApostas.model.conta.Account;
 import com.example.casaDeApostas.service.AccountService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,11 +29,10 @@ public class AccountController {
     @PostMapping("/depositar")
     public ResponseEntity deposito(
             @RequestBody DepositoDTO dto){
+
         accountService.depositar(dto.cpf(), dto.valor());
 
         return ResponseEntity.ok().body("Deposito feito!");
     }
-
-
 
 }

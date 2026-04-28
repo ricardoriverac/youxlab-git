@@ -44,11 +44,7 @@ public class AccountService {
     public void depositar(Long cpf, Double valor){
 
         Account account = accountRepository.findByCpf(cpf);
-        if (account == null) throw new IllegalArgumentException("Cpf null!");
-
-        if (accountRepository.existsByCpf(cpf)){
-            throw new IllegalArgumentException("Cpf em uso!");
-        }
+        if (account == null) throw new IllegalArgumentException("Cpf não existe.");
 
         account.depositar(valor);
     }

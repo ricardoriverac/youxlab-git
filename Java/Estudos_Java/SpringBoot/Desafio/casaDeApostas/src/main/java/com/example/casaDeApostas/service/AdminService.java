@@ -1,11 +1,7 @@
 package com.example.casaDeApostas.service;
 
-import com.example.casaDeApostas.dto.AdminDTO;
-import com.example.casaDeApostas.model.enums.Roles;
 import com.example.casaDeApostas.model.users.User;
-import com.example.casaDeApostas.repository.AccountRepository;
 import com.example.casaDeApostas.repository.UserRepository;
-import com.example.casaDeApostas.security.SecurityConfiguration;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.NullValueInNestedPathException;
 import org.springframework.stereotype.Service;
@@ -19,24 +15,30 @@ public class AdminService {
     private final UserRepository userRepository;
 
     public List<User> allUsers(){
-        try {
-            return userRepository.findAll();
-        }
-        catch (NullValueInNestedPathException e){
-            throw new RuntimeException("Nenhum usuário cadastrado.", e);
-        }
+
+        return userRepository.findAll();
     }
 
     public User getByCpf(Long cpf) {
-        User user = new User();
-        user = userRepository.findByCpf(cpf);
-
-        return user;
-
+        return userRepository.findByCpf(cpf);
     }
 
-    // metodo para bloquear
+    public String blockUser(Long cpf) {
 
+        User user = userRepository.findByCpf(cpf);
 
+        user.setBloqueado(true);
+        userRepository.save(user);
+        return "Usuário bloqueado com sucesso.";
+    }
+
+    public String unlockUser(Long cpf) {
+
+        User user = userRepository.findByCpf(cpf);
+
+        user.setBloqueado(false);
+        userRepository.save(user);
+        return "Usuário bloqueado com sucesso.";
+    }
     // metodo dashboard admin
 }

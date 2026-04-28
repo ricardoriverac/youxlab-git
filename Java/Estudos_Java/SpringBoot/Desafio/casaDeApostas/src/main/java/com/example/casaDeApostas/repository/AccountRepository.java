@@ -1,6 +1,7 @@
 package com.example.casaDeApostas.repository;
 
 import com.example.casaDeApostas.model.conta.Account;
+import com.example.casaDeApostas.model.users.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;
