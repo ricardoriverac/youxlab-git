@@ -1,9 +1,12 @@
 package com.example.casaDeApostas.service;
 
+import com.example.casaDeApostas.exceptions.JogoNaoEncontrado;
+import com.example.casaDeApostas.exceptions.UserDoesNotExist;
 import com.example.casaDeApostas.model.dashboard.DashBoardUser;
 import com.example.casaDeApostas.model.dashboard.DashBoardAdmin;
 
 import com.example.casaDeApostas.model.enums.Roles;
+import com.example.casaDeApostas.model.jogo.Jogo;
 import com.example.casaDeApostas.model.users.User;
 import com.example.casaDeApostas.repository.JogoRepository;
 import com.example.casaDeApostas.repository.UserRepository;
@@ -31,8 +34,8 @@ public class DashBoardsService {
     public DashBoardUser dashBoardsUser(UUID idUser){
 
         Long qtdJogos = jogoRepository.countJogoByUsuario_Id(idUser);
-        Integer percas = jogoRepository.contarPercasPorUsuario(idUser);
-        Integer ganhos = jogoRepository.contarGanhosPorUsuario(idUser);
+        Integer percas = jogoRepository.contarPercasPorUsuario_id(idUser);
+        Integer ganhos = jogoRepository.contarGanhosPorUsuario_id(idUser);
 
         DashBoardUser dashBoardUser = new DashBoardUser(qtdJogos, ganhos, percas);
         return dashBoardUser;

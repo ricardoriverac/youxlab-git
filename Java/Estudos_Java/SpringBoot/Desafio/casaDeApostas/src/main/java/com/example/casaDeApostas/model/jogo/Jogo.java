@@ -72,6 +72,7 @@ public class Jogo {
         this.percas = 0;
         this.quantidadeDiamantesEncontrados = 0;
         this.tipoJogo = TipoJogo.EM_ANDAMENTO;
+        this.valorGanho = 0.0;
     }
 
     public Jogo(String mensagem) {
@@ -110,9 +111,13 @@ public class Jogo {
 
         double valorGanho = jogo.getValorApostado() * (1 + (jogo.getQuantidadeDiamantesEncontrados() * 0.33));
 
-        jogo.setValorGanho(valorGanho);
+        jogo.setValorGanho(somarValorGanho(valorGanho));
         return valorGanho;
 
+    }
+
+    private Double somarValorGanho(Double valor){
+        return this.valorGanho += valor;
     }
 
 

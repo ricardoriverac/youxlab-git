@@ -1,8 +1,10 @@
 package com.example.casaDeApostas.service;
 
-import ch.qos.logback.core.joran.conditional.IfAction;
 import com.example.casaDeApostas.dto.CriarJogoDTO;
 
+import com.example.casaDeApostas.dto.EncerrarRespostaDTO;
+import com.example.casaDeApostas.dto.JogoResponseDTO;
+import com.example.casaDeApostas.exceptions.*;
 import com.example.casaDeApostas.model.conta.Account;
 import com.example.casaDeApostas.model.enums.TipoJogo;
 import com.example.casaDeApostas.model.enums.TipoCampo;
@@ -17,10 +19,7 @@ import com.example.casaDeApostas.repository.UserRepository;
 
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.*;
 
@@ -37,47 +36,64 @@ public class JogoService {
 
     private final AccountRepository accountRepository;
 
-    public Jogo criarJogo(CriarJogoDTO dto) {
+    public Jogo criarJogo(CriarJogoDTO dto){
 
         Optional<User> user = userRepository.findById(dto.userId());
 
         if (user.isPresent()) {
             Jogo novoJogo = new Jogo(user.get(), dto.valorAposta());
 
-            jogoRepository.save(novoJogo);
-            novoJogo.gerarCampoMinado();
+            Account account = accountRepository.findByCpf(user.get().getCpf());
+            if (account != null) {
 
-            salvarMatriz(novoJogo.getMatriz());
-            return novoJogo;
+                if (account.getValorAtual() < dto.valorAposta()){
+                    throw new IllegalArgumentException("Você não possui esse valor na conta.");
+                }
+
+                account.tirarValorApostado(dto.valorAposta());
+                jogoRepository.save(novoJogo);
+                novoJogo.gerarCampoMinado();
+
+                salvarMatriz(novoJogo.getMatriz());
+                return novoJogo;
+            }
+            else {
+                throw new YouDoNotHaveBankAccount("Você não possuiu uma conta bancária para jogar.");
+            }
         }
-
-        return new Jogo();
+        throw new UserDoesNotExist("Erro: Usuário não existe.");
     }
 
 
     @Transactional
-    public Jogo jogar(UUID idJogo, int linha, int coluna) {
+    public Object jogar(UUID idJogo, int linha, int coluna) {
 
         Optional<Jogo> jogo = jogoRepository.findById(idJogo);
 
         if (!jogo.isPresent()){
-            new Jogo("Jogo não encontrado");
+            throw new JogoNaoEncontrado("Jogo não encontrado");
+        }
+
+        if (jogo.get().getTipoJogo() == TipoJogo.ENCERRADO){
+            throw new JogoJaEncerrado("Você já perdeu.");
         }
 
         int indiceReal = (linha * 5) + coluna;
 
         if (linha < 0 || linha >= 5 || coluna < 0 || coluna >= 5) {
-            return new Jogo("Tamanho insuficiente.");
+            throw  new IllegalArgumentException("Tamanho insuficiente.");
         }
         if (jogo.get().getMatriz()[indiceReal] != TipoCampo.DIAMANTE) {
 
-            if (jogo.get().getPercas() == 1){
-                return new Jogo("Você já perdeu.");
-            }
             jogo.get().adicionarPerdas(1);
             jogo.get().setTipoDB(TipoCampo.BOMBA);
             jogo.get().setTipoJogo(TipoJogo.ENCERRADO);
-            return jogoRepository.save(jogo.get());
+            jogo.get().calcularGanho(jogo.get());
+            jogoRepository.save(jogo.get());
+            return "Voce encontrou uma: "
+                    + jogo.get().getTipoDB()
+                    + " \n"
+                    + "Jogo finalizado.";
 
         } else {
 
@@ -85,18 +101,22 @@ public class JogoService {
             jogo.get().setTipoDB(TipoCampo.DIAMANTE);
             jogo.get().setTipoJogo(TipoJogo.EM_ANDAMENTO);
             jogo.get().adicionarDiamantesEncontrados(1);
-            return jogoRepository.save(jogo.get());
+            jogo.get().setValorGanho(jogo.get().calcularGanho(jogo.get()));
+            jogoRepository.save(jogo.get());
+            return new JogoResponseDTO(
+                    jogo.get().getTipoDB()
+            );
         }
     }
 
-    public ResponseEntity<String> encerrarJogo(UUID idJogo) {
+    public EncerrarRespostaDTO encerrarJogo(UUID idJogo) {
 
         Optional<Jogo> jogo = jogoRepository.findById(idJogo);
 
         if (jogo.isPresent()) {
 
             if (jogo.get().getTipoJogo() == TipoJogo.ENCERRADO) {
-                return ResponseEntity.status(HttpStatus.CONFLICT).body("jogo já finalizado.");
+                throw new JogoJaEncerrado("Jogo já encerrado.");
             }
 
             jogo.get().setTipoJogo(TipoJogo.ENCERRADO);
@@ -108,21 +128,21 @@ public class JogoService {
 
                 Account account = accountRepository.findByCpf(user.get().getCpf());
                 if (account != null) {
-                    account.setValorAtual(ganho);
+
+                    account.depositar(ganho);
+                    EncerrarRespostaDTO encerrarRespostaDTO = new EncerrarRespostaDTO("Jogo Finalizado.", jogo.get().getValorGanho());
                     accountRepository.save(account);
                     jogoRepository.save(jogo.get());
-                    return ResponseEntity.ok().body("Jogo finalizado.");
+                    return encerrarRespostaDTO;
+
+                } else {
+                    throw new UserExistButNotAccount("Usuário encontrado, mas ele não possui uma conta.");
                 }
-                else {
-                    return ResponseEntity.status(HttpStatus.CONFLICT).body("Usuário encontrado, porque ele não possui uma conta.");
-                }
+            } else {
+                throw new UserDoesNotExist("Usuário não encontrado.");
             }
-            else {
-                return ResponseEntity.status(HttpStatus.CONFLICT).body("Usuário não encontrado.");
-            }
-        }
-        else {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("jogo não encontrado.");
+        } else {
+            throw new JogoNaoEncontrado("jogo não encontrado.");
         }
     }
 

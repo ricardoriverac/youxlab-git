@@ -1,6 +1,8 @@
 package com.example.casaDeApostas.service;
 
 import com.example.casaDeApostas.dto.LoginDTO;
+import com.example.casaDeApostas.exceptions.EmailSenhaIncorretos;
+import com.example.casaDeApostas.exceptions.UsuaroBloqueado;
 import com.example.casaDeApostas.model.users.User;
 import com.example.casaDeApostas.repository.UserRepository;
 import lombok.AllArgsConstructor;
@@ -22,15 +24,15 @@ public class ApostaService {
         User user = userRepository.findByEmail(login.email());
 
         if (user == null) {
-            return "Erro: Email ou senha incorretos.";
+            throw new EmailSenhaIncorretos("Erro: Email ou senha incorretos.");
         }
 
         if (!passwordEncoder.matches(login.senha(), user.getSenha())) {
-            return "Erro: Email ou senha incorretos.";
+            throw new EmailSenhaIncorretos("Erro: Email ou senha incorretos.");
         }
 
         if (user.isBloqueado()) {
-            return "Acesso negado. Usuário bloqueado.";
+            throw new UsuaroBloqueado("Acesso negado. Usuário bloqueado.");
         }
 
         else return "Token: " + tokenService.generateTokenUser(user);

@@ -1,5 +1,6 @@
 package com.example.casaDeApostas.controller;
 
+import com.example.casaDeApostas.exceptions.JogoNaoEncontrado;
 import com.example.casaDeApostas.model.dashboard.DashBoardAdmin;
 import com.example.casaDeApostas.model.dashboard.DashBoardUser;
 import com.example.casaDeApostas.repository.UserRepository;
@@ -20,8 +21,6 @@ import java.util.UUID;
 @AllArgsConstructor
 public class DashBoardController {
 
-    private final UserRepository userRepository;
-
     private DashBoardsService dashBoardsService;
 
     @GetMapping("/dashboard-admin")
@@ -39,12 +38,11 @@ public class DashBoardController {
     @GetMapping("/dashboard-user/{idUser}")
     public ResponseEntity dashboardUser(@PathVariable UUID idUser){
         try{
-
             DashBoardUser dashBoardUser = dashBoardsService.dashBoardsUser(idUser);
             return ResponseEntity.ok().body(dashBoardUser);
         }
-        catch (ResponseStatusException e){
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("Ocorreu um problema nessa operação.");
+        catch (Exception e){
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Usuário não existe.");
         }
     }
 }

@@ -2,6 +2,9 @@ package com.example.casaDeApostas.controller;
 
 import com.example.casaDeApostas.dto.LoginDTO;
 import com.example.casaDeApostas.dto.ResetPasswordDTO;
+import com.example.casaDeApostas.exceptions.EmailSenhaIncorretos;
+import com.example.casaDeApostas.exceptions.UserDoesNotExist;
+import com.example.casaDeApostas.exceptions.UsuaroBloqueado;
 import com.example.casaDeApostas.model.users.User;
 import com.example.casaDeApostas.repository.UserRepository;
 import com.example.casaDeApostas.service.*;
@@ -28,8 +31,8 @@ public class CasaApostaController {
             String resposta = senhaService.resetarSenha(resetar.idUsuario(), resetar.senha());
             return ResponseEntity.status(HttpStatus.OK).body(resposta);
         }
-        catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("Usuário não encontrado.");
+        catch (UserDoesNotExist e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Usuário não existe.");
         }
     }
 
@@ -40,8 +43,11 @@ public class CasaApostaController {
             String token = apostaService.login(login);
             return ResponseEntity.ok().body(token);
         }
-        catch (Exception e){
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("Ocorreu um problema nessa operação.");
+        catch (EmailSenhaIncorretos e){
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Email ou senha incorretos.");
+        }
+        catch (UsuaroBloqueado e){
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Usuário está bloqueado.");
         }
 
     }

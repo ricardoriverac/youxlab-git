@@ -1,10 +1,8 @@
 package com.example.casaDeApostas.controller;
 
-import com.example.casaDeApostas.dto.ApostaDTO;
-import com.example.casaDeApostas.dto.CriarJogoDTO;
+import com.example.casaDeApostas.dto.*;
 
-import com.example.casaDeApostas.dto.EncerrarDTO;
-import com.example.casaDeApostas.dto.JogoResponseDTO;
+import com.example.casaDeApostas.exceptions.*;
 import com.example.casaDeApostas.model.enums.TipoJogo;
 import com.example.casaDeApostas.model.jogo.Jogo;
 import com.example.casaDeApostas.repository.JogoRepository;
@@ -33,51 +31,70 @@ public class JogoController {
     @PostMapping("/criar-jogo")
     public ResponseEntity criarJogo(@RequestBody CriarJogoDTO criarJogoDTO){
 
-        if (criarJogoDTO.valorAposta() <= 0.0){
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("Valor não permitido para apostar.");
-        }
+        try {
+            if (criarJogoDTO.valorAposta() <= 0.0) {
+                return ResponseEntity.status(HttpStatus.CONFLICT).body("Valor não permitido para apostar.");
+            }
 
-        Jogo jogar = jogoService.criarJogo(criarJogoDTO);
-        return ResponseEntity.ok().body(jogar);
+            Jogo jogar = jogoService.criarJogo(criarJogoDTO);
+            return ResponseEntity.ok().body(jogar);
+        }
+        catch (YouDoNotHaveBankAccount e){
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Você não possuiu uma conta bancária para jogar.");
+        }
+        catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Saldo insuficiente.");
+        }
+        catch (UserDoesNotExist e){
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Erro: Usuário não existe.");
+        }
     }
 
     @PostMapping("/jogar")
     public ResponseEntity jogar(
             @RequestBody ApostaDTO dto) {
 
-        Optional<Jogo> procurarJogo = jogoRepository.findById(dto.idJogo());
+        try {
 
-        if (procurarJogo.isPresent()) {
-            Jogo jogoAtualizado = procurarJogo.get();
-            jogoAtualizado = jogoService.jogar(dto.idJogo(), dto.linha(), dto.coluna());
+            Object jogoDados = jogoService.jogar(dto.idJogo(), dto.linha(), dto.coluna());
+            return ResponseEntity.status(HttpStatus.OK).body(jogoDados);
 
-            if (jogoAtualizado.getTipoJogo() == TipoJogo.ENCERRADO) {
-
-                return ResponseEntity.status(HttpStatus.CONFLICT).body(
-                        "Voce encontrou uma: "
-                                + jogoAtualizado.getTipoDB()
-                                + " \n"
-                                + "Jogo finalizado.");
-            }
-
-            JogoResponseDTO dadosJogo = new JogoResponseDTO(
-                    jogoAtualizado.getValorApostado(),
-                    jogoAtualizado.getTipoDB()
-            );
-            return ResponseEntity.status(HttpStatus.OK).body(dadosJogo);
+        }
+        catch (JogoJaEncerrado e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Você já perdeu.");
+        }
+        catch (IllegalArgumentException e){
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Tamanho insuficiente.");
+        }
+        catch (JogoNaoEncontrado e){
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Jogo não existe.");
+        }
+        catch (UserExistButNotAccount e){
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Usuário existe, mas ele não possui uma conta bancária no jogo.");
         }
 
-        return ResponseEntity.status(HttpStatus.CONFLICT).body("Jogo não existe.");
     }
 
     @PutMapping("/encerrar")
     public ResponseEntity encerrarJogo(@RequestBody EncerrarDTO dto){
 
-        if (!jogoRepository.existsById(dto.idJogo())){
+        try {
+            EncerrarRespostaDTO resposta = jogoService.encerrarJogo(dto.idJogo());
+            return ResponseEntity.status(HttpStatus.OK).body(resposta);
+
+        }
+        catch (JogoNaoEncontrado e){
             return ResponseEntity.status(HttpStatus.CONFLICT).body("Jogo não existe.");
         }
-        ResponseEntity<String> resposta = jogoService.encerrarJogo(dto.idJogo());
-        return resposta;
+        catch (JogoJaEncerrado e){
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Jogo já encerrado.");
+        }
+        catch (UserDoesNotExist e){
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Usuário não existe.");
+        }
+        catch (UserExistButNotAccount e){
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Usuário existe, mas ele não possui uma conta.");
+        }
     }
 
 }

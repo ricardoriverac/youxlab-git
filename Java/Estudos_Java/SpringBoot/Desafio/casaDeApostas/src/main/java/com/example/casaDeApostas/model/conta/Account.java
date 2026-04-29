@@ -45,4 +45,8 @@ public class Account {
             this.valorAtual += valor;
         }
     }
+
+    public void tirarValorApostado(Double valor){
+        this.valorAtual -= valor;
+    }
 }

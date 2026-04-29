@@ -1,5 +1,6 @@
 package com.example.casaDeApostas.service;
 
+import com.example.casaDeApostas.exceptions.UserDoesNotExist;
 import com.example.casaDeApostas.model.users.User;
 import com.example.casaDeApostas.repository.UserRepository;
 import lombok.AllArgsConstructor;
@@ -15,11 +16,15 @@ public class AdminService {
     private final UserRepository userRepository;
 
     public List<User> allUsers(){
-
         return userRepository.findAll();
     }
 
     public User getByCpf(Long cpf) {
+        User user = userRepository.findByCpf(cpf);
+
+        if (user == null){
+            throw new UserDoesNotExist("Cpf inválido.");
+        }
         return userRepository.findByCpf(cpf);
     }
 

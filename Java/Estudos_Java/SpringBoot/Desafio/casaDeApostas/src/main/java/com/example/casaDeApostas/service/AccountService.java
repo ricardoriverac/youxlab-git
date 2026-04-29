@@ -1,7 +1,8 @@
 package com.example.casaDeApostas.service;
 
 import com.example.casaDeApostas.dto.AccountDTO;
-import com.example.casaDeApostas.dto.DepositoDTO;
+import com.example.casaDeApostas.exceptions.CpfJaCadastrado;
+import com.example.casaDeApostas.exceptions.NaoPodeDepositarValorNegativo;
 import com.example.casaDeApostas.model.conta.Account;
 import com.example.casaDeApostas.model.users.User;
 import com.example.casaDeApostas.repository.AccountRepository;
@@ -28,13 +29,13 @@ public class AccountService {
         User user = userRepository.findByCpf(conta.cpf());
 
         if (user ==  null) {
-            return "Cpf não válido.";
+            throw new IllegalArgumentException("Cpf não válido.");
         }
 
         boolean existeEsseCpf = accountRepository.existsByCpf(newAccount.getCpf());
 
         if (existeEsseCpf) {
-            return "Erro: CPF já cadastrado.";
+            throw new CpfJaCadastrado("Erro: CPF já cadastrado.");
         }
 
         accountRepository.save(newAccount);
@@ -44,9 +45,14 @@ public class AccountService {
     public void depositar(Long cpf, Double valor){
 
         Account account = accountRepository.findByCpf(cpf);
-        if (account == null) throw new IllegalArgumentException("Cpf não existe.");
+        if (account == null)
+            throw new IllegalArgumentException("Cpf não existe.");
 
+        if (valor < 0){
+            throw new NaoPodeDepositarValorNegativo("Não pode depositar valor negativo.");
+        }
         account.depositar(valor);
+        accountRepository.save(account);
     }
 
 }

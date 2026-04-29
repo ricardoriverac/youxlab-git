@@ -19,10 +19,10 @@ public interface JogoRepository extends JpaRepository<Jogo, UUID> {
     Long countJogoByUsuario_Id(UUID usuarioId);
 
     @Query("SELECT SUM(j.ganhos) FROM Jogo j WHERE j.usuario.id = :idUser")
-    Integer contarGanhosPorUsuario(UUID idUser);
+    Integer contarGanhosPorUsuario_id(UUID idUser);
 
     @Query("SELECT SUM(j.percas) FROM Jogo j WHERE j.usuario.id = :idUser")
-    Integer contarPercasPorUsuario(UUID idUser);
+    Integer contarPercasPorUsuario_id(UUID idUser);
 
     @Query("SELECT COUNT(*) FROM Jogo")
     Long countAll();

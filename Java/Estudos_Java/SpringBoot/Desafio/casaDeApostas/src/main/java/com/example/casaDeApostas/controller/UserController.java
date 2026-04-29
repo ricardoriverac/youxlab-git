@@ -3,6 +3,9 @@ package com.example.casaDeApostas.controller;
 import ch.qos.logback.core.joran.conditional.IfAction;
 import com.example.casaDeApostas.dto.BloquearDTO;
 import com.example.casaDeApostas.dto.UserDTO;
+import com.example.casaDeApostas.exceptions.CpfJaCadastrado;
+import com.example.casaDeApostas.exceptions.EmailJaCadastrado;
+import com.example.casaDeApostas.exceptions.UserDoesNotExist;
 import com.example.casaDeApostas.model.users.User;
 import com.example.casaDeApostas.repository.UserRepository;
 import com.example.casaDeApostas.service.AdminService;
@@ -35,11 +38,13 @@ public class UserController {
 
         try {
             userService.createUsuario(user);
-
             return ResponseEntity.ok().body("Usuário criado com sucesso!");
         }
-        catch (Exception e){
-            return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
+        catch (EmailJaCadastrado e){
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Email já cadastrado.");
+        }
+        catch (CpfJaCadastrado e){
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Cpf já cadastrado.");
         }
     }
 
@@ -61,19 +66,22 @@ public class UserController {
     public ResponseEntity allUsers(){
 
         List<User> allUsers = adminService.allUsers();
-
+        if (allUsers == null){
+            return ResponseEntity.status(HttpStatus.OK).body("Não possui nenhum usuário.");
+        }
         return ResponseEntity.ok().body(allUsers);
     }
 
     @GetMapping("admins/cpf/{cpf}")
     public ResponseEntity mostrarUsuarioPorCf(@PathVariable @Valid Long cpf){
-        User user = adminService.getByCpf(cpf);
 
-        if(user == null){
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("Usuário não encontrado");
+        try {
+            User user = adminService.getByCpf(cpf);
+            return ResponseEntity.ok().body(user);
         }
-
-        return ResponseEntity.ok().body(user);
+        catch (UserDoesNotExist e){
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Cpf inválido.");
+        }
     }
 
     @PostMapping("admins/users/bloquear")
