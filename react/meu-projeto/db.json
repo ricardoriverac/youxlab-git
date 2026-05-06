@@ -15,12 +15,30 @@
       "services": []
     },
     {
-      "id": "e555",
-      "name": "Instituto Youx",
-      "budget": "300000",
+      "id": "344b",
       "category": {
         "id": "2",
         "name": "Desenvolvimento"
+      },
+      "name": "IGREJA AMOR E VIDA",
+      "budget": "4000000",
+      "cost": 200000,
+      "services": [
+        {
+          "name": "Deus é bom",
+          "cost": "200000",
+          "description": "Deus é bom o tempo todo",
+          "id": "f67f5a75-3e21-48fb-994d-84fda842c440"
+        }
+      ]
+    },
+    {
+      "id": "fcf0",
+      "name": "Instituto Youx",
+      "budget": "123456",
+      "category": {
+        "id": "1",
+        "name": "Infra"
       },
       "cost": 0,
       "services": []
@@ -43,5 +61,6 @@
       "id": "4",
       "name": "Planejamento"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
