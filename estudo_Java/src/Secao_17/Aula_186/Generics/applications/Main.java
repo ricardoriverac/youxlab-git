@@ -1,13 +1,28 @@
 package Secao_17.Aula_186.Generics.applications;
 
-import Secao_17.Aula_186.Generics.entities.Repositorio;
+import Secao_17.Aula_186.Generics.service.PrintService;
+
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        Repositorio rp = new Repositorio();
+        Scanner sc = new Scanner(System.in);
 
-        rp.salvar(4.009);
-        System.out.println(rp.obter());
+        PrintService<Integer> ps = new PrintService<>();
+
+        System.out.print("How many values? ");
+        int n = sc.nextInt();
+
+        for (int i = 0; i < n; i++) {
+            Integer value = sc.nextInt();
+            ps.addValue(value);
+        }
+
+        ps.print();
+        Integer x = ps.first();
+        System.out.println("First: " + x);
+
+        sc.close();
     }
 }
