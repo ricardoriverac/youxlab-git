@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d988d7ba-0ca2-4394-b311-337088138fd8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/.idea/IdeaProjects.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/curso_programacao.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estrutura_Condicional/aula_01/codigo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estrutura_Condicional/aula_01/exer1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estrutura_Condicional/aula_01/exer2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estrutura_Condicional/aula_01/exer3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estrutura_Condicional/aula_01/exer4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estrutura_Condicional/aula_01/exer5.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estrutura_Condicional/aula_01/exer6.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estrutura_Condicional/aula_01/exer7.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estrutura_Condicional/aula_01/exer8.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estrutura_Condicional/aula_02/codigo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estrutura_Sequencial/aula_01/codigo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estrutura_Sequencial/aula_01/exer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estrutura_Sequencial/aula_02/codigo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estrutura_Sequencial/aula_03/codigo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estrutura_Sequencial/aula_03/exer1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estrutura_Sequencial/aula_03/exer2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estrutura_Sequencial/aula_03/exer3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estrutura_Sequencial/aula_03/exer4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estrutura_Sequencial/aula_03/exer5.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estrutura_Sequencial/aula_03/exer6.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estruturas_Repetitivas/aula_01/codigo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estruturas_Repetitivas/aula_01/exer1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estruturas_Repetitivas/aula_01/exer2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estruturas_Repetitivas/aula_01/exer3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estruturas_Repetitivas/aula_02/codigo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estruturas_Repetitivas/aula_02/exer1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estruturas_Repetitivas/aula_02/exer2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estruturas_Repetitivas/aula_02/exer3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estruturas_Repetitivas/aula_02/exer4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estruturas_Repetitivas/aula_02/exer5.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estruturas_Repetitivas/aula_02/exer6.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estruturas_Repetitivas/aula_02/exer7.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Estruturas_Repetitivas/do_while_03/codigo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Programacao_Orientada_Objetos/Exercicios/Employee/Employee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Programacao_Orientada_Objetos/Exercicios/Employee/Program.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Programacao_Orientada_Objetos/Exercicios/Rectangle/Program/Program.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Programacao_Orientada_Objetos/Exercicios/Rectangle/entities/rectangle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Programacao_Orientada_Objetos/Exercicios/Student/Program03.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Programacao_Orientada_Objetos/Exercicios/Student/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Programacao_Orientada_Objetos/Product/codigo_principal/Programa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Programacao_Orientada_Objetos/Product/entities/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Programacao_Orientada_Objetos/Triangulo/codigo_principal/codigo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Programacao_Orientada_Objetos/Triangulo/entities/triangulo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Topios_basios_java/Funcoes/codigo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Topios_basios_java/Funcoes_String/_split/codigo_split.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Topios_basios_java/Funcoes_String/codigo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/curso_programacao/src/Topios_basios_java/Operadores_bitwise/codigo.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="36lQCoswtP56Ci8ZbI891zsNmts" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "Luis",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/youx/Projetos/youxlab-git/Java/Estudos_Java"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d988d7ba-0ca2-4394-b311-337088138fd8" name="Changes" comment="" />
+      <created>1765578552965</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1765578552965</updated>
+    </task>
+    <servers />
+  </component>
+</project>
