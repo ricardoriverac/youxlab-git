@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="62c9625e-5f17-447c-8003-cb0b489a4882" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Java/arquiteturaSpring/src/main/java/io/github/cursodsousa/arquiteturaSpring/ExemploInjecaoDependencia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../JAVA/teste1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Java/produtosapi/src/main/java/com/projeto2/produtosapi/controller/ProdutoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Java/produtosapi/src/main/java/com/projeto2/produtosapi/controller/ProdutoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Java/produtosapi/src/main/java/com/projeto2/produtosapi/model/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Java/produtosapi/src/main/java/com/projeto2/produtosapi/model/Produto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Java/produtosapi/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../Java/produtosapi/src/main/resources/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Java/projeto/testeCurso1/testeCurso/src/main/java/com/TesteLucas/testeCurso/resources/CategoryResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Java/projeto/testeCurso1/testeCurso/src/main/java/com/TesteLucas/testeCurso/resources/CategoryResource.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="3Allvb6wpHDIuTD3ddiF5f5FNAN" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.LojaMusicaTresApplication.executor": "Run",
+    "git-widget-placeholder": "lucas",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/youx/youxlab-git/coisinhas/AtividadeIdenpendente"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="62c9625e-5f17-447c-8003-cb0b489a4882" name="Changes" comment="" />
+      <created>1773175269917</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1773175269917</updated>
+    </task>
+    <servers />
+  </component>
+</project>

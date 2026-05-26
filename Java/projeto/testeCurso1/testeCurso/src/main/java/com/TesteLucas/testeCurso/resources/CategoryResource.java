@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/category")
-public class CategoryResource {
+public class    CategoryResource {
     @Autowired
     private CategoryService service;
     @GetMapping

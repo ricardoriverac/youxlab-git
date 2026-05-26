@@ -1,0 +1,12 @@
+    spring:
+      application:
+        name: Arquitetura Spring
+      jpg:
+        show-sql: true
+      main:
+        lazy-initialization: false
+
+    app:
+      config:
+        variavel: O valor da VARIÁVEL é X
+        valor1: 500
