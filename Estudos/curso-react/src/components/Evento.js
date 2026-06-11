@@ -1,17 +1,21 @@
-import { getDefaultNormalizer } from "@testing-library/dom"
-
-function Evento({numero}) {
+import Button from "./eventos/Button"
+function Evento() {
 
     function meuEvento() {
-        console.log(`Opa, foi ativado! ${numero}`)
+        console.log(`Ativando primeiro evento`)
     }
-    
-    return(
+
+    function segundoEvento() {
+        console.log("Ativndo o segundo evento")
+    }
+
+    return (
         <div>
             <p>CLique para disparar um evento: </p>
-            <button onClick={meuEvento}> Ativar|</button>
+            <Button  event={meuEvento} text="Primeiro evento" />
+            <Button event={segundoEvento} text="Segundo evento" />
         </div>
     )
 }
 
-export default Evento;
+export default Evento
